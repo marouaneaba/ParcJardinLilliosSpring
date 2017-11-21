@@ -9,10 +9,20 @@ public class ParcJardinn {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(name = "name")
+	@Column
 	private String name;
-	@Column(name = "description")
+	@Column
 	private String description;
+	
+	
+	public ParcJardinn(){}
+	
+	public ParcJardinn(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -31,11 +41,7 @@ public class ParcJardinn {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public ParcJardinn(String name, String description) {
-		super();
-		this.name = name;
-		this.description = description;
-	}
+	
 	
 	
 }
