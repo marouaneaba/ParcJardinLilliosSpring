@@ -1,9 +1,9 @@
-package com.lille1.ParcsJardinnsLilios.JardinnParc.Entity;
+package com.lille1.ParcsJardinnsLilios.Entity;
 
 import javax.persistence.*;
 
 @Entity
-public class ParcJardinn {
+public class ParcJardinnEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,14 +13,17 @@ public class ParcJardinn {
 	private String name;
 	@Column
 	private String description;
+	@Column
+	private boolean Parc;
 	
 	
-	public ParcJardinn(){}
+	public ParcJardinnEntity(){}
 	
-	public ParcJardinn(String name, String description) {
+	public ParcJardinnEntity(String name, String description,boolean parc) {
 		super();
 		this.name = name;
 		this.description = description;
+		this.Parc = parc;
 	}
 	
 	public String getName() {
@@ -41,6 +44,16 @@ public class ParcJardinn {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public boolean isParc() {
+		return Parc;
+	}
+
+	public void setParc(boolean parc) {
+		Parc = parc;
+	}
+	
+	
 	
 	
 	

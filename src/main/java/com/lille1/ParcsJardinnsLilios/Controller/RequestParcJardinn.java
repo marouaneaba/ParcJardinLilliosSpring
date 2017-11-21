@@ -1,4 +1,4 @@
-package com.lille1.ParcsJardinnsLilios.JardinnParc.Controller;
+package com.lille1.ParcsJardinnsLilios.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lille1.ParcsJardinnsLilios.JardinnParc.Entity.ParcJardinn;
-import com.lille1.ParcsJardinnsLilios.JardinnParc.Repository.ParcJardinnRepostory;
+import com.lille1.ParcsJardinnsLilios.Entity.*;
+import com.lille1.ParcsJardinnsLilios.Repository.ParcJardinnRepository;
 
 @RestController
 @RequestMapping("/jardinn")
-public class Request {
+public class RequestParcJardinn {
 
 	@Autowired
-	ParcJardinnRepostory mParcJardinnRepostory;
+	ParcJardinnRepository mParcJardinnRepostory;
 	
 	
 	/**
@@ -24,7 +24,7 @@ public class Request {
      * @return la liste des jardinns et des parc
      */
 	@RequestMapping(method = RequestMethod.GET)
-	 public Iterable<ParcJardinn> JardinnGet() {
+	 public Iterable<ParcJardinnEntity> JardinnGet() {
 		return mParcJardinnRepostory.findAll();
 	 }
 	
@@ -37,8 +37,9 @@ public class Request {
      */
 	@RequestMapping(method = RequestMethod.POST)
 	 public void JardinnSet(@RequestParam("name")String name,
-				@RequestParam("description")String description) {
-		mParcJardinnRepostory.save(new ParcJardinn(name,description));
+				@RequestParam("description")String description,
+				@RequestParam("parc")boolean parc) {
+		mParcJardinnRepostory.save(new ParcJardinnEntity(name,description,parc));
 	 }
 	
 }
