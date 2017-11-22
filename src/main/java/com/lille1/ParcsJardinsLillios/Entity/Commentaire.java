@@ -8,8 +8,8 @@ public class Commentaire {
 
 	@Id
 	private Long id;
-	@ManyToOne(targetEntity = ParcJardinn.class)
-	private ParcJardinn parcJardinn;
+	@ManyToOne(targetEntity = ParcJardin.class)
+	private ParcJardin parcJardinn;
 	@Column
 	private String commentaire;
 	@Column
@@ -18,7 +18,7 @@ public class Commentaire {
 	
 	public Commentaire(){}
 	
-	public Commentaire(ParcJardinn parcJardinn, String commentaire, boolean confirmer) {
+	public Commentaire(ParcJardin parcJardinn, String commentaire, boolean confirmer) {
 		super();
 		this.parcJardinn = parcJardinn;
 		this.commentaire = commentaire;
@@ -30,10 +30,10 @@ public class Commentaire {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public ParcJardinn getParcJardinn() {
+	public ParcJardin getParcJardinn() {
 		return parcJardinn;
 	}
-	public void setParcJardinn(ParcJardinn parcJardinn) {
+	public void setParcJardinn(ParcJardin parcJardinn) {
 		this.parcJardinn = parcJardinn;
 	}
 	public String getCommentaire() {

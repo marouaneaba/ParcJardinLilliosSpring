@@ -18,13 +18,13 @@ public class Horaire {
 	@Column
 	private String journee;
 	
-	@ManyToOne(targetEntity = ParcJardinn.class)
-	private ParcJardinn ParcJardinn;
+	@ManyToOne(targetEntity = ParcJardin.class)
+	private ParcJardin ParcJardinn;
 
 	
 	public Horaire(){}
 	
-	public Horaire(String ouverture, String fermuture, String journee,ParcJardinn parcJardinn) {
+	public Horaire(String ouverture, String fermuture, String journee,ParcJardin parcJardinn) {
 		super();
 		this.ouverture = ouverture;
 		this.fermuture = fermuture;
@@ -64,11 +64,11 @@ public class Horaire {
 		this.journee = journee;
 	}
 
-	public ParcJardinn getParcJardinn() {
+	public ParcJardin getParcJardinn() {
 		return ParcJardinn;
 	}
 
-	public void setParcJardinn(ParcJardinn parcJardinn) {
+	public void setParcJardinn(ParcJardin parcJardinn) {
 		ParcJardinn = parcJardinn;
 	}
 

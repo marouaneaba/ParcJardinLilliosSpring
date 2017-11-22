@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-public class ParcJardinn {
+public class ParcJardin {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,9 +42,9 @@ public class ParcJardinn {
 	private List<Horaire> horaire;
 
 
-	public ParcJardinn(){}
+	public ParcJardin(){}
 	
-	public ParcJardinn(String name, String description, boolean parc, double l, double g, List<Commentaire> commentaire,
+	public ParcJardin(String name, String description, boolean parc, double l, double g, List<Commentaire> commentaire,
 			List<Categorie> categorie, List<Horaire> horaire) {
 		super();
 		this.name = name;

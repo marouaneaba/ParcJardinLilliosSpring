@@ -10,7 +10,7 @@ public class Categorie {
 	@Id
 	private Long id;
 	@ManyToMany(mappedBy = "categorie")
-	private Collection<ParcJardinn> ParcJardinn;
+	private Collection<ParcJardin> ParcJardinn;
 	@Column
 	private String categorie;
 	
@@ -21,7 +21,7 @@ public class Categorie {
 
 
 
-	public Categorie(Collection<ParcJardinn> parcJardinn, String categorie) {
+	public Categorie(Collection<ParcJardin> parcJardinn, String categorie) {
 		super();
 		ParcJardinn = parcJardinn;
 		this.categorie = categorie;
@@ -41,13 +41,13 @@ public class Categorie {
 
 
 
-	public Collection<ParcJardinn> getParcJardinn() {
+	public Collection<ParcJardin> getParcJardinn() {
 		return ParcJardinn;
 	}
 
 
 
-	public void setParcJardinn(Collection<ParcJardinn> parcJardinn) {
+	public void setParcJardinn(Collection<ParcJardin> parcJardinn) {
 		ParcJardinn = parcJardinn;
 	}
 
