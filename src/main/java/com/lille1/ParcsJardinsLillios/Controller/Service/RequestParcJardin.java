@@ -49,7 +49,7 @@ public class RequestParcJardin  implements InterfaceParcJardin{
 				@RequestParam("parc")boolean parc,
 				@RequestParam("l")double l,
 				@RequestParam("g")double g) {
-		mParcJardinnRepostory.save(new ParcJardin(name,description,parc,l,g,null,null,null));
+		mParcJardinnRepostory.save(new ParcJardin(name,description,null,l,g,null,null,null));
 	 }
 
 	/**

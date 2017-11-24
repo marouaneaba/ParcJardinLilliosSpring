@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.lille1.ParcsJardinsLillios.Enum.EnumTypePJ;
+
 @Entity
 public class ParcJardin {
 
@@ -16,7 +18,7 @@ public class ParcJardin {
 	@Column
 	private String description;
 	@Column
-	private boolean Parc;
+	private EnumTypePJ type;// parc ou jardin
 	@Column
 	private double L;
 	@Column
@@ -27,8 +29,6 @@ public class ParcJardin {
 	private List<Commentaire> commentaire;
 	
 	@ManyToMany
-	/*@JoinTable(name="ParcJardinn_Categorie", joinColumns =@JoinColumn(name="id_parcJardinn",referencedColumnName="id")
-	,inverseJoinColumns = @JoinColumn(name="id_categorie",referencedColumnName="id"))*/
 	@JoinTable(
 		      name="ParcJardinn_Categorie",
 		      joinColumns=@JoinColumn(name="parcJardin_id", referencedColumnName="id"),
@@ -44,12 +44,12 @@ public class ParcJardin {
 
 	public ParcJardin(){}
 	
-	public ParcJardin(String name, String description, boolean parc, double l, double g, List<Commentaire> commentaire,
+	public ParcJardin(String name, String description, EnumTypePJ type, double l, double g, List<Commentaire> commentaire,
 			List<Categorie> categorie, List<Horaire> horaire) {
 		super();
 		this.name = name;
 		this.description = description;
-		this.Parc = parc;
+		this.type = type;
 		this.L = l;
 		this.G = g;
 		this.commentaire = commentaire;
@@ -93,19 +93,13 @@ public class ParcJardin {
 		this.description = description;
 	}
 
-
-
-	public boolean isParc() {
-		return Parc;
+	public EnumTypePJ getType() {
+		return type;
 	}
 
-
-
-	public void setParc(boolean parc) {
-		Parc = parc;
+	public void setType(EnumTypePJ type) {
+		this.type = type;
 	}
-
-
 
 	public double getL() {
 		return L;

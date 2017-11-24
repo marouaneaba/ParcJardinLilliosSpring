@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.lille1.ParcsJardinsLillios.Enum.EnumJournees;
+
 @Entity
 public class Horaire {
 
@@ -16,7 +18,7 @@ public class Horaire {
 	@Column
 	private String fermuture;
 	@Column
-	private String journee;
+	private EnumJournees journee;
 	
 	@ManyToOne(targetEntity = ParcJardin.class)
 	private ParcJardin ParcJardinn;
@@ -24,7 +26,7 @@ public class Horaire {
 	
 	public Horaire(){}
 	
-	public Horaire(String ouverture, String fermuture, String journee,ParcJardin parcJardinn) {
+	public Horaire(String ouverture, String fermuture, EnumJournees journee,ParcJardin parcJardinn) {
 		super();
 		this.ouverture = ouverture;
 		this.fermuture = fermuture;
@@ -56,11 +58,11 @@ public class Horaire {
 		this.fermuture = fermuture;
 	}
 
-	public String getJournee() {
+	public EnumJournees getJournee() {
 		return journee;
 	}
 
-	public void setJournee(String journee) {
+	public void setJournee(EnumJournees journee) {
 		this.journee = journee;
 	}
 

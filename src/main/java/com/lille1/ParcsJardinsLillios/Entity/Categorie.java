@@ -4,6 +4,8 @@ import java.util.Collection;
 
 import javax.persistence.*;
 
+import com.lille1.ParcsJardinsLillios.Enum.EnumCategorie;
+
 @Entity
 public class Categorie {
 
@@ -12,7 +14,7 @@ public class Categorie {
 	@ManyToMany(mappedBy = "categorie")
 	private Collection<ParcJardin> ParcJardinn;
 	@Column
-	private String categorie;
+	private EnumCategorie categorie;
 	
 	
 	public Categorie() {
@@ -21,7 +23,7 @@ public class Categorie {
 
 
 
-	public Categorie(Collection<ParcJardin> parcJardinn, String categorie) {
+	public Categorie(Collection<ParcJardin> parcJardinn, EnumCategorie categorie) {
 		super();
 		ParcJardinn = parcJardinn;
 		this.categorie = categorie;
@@ -53,13 +55,13 @@ public class Categorie {
 
 
 
-	public String getCategorie() {
+	public EnumCategorie getCategorie() {
 		return categorie;
 	}
 
 
 
-	public void setCategorie(String categorie) {
+	public void setCategorie(EnumCategorie categorie) {
 		this.categorie = categorie;
 	}
 	
