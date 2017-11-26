@@ -31,10 +31,10 @@ public class RequestParcJardin  implements InterfaceParcJardin{
 		return mParcJardinnRepostory.findAll();
 	 }
 	
-	@RequestMapping(method = RequestMethod.GET)
+	/*@RequestMapping(method = RequestMethod.GET)
 	 public void ChercherPJ() {
 		
-	 }
+	 }*/
 	
 	/**
      * Permet d'enregistrer un nouvel Jardinn ou Parc
@@ -59,7 +59,7 @@ public class RequestParcJardin  implements InterfaceParcJardin{
      * @param name le nom de jardinn
      * @param description la description sur un jardinn
      */
-	@Override
+	/*@Override
 	public List<ParcJardin> ChercherPJ(String KeyWordJP) {
 		// TODO Auto-generated method stub
 		return null;
@@ -105,7 +105,7 @@ public class RequestParcJardin  implements InterfaceParcJardin{
 	public void supprimerCommentaire(Long id) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 	
 	
 	

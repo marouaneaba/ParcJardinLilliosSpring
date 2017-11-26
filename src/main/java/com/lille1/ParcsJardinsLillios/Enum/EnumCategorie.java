@@ -1,5 +1,5 @@
 package com.lille1.ParcsJardinsLillios.Enum;
 
-public class EnumCategorie {
-
+public enum EnumCategorie {
+	Etude,Historique ;
 }

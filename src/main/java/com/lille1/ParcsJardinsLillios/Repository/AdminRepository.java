@@ -8,5 +8,5 @@ import com.lille1.ParcsJardinsLillios.Entity.*;
 
 public interface AdminRepository extends CrudRepository<Admin, Long>{
 	
-	public Admin findByNameAndPassword(String name,String password);
+	//public Admin findByNameAndPassword(String name,String password);
 }

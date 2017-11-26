@@ -1,13 +1,9 @@
-com\lille1\ParcsJardinsLillios\Entity\ParcJardinn.class
-com\lille1\ParcsJardinsLillios\Repository\ParcJardinnRepository.class
 com\lille1\ParcsJardinsLillios\Entity\Admin.class
 com\lille1\ParcsJardinsLillios\Entity\Horaire.class
-com\lille1\ParcsJardinsLillios\Controller\RequestCommentaire.class
-com\lille1\ParcsJardinsLillios\Controller\RequestParcJardinn.class
-com\lille1\ParcsJardinsLillios\Application.class
 com\lille1\ParcsJardinsLillios\Entity\Commentaire.class
 com\lille1\ParcsJardinsLillios\Repository\CategorieRepository.class
-com\lille1\ParcsJardinsLillios\Repository\CommentaireRepository.class
 com\lille1\ParcsJardinsLillios\Entity\Categorie.class
 com\lille1\ParcsJardinsLillios\Repository\HoraireRepository.class
 com\lille1\ParcsJardinsLillios\Repository\AdminRepository.class
+com\lille1\ParcsJardinsLillios\Application.class
+com\lille1\ParcsJardinsLillios\Repository\CommentaireRepository.class

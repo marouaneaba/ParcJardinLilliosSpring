@@ -17,21 +17,22 @@ public interface InterfaceParcJardin {
 	
 	 public Iterable<ParcJardin> ConsulterParcsJardin();
 	
-	 public List<ParcJardin> ChercherPJ(String KeyWordJP);
+	 public void JardinnSet(String name,String description,boolean parc,double l,double g);
+	 //public List<ParcJardin> ChercherPJ(String KeyWordJP);
 	
-	 public ParcJardin ChercherPJ(Long id);
+	 //public ParcJardin ChercherPJ(Long id);
 	 
-	 public void AjouterPJ(ParcJardin JP);
+	 //public void AjouterPJ(ParcJardin JP);
 	 
-	 public void SupprimerPJ(ParcJardin JP);
+	 //public void SupprimerPJ(ParcJardin JP);
 	 
-	 public void ModifierPJ(ParcJardin JP);
+	 //public void ModifierPJ(ParcJardin JP);
 	 
-	 public List<Commentaire> ConsulterCommentaire(boolean confirmer);
+	 //public List<Commentaire> ConsulterCommentaire(boolean confirmer);
 	 
-	 public void ConfirmerCommentaire(Long id);
+	 //public void ConfirmerCommentaire(Long id);
 	 
-	 public void supprimerCommentaire(Long id);
+	 //public void supprimerCommentaire(Long id);
 	 
 	 
 	 

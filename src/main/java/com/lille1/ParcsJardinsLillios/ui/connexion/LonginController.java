@@ -33,12 +33,12 @@ public class LonginController {
             @RequestParam("password")String password){
         
         //on connecte l'utilisateur
-        Admin admin = mAdminRepository.findByNameAndPassword(name, password);
-        if(admin != null){
+        //Admin admin = mAdminRepository.findByNameAndPassword(name, password);
+        /*if(admin != null){
             model.addAttribute("status","connecté : " + admin.getName());
         }else{
             model.addAttribute("status","erreur");
-        }
+        }*/
         return "connexion";
     }
 }
