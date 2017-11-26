@@ -25,20 +25,18 @@ public class LonginController {
 	@RequestMapping(method = RequestMethod.GET)
     public String createView(Model model){
         model.addAttribute("status","validé");
+        
         return "connexion";
     }
     
     @RequestMapping(method = RequestMethod.POST)
-    public String connectUser(Model model, @RequestParam("name") String name,
+    public String connectUser(Model model, @RequestParam("username") String name,
             @RequestParam("password")String password){
         
-        //on connecte l'utilisateur
-        //Admin admin = mAdminRepository.findByNameAndPassword(name, password);
-        /*if(admin != null){
-            model.addAttribute("status","connecté : " + admin.getName());
-        }else{
-            model.addAttribute("status","erreur");
-        }*/
-        return "connexion";
+    	boolean find = true;//mAdminRepository.findByNameAndPassword(name, password); 
+    	if(find){
+    		return "admin";
+    	}
+        return "erreur";
     }
 }
