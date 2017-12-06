@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Admin {
 
 	@Id
+	@GeneratedValue
 	private Long id;
 	@Column
 	private String Name;

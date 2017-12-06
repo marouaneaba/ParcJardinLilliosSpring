@@ -12,6 +12,7 @@ public class Horaire {
 
 	
 	@Id
+	@GeneratedValue
 	private Long id;
 	@Column
 	private String ouverture;

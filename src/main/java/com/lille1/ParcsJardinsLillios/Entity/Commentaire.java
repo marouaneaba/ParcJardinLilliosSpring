@@ -7,6 +7,7 @@ public class Commentaire {
 
 
 	@Id
+	@GeneratedValue
 	private Long id;
 	@ManyToOne(targetEntity = ParcJardin.class)
 	private ParcJardin parcJardinn;

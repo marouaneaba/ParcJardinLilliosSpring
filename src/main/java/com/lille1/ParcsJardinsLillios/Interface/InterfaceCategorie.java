@@ -1,4 +1,4 @@
-package com.lille1.ParcsJardinsLillios.Controller.Interface;
+package com.lille1.ParcsJardinsLillios.Interface;
 
 import java.util.List;
 

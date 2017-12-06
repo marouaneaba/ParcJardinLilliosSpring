@@ -1,4 +1,4 @@
-package com.lille1.ParcsJardinsLillios.Controller.Service;
+package com.lille1.ParcsJardinsLillios.Service;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lille1.ParcsJardinsLillios.Controller.Interface.InterfaceParcJardin;
 import com.lille1.ParcsJardinsLillios.Entity.*;
+import com.lille1.ParcsJardinsLillios.Interface.InterfaceParcJardin;
 import com.lille1.ParcsJardinsLillios.Repository.ParcJardinRepository;
 
 @RestController

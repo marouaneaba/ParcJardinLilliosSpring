@@ -1,9 +1,9 @@
-package com.lille1.ParcsJardinsLillios.Controller.Service;
+package com.lille1.ParcsJardinsLillios.Service;
 
 import java.util.List;
 
-import com.lille1.ParcsJardinsLillios.Controller.Interface.InterfaceCommentaire;
 import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
+import com.lille1.ParcsJardinsLillios.Interface.InterfaceCommentaire;
 
 public class RequestCommentaire implements InterfaceCommentaire{
 

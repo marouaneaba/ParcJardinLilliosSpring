@@ -10,6 +10,7 @@ import com.lille1.ParcsJardinsLillios.Enum.EnumCategorie;
 public class Categorie {
 
 	@Id
+	@GeneratedValue
 	private Long id;
 	@ManyToMany(mappedBy = "categorie")
 	private Collection<ParcJardin> ParcJardinn;

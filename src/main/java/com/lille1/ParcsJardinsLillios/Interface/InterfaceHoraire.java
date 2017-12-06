@@ -1,4 +1,4 @@
-package com.lille1.ParcsJardinsLillios.Controller.Interface;
+package com.lille1.ParcsJardinsLillios.Interface;
 
 public interface InterfaceHoraire {
 	

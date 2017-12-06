@@ -33,10 +33,12 @@ public class LonginController {
     public String connectUser(Model model, @RequestParam("username") String name,
             @RequestParam("password")String password){
         
-    	boolean find = true;//mAdminRepository.findByNameAndPassword(name, password); 
-    	if(find){
+    	Admin find = mAdminRepository.findByNameAndPassword(name, password); 
+    	System.out.println("find : "+find.getName()+" , "+find.getPassword());
+    	if(find != null ){
     		return "admin";
     	}
         return "erreur";
     }
 }
+// REST controller , jpa , method repository
