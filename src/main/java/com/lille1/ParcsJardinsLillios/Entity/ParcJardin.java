@@ -32,9 +32,9 @@ public class ParcJardin {
 	@JoinTable(
 		      name="ParcJardinn_Categorie",
 		      joinColumns=@JoinColumn(name="parcJardin_id", referencedColumnName="id"),
-		      inverseJoinColumns=@JoinColumn(name="categorie_id", referencedColumnName="id"))
+		      inverseJoinColumns=@JoinColumn(name="categorieList_id", referencedColumnName="id"))
 
-	private List<Categorie> categorie;
+	private List<Categorie> categorieList;
 	
 	
 	
@@ -53,7 +53,7 @@ public class ParcJardin {
 		this.L = l;
 		this.G = g;
 		this.commentaire = commentaire;
-		this.categorie = categorie;
+		this.categorieList = categorie;
 		this.horaire = horaire;
 	}
 
@@ -138,13 +138,13 @@ public class ParcJardin {
 
 
 	public List<Categorie> getCategorie() {
-		return categorie;
+		return categorieList;
 	}
 
 
 
 	public void setCategorie(List<Categorie> categorie) {
-		this.categorie = categorie;
+		this.categorieList = categorie;
 	}
 
 

@@ -12,10 +12,10 @@ public class Categorie {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@ManyToMany(mappedBy = "categorie")
+	@ManyToMany(mappedBy = "categorieList")
 	private Collection<ParcJardin> ParcJardinn;
 	@Column
-	private EnumCategorie categorie;
+	private String Nomcategorie;
 	
 	
 	public Categorie() {
@@ -24,10 +24,10 @@ public class Categorie {
 
 
 
-	public Categorie(Collection<ParcJardin> parcJardinn, EnumCategorie categorie) {
+	public Categorie(String Nomcategorie) {
 		super();
-		ParcJardinn = parcJardinn;
-		this.categorie = categorie;
+
+		this.Nomcategorie = Nomcategorie;
 	}
 
 
@@ -56,18 +56,25 @@ public class Categorie {
 
 
 
-	public EnumCategorie getCategorie() {
-		return categorie;
+	public String getNomCategorie() {
+		return Nomcategorie;
 	}
 
 
 
-	public void setCategorie(EnumCategorie categorie) {
-		this.categorie = categorie;
+	public void setNomcategorie(String Nomcategorie) {
+		this.Nomcategorie = Nomcategorie;
 	}
-	
-	
 
-	
+
+
+	@Override
+	public String toString() {
+		return "Bar{" +
+				", nom='" + Nomcategorie + '\'' +
+
+
+				'}';
+	}
 	
 }

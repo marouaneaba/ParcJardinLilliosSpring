@@ -1,11 +1,12 @@
 package com.lille1.ParcsJardinsLillios;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.lille1.ParcsJardinsLillios.Repository.*;
+import com.lille1.ParcsJardinsLillios.DAO.*;
 import com.lille1.ParcsJardinsLillios.UI.Enum.EnumTypePJ;
 import com.lille1.ParcsJardinsLillios.Entity.*;
 
@@ -29,7 +30,8 @@ public class Application implements CommandLineRunner{
 	@Autowired
 	private HoraireRepository horaireRepository;
 	
-
+	@Autowired
+	private CategorieInterface categorieInterfaceMetier;
 	
 	
 	
@@ -43,6 +45,17 @@ public class Application implements CommandLineRunner{
 	public void run(String... arg0) throws Exception {
 		ParcJardin PJ1= parcJardinRepository.save(new ParcJardin("heron","desc smdlfjklsjgkl",EnumTypePJ.Parc,125.0,2121.0,null,null,null));
 		ParcJardin PJ2= parcJardinRepository.save(new ParcJardin("valentiu","desc pas mal",EnumTypePJ.Jardin,122.0,211.0,null,null,null));
+
+		Categorie cat1 = categorieRepository.save(new Categorie("cat1"));
+		Categorie cat2 = categorieRepository.save(new Categorie("cat2"));
+
+		Categorie cat3 = new Categorie("cat3");
+		categorieInterfaceMetier.AjouterCategoriePJ(cat3);
+
+
+		Categorie foundCat = categorieInterfaceMetier.ColsulterCategorie(Long.parseLong(String.valueOf(1)));
+
+		System.out.println("cat found"+foundCat.toString());
 		parcJardinRepository.findAll().forEach(c->{
 			System.out.println(c.getName());
 		});
