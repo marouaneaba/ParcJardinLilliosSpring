@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import javax.persistence.*;
 
-import com.lille1.ParcsJardinsLillios.Enum.EnumCategorie;
+import com.lille1.ParcsJardinsLillios.UI.Enum.EnumCategorie;
 
 @Entity
 public class Categorie {

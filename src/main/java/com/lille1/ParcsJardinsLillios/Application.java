@@ -6,9 +6,8 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.lille1.ParcsJardinsLillios.Repository.*;
-
+import com.lille1.ParcsJardinsLillios.UI.Enum.EnumTypePJ;
 import com.lille1.ParcsJardinsLillios.Entity.*;
-import com.lille1.ParcsJardinsLillios.Enum.EnumTypePJ;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

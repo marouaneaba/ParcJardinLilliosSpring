@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import com.lille1.ParcsJardinsLillios.Enum.EnumJournees;
+import com.lille1.ParcsJardinsLillios.UI.Enum.EnumJournees;
 
 @Entity
 public class Horaire {
