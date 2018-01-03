@@ -1,5 +1,6 @@
 package com.lille1.ParcsJardinsLillios.Entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
@@ -7,7 +8,7 @@ import javax.persistence.*;
 import com.lille1.ParcsJardinsLillios.UI.Enum.EnumTypePJ;
 
 @Entity
-public class ParcJardin {
+public class ParcJardin implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,18 +24,22 @@ public class ParcJardin {
 	private double L;
 	@Column
 	private double G;
-	
-	
-	@OneToMany(targetEntity = Commentaire.class)
+	@Column
+	private String adresse;
+
+
+
+	@OneToMany(mappedBy = "parcJardinCommentaire")
+
 	private List<Commentaire> commentaire;
 	
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinTable(
 		      name="ParcJardinn_Categorie",
 		      joinColumns=@JoinColumn(name="parcJardin_id", referencedColumnName="id"),
-		      inverseJoinColumns=@JoinColumn(name="categorieList_id", referencedColumnName="id"))
+		      inverseJoinColumns=@JoinColumn(name="categorie_id", referencedColumnName="id"))
 
-	private List<Categorie> categorieList;
+	private List<Categorie> categories;
 	
 	
 	
@@ -44,17 +49,16 @@ public class ParcJardin {
 
 	public ParcJardin(){}
 	
-	public ParcJardin(String name, String description, EnumTypePJ type, double l, double g, List<Commentaire> commentaire,
-			List<Categorie> categorie, List<Horaire> horaire) {
+	public ParcJardin(String name, String description, EnumTypePJ type, double l, double g, String adresse
+			) {
 		super();
 		this.name = name;
 		this.description = description;
 		this.type = type;
 		this.L = l;
 		this.G = g;
-		this.commentaire = commentaire;
-		this.categorieList = categorie;
-		this.horaire = horaire;
+		this.adresse = adresse;
+
 	}
 
 
@@ -138,13 +142,13 @@ public class ParcJardin {
 
 
 	public List<Categorie> getCategorie() {
-		return categorieList;
+		return categories;
 	}
 
 
 
 	public void setCategorie(List<Categorie> categorie) {
-		this.categorieList = categorie;
+		this.categories = categorie;
 	}
 
 
@@ -158,10 +162,27 @@ public class ParcJardin {
 	public void setHoraire(List<Horaire> horaire) {
 		this.horaire = horaire;
 	}
-	
-	
-	
-	
-	
-	
+
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+
+	@Override
+	public String toString() {
+		return "ParcJardin{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", description='" + description + '\'' +
+				", type=" + type +
+				", L=" + L +
+				", G=" + G +
+				", adresse='" + adresse + '\'' +
+				'}';
+	}
 }

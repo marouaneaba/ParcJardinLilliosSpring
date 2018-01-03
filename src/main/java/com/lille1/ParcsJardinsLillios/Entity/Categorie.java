@@ -1,19 +1,21 @@
 package com.lille1.ParcsJardinsLillios.Entity;
 
+import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.*;
 
 import com.lille1.ParcsJardinsLillios.UI.Enum.EnumCategorie;
 
 @Entity
-public class Categorie {
+public class Categorie implements Serializable{
 
 	@Id
 	@GeneratedValue
 	private Long id;
-	@ManyToMany(mappedBy = "categorieList")
-	private Collection<ParcJardin> ParcJardinn;
+	@ManyToMany(mappedBy = "categories")
+	private List<ParcJardin> ParcJardinn;
 	@Column
 	private String Nomcategorie;
 	
@@ -44,13 +46,13 @@ public class Categorie {
 
 
 
-	public Collection<ParcJardin> getParcJardinn() {
+	public List<ParcJardin> getParcJardinn() {
 		return ParcJardinn;
 	}
 
 
 
-	public void setParcJardinn(Collection<ParcJardin> parcJardinn) {
+	public void setParcJardinn(List<ParcJardin> parcJardinn) {
 		ParcJardinn = parcJardinn;
 	}
 
@@ -70,9 +72,8 @@ public class Categorie {
 
 	@Override
 	public String toString() {
-		return "Bar{" +
+		return "Categorie{" +
 				", nom='" + Nomcategorie + '\'' +
-
 
 				'}';
 	}

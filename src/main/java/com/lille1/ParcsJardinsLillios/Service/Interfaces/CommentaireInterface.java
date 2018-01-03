@@ -6,12 +6,16 @@ import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
 
 public interface CommentaireInterface {
 
-	public void AjouterCommentaire(Long idPJ);
+	public Commentaire AjouterCommentaire(Commentaire commentaire);
+
+	public Commentaire ValiderCommentaire(Commentaire commentaire);
 	
-	public List<Commentaire> ConsulterCommentaire(boolean confirm);
-	
-	public List<Commentaire> ConsulterCommentaireParPJ(Long PJ);
-	
+	public void SupprimerCommentaire(Commentaire commentaire);
+
+	public List<Commentaire> ConsulterNouveauCommentaire(boolean confirm);
+
+
+
 	
 	
 }

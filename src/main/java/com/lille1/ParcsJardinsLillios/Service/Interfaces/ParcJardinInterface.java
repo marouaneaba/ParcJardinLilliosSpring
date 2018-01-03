@@ -1,0 +1,70 @@
+package com.lille1.ParcsJardinsLillios.Service.Interfaces;
+
+import com.lille1.ParcsJardinsLillios.Entity.*;
+import com.sun.org.omg.CORBA.ParDescriptionSeqHelper;
+
+import java.util.List;
+
+
+public interface ParcJardinInterface {
+
+
+
+	 public List<ParcJardin> ConsulterParcsJardin();
+	
+	 public void JardinnSet(Long idPJ, String name, String description, double l, double g, String adresse);
+
+	 public List<ParcJardin> ChercherPJParMotCle(String KeyWordJP);
+	
+	 public ParcJardin ChercherPJParId(Long id);
+
+	 public ParcJardin chercherPJParNom(String nomPj);
+
+	 public List<ParcJardin> chercherPJParCategorie(Categorie categorie);
+
+
+
+	 
+	 public boolean AjouterPJ(ParcJardin PJ);
+	 
+	 public void SupprimerPJ(ParcJardin PJ);
+
+
+
+	 
+	 public ParcJardin ModifierDescriptionPJ(Long idPJ, String desc);
+
+	 public ParcJardin ModifierNomPJ(Long idPJ, String nom);
+
+
+
+	 public List<Horaire> ConsulterHorairesPJ(Long idPJ);
+	 public void ModifierHorairesPJ(ParcJardin PJ, List<Horaire> horaire);
+
+
+	 
+	 public List<Commentaire> ConsulterCommentairesPJ(ParcJardin PJ);
+	 public ParcJardin ajouterCommentaireToPJ(Commentaire commentaire , ParcJardin PJ);
+	 public ParcJardin supprimerCommetaireFromPJ(Commentaire commentire, ParcJardin PJ );
+
+
+	 public List<Categorie> ConsulterCategoriesPJ(ParcJardin PJ);
+	 public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ);
+	 public ParcJardin supprimerCategorieFromPJ(Categorie categorie, ParcJardin PJ);
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+	 
+
+}

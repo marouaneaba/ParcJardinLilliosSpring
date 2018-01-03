@@ -1,9 +1,10 @@
 package com.lille1.ParcsJardinsLillios.Entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Admin {
+public class Admin implements Serializable {
 
 	@Id
 	@GeneratedValue

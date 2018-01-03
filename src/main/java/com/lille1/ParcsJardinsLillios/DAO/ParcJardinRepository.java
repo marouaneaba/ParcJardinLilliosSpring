@@ -10,7 +10,10 @@ import com.lille1.ParcsJardinsLillios.Entity.*;
 
 
 public interface ParcJardinRepository extends JpaRepository<ParcJardin, Long>{
-	
+	public List<ParcJardin> findAll();
 	public ParcJardin findByName(String PJ);
-	public Long findById(Long idPJ);
+	public ParcJardin findById(Long id);
+	public List<ParcJardin> findByCategories(Categorie categorie);
+	public List<ParcJardin> findByType(String type);
+
 }

@@ -1,27 +1,28 @@
 package com.lille1.ParcsJardinsLillios.Entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Commentaire {
-
+public class Commentaire implements Serializable {
 
 	@Id
 	@GeneratedValue
 	private Long id;
-	@ManyToOne(targetEntity = ParcJardin.class)
-	private ParcJardin parcJardinn;
 	@Column
 	private String commentaire;
 	@Column
 	private boolean confirmer;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "parcJardin_id")
+	private ParcJardin parcJardinCommentaire;
 	
 	
 	public Commentaire(){}
 	
-	public Commentaire(ParcJardin parcJardinn, String commentaire, boolean confirmer) {
+	public Commentaire(String commentaire, ParcJardin parcJardinn, boolean confirmer) {
 		super();
-		this.parcJardinn = parcJardinn;
+		this.parcJardinCommentaire = parcJardinn;
 		this.commentaire = commentaire;
 		this.confirmer = confirmer;
 	}
@@ -31,11 +32,11 @@ public class Commentaire {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public ParcJardin getParcJardinn() {
-		return parcJardinn;
+	public ParcJardin getParcJardinCommentaire() {
+		return parcJardinCommentaire;
 	}
-	public void setParcJardinn(ParcJardin parcJardinn) {
-		this.parcJardinn = parcJardinn;
+	public void setParcJardinCommentaire(ParcJardin parcJardinn) {
+		this.parcJardinCommentaire = parcJardinn;
 	}
 	public String getCommentaire() {
 		return commentaire;

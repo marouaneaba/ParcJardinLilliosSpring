@@ -8,9 +8,14 @@ public interface CategorieInterface {
 
 	
 	public boolean AjouterCategoriePJ(Categorie Categorie);
-	public Categorie ColsulterCategorie(Long id);
+	public Categorie ColsulterCategorieId(Long id);
 	public void SupprimerCategorie(Long idPJ);
 	public boolean ModifierCategorie(Categorie categorie, Long idCat);
+
+
+	public List<ParcJardin> ConsulterParcJardinParCategorie(Categorie categorie);
+
+
 
 
 	

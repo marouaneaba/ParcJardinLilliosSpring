@@ -1,5 +1,7 @@
 package com.lille1.ParcsJardinsLillios;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +14,8 @@ import com.lille1.ParcsJardinsLillios.Entity.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 
 @SpringBootApplication
@@ -32,6 +36,10 @@ public class Application implements CommandLineRunner{
 	
 	@Autowired
 	private CategorieInterface categorieInterfaceMetier;
+	@Autowired
+	private ParcJardinInterface parcJardinInterfaceMetier;
+	@Autowired
+    private CommentaireInterface commentaireInterfaceMetier;
 	
 	
 	
@@ -43,30 +51,95 @@ public class Application implements CommandLineRunner{
 
 	@Override
 	public void run(String... arg0) throws Exception {
-		ParcJardin PJ1= parcJardinRepository.save(new ParcJardin("heron","desc smdlfjklsjgkl",EnumTypePJ.Parc,125.0,2121.0,null,null,null));
-		ParcJardin PJ2= parcJardinRepository.save(new ParcJardin("valentiu","desc pas mal",EnumTypePJ.Jardin,122.0,211.0,null,null,null));
+		ParcJardin PJ1= new ParcJardin("parc1","descParc1",EnumTypePJ.Parc,125.0,2121.0,"adressParc1");
+		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1",EnumTypePJ.Jardin,122.0,211.0,"adressJardin1");
 
-		Categorie cat1 = categorieRepository.save(new Categorie("cat1"));
-		Categorie cat2 = categorieRepository.save(new Categorie("cat2"));
-
+		Categorie cat1 = new Categorie("cat1");
+		Categorie cat2 = new Categorie("cat2");
 		Categorie cat3 = new Categorie("cat3");
-		categorieInterfaceMetier.AjouterCategoriePJ(cat3);
+
+		Commentaire cm1 = new Commentaire("com1",PJ1,false);
+        Commentaire cm2 = new Commentaire("com2",PJ1,false);
 
 
-		Categorie foundCat = categorieInterfaceMetier.ColsulterCategorie(Long.parseLong(String.valueOf(1)));
+        //tester la classe metier parcjardin
 
-		System.out.println("cat found"+foundCat.toString());
-		parcJardinRepository.findAll().forEach(c->{
-			System.out.println(c.getName());
-		});
-		
+		//ajouter PJ
+		System.out.println("test ParcJardin Services");
+		boolean ajouter1 =parcJardinInterfaceMetier.AjouterPJ(PJ1);
+		System.out.println("PJ1 ajouter : " + ajouter1);
+		boolean ajouter2 =parcJardinInterfaceMetier.AjouterPJ(PJ2);
+		System.out.println("PJ2 ajouter : " + ajouter2);
+
+		//ajouter les cat
+        categorieInterfaceMetier.AjouterCategoriePJ(cat1);
+        categorieInterfaceMetier.AjouterCategoriePJ(cat2);
+        categorieInterfaceMetier.AjouterCategoriePJ(cat3);
+
+		//chercher un pqrc pqr id
+		ParcJardin pjById1 = parcJardinInterfaceMetier.ChercherPJParId(Long.parseLong(String.valueOf(1)));
+		System.out.println("PJ1 trouver " + pjById1.toString());
+
+		//chercher un parc par nom
+        ParcJardin pjByNom2 = parcJardinInterfaceMetier.chercherPJParNom("jardin1");
+        System.out.println("PJ2 trouver " + pjByNom2.toString());
+
+        //ajouter categorie a PJ
+        parcJardinInterfaceMetier.ajouterCategorieToPJ(cat1,pjById1);
+        parcJardinInterfaceMetier.ajouterCategorieToPJ(cat2,pjById1);
+        parcJardinInterfaceMetier.ajouterCategorieToPJ(cat1,pjByNom2);
+
+
+        //ajouter des commentaire confirmer false
+        Commentaire comAjouter1 = commentaireInterfaceMetier.AjouterCommentaire(cm1);
+        Commentaire comAjouter2 = commentaireInterfaceMetier.AjouterCommentaire(cm2);
+
+        //consulter les categories de pj1
+        List<Categorie> listCatPJ1 = pjById1.getCategorie();
+        System.out.println("categorie de pj1 = " + listCatPJ1.toString());
+
+
+        //consulter les commentaires de pj1
+        /*pjByNom2.getCommentaire().add(comAjouter1);
+        List<Commentaire> listComPJ1 = pjByNom2.getCommentaire();
+        System.out.println("commentaire de pj1 = " + listComPJ1.toString());*/
+
+        //ajouter commentaire a pj
+
+        //parcJardinInterfaceMetier.ajouterCommentaireToPJ(comAjouter1,pjById1);
+
+        //chercher parc par categorie
+
+        List<ParcJardin> listPjCat = parcJardinInterfaceMetier.chercherPJParCategorie(cat1);
+        /*for(int i=0 ; i< listPjCat.size();i++) {
+            System.out.println("PJ avec cat1 = " + listPjCat.toString());
+        }*/
+
+
+
+
+
+
+
+
+		//tester la classe metier categorie
+
+		Categorie foundCat = categorieInterfaceMetier.ColsulterCategorieId(Long.parseLong(String.valueOf(3)));
+		categorieInterfaceMetier.ConsulterParcJardinParCategorie(cat3);
+
+
+		System.out.println("cat found "+foundCat.toString());
+
+
+
+/*
 		Admin a = new Admin("mouss", "123", "toto", "25448");
 		adminRepository.save(a);
-		
-		
+
+
 		adminRepository.findAll().forEach(c->{
 			System.out.println(c.getName());
-		});
+		});*/
 		
 		
 	}

@@ -1,5 +1,6 @@
 package com.lille1.ParcsJardinsLillios.Entity;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import javax.persistence.*;
 import com.lille1.ParcsJardinsLillios.UI.Enum.EnumJournees;
 
 @Entity
-public class Horaire {
+public class Horaire implements Serializable {
 
 	
 	@Id
