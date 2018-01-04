@@ -19,7 +19,7 @@ public class ParcJardin implements Serializable {
 	@Column
 	private String description;
 	@Column
-	private EnumTypePJ type;// parc ou jardin
+	private EnumTypePJ type;  // parc ou jardin
 	@Column
 	private double L;
 	@Column
@@ -34,8 +34,6 @@ public class ParcJardin implements Serializable {
 			fetch = FetchType.LAZY,
 			mappedBy = "parcJardinCommentaire")
 	private List<Commentaire> commentaire;
-
-
 
 	
 	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)

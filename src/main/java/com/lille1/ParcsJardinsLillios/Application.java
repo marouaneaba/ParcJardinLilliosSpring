@@ -83,11 +83,11 @@ public class Application implements CommandLineRunner{
 
 		//chercher un pqrc pqr id
 		ParcJardin pjById1 = parcJardinInterfaceMetier.ChercherPJParId(Long.parseLong(String.valueOf(1)));
-		System.out.println("PJ1 trouver " + pjById1.toString());
+		//System.out.println("PJ1 trouver " + pjById1.toString());
 
 		//chercher un parc par nom
         ParcJardin pjByNom2 = parcJardinInterfaceMetier.chercherPJParNom("jardin1");
-        System.out.println("PJ2 trouver " + pjByNom2.toString());
+       // System.out.println("PJ2 trouver " + pjByNom2.toString());
 
 
         //
@@ -106,7 +106,7 @@ public class Application implements CommandLineRunner{
 
         //consulter les categories de pj1
         List<Categorie> listCatPJ1 = pjById1.getCategorie();
-        System.out.println("categorie de pj1 = " + listCatPJ1.toString());
+        //System.out.println("categorie de pj1 = " + listCatPJ1.toString());
 
 
 
@@ -135,8 +135,15 @@ public class Application implements CommandLineRunner{
 		categorieInterfaceMetier.ConsulterParcJardinParCategorie(cat3);
 
 
-		System.out.println("cat found "+foundCat.toString());
+		//System.out.println("cat found "+foundCat.toString());
 
+
+
+		//chercher tout les parcs et jardins
+		List<ParcJardin> ListPJconsulter = parcJardinInterfaceMetier.ConsulterParcsJardin();
+		for(int i=0 ; i< ListPJconsulter.size();i++) {
+			System.out.println("PJ = "+" " +i+" " + ListPJconsulter.get(i).getName());
+		}
 
 
 /*

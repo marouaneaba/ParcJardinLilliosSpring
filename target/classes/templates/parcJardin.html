@@ -14,7 +14,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Chercher Parcs Jardins</div>
             <div class="panel-body">
-                <form th:action="@{/" methode="GET">
+                <form methode="GET">
                     <div>
                         <label>Nom : </label>
                         <input type="text" name="PJNom"/>
@@ -32,17 +32,13 @@
                         <th scope="col">Nom </th>
                         <th scope="col">Adresse</th>
                         <th scope="col">Type</th>
-                        <th scope="col">Action</th>
-
                     </tr>
                     </thead>
-                    <tbody th:eatch="pj : ${allParcsJardins}">
+                    <tbody th:eatch="pj :${allParcsJardins}">
                         <tr>
                             <td th:text="${pj.name}"></td>
                             <td th:text="${pj.adresse}"></td>
                             <td th:text="${pj.type}"></td>
-                            <td th:text=""></td>
-
                         </tr>
                     </tbody>
                 </table>
