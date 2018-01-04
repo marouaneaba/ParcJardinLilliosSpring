@@ -108,12 +108,10 @@ public class Application implements CommandLineRunner{
         List<Categorie> listCatPJ1 = pjById1.getCategorie();
         //System.out.println("categorie de pj1 = " + listCatPJ1.toString());
 
+		parcJardinInterfaceMetier.SupprimerPJ(pjByNom2);
 
 
 
-        //ajouter commentaire a pj
-
-        //parcJardinInterfaceMetier.ajouterCommentaireToPJ(comAjouter1,pjById1);
 
         //chercher parc par categorie
 

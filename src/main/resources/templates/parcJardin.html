@@ -14,7 +14,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Chercher Parcs Jardins</div>
             <div class="panel-body">
-                <form th:action="@{/" methode="GET">
+                <form methode="GET">
                     <div>
                         <label>Nom : </label>
                         <input type="text" name="PJNom"/>
@@ -23,7 +23,7 @@
                 </form>
             </div>
         </div>
-        <div class="panel panel-primary">
+        <div class="panel panel-primary" th:if="${allParcsJardins}">
             <div class="panel-heading">Parcs Jardins Trouves</div>
             <div class="panel-body">
                 <table class="table">
@@ -36,12 +36,18 @@
 
                     </tr>
                     </thead>
-                    <tbody th:eatch="pj : ${allParcsJardins}">
+                    <tbody th:each="pj : ${allParcsJardins}" >
                         <tr>
                             <td th:text="${pj.name}"></td>
                             <td th:text="${pj.adresse}"></td>
                             <td th:text="${pj.type}"></td>
-                            <td th:text=""></td>
+                            <td>
+                                <form method="POST">
+                                    <button type="submit" class="btn btn-xs btn-success" >Modifier</button>
+                                    <button type="submit" class="btn btn-xs btn-success" >Supprimer</button>
+                                </form>
+                            </td>
+
 
                         </tr>
                     </tbody>

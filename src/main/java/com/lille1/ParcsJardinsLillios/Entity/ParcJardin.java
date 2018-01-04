@@ -1,6 +1,7 @@
 package com.lille1.ParcsJardinsLillios.Entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -33,7 +34,7 @@ public class ParcJardin implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL,
 			fetch = FetchType.LAZY,
 			mappedBy = "parcJardinCommentaire")
-	private List<Commentaire> commentaire;
+	private List<Commentaire> commentaire = new ArrayList<>();
 
 	
 	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
@@ -41,12 +42,12 @@ public class ParcJardin implements Serializable {
 		      name="ParcJardinn_Categorie",
 		      joinColumns=@JoinColumn(name="parcJardin_id", referencedColumnName="id"),
 		      inverseJoinColumns=@JoinColumn(name="categorie_id", referencedColumnName="id"))
-	private List<Categorie> categories;
+	private List<Categorie> categories = new ArrayList<>();
 	
 	
 	
 	@OneToMany(targetEntity = Horaire.class)
-	private List<Horaire> horaire;
+	private List<Horaire> horaire = new ArrayList<>();
 
 
 	public ParcJardin(){}

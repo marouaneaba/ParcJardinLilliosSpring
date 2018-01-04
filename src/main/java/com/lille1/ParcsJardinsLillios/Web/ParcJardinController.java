@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -23,16 +24,20 @@ public class ParcJardinController {
     @RequestMapping(value="/operationPJ", method = RequestMethod.GET)
     public String index(Model model){
         List<ParcJardin> listPJ = parcJardinInterfaceMetier.ConsulterParcsJardin();
-        model.addAttribute("allParcsJardins" , parcJardinRepository.findAll() );
+        model.addAttribute("allParcsJardins" , new ArrayList<>(parcJardinRepository.findAll())  );
         return "parcJardin";
     }
 
-    @RequestMapping(value="/chercherPJParNom")
-    public String ChercherPJParNom(Model model, String nomPJ){
-        ParcJardin PJ = parcJardinInterfaceMetier.chercherPJParNom(nomPJ);
-        model.addAttribute("foundPJ",PJ);
-        return "parcJardin";
-    }
+
+
+
+
+
+
+   @RequestMapping(value="/supprimerPJ")
+    public String supprimerPJ(Model model, ParcJardin PJ){
+return "parcJardin";
+   }
 
 
 

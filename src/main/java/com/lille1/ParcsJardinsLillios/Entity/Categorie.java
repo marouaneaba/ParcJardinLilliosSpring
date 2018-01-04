@@ -1,6 +1,7 @@
 package com.lille1.ParcsJardinsLillios.Entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,13 +16,12 @@ public class Categorie implements Serializable{
 	@GeneratedValue
 	private Long id;
 	@ManyToMany(mappedBy = "categories")
-	private List<ParcJardin> ParcJardinn;
+	private List<ParcJardin> ParcJardinn = new ArrayList<>();
 	@Column
 	private String Nomcategorie;
 
 
 	public Categorie() {
-
 	}
 
 

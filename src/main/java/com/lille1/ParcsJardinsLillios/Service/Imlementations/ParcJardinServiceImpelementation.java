@@ -1,16 +1,21 @@
 package com.lille1.ParcsJardinsLillios.Service.Imlementations;
 
+import com.lille1.ParcsJardinsLillios.DAO.CategorieRepository;
 import com.lille1.ParcsJardinsLillios.DAO.ParcJardinRepository;
 import com.lille1.ParcsJardinsLillios.Entity.Categorie;
 import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
 import com.lille1.ParcsJardinsLillios.Entity.Horaire;
 import com.lille1.ParcsJardinsLillios.Entity.ParcJardin;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -20,7 +25,8 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Autowired
     ParcJardinRepository parcJardinRepository;
-
+    @Autowired
+    CategorieRepository categorieRepository;
     @Override
     public List<ParcJardin> ConsulterParcsJardin() {
         return parcJardinRepository.findAll();
@@ -65,7 +71,17 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     @Override
     public void SupprimerPJ(ParcJardin PJ) {
         try {
-            parcJardinRepository.delete(PJ);
+
+            ParcJardin tmp = parcJardinRepository.findById(PJ.getId());
+
+            ArrayList<Categorie> listcat = new ArrayList<>(tmp.getCategorie());
+
+            for(Categorie categorie : listcat){
+                tmp.getCategorie().remove(categorie);
+            }
+            //PJ.getCategorie().clear();
+          //  parcJardinRepository.save(tmp);
+            parcJardinRepository.delete(tmp.getId());
         }catch(Exception e){
             e.printStackTrace();
         }
