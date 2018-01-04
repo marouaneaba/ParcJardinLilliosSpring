@@ -57,11 +57,10 @@
             <version>1.11.8.RELEASE</version>
             <type>jar</type>
         </dependency>
-        
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mustache</artifactId>
-            <type>jar</type>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
         <dependency>
