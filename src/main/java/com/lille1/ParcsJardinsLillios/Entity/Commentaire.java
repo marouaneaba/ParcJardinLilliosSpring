@@ -13,8 +13,12 @@ public class Commentaire implements Serializable {
 	private String commentaire;
 	@Column
 	private boolean confirmer;
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "parcJardin_id")
+
+
+
+	//@ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parcJardin_id", nullable = false)
 	private ParcJardin parcJardinCommentaire;
 	
 	
@@ -32,9 +36,11 @@ public class Commentaire implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public ParcJardin getParcJardinCommentaire() {
 		return parcJardinCommentaire;
 	}
+
 	public void setParcJardinCommentaire(ParcJardin parcJardinn) {
 		this.parcJardinCommentaire = parcJardinn;
 	}

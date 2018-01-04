@@ -1,6 +1,7 @@
 com/lille1/ParcsJardinsLillios/Entity/ParcJardin.class
 com/lille1/ParcsJardinsLillios/Service/Interfaces/ParcJardinInterface.class
 com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.class
+com/lille1/ParcsJardinsLillios/Web/ParcJardinController.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/HoraireServiceImplementation.class
 com/lille1/ParcsJardinsLillios/UI/Enum/EnumCategorie.class
 com/lille1/ParcsJardinsLillios/UI/controller/ListerJardinParcController.class

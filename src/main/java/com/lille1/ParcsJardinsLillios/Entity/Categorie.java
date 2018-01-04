@@ -18,10 +18,10 @@ public class Categorie implements Serializable{
 	private List<ParcJardin> ParcJardinn;
 	@Column
 	private String Nomcategorie;
-	
-	
+
+
 	public Categorie() {
-		
+
 	}
 
 
@@ -77,5 +77,5 @@ public class Categorie implements Serializable{
 
 				'}';
 	}
-	
+
 }

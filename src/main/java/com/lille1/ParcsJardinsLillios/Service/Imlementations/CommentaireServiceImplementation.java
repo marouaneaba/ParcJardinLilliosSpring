@@ -2,6 +2,7 @@ package com.lille1.ParcsJardinsLillios.Service.Imlementations;
 
 import com.lille1.ParcsJardinsLillios.DAO.CommentaireRepository;
 import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
+import com.lille1.ParcsJardinsLillios.Entity.ParcJardin;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,11 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
     public List<Commentaire> ConsulterNouveauCommentaire(boolean confirm) {
 
         return commentaireRepository.findByConfirmer(false);
+    }
+
+    @Override
+    public List<Commentaire> ListeCommentaireParPJ(ParcJardin PJ) {
+        return null;
     }
 
 

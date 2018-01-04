@@ -76,6 +76,11 @@ public class Application implements CommandLineRunner{
         categorieInterfaceMetier.AjouterCategoriePJ(cat2);
         categorieInterfaceMetier.AjouterCategoriePJ(cat3);
 
+
+        //chercher une caegorie
+		Categorie catFound1 = categorieInterfaceMetier.ColsulterCategorieId(Long.parseLong(String.valueOf(1)));
+		Categorie catFound2 = categorieInterfaceMetier.ColsulterCategorieId(Long.parseLong(String.valueOf(2)));
+
 		//chercher un pqrc pqr id
 		ParcJardin pjById1 = parcJardinInterfaceMetier.ChercherPJParId(Long.parseLong(String.valueOf(1)));
 		System.out.println("PJ1 trouver " + pjById1.toString());
@@ -84,10 +89,15 @@ public class Application implements CommandLineRunner{
         ParcJardin pjByNom2 = parcJardinInterfaceMetier.chercherPJParNom("jardin1");
         System.out.println("PJ2 trouver " + pjByNom2.toString());
 
+
+        //
+
         //ajouter categorie a PJ
-        parcJardinInterfaceMetier.ajouterCategorieToPJ(cat1,pjById1);
-        parcJardinInterfaceMetier.ajouterCategorieToPJ(cat2,pjById1);
-        parcJardinInterfaceMetier.ajouterCategorieToPJ(cat1,pjByNom2);
+
+        parcJardinInterfaceMetier.ajouterCategorieToPJ(catFound1,pjById1);
+        parcJardinInterfaceMetier.ajouterCategorieToPJ(catFound2,pjById1);
+		parcJardinInterfaceMetier.ajouterCategorieToPJ(catFound1,pjByNom2);
+
 
 
         //ajouter des commentaire confirmer false
@@ -99,10 +109,7 @@ public class Application implements CommandLineRunner{
         System.out.println("categorie de pj1 = " + listCatPJ1.toString());
 
 
-        //consulter les commentaires de pj1
-        /*pjByNom2.getCommentaire().add(comAjouter1);
-        List<Commentaire> listComPJ1 = pjByNom2.getCommentaire();
-        System.out.println("commentaire de pj1 = " + listComPJ1.toString());*/
+
 
         //ajouter commentaire a pj
 

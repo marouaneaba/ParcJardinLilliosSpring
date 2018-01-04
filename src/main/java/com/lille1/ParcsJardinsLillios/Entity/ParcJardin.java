@@ -29,16 +29,20 @@ public class ParcJardin implements Serializable {
 
 
 
-	@OneToMany(mappedBy = "parcJardinCommentaire")
-
+	//@OneToMany(mappedBy = "parcJardinCommentaire")
+	@OneToMany(cascade = CascadeType.ALL,
+			fetch = FetchType.LAZY,
+			mappedBy = "parcJardinCommentaire")
 	private List<Commentaire> commentaire;
+
+
+
 	
 	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinTable(
 		      name="ParcJardinn_Categorie",
 		      joinColumns=@JoinColumn(name="parcJardin_id", referencedColumnName="id"),
 		      inverseJoinColumns=@JoinColumn(name="categorie_id", referencedColumnName="id"))
-
 	private List<Categorie> categories;
 	
 	
