@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymLeaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeLeaf/Layout"
+      layout:decorator="template">
+<head>
+    <meta charset="UTF-8"/>
+    <title>ModifierPJ</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <form>
+        <div>
+        <label>Nom : </label>
+        <input type="text" name="nomPJ" value="pj.name"/>
+        </div>
+        <div>
+            <label>Adresse : </label>
+            <input type="text" name="PJAdress" value="pj.adresse"/>
+        </div>
+        <div>
+            <label>Description : </label>
+            <input type="text" name="PJDesc" value="pj.description" />
+        </div>
+        <div>
+            <label>Type : </label>
+            <input type="checkbox" id ="PJtype1" name="parc" value="Parc"/>
+            <label for="PJtype1">Parc</label>
+            <input type="checkbox" id ="PJtype2" name="jardin" value="Jardin"/>
+            <label for="PJtype1">Jardin</label>
+        </div>
+
+
+    </form>
+</div>
+
+</body>
+</html>

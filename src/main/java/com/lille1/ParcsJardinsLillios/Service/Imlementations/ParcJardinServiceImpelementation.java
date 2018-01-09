@@ -33,8 +33,16 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     }
 
     @Override
-    public void JardinnSet(Long idPJ , String name, String description, double l, double g, String adresse) {
-
+    public ParcJardin JardinSet(ParcJardin pj ) {
+                ParcJardin p= parcJardinRepository.findById(pj.getId());
+                p.setName(pj.getName());
+                p.setDescription(pj.getDescription());
+                p.setL(pj.getL());
+                p.setG(pj.getG());
+                p.setType(pj.getType());
+                p.setCategorie(pj.getCategorie());
+                p.setHoraire(pj.getHoraire());
+                return parcJardinRepository.save(p);
     }
 
     @Override
@@ -79,8 +87,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
             for(Categorie categorie : listcat){
                 tmp.getCategorie().remove(categorie);
             }
-            //PJ.getCategorie().clear();
-          //  parcJardinRepository.save(tmp);
+
             parcJardinRepository.delete(tmp.getId());
         }catch(Exception e){
             e.printStackTrace();

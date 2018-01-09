@@ -53,6 +53,7 @@ public class Application implements CommandLineRunner{
 	public void run(String... arg0) throws Exception {
 		ParcJardin PJ1= new ParcJardin("parc1","descParc1",EnumTypePJ.Parc,125.0,2121.0,"adressParc1");
 		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1",EnumTypePJ.Jardin,122.0,211.0,"adressJardin1");
+		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2",EnumTypePJ.Jardin,122.0,211.0,"adressJardin2");
 
 		Categorie cat1 = new Categorie("cat1");
 		Categorie cat2 = new Categorie("cat2");
@@ -68,6 +69,8 @@ public class Application implements CommandLineRunner{
 		System.out.println("test ParcJardin Services");
 		boolean ajouter1 =parcJardinInterfaceMetier.AjouterPJ(PJ1);
 		System.out.println("PJ1 ajouter : " + ajouter1);
+		boolean ajouter3 =parcJardinInterfaceMetier.AjouterPJ(PJ3);
+		System.out.println("PJ1 ajouter : " + ajouter3);
 		boolean ajouter2 =parcJardinInterfaceMetier.AjouterPJ(PJ2);
 		System.out.println("PJ2 ajouter : " + ajouter2);
 

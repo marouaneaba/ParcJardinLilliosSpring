@@ -12,7 +12,7 @@ public interface ParcJardinInterface {
 
 	 public List<ParcJardin> ConsulterParcsJardin();
 	
-	 public void JardinnSet(Long idPJ, String name, String description, double l, double g, String adresse);
+	 public ParcJardin JardinSet(ParcJardin pj);
 
 	 public List<ParcJardin> ChercherPJParMotCle(String KeyWordJP);
 	

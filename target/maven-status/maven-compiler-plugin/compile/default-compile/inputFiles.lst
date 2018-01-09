@@ -1,5 +1,6 @@
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/DAO/AdminRepository.java
+/home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Web/formulairePJ.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/includes/FooterController.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/connexion/LonginController.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/controller/ListerJardinParcController.java
