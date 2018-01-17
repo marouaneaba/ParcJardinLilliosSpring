@@ -5,6 +5,7 @@
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/connexion/LonginController.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/controller/ListerJardinParcController.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.java
+/home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Web/CommentaireController.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/ParcJardinInterface.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImpelementation.java
@@ -13,7 +14,6 @@
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/controller/AjouterParcJardinController.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/DAO/ParcJardinRepository.java
-/home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/Enum/EnumJournees.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CommentaireInterface.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java
@@ -23,9 +23,7 @@
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Admin.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/HoraireInterface.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/Service/RequestParcJardin.java
-/home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/Enum/EnumTypePJ.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/Service/RequestCommentaire.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/includes/HeaderContorller.java
-/home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/Enum/EnumCategorie.java
 /home/elazzam/IdeaProjects/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/DAO/HoraireRepository.java

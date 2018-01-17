@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymLeaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeLeaf/Layout"
+      layout:decorator="template">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Nouveau Commentaire</title>
+</head>
+<body class="gray-bg">
+<div layout:fragment="content">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Chercher Commentaires Par PJ</div>
+            <div class="panel-body">
+                <form method="GET">
+                    <div>
+                        <label>Nom : </label>
+                        <input type="text" name="PJNom"/>
+                        <button type="submit" class="btn btn-primary">Chercher</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-primary" th:if="${AllCommentaire}">
+            <div class="panel-heading">Nouveaux Commentaires </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Commentaire </th>
+                        <th scope="col">Cible</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody th:each="com : ${AllCommentaire}" >
+                    <tr>
+                        <td th:text="${com.commentaire}"></td>
+                        <td th:text="${com.parcJardinCommentaire.name}"></td>
+                        <td>
+                        <form th:action="@{/NouveauCommentaire/delete}" method = "Post">
+                            <input type="hidden" name="id" th:value="${com.id}"/>
+                            <button type="submit" class="btn btn-xs btn-danger" >Supprimer</button>
+                        </form>
+
+                        <form th:action="@{/NouveauCommentaire/confirmer}" method = "Post">
+                           <input type="hidden" name="id" th:value="${com.id}"/>
+                           <button type="submit" class="btn btn-xs" >Confirmer</button>
+                        </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

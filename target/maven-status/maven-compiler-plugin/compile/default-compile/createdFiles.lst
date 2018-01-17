@@ -3,7 +3,6 @@ com/lille1/ParcsJardinsLillios/Service/Interfaces/ParcJardinInterface.class
 com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.class
 com/lille1/ParcsJardinsLillios/Web/ParcJardinController.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/HoraireServiceImplementation.class
-com/lille1/ParcsJardinsLillios/UI/Enum/EnumCategorie.class
 com/lille1/ParcsJardinsLillios/UI/controller/ListerJardinParcController.class
 com/lille1/ParcsJardinsLillios/Entity/Admin.class
 com/lille1/ParcsJardinsLillios/Entity/Horaire.class
@@ -15,14 +14,13 @@ com/lille1/ParcsJardinsLillios/UI/Service/RequestParcJardin.class
 com/lille1/ParcsJardinsLillios/DAO/AdminRepository.class
 com/lille1/ParcsJardinsLillios/UI/includes/FooterController.class
 com/lille1/ParcsJardinsLillios/UI/controller/AjouterParcJardinController.class
+com/lille1/ParcsJardinsLillios/Web/CommentaireController.class
 com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.class
 com/lille1/ParcsJardinsLillios/Entity/Commentaire.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.class
 com/lille1/ParcsJardinsLillios/DAO/HoraireRepository.class
 com/lille1/ParcsJardinsLillios/UI/includes/HeaderContorller.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImpelementation.class
-com/lille1/ParcsJardinsLillios/UI/Enum/EnumTypePJ.class
-com/lille1/ParcsJardinsLillios/UI/Enum/EnumJournees.class
 com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.class
 com/lille1/ParcsJardinsLillios/Application.class
 com/lille1/ParcsJardinsLillios/Entity/Categorie.class

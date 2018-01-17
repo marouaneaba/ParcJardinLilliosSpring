@@ -11,7 +11,7 @@ public interface CategorieInterface {
 	public Categorie ColsulterCategorieId(Long id);
 	public void SupprimerCategorie(Long idPJ);
 	public boolean ModifierCategorie(Categorie categorie, Long idCat);
-
+	public List<Categorie> consulterCategories();
 
 	public List<ParcJardin> ConsulterParcJardinParCategorie(Categorie categorie);
 

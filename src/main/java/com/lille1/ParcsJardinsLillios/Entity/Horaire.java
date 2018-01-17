@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import com.lille1.ParcsJardinsLillios.UI.Enum.EnumJournees;
+
 
 @Entity
 public class Horaire implements Serializable {
@@ -20,7 +20,7 @@ public class Horaire implements Serializable {
 	@Column
 	private String fermuture;
 	@Column
-	private EnumJournees journee;
+	private String journee;
 	
 	@ManyToOne(targetEntity = ParcJardin.class)
 	private ParcJardin ParcJardinn;
@@ -28,7 +28,7 @@ public class Horaire implements Serializable {
 	
 	public Horaire(){}
 	
-	public Horaire(String ouverture, String fermuture, EnumJournees journee,ParcJardin parcJardinn) {
+	public Horaire(String ouverture, String fermuture, String journee,ParcJardin parcJardinn) {
 		super();
 		this.ouverture = ouverture;
 		this.fermuture = fermuture;
@@ -60,11 +60,11 @@ public class Horaire implements Serializable {
 		this.fermuture = fermuture;
 	}
 
-	public EnumJournees getJournee() {
+	public String getJournee() {
 		return journee;
 	}
 
-	public void setJournee(EnumJournees journee) {
+	public void setJournee(String journee) {
 		this.journee = journee;
 	}
 

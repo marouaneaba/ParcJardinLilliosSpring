@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import com.lille1.ParcsJardinsLillios.UI.Enum.EnumCategorie;
+
 
 @Entity
 public class Categorie implements Serializable{

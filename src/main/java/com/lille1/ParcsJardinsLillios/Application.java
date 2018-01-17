@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.lille1.ParcsJardinsLillios.DAO.*;
-import com.lille1.ParcsJardinsLillios.UI.Enum.EnumTypePJ;
+
 import com.lille1.ParcsJardinsLillios.Entity.*;
 
 import org.slf4j.Logger;
@@ -45,15 +45,15 @@ public class Application implements CommandLineRunner{
 	
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
-    public static void main(String[] args) {
+    public static void main(java.lang.String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
 	@Override
-	public void run(String... arg0) throws Exception {
-		ParcJardin PJ1= new ParcJardin("parc1","descParc1",EnumTypePJ.Parc,125.0,2121.0,"adressParc1");
-		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1",EnumTypePJ.Jardin,122.0,211.0,"adressJardin1");
-		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2",EnumTypePJ.Jardin,122.0,211.0,"adressJardin2");
+	public void run(java.lang.String... arg0) throws Exception {
+		ParcJardin PJ1= new ParcJardin("parc1","descParc1", "Parc",125.0,2121.0,"adressParc1");
+		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "Jardin",122.0,211.0,"adressJardin1");
+		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "Jardin",122.0,211.0,"adressJardin2");
 
 		Categorie cat1 = new Categorie("cat1");
 		Categorie cat2 = new Categorie("cat2");
@@ -81,11 +81,11 @@ public class Application implements CommandLineRunner{
 
 
         //chercher une caegorie
-		Categorie catFound1 = categorieInterfaceMetier.ColsulterCategorieId(Long.parseLong(String.valueOf(1)));
-		Categorie catFound2 = categorieInterfaceMetier.ColsulterCategorieId(Long.parseLong(String.valueOf(2)));
+		Categorie catFound1 = categorieInterfaceMetier.ColsulterCategorieId(Long.parseLong(java.lang.String.valueOf(1)));
+		Categorie catFound2 = categorieInterfaceMetier.ColsulterCategorieId(Long.parseLong(java.lang.String.valueOf(2)));
 
 		//chercher un pqrc pqr id
-		ParcJardin pjById1 = parcJardinInterfaceMetier.ChercherPJParId(Long.parseLong(String.valueOf(1)));
+		ParcJardin pjById1 = parcJardinInterfaceMetier.ChercherPJParId(Long.parseLong(java.lang.String.valueOf(1)));
 		//System.out.println("PJ1 trouver " + pjById1.toString());
 
 		//chercher un parc par nom
@@ -113,7 +113,7 @@ public class Application implements CommandLineRunner{
 
 		parcJardinInterfaceMetier.SupprimerPJ(pjByNom2);
 
-
+		commentaireInterfaceMetier.ValiderCommentaire(cm1);
 
 
         //chercher parc par categorie
@@ -132,7 +132,7 @@ public class Application implements CommandLineRunner{
 
 		//tester la classe metier categorie
 
-		Categorie foundCat = categorieInterfaceMetier.ColsulterCategorieId(Long.parseLong(String.valueOf(3)));
+		Categorie foundCat = categorieInterfaceMetier.ColsulterCategorieId(Long.parseLong(java.lang.String.valueOf(3)));
 		categorieInterfaceMetier.ConsulterParcJardinParCategorie(cat3);
 
 

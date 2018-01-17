@@ -47,5 +47,10 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
         return null;
     }
 
+    @Override
+    public Commentaire ConsulterCommentaireParId(Long id) {
+        return commentaireRepository.findById(id);
+    }
+
 
 }

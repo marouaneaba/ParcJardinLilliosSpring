@@ -8,49 +8,52 @@
 </head>
 <body class="gray-bg">
 <div layout:fragment="content">
+    <center>
     <div id="bloc_page" class ="col-lg-12">
 
         <form class="row" th:action="@{/AjouterPJ}" method ="Post" th:object="${nouveauPJ}">
             <div>
                 <label>Nom : </label>
-                <input type="text" name="name" th:value="*{name}"/>
+                <input type="text" name="name" th:field="*{name}"/>
             </div>
             <div>
                 <label>Adresse : </label>
-                <input type="text" name="adresse" th:value="*{adresse}"/>
+                <input type="text" name="adresse" th:field="*{adresse}"/>
             </div>
             <div>
                 <label>Description : </label>
-                <input type="text" name="description"  th:value="*{description}"/>
+                <input style="padding-bottom: 30px;" type="text" name="description"  th:field="*{description}"/>
             </div>
-            <!--<div>
+            <div>
                 <label>Type : </label>
-                <input type="checkbox" id ="PJtype1" name="parc" value="Parc"/>
+                <input type="checkbox" id ="PJtype1" name="type" th:value="parc" th:field="*{type}"/>
                 <label for="PJtype1">Parc</label>
-                <input type="checkbox" id ="PJtype2" name="jardin" value="Jardin"/>
+                <input type="checkbox" id ="PJtype2" name="type" th:value="jardin" th:field="*{type}"/>
                 <label for="PJtype1">Jardin</label>
-            </div>-->
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>Nom Categorie</td>
+                        <td>
+                            <th:block th:each="cat : ${categories}">
+                                <input type="checkbox" name="cats" th:value="${cat.id}"/>
+                                <label th:text="${cat.NomCategorie}"></label>
+                            </th:block>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <div>
                 <button type="submit" class="btn btn-primary">Ajouter</button>
+
             </div>
 
         </form>
-        <!--<section class="row">
-            <article class ="col-lg-12">
-                <input type="checkbox" name="Cafétiere" value="Cafétiere">Cafétiere<br>
-                <input type="checkbox" name="Wifi" value="Wifi">Wifi<br>
-                <input type="checkbox" name="Terrain" value="Terrain">Terrain de sport<br>
-                <input type="checkbox" name="Restaurant" value="Restaurant">Restaurant<br>
-                <input type="checkbox" name="Point" value="Point">Point d'eau<br>
-                <input type="checkbox" name="Parking" value="Parking">Parking<br>
-            </article>
-
-        </section>-->
-
-
 
 
     </div>
+    </center>
 </div>
 </body>
 </html>

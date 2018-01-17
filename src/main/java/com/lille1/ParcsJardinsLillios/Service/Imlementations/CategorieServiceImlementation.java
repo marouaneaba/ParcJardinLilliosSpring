@@ -54,6 +54,11 @@ public class CategorieServiceImlementation implements CategorieInterface{
     }
 
     @Override
+    public List<Categorie> consulterCategories() {
+        return categorieRepository.findAll();
+    }
+
+    @Override
     public List<ParcJardin> ConsulterParcJardinParCategorie(Categorie categorie) {
         return categorie.getParcJardinn();
     }

@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import com.lille1.ParcsJardinsLillios.UI.Enum.EnumTypePJ;
+
 
 @Entity
 public class ParcJardin implements Serializable {
@@ -16,17 +16,17 @@ public class ParcJardin implements Serializable {
 	private Long id;
 	
 	@Column
-	private String name;
+	private java.lang.String name;
 	@Column
-	private String description;
+	private java.lang.String description;
 	@Column
-	private EnumTypePJ type;  // parc ou jardin
+	private String type;  // parc ou jardin
 	@Column
 	private double L;
 	@Column
 	private double G;
 	@Column
-	private String adresse;
+	private java.lang.String adresse;
 
 
 
@@ -52,7 +52,7 @@ public class ParcJardin implements Serializable {
 
 	public ParcJardin(){}
 	
-	public ParcJardin(String name, String description, EnumTypePJ type, double l, double g, String adresse
+	public ParcJardin(java.lang.String name, java.lang.String description, String type, double l, double g, java.lang.String adresse
 			) {
 		super();
 		this.name = name;
@@ -78,33 +78,33 @@ public class ParcJardin implements Serializable {
 
 
 
-	public String getName() {
+	public java.lang.String getName() {
 		return name;
 	}
 
 
 
-	public void setName(String name) {
+	public void setName(java.lang.String name) {
 		this.name = name;
 	}
 
 
 
-	public String getDescription() {
+	public java.lang.String getDescription() {
 		return description;
 	}
 
 
 
-	public void setDescription(String description) {
+	public void setDescription(java.lang.String description) {
 		this.description = description;
 	}
 
-	public EnumTypePJ getType() {
+	public String getType() {
 		return type;
 	}
 
-	public void setType(EnumTypePJ type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 
@@ -167,17 +167,17 @@ public class ParcJardin implements Serializable {
 	}
 
 
-	public String getAdresse() {
+	public java.lang.String getAdresse() {
 		return adresse;
 	}
 
-	public void setAdresse(String adresse) {
+	public void setAdresse(java.lang.String adresse) {
 		this.adresse = adresse;
 	}
 
 
 	@Override
-	public String toString() {
+	public java.lang.String toString() {
 		return "ParcJardin{" +
 				"id=" + id +
 				", name='" + name + '\'' +
