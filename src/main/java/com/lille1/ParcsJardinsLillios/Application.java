@@ -139,6 +139,10 @@ public class Application implements CommandLineRunner{
 		//System.out.println("cat found "+foundCat.toString());
 
 
+		ParcJardin pjLG = parcJardinRepository.trouverPJparLG(PJ1.getL(),PJ1.getG());
+		System.out.println("parc Trouver Par L et G"+ pjLG.toString());
+
+
 
 		//chercher tout les parcs et jardins
 		List<ParcJardin> ListPJconsulter = parcJardinInterfaceMetier.ConsulterParcsJardin();

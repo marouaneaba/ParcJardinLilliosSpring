@@ -18,7 +18,6 @@ public class CategorieServiceImlementation implements CategorieInterface{
 
     @Override
     public Categorie ColsulterCategorieId(Long id) {
-
         return categorieRepository.findById(id);
     }
 

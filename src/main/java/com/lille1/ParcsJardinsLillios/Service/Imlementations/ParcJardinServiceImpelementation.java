@@ -159,5 +159,10 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
         return parcJardinRepository.save(PJ);
     }
 
+    @Override
+    public ParcJardin chercherPJLG(Long l, Long g) {
+        return parcJardinRepository.trouverPJparLG(l,g);
+    }
+
 
 }

@@ -52,7 +52,7 @@ public interface ParcJardinInterface {
 	 public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ);
 	 public ParcJardin supprimerCategorieFromPJ(Categorie categorie, ParcJardin PJ);
 
-
+	 public ParcJardin chercherPJLG(Long l , Long g);
 
 
 
