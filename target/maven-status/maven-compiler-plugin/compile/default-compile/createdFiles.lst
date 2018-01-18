@@ -18,6 +18,7 @@ com/lille1/ParcsJardinsLillios/Web/CommentaireController.class
 com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.class
 com/lille1/ParcsJardinsLillios/Entity/Commentaire.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.class
+com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.class
 com/lille1/ParcsJardinsLillios/DAO/HoraireRepository.class
 com/lille1/ParcsJardinsLillios/UI/includes/HeaderContorller.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImpelementation.class

@@ -113,7 +113,7 @@ public class Application implements CommandLineRunner{
 
 		parcJardinInterfaceMetier.SupprimerPJ(pjByNom2);
 
-		commentaireInterfaceMetier.ValiderCommentaire(cm1);
+		//commentaireInterfaceMetier.ValiderCommentaire(cm1);
 
 
         //chercher parc par categorie
