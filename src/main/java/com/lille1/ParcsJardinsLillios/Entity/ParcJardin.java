@@ -1,5 +1,8 @@
 package com.lille1.ParcsJardinsLillios.Entity;
 
+import org.springframework.web.multipart.MultipartFile;
+
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +31,7 @@ public class ParcJardin implements Serializable {
 	@Column
 	private java.lang.String adresse;
 
+	//private List<MultipartFile> images;
 
 
 	//@OneToMany(mappedBy = "parcJardinCommentaire")
@@ -174,6 +178,8 @@ public class ParcJardin implements Serializable {
 	public void setAdresse(java.lang.String adresse) {
 		this.adresse = adresse;
 	}
+
+
 
 
 	@Override

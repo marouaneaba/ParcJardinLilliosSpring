@@ -10,6 +10,8 @@ public class Commentaire implements Serializable {
 	@GeneratedValue
 	private Long id;
 	@Column
+	private String nomCommentaire;
+	@Column
 	private String commentaire;
 	@Column
 	private boolean confirmer;
@@ -24,8 +26,9 @@ public class Commentaire implements Serializable {
 	
 	public Commentaire(){}
 	
-	public Commentaire(String commentaire, ParcJardin parcJardinn, boolean confirmer) {
+	public Commentaire(String commentaire, String nomCommentaire,ParcJardin parcJardinn, boolean confirmer) {
 		super();
+		this.nomCommentaire=nomCommentaire;
 		this.parcJardinCommentaire = parcJardinn;
 		this.commentaire = commentaire;
 		this.confirmer = confirmer;

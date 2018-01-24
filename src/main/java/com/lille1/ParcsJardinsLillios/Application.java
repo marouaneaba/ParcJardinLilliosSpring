@@ -59,8 +59,8 @@ public class Application implements CommandLineRunner{
 		Categorie cat2 = new Categorie("cat2");
 		Categorie cat3 = new Categorie("cat3");
 
-		Commentaire cm1 = new Commentaire("com1",PJ1,false);
-        Commentaire cm2 = new Commentaire("com2",PJ1,false);
+		Commentaire cm1 = new Commentaire("com1","pers1",PJ1,false);
+        Commentaire cm2 = new Commentaire("com2","pers2",PJ1,false);
 
 
         //tester la classe metier parcjardin
