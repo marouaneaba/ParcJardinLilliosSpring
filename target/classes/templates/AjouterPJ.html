@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymLeaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeLeaf/Layout"
+      layout:decorator="template">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ajouter Nouveau Parc-Jardin</title>
+</head>
+<body class="gray-bg">
+<div layout:fragment="content">
+    <center>
+    <div id="bloc_page" class ="col-lg-12">
+
+        <form class="row" th:action="@{/AjouterPJ}" method ="Post" th:object="${nouveauPJ}">
+            <div>
+                <label>Nom : </label>
+                <input type="text" name="name" th:field="*{name}"/>
+            </div>
+            <div>
+                <label>Adresse : </label>
+                <input type="text" name="adresse" th:field="*{adresse}"/>
+            </div>
+            <div>
+                <label>Description : </label>
+                <input style="padding-bottom: 30px;" type="text" name="description"  th:field="*{description}"/>
+            </div>
+            <div>
+                <label>Type : </label>
+                <input type="checkbox" id ="PJtype1" name="type" th:value="parc" th:field="*{type}"/>
+                <label for="PJtype1">Parc</label>
+                <input type="checkbox" id ="PJtype2" name="type" th:value="jardin" th:field="*{type}"/>
+                <label for="PJtype1">Jardin</label>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>Nom Categorie</td>
+                        <td>
+                            <th:block th:each="cat : ${categories}">
+                                <input type="checkbox" name="cats" th:value="${cat.id}"/>
+                                <label th:text="${cat.NomCategorie}"></label>
+                            </th:block>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>ajouter photos</td>
+                            <button type="submit" class="btn btn-xs btn-danger" >Ajjouter Photos</button>
+
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+
+            </div>
+
+        </form>
+
+
+    </div>
+    </center>
+</div>
+</body>
+</html>

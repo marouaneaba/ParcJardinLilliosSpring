@@ -9,6 +9,7 @@ com/lille1/ParcsJardinsLillios/Entity/Admin.class
 com/lille1/ParcsJardinsLillios/Entity/Horaire.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.class
 com/lille1/ParcsJardinsLillios/Service/Interfaces/HoraireInterface.class
+com/lille1/ParcsJardinsLillios/Web/UploadController.class
 com/lille1/ParcsJardinsLillios/Web/formulairePJ.class
 com/lille1/ParcsJardinsLillios/UI/connexion/LonginController.class
 com/lille1/ParcsJardinsLillios/UI/Service/RequestParcJardin.class
@@ -27,5 +28,6 @@ com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.class
 com/lille1/ParcsJardinsLillios/Application.class
 com/lille1/ParcsJardinsLillios/Entity/Categorie.class
 com/lille1/ParcsJardinsLillios/Service/Interfaces/CommentaireInterface.class
+com/lille1/ParcsJardinsLillios/Storage/StorageService.class
 com/lille1/ParcsJardinsLillios/DAO/ParcJardinRepository.class
 com/lille1/ParcsJardinsLillios/UI/Service/RequestCommentaire.class

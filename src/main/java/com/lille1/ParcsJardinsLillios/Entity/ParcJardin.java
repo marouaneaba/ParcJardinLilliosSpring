@@ -32,8 +32,29 @@ public class ParcJardin implements Serializable {
 	private java.lang.String adresse;
 
 
-	//private List<MultipartFile> images;
 
+	/*@Lob
+	@Column(name="photos", length=100000)
+	private byte[] photos;
+
+	public byte[] getPhotos() {
+		return photos;
+	}
+
+
+	public void setPhotos(byte[] photos) {
+		this.photos = photos;
+	}*/
+
+	private List<String> photos;
+
+	public List<String> getPhotos() {
+		return photos;
+	}
+
+	public void setPhotos(String photos) {
+		this.photos.add(photos);
+	}
 
 	//@OneToMany(mappedBy = "parcJardinCommentaire")
 	@OneToMany(cascade = CascadeType.ALL,

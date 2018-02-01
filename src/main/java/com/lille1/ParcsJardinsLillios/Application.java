@@ -2,10 +2,12 @@ package com.lille1.ParcsJardinsLillios;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
+import com.lille1.ParcsJardinsLillios.Storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.*;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.lille1.ParcsJardinsLillios.DAO.*;
@@ -15,14 +17,19 @@ import com.lille1.ParcsJardinsLillios.Entity.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
 @SpringBootApplication
 @EnableJpaRepositories
 
-public class Application implements CommandLineRunner{
+public class 	Application implements CommandLineRunner{
 
+	@Resource
+	StorageService storageService;
 	@Autowired
 	private ParcJardinRepository parcJardinRepository;
 	@Autowired
@@ -159,7 +166,29 @@ public class Application implements CommandLineRunner{
 		adminRepository.findAll().forEach(c->{
 			System.out.println(c.getName());
 		});*/
-		
-		
+
+storageService.deleteAll();
+storageService.init();
+
+
+
+
+
+// image 1
+		ClassPathResource backImgFile = new ClassPathResource("files/index.jpeg");
+		byte[] arrayPic = new byte[(int) backImgFile.contentLength()];
+		backImgFile.getInputStream().read(arrayPic);
+		PJ1.setPhotos(backImgFile.getFilename());
+		// store image to MySQL via SpringJPA
+		parcJardinRepository.save(PJ1);
+
+
+		/*// retrieve image from MySQL via SpringJPA
+		for(ImageModel imageModel : imageRepository.findAll()){
+			Files.write(Paths.get("retrieve-dir/" + imageModel.getName() + "." + imageModel.getType()), imageModel.getPic());
+		}*/
+
+
+		System.out.println("photo de oj1"+PJ1.getPhotos());
 	}
 }
