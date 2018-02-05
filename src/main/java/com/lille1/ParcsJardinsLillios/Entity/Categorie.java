@@ -16,7 +16,7 @@ public class Categorie implements Serializable{
 	@GeneratedValue
 	private Long id;
 	@ManyToMany
-	private List<ParcJardin> ParcJardinn = new ArrayList<>();
+	private List<ParcJardin> ParcJardinn;
 	@Column
 	private String nomcategorie;
 	
