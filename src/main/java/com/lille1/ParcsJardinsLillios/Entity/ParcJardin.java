@@ -46,7 +46,7 @@ public class ParcJardin implements Serializable {
 		this.photos = photos;
 	}*/
 
-	private List<String> photos;
+	/*private List<String> photos;
 
 	public List<String> getPhotos() {
 		return photos;
@@ -54,7 +54,7 @@ public class ParcJardin implements Serializable {
 
 	public void setPhotos(String photos) {
 		this.photos.add(photos);
-	}
+	}*/
 
 	//@OneToMany(mappedBy = "parcJardinCommentaire")
 	@OneToMany(cascade = CascadeType.ALL,

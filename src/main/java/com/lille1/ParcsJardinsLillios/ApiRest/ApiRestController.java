@@ -25,13 +25,15 @@ public class ApiRestController {
     @Autowired
     private CommentaireInterface commentaireInterfaceMetier;
 
+
+    //confirmer
     //retourn tt les categories
-    @GetMapping(value="/api/categorie")
+    @GetMapping(value="/api/Categorie")
         public List<Categorie> consulterCategorie(){
         return categorieInterfaceMetier.consulterCategories();
     }
 
-
+    //confirmer
     //retourn tt les parc et jardin
     @GetMapping(value="/api/PJ")
     public List<ParcJardin> consulterPJAll(){
@@ -48,21 +50,24 @@ public class ApiRestController {
 
 
 
-
+    //confirmer
     //chercher les parc par une categorie
     @GetMapping(value="/api/PJByservice/{service}")
-    public List<ParcJardin> chercherPJservice(@PathVariable Categorie service){
-        return parcJardinInterfaceMetier.chercherPJParCategorie(service);
+    public List<ParcJardin> chercherPJservice(@PathVariable String service){
+        Categorie catTmp= categorieInterfaceMetier.ConsulterCategorieParNom(service);
+        return parcJardinInterfaceMetier.chercherPJParCategorie(catTmp);
     }
 
 
-
+    //confirmer
     //chercher pj par L et G
     @GetMapping(value="/api/PJBylocalisation/{Latitude}/{Longitude}")
     public ParcJardin chercherPJLG(@PathVariable Long Latitude,@PathVariable Long Longitude){
         return parcJardinInterfaceMetier.chercherPJLG(Latitude,Longitude);
     }
 
+
+    //confirmer mais a discuter
     @GetMapping(value="/api/categorieByPJ/{IdPJ}")
     public List<Categorie> consulterCatPJ(@PathVariable long IdPJ){
         ParcJardin pj= parcJardinInterfaceMetier.ChercherPJParId(IdPJ);
@@ -71,11 +76,11 @@ public class ApiRestController {
 
 
 
-    //chercher PJ par id
-    @GetMapping(value="/api/CommentairesByParcJardinn/{idPJ}")
-    public List<Commentaire> consulterComPJ(long idPJ){
-        ParcJardin pj=parcJardinInterfaceMetier.ChercherPJParId(idPJ);
-        return commentaireInterfaceMetier.ListeCommentaireParPJ(pj);
+    //Commentaire par par id de pj
+     @GetMapping(value="/api/CommentairesByParcJardinn/{idPJ}")
+    public List<Commentaire> consulterComPJ(@PathVariable long idPJ){
+        ParcJardin pjtmp=parcJardinInterfaceMetier.ChercherPJParId(idPJ);
+        return commentaireInterfaceMetier.ListeCommentaireParPJ(pjtmp);
 
     }
 

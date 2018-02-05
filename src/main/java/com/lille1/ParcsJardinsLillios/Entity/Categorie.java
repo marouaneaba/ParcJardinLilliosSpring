@@ -18,18 +18,17 @@ public class Categorie implements Serializable{
 	@ManyToMany(mappedBy = "categories")
 	private List<ParcJardin> ParcJardinn = new ArrayList<>();
 	@Column
-	private String Nomcategorie;
+	private String nomCategorie;
 
 
 	public Categorie() {
 	}
 
 
-
 	public Categorie(String Nomcategorie) {
 		super();
 
-		this.Nomcategorie = Nomcategorie;
+		this.nomCategorie = Nomcategorie;
 	}
 
 
@@ -59,13 +58,13 @@ public class Categorie implements Serializable{
 
 
 	public String getNomCategorie() {
-		return Nomcategorie;
+		return nomCategorie;
 	}
 
 
 
 	public void setNomcategorie(String Nomcategorie) {
-		this.Nomcategorie = Nomcategorie;
+		this.nomCategorie = Nomcategorie;
 	}
 
 
@@ -73,7 +72,7 @@ public class Categorie implements Serializable{
 	@Override
 	public String toString() {
 		return "Categorie{" +
-				", nom='" + Nomcategorie + '\'' +
+				", nom='" + nomCategorie + '\'' +
 
 				'}';
 	}

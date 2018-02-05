@@ -26,7 +26,7 @@ import java.util.List;
 @SpringBootApplication
 @EnableJpaRepositories
 
-public class 	Application implements CommandLineRunner{
+public class Application implements CommandLineRunner{
 
 	@Resource
 	StorageService storageService;
@@ -171,16 +171,18 @@ storageService.deleteAll();
 storageService.init();
 
 
-
-
+		List<Categorie> catList = parcJardinInterfaceMetier.ConsulterCategoriesPJ(pjById1);
+		for(int i=0 ; i< catList.size() ; i++){
+			System.out.println("test service retour des cat de PJ"+ catList.get(i));
+		}
 
 // image 1
-		ClassPathResource backImgFile = new ClassPathResource("files/index.jpeg");
+		/*ClassPathResource backImgFile = new ClassPathResource("files/index.jpeg");
 		byte[] arrayPic = new byte[(int) backImgFile.contentLength()];
 		backImgFile.getInputStream().read(arrayPic);
 		PJ1.setPhotos(backImgFile.getFilename());
 		// store image to MySQL via SpringJPA
-		parcJardinRepository.save(PJ1);
+		parcJardinRepository.save(PJ1);*/
 
 
 		/*// retrieve image from MySQL via SpringJPA
@@ -189,6 +191,6 @@ storageService.init();
 		}*/
 
 
-		System.out.println("photo de oj1"+PJ1.getPhotos());
+		//System.out.println("photo de oj1"+PJ1.getPhotos());
 	}
 }

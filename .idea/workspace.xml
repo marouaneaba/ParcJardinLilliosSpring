@@ -2,23 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f6be83f-e5d1-45c4-bb2f-a426fb544aed" name="Default" comment="31 01">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Storage/StorageService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/UploadController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/files/index.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/listFiles.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/uploadForm.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/ParcJardinController.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/ParcJardinController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/security/securityconfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/security/securityconfig.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Application.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Application.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Entity/Categorie.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Entity/Categorie.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Web/ParcJardinController.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Web/ParcJardinController.class" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/security/securityconfig.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/security/securityconfig.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,63 +49,59 @@
       <file leaf-file-name="ParcJardin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="900">
+              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#850#851#0" expanded="true" />
-                <element signature="e#870#871#0" expanded="true" />
-                <element signature="e#911#912#0" expanded="true" />
-                <element signature="e#941#942#0" expanded="true" />
-                <element signature="e#1935#1936#0" expanded="true" />
-                <element signature="e#1951#1952#0" expanded="true" />
-                <element signature="e#1984#1985#0" expanded="true" />
-                <element signature="e#2003#2004#0" expanded="true" />
-                <element signature="e#2043#2044#0" expanded="true" />
-                <element signature="e#2061#2062#0" expanded="true" />
-                <element signature="e#2110#2111#0" expanded="true" />
-                <element signature="e#2133#2134#0" expanded="true" />
-                <element signature="e#2180#2181#0" expanded="true" />
-                <element signature="e#2205#2206#0" expanded="true" />
-                <element signature="e#2268#2269#0" expanded="true" />
-                <element signature="e#2305#2306#0" expanded="true" />
-                <element signature="e#2333#2334#0" expanded="true" />
-                <element signature="e#2351#2352#0" expanded="true" />
-                <element signature="e#2388#2389#0" expanded="true" />
-                <element signature="e#2411#2412#0" expanded="true" />
-                <element signature="e#2436#2437#0" expanded="true" />
-                <element signature="e#2451#2452#0" expanded="true" />
-                <element signature="e#2484#2485#0" expanded="true" />
-                <element signature="e#2496#2497#0" expanded="true" />
-                <element signature="e#2523#2524#0" expanded="true" />
-                <element signature="e#2538#2539#0" expanded="true" />
-                <element signature="e#2571#2572#0" expanded="true" />
-                <element signature="e#2583#2584#0" expanded="true" />
-                <element signature="e#2631#2632#0" expanded="true" />
-                <element signature="e#2656#2657#0" expanded="true" />
-                <element signature="e#2720#2721#0" expanded="true" />
-                <element signature="e#2757#2758#0" expanded="true" />
-                <element signature="e#2801#2802#0" expanded="true" />
-                <element signature="e#2825#2826#0" expanded="true" />
-                <element signature="e#2883#2884#0" expanded="true" />
-                <element signature="e#2917#2918#0" expanded="true" />
-                <element signature="e#2957#2958#0" expanded="true" />
-                <element signature="e#2978#2979#0" expanded="true" />
-                <element signature="e#3030#3031#0" expanded="true" />
-                <element signature="e#3059#3060#0" expanded="true" />
-                <element signature="e#3101#3102#0" expanded="true" />
-                <element signature="e#3122#3123#0" expanded="true" />
-                <element signature="e#3175#3176#0" expanded="true" />
-                <element signature="e#3204#3205#0" expanded="true" />
+                <element signature="e#1939#1940#0" expanded="true" />
+                <element signature="e#1955#1956#0" expanded="true" />
+                <element signature="e#1988#1989#0" expanded="true" />
+                <element signature="e#2007#2008#0" expanded="true" />
+                <element signature="e#2047#2048#0" expanded="true" />
+                <element signature="e#2065#2066#0" expanded="true" />
+                <element signature="e#2114#2115#0" expanded="true" />
+                <element signature="e#2137#2138#0" expanded="true" />
+                <element signature="e#2184#2185#0" expanded="true" />
+                <element signature="e#2209#2210#0" expanded="true" />
+                <element signature="e#2272#2273#0" expanded="true" />
+                <element signature="e#2309#2310#0" expanded="true" />
+                <element signature="e#2337#2338#0" expanded="true" />
+                <element signature="e#2355#2356#0" expanded="true" />
+                <element signature="e#2392#2393#0" expanded="true" />
+                <element signature="e#2415#2416#0" expanded="true" />
+                <element signature="e#2440#2441#0" expanded="true" />
+                <element signature="e#2455#2456#0" expanded="true" />
+                <element signature="e#2488#2489#0" expanded="true" />
+                <element signature="e#2500#2501#0" expanded="true" />
+                <element signature="e#2527#2528#0" expanded="true" />
+                <element signature="e#2542#2543#0" expanded="true" />
+                <element signature="e#2575#2576#0" expanded="true" />
+                <element signature="e#2587#2588#0" expanded="true" />
+                <element signature="e#2635#2636#0" expanded="true" />
+                <element signature="e#2660#2661#0" expanded="true" />
+                <element signature="e#2724#2725#0" expanded="true" />
+                <element signature="e#2761#2762#0" expanded="true" />
+                <element signature="e#2805#2806#0" expanded="true" />
+                <element signature="e#2829#2830#0" expanded="true" />
+                <element signature="e#2887#2888#0" expanded="true" />
+                <element signature="e#2921#2922#0" expanded="true" />
+                <element signature="e#2961#2962#0" expanded="true" />
+                <element signature="e#2982#2983#0" expanded="true" />
+                <element signature="e#3034#3035#0" expanded="true" />
+                <element signature="e#3063#3064#0" expanded="true" />
+                <element signature="e#3105#3106#0" expanded="true" />
+                <element signature="e#3126#3127#0" expanded="true" />
+                <element signature="e#3179#3180#0" expanded="true" />
+                <element signature="e#3208#3209#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategorieServiceImlementation.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CategorieServiceImlementation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-292">
+            <state relative-caret-position="18">
               <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="e#741#742#0" expanded="true" />
@@ -114,49 +111,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiRestController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApiRestController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="126">
               <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1182#1183#0" expanded="true" />
-                <element signature="e#1251#1252#0" expanded="true" />
+                <element signature="e#1199#1200#0" expanded="true" />
+                <element signature="e#1268#1269#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Categorie.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java">
+      <file leaf-file-name="ParcJardinServiceImpelementation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImpelementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            <state relative-caret-position="2160">
+              <caret line="144" column="48" lean-forward="false" selection-start-line="144" selection-start-column="27" selection-end-line="144" selection-end-column="48" />
+              <folding>
+                <element signature="e#4376#4377#0" expanded="true" />
+                <element signature="e#4416#4417#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategorieInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UploadController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/UploadController.java">
+      <file leaf-file-name="CategorieRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1205#1206#0" expanded="true" />
-                <element signature="e#1240#1241#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StorageService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Storage/StorageService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="90">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -165,22 +161,27 @@
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="180" column="47" lean-forward="false" selection-start-line="180" selection-start-column="47" selection-end-line="180" selection-end-column="47" />
+            <state relative-caret-position="1134">
+              <caret line="86" column="34" lean-forward="false" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1517480682479" expanded="true" signature="5652:6316" ph="{...}" />
+                <element signature="e#1745#1746#0" expanded="true" />
+                <element signature="e#1807#1808#0" expanded="true" />
+                <marker date="1517768221449" expanded="true" signature="5651:6527" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="securityconfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/security/securityconfig.java">
+      <file leaf-file-name="Categorie.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="270">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <element signature="e#921#922#0" expanded="true" />
+                <element signature="e#960#961#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -188,8 +189,8 @@
       <file leaf-file-name="formulairePJ.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/formulairePJ.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="33" />
+            <state relative-caret-position="270">
+              <caret line="23" column="65" lean-forward="false" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -198,8 +199,8 @@
       <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="450">
+              <caret line="25" column="52" lean-forward="false" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -230,6 +231,7 @@
       <find>security</find>
       <find>file</find>
       <find>uploadForm</find>
+      <find>com</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -255,13 +257,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/operationPJ.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/mystyle.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/ajouterParcJardin.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/erreur.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/ModifierPJ.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/UI/Enum/String.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Horaire.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/formulairePJ.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/template.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/parcJardin.html" />
@@ -270,11 +269,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/CommentaireController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/ParcJardinInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/ParcJardinRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImpelementation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Commentaire.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html" />
@@ -290,10 +287,15 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/listFiles.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/uploadForm.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/UploadController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/security/securityconfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java" />
       </list>
     </option>
   </component>
@@ -370,6 +372,14 @@
               <item name="src/main" type="cbb8eebc:String" user="src/main" />
               <item name="java" type="cbb8eebc:String" user="java" />
               <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
+              <item name="DAO" type="cbb8eebc:String" user="DAO" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Platine_project" type="cbb8eebc:String" user="Platine_project" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
               <item name="Entity" type="cbb8eebc:String" user="Entity" />
             </path>
             <path>
@@ -379,6 +389,32 @@
               <item name="java" type="cbb8eebc:String" user="java" />
               <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
               <item name="security" type="cbb8eebc:String" user="security" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Platine_project" type="cbb8eebc:String" user="Platine_project" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
+              <item name="Service" type="cbb8eebc:String" user="Service" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Platine_project" type="cbb8eebc:String" user="Platine_project" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
+              <item name="Service" type="cbb8eebc:String" user="Service" />
+              <item name="Imlementations" type="cbb8eebc:String" user="Imlementations" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Platine_project" type="cbb8eebc:String" user="Platine_project" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
+              <item name="Service" type="cbb8eebc:String" user="Service" />
+              <item name="Interfaces" type="cbb8eebc:String" user="Interfaces" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -414,7 +450,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -427,6 +462,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -589,7 +625,10 @@
       <workItem from="1516301288858" duration="1195000" />
       <workItem from="1516819035762" duration="141000" />
       <workItem from="1517402523826" duration="17268000" />
-      <workItem from="1517477656945" duration="4321000" />
+      <workItem from="1517477656945" duration="4839000" />
+      <workItem from="1517674883980" duration="9000" />
+      <workItem from="1517751883584" duration="7419000" />
+      <workItem from="1517825109178" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="categorie interface and implementation ok">
       <created>1514850858187</created>
@@ -672,7 +711,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180140000" />
+    <option name="totallyTimeSpent" value="188098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1751" y="-4" width="1537" height="912" extended-state="6" />
@@ -689,10 +728,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66933334" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6675532" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30960375" sideWeight="0.4850088" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26259235" sideWeight="0.4850088" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975152" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -789,14 +828,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java</url>
-          <line>148</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
@@ -875,13 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -917,13 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/ParcJardinInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -938,22 +955,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImpelementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="e#4920#4921#0" expanded="false" />
-            <element signature="e#4983#4984#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Commentaire.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,7 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="53" column="33" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,7 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,7 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="45" column="72" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,7 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,15 +1034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Storage/StorageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,109 +1042,17 @@
         <state relative-caret-position="144">
           <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1205#1206#0" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1205#1206#0" expanded="false" />
+            <element signature="e#1240#1241#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Storage/StorageService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-292">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="e#741#742#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="180" column="47" lean-forward="false" selection-start-line="180" selection-start-column="47" selection-end-line="180" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1517480682479" expanded="true" signature="5652:6316" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#911#912#0" expanded="true" />
-            <element signature="e#941#942#0" expanded="true" />
-            <element signature="e#1935#1936#0" expanded="true" />
-            <element signature="e#1951#1952#0" expanded="true" />
-            <element signature="e#1984#1985#0" expanded="true" />
-            <element signature="e#2003#2004#0" expanded="true" />
-            <element signature="e#2043#2044#0" expanded="true" />
-            <element signature="e#2061#2062#0" expanded="true" />
-            <element signature="e#2110#2111#0" expanded="true" />
-            <element signature="e#2133#2134#0" expanded="true" />
-            <element signature="e#2180#2181#0" expanded="true" />
-            <element signature="e#2205#2206#0" expanded="true" />
-            <element signature="e#2268#2269#0" expanded="true" />
-            <element signature="e#2305#2306#0" expanded="true" />
-            <element signature="e#2333#2334#0" expanded="true" />
-            <element signature="e#2351#2352#0" expanded="true" />
-            <element signature="e#2388#2389#0" expanded="true" />
-            <element signature="e#2411#2412#0" expanded="true" />
-            <element signature="e#2436#2437#0" expanded="true" />
-            <element signature="e#2451#2452#0" expanded="true" />
-            <element signature="e#2484#2485#0" expanded="true" />
-            <element signature="e#2496#2497#0" expanded="true" />
-            <element signature="e#2523#2524#0" expanded="true" />
-            <element signature="e#2538#2539#0" expanded="true" />
-            <element signature="e#2571#2572#0" expanded="true" />
-            <element signature="e#2583#2584#0" expanded="true" />
-            <element signature="e#2631#2632#0" expanded="true" />
-            <element signature="e#2656#2657#0" expanded="true" />
-            <element signature="e#2720#2721#0" expanded="true" />
-            <element signature="e#2757#2758#0" expanded="true" />
-            <element signature="e#2801#2802#0" expanded="true" />
-            <element signature="e#2825#2826#0" expanded="true" />
-            <element signature="e#2883#2884#0" expanded="true" />
-            <element signature="e#2917#2918#0" expanded="true" />
-            <element signature="e#2957#2958#0" expanded="true" />
-            <element signature="e#2978#2979#0" expanded="true" />
-            <element signature="e#3030#3031#0" expanded="true" />
-            <element signature="e#3059#3060#0" expanded="true" />
-            <element signature="e#3101#3102#0" expanded="true" />
-            <element signature="e#3122#3123#0" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-            <element signature="e#3204#3205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/formulairePJ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="33" />
+        <state relative-caret-position="108">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1167,14 +1065,142 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1939#1940#0" expanded="true" />
+            <element signature="e#1955#1956#0" expanded="true" />
+            <element signature="e#1988#1989#0" expanded="true" />
+            <element signature="e#2007#2008#0" expanded="true" />
+            <element signature="e#2047#2048#0" expanded="true" />
+            <element signature="e#2065#2066#0" expanded="true" />
+            <element signature="e#2114#2115#0" expanded="true" />
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2184#2185#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2309#2310#0" expanded="true" />
+            <element signature="e#2337#2338#0" expanded="true" />
+            <element signature="e#2355#2356#0" expanded="true" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2415#2416#0" expanded="true" />
+            <element signature="e#2440#2441#0" expanded="true" />
+            <element signature="e#2455#2456#0" expanded="true" />
+            <element signature="e#2488#2489#0" expanded="true" />
+            <element signature="e#2500#2501#0" expanded="true" />
+            <element signature="e#2527#2528#0" expanded="true" />
+            <element signature="e#2542#2543#0" expanded="true" />
+            <element signature="e#2575#2576#0" expanded="true" />
+            <element signature="e#2587#2588#0" expanded="true" />
+            <element signature="e#2635#2636#0" expanded="true" />
+            <element signature="e#2660#2661#0" expanded="true" />
+            <element signature="e#2724#2725#0" expanded="true" />
+            <element signature="e#2761#2762#0" expanded="true" />
+            <element signature="e#2805#2806#0" expanded="true" />
+            <element signature="e#2829#2830#0" expanded="true" />
+            <element signature="e#2887#2888#0" expanded="true" />
+            <element signature="e#2921#2922#0" expanded="true" />
+            <element signature="e#2961#2962#0" expanded="true" />
+            <element signature="e#2982#2983#0" expanded="true" />
+            <element signature="e#3034#3035#0" expanded="true" />
+            <element signature="e#3063#3064#0" expanded="true" />
+            <element signature="e#3105#3106#0" expanded="true" />
+            <element signature="e#3126#3127#0" expanded="true" />
+            <element signature="e#3179#3180#0" expanded="true" />
+            <element signature="e#3208#3209#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="52" lean-forward="false" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#921#922#0" expanded="true" />
+            <element signature="e#960#961#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/formulairePJ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" column="65" lean-forward="false" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="86" column="34" lean-forward="false" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#1807#1808#0" expanded="true" />
+            <marker date="1517768221449" expanded="true" signature="5651:6527" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImpelementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="144" column="48" lean-forward="false" selection-start-line="144" selection-start-column="27" selection-end-line="144" selection-end-column="48" />
+          <folding>
+            <element signature="e#4376#4377#0" expanded="true" />
+            <element signature="e#4416#4417#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="126">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
-            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+            <element signature="e#1268#1269#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
           </folding>
         </state>
       </provider>

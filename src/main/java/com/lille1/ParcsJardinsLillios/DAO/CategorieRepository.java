@@ -6,10 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface CategorieRepository extends JpaRepository<Categorie, Long>{
-    public List<Categorie> findAll();
+
    // public Categorie findByNomCategorie(String Nom);
     public Categorie findById(Long id);
     public void deleteById(Long id);
+    public Categorie findByNomCategorie(String nomCategorie);
 
 
 
