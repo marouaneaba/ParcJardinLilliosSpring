@@ -29,9 +29,24 @@ public class ParcJardin implements Serializable {
 	@Column
 	private double G;
 	@Column
-	private java.lang.String adresse;
+	private String adresse;
+	
+	//@OneToMany(mappedBy = "parcJardinCommentaire")
+		@OneToMany
+		private List<Commentaire> commentaires = new ArrayList<>();
 
-
+		@ManyToMany
+		private List<Horaire> horaire = new ArrayList<>();
+		
+		//@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+		/*@JoinTable(
+			      name="ParcJardinn_Categorie",
+			      joinColumns=@JoinColumn(name="parcJardin_id", referencedColumnName="id"),
+			      inverseJoinColumns=@JoinColumn(name="categorie_id", referencedColumnName="id"))
+		private List<Categorie> categories = new ArrayList<>();*/
+		
+		
+		
 
 	/*@Lob
 	@Column(name="photos", length=100000)
@@ -56,24 +71,8 @@ public class ParcJardin implements Serializable {
 		this.photos.add(photos);
 	}*/
 
-	//@OneToMany(mappedBy = "parcJardinCommentaire")
-	@OneToMany(cascade = CascadeType.ALL,
-			fetch = FetchType.LAZY,
-			mappedBy = "parcJardinCommentaire")
-	private List<Commentaire> commentaire = new ArrayList<>();
-
-	
-	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinTable(
-		      name="ParcJardinn_Categorie",
-		      joinColumns=@JoinColumn(name="parcJardin_id", referencedColumnName="id"),
-		      inverseJoinColumns=@JoinColumn(name="categorie_id", referencedColumnName="id"))
-	private List<Categorie> categories = new ArrayList<>();
 	
 	
-	
-	@OneToMany(targetEntity = Horaire.class)
-	private List<Horaire> horaire = new ArrayList<>();
 
 
 	public ParcJardin(){}
@@ -90,37 +89,25 @@ public class ParcJardin implements Serializable {
 
 	}
 
-
-
 	public Long getId() {
 		return id;
 	}
-
-
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
-
 	public java.lang.String getName() {
 		return name;
 	}
-
-
 
 	public void setName(java.lang.String name) {
 		this.name = name;
 	}
 
-
-
 	public java.lang.String getDescription() {
 		return description;
 	}
-
-
 
 	public void setDescription(java.lang.String description) {
 		this.description = description;
@@ -138,82 +125,52 @@ public class ParcJardin implements Serializable {
 		return L;
 	}
 
-
-
 	public void setL(double l) {
 		L = l;
 	}
-
-
 
 	public double getG() {
 		return G;
 	}
 
-
-
 	public void setG(double g) {
 		G = g;
 	}
 
-
-
-	public List<Commentaire> getCommentaire() {
-		return commentaire;
+	public String getAdresse() {
+		return adresse;
 	}
 
-
-
-	public void setCommentaire(List<Commentaire> commentaire) {
-		this.commentaire = commentaire;
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
 
-
-
-	public List<Categorie> getCategorie() {
-		return categories;
+	public List<Commentaire> getCommentaires() {
+		return commentaires;
 	}
 
-
-
-	public void setCategorie(List<Categorie> categorie) {
-		this.categories = categorie;
+	public void setCommentaires(List<Commentaire> commentaires) {
+		this.commentaires = commentaires;
 	}
-
-
 
 	public List<Horaire> getHoraire() {
 		return horaire;
 	}
 
-
-
 	public void setHoraire(List<Horaire> horaire) {
 		this.horaire = horaire;
 	}
 
-
-	public java.lang.String getAdresse() {
-		return adresse;
-	}
-
-	public void setAdresse(java.lang.String adresse) {
-		this.adresse = adresse;
-	}
-
-
-
-
 	@Override
-	public java.lang.String toString() {
-		return "ParcJardin{" +
-				"id=" + id +
-				", name='" + name + '\'' +
-				", description='" + description + '\'' +
-				", type=" + type +
-				", L=" + L +
-				", G=" + G +
-				", adresse='" + adresse + '\'' +
-				'}';
+	public String toString() {
+		return "ParcJardin [id=" + id + ", name=" + name + ", description=" + description + ", type=" + type + ", L="
+				+ L + ", G=" + G + ", adresse=" + adresse + ", commentaires=" + commentaires + ", horaire=" + horaire
+				+ "]";
 	}
+	
+	
+
+
+
+	
 }

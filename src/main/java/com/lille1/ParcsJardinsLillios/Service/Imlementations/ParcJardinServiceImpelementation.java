@@ -34,7 +34,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public ParcJardin JardinSet(ParcJardin pj ) {
-                ParcJardin p= parcJardinRepository.findById(pj.getId());
+                /*ParcJardin p= parcJardinRepository.findById(pj.getId());
                 p.setName(pj.getName());
                 p.setDescription(pj.getDescription());
                 p.setL(pj.getL());
@@ -42,7 +42,8 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
                 p.setType(pj.getType());
                 p.setCategorie(pj.getCategorie());
                 p.setHoraire(pj.getHoraire());
-                return parcJardinRepository.save(p);
+                return parcJardinRepository.save(p);*/
+    	return null;
     }
 
     @Override
@@ -78,7 +79,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public void SupprimerPJ(ParcJardin PJ) {
-        try {
+        /*try {
 
             ParcJardin tmp = parcJardinRepository.findById(PJ.getId());
 
@@ -91,7 +92,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
             parcJardinRepository.delete(tmp.getId());
         }catch(Exception e){
             e.printStackTrace();
-        }
+        }*/
 
     }
 
@@ -125,43 +126,47 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public List<Commentaire> ConsulterCommentairesPJ(ParcJardin PJ) {
-        return PJ.getCommentaire();
+        return null;//PJ.getCommentaire();
     }
 
     @Override
     public ParcJardin ajouterCommentaireToPJ(Commentaire commentaire, ParcJardin PJ) {
-        Hibernate.initialize(PJ.getCommentaire());
+        /*Hibernate.initialize(PJ.getCommentaire());
         PJ.getCommentaire().add(commentaire);
-        return parcJardinRepository.save(PJ);
+        return parcJardinRepository.save(PJ);*/
+    	return null;
     }
 
     @Override
     public ParcJardin supprimerCommetaireFromPJ(Commentaire commentire, ParcJardin PJ) {
-        PJ.getCommentaire().remove(commentire);
-        return parcJardinRepository.save(PJ);
+        /*PJ.getCommentaire().remove(commentire);
+        return parcJardinRepository.save(PJ);*/
+    	return null;
     }
 
     @Override
     public List<Categorie> ConsulterCategoriesPJ(ParcJardin PJ) {
-        return PJ.getCategorie();
+        return null;//PJ.getCategorie();
     }
 
     @Override
     public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ) {
-        Hibernate.initialize(PJ.getCategorie());
+        /*Hibernate.initialize(PJ.getCategorie());
         PJ.getCategorie().add(categorie);
-        return parcJardinRepository.save(PJ);
+        return parcJardinRepository.save(PJ);*/
+    	return null;
     }
 
     @Override
     public ParcJardin supprimerCategorieFromPJ(Categorie categorie, ParcJardin PJ) {
-        PJ.getCategorie().remove(categorie);
-        return parcJardinRepository.save(PJ);
+        /*PJ.getCategorie().remove(categorie);
+        return parcJardinRepository.save(PJ);*/
+    	return null;
     }
 
     @Override
     public ParcJardin chercherPJLG(Long l, Long g) {
-        return parcJardinRepository.trouverPJparLG(l,g);
+        return null;//parcJardinRepository.trouverPJparLG(l,g);
     }
 
 

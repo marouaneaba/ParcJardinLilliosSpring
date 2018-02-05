@@ -10,7 +10,9 @@ public class Commentaire implements Serializable {
 	@GeneratedValue
 	private Long id;
 	@Column
-	private String nomCommentaire;
+	private String Name;
+	@Column
+	private int nbrEtoile;
 	@Column
 	private String commentaire;
 	@Column
@@ -19,45 +21,65 @@ public class Commentaire implements Serializable {
 
 
 	//@ManyToOne(fetch = FetchType.EAGER)
-    @ManyToOne(fetch = FetchType.LAZY)
+    /*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parcJardin_id", nullable = false)
-	private ParcJardin parcJardinCommentaire;
+	private ParcJardin parcJardinCommentaire;*/
 	
 	
 	public Commentaire(){}
 	
-	public Commentaire(String commentaire, String nomCommentaire,ParcJardin parcJardinn, boolean confirmer) {
+	public Commentaire(String commentaire,int nbrEtoile, String nomCommentaire, boolean confirmer) {
 		super();
-		this.nomCommentaire=nomCommentaire;
-		this.parcJardinCommentaire = parcJardinn;
+		this.Name=nomCommentaire;
+		this.nbrEtoile = nbrEtoile;
 		this.commentaire = commentaire;
 		this.confirmer = confirmer;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public ParcJardin getParcJardinCommentaire() {
-		return parcJardinCommentaire;
+	public String getName() {
+		return Name;
 	}
 
-	public void setParcJardinCommentaire(ParcJardin parcJardinn) {
-		this.parcJardinCommentaire = parcJardinn;
+	public void setName(String name) {
+		Name = name;
 	}
+
+	public int getNbrEtoile() {
+		return nbrEtoile;
+	}
+
+	public void setNbrEtoile(int nbrEtoile) {
+		this.nbrEtoile = nbrEtoile;
+	}
+
 	public String getCommentaire() {
 		return commentaire;
 	}
+
 	public void setCommentaire(String commentaire) {
 		this.commentaire = commentaire;
 	}
+
 	public boolean isConfirmer() {
 		return confirmer;
 	}
+
 	public void setConfirmer(boolean confirmer) {
 		this.confirmer = confirmer;
+	}
+
+	@Override
+	public String toString() {
+		return "Commentaire [id=" + id + ", Name=" + Name + ", nbrEtoile=" + nbrEtoile + ", commentaire=" + commentaire
+				+ ", confirmer=" + confirmer + "]";
 	}
 	
 	

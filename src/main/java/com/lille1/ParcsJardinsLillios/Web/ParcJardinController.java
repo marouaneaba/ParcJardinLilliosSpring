@@ -83,7 +83,7 @@ public class ParcJardinController {
         }*/
         if (cats != null) {
             for (int i = 0; i < cats.size(); i++) {
-                nouveauPJ.getCategorie().add(cats.get(i));
+                //nouveauPJ.getCategorie().add(cats.get(i));
             }
         }
       //  model.addAttribute("files", fileNames);

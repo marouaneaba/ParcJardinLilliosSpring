@@ -15,20 +15,16 @@ public class Categorie implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;
-	@ManyToMany(mappedBy = "categories")
+	@ManyToMany
 	private List<ParcJardin> ParcJardinn = new ArrayList<>();
 	@Column
-	private String nomCategorie;
-
-
-	public Categorie() {
-	}
-
-
-	public Categorie(String Nomcategorie) {
+	private String nomcategorie;
+	
+	public Categorie( ) {}
+	
+	public Categorie(String nomcategorie) {
 		super();
-
-		this.nomCategorie = Nomcategorie;
+		this.nomcategorie = nomcategorie;
 	}
 
 
@@ -57,24 +53,25 @@ public class Categorie implements Serializable{
 
 
 
-	public String getNomCategorie() {
-		return nomCategorie;
+	public String getNomcategorie() {
+		return nomcategorie;
 	}
 
 
 
-	public void setNomcategorie(String Nomcategorie) {
-		this.nomCategorie = Nomcategorie;
+	public void setNomcategorie(String nomcategorie) {
+		this.nomcategorie = nomcategorie;
 	}
 
 
 
 	@Override
 	public String toString() {
-		return "Categorie{" +
-				", nom='" + nomCategorie + '\'' +
-
-				'}';
+		return "Categorie [id=" + id + ", ParcJardinn=" + ParcJardinn + ", nomcategorie=" + nomcategorie + "]";
 	}
+
+
+	
+	
 
 }

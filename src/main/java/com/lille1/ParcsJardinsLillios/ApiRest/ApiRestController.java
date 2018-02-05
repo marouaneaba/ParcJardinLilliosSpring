@@ -25,7 +25,7 @@ public class ApiRestController {
     @Autowired
     private CommentaireInterface commentaireInterfaceMetier;
 
-
+/*
     //confirmer
     //retourn tt les categories
     @GetMapping(value="/api/Categorie")
@@ -38,7 +38,7 @@ public class ApiRestController {
     @GetMapping(value="/api/PJ")
     public List<ParcJardin> consulterPJAll(){
         return parcJardinInterfaceMetier.ConsulterParcsJardin();
-    }
+    }*/
 
 
 
@@ -49,7 +49,7 @@ public class ApiRestController {
     }*/
 
 
-
+/*
     //confirmer
     //chercher les parc par une categorie
     @GetMapping(value="/api/PJByservice/{service}")
@@ -89,7 +89,7 @@ public class ApiRestController {
     public void ajouterCommentaire(@PathVariable Long idPJ, Commentaire com){
         ParcJardin pj=parcJardinInterfaceMetier.ChercherPJParId(idPJ);
         parcJardinInterfaceMetier.ajouterCommentaireToPJ(com,pj);
-    }
+    }*/
 
 
 

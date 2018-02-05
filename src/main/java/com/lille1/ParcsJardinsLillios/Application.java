@@ -66,8 +66,8 @@ public class Application implements CommandLineRunner{
 		Categorie cat2 = new Categorie("cat2");
 		Categorie cat3 = new Categorie("cat3");
 
-		Commentaire cm1 = new Commentaire("com1","pers1",PJ1,false);
-        Commentaire cm2 = new Commentaire("com2","pers2",PJ1,false);
+		Commentaire cm1 = new Commentaire("com1",3,"pers1",false);
+        Commentaire cm2 = new Commentaire("com2",5,"pers2",false);
 
 
         //tester la classe metier parcjardin
@@ -115,7 +115,8 @@ public class Application implements CommandLineRunner{
         Commentaire comAjouter2 = commentaireInterfaceMetier.AjouterCommentaire(cm2);
 
         //consulter les categories de pj1
-        List<Categorie> listCatPJ1 = pjById1.getCategorie();
+        
+        List<Categorie> listCatPJ1 = categorieRepository.findByParcJardin(pjById1);
         //System.out.println("categorie de pj1 = " + listCatPJ1.toString());
 
 		parcJardinInterfaceMetier.SupprimerPJ(pjByNom2);
