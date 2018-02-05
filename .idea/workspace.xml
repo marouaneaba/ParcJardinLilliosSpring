@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f6be83f-e5d1-45c4-bb2f-a426fb544aed" name="Default" comment="31 01">
+    <list default="true" id="2f6be83f-e5d1-45c4-bb2f-a426fb544aed" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Application.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Application.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Entity/Categorie.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Entity/Categorie.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/security/securityconfig.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/security/securityconfig.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,66 +30,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ParcJardin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java">
+      <file leaf-file-name="CategorieServiceImlementation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1939#1940#0" expanded="true" />
-                <element signature="e#1955#1956#0" expanded="true" />
-                <element signature="e#1988#1989#0" expanded="true" />
-                <element signature="e#2007#2008#0" expanded="true" />
-                <element signature="e#2047#2048#0" expanded="true" />
-                <element signature="e#2065#2066#0" expanded="true" />
-                <element signature="e#2114#2115#0" expanded="true" />
-                <element signature="e#2137#2138#0" expanded="true" />
-                <element signature="e#2184#2185#0" expanded="true" />
-                <element signature="e#2209#2210#0" expanded="true" />
-                <element signature="e#2272#2273#0" expanded="true" />
-                <element signature="e#2309#2310#0" expanded="true" />
-                <element signature="e#2337#2338#0" expanded="true" />
-                <element signature="e#2355#2356#0" expanded="true" />
-                <element signature="e#2392#2393#0" expanded="true" />
-                <element signature="e#2415#2416#0" expanded="true" />
-                <element signature="e#2440#2441#0" expanded="true" />
-                <element signature="e#2455#2456#0" expanded="true" />
-                <element signature="e#2488#2489#0" expanded="true" />
-                <element signature="e#2500#2501#0" expanded="true" />
-                <element signature="e#2527#2528#0" expanded="true" />
-                <element signature="e#2542#2543#0" expanded="true" />
-                <element signature="e#2575#2576#0" expanded="true" />
-                <element signature="e#2587#2588#0" expanded="true" />
-                <element signature="e#2635#2636#0" expanded="true" />
-                <element signature="e#2660#2661#0" expanded="true" />
-                <element signature="e#2724#2725#0" expanded="true" />
-                <element signature="e#2761#2762#0" expanded="true" />
-                <element signature="e#2805#2806#0" expanded="true" />
-                <element signature="e#2829#2830#0" expanded="true" />
-                <element signature="e#2887#2888#0" expanded="true" />
-                <element signature="e#2921#2922#0" expanded="true" />
-                <element signature="e#2961#2962#0" expanded="true" />
-                <element signature="e#2982#2983#0" expanded="true" />
-                <element signature="e#3034#3035#0" expanded="true" />
-                <element signature="e#3063#3064#0" expanded="true" />
-                <element signature="e#3105#3106#0" expanded="true" />
-                <element signature="e#3126#3127#0" expanded="true" />
-                <element signature="e#3179#3180#0" expanded="true" />
-                <element signature="e#3208#3209#0" expanded="true" />
+                <element signature="e#741#742#0" expanded="true" />
+                <element signature="e#796#797#0" expanded="true" />
+                <element signature="e#1883#1884#0" expanded="true" />
+                <element signature="e#1932#1933#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategorieServiceImlementation.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java">
+      <file leaf-file-name="UploadController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/UploadController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="234">
+              <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
               <folding>
-                <element signature="e#741#742#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
+                <element signature="e#1116#1124#0" expanded="true" />
+                <element signature="e#1205#1206#0" expanded="true" />
+                <element signature="e#1240#1241#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -293,9 +241,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java" />
       </list>
     </option>
   </component>
@@ -313,10 +261,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1751" />
+    <option name="x" value="241" />
     <option name="y" value="-4" />
-    <option name="width" value="739" />
-    <option name="height" value="868" />
+    <option name="width" value="1151" />
+    <option name="height" value="650" />
   </component>
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
@@ -364,31 +312,7 @@
               <item name="src/main" type="cbb8eebc:String" user="src/main" />
               <item name="java" type="cbb8eebc:String" user="java" />
               <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
-              <item name="ApiRest" type="cbb8eebc:String" user="ApiRest" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Platine_project" type="cbb8eebc:String" user="Platine_project" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
-              <item name="DAO" type="cbb8eebc:String" user="DAO" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Platine_project" type="cbb8eebc:String" user="Platine_project" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
               <item name="Entity" type="cbb8eebc:String" user="Entity" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Platine_project" type="cbb8eebc:String" user="Platine_project" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
-              <item name="security" type="cbb8eebc:String" user="security" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -422,28 +346,7 @@
               <item name="src/main" type="cbb8eebc:String" user="src/main" />
               <item name="java" type="cbb8eebc:String" user="java" />
               <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
-              <item name="Storage" type="cbb8eebc:String" user="Storage" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Platine_project" type="cbb8eebc:String" user="Platine_project" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="com/lille1/ParcsJardinsLillios" type="cbb8eebc:String" user="com/lille1/ParcsJardinsLillios" />
               <item name="Web" type="cbb8eebc:String" user="Web" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Platine_project" type="cbb8eebc:String" user="Platine_project" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Platine_project" type="cbb8eebc:String" user="Platine_project" />
-              <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-              <item name="files" type="cbb8eebc:String" user="files" />
             </path>
           </expand>
           <select />
@@ -628,7 +531,7 @@
       <workItem from="1517477656945" duration="4839000" />
       <workItem from="1517674883980" duration="9000" />
       <workItem from="1517751883584" duration="7419000" />
-      <workItem from="1517825109178" duration="12000" />
+      <workItem from="1517825109178" duration="1499000" />
     </task>
     <task id="LOCAL-00001" summary="categorie interface and implementation ok">
       <created>1514850858187</created>
@@ -707,14 +610,21 @@
       <option name="project" value="LOCAL" />
       <updated>1517406286605</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="partie test de API">
+      <created>1517825177959</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1517825177960</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188098000" />
+    <option name="totallyTimeSpent" value="189585000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1751" y="-4" width="1537" height="912" extended-state="6" />
+    <frame x="65" y="-4" width="1535" height="904" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -824,7 +734,8 @@
     <MESSAGE value="il reste a faire l importation des photos et modification d un parc jardin" />
     <MESSAGE value="api terminer reste a tester avec android" />
     <MESSAGE value="31 01" />
-    <option name="LAST_COMMIT_MESSAGE" value="31 01" />
+    <MESSAGE value="partie test de API" />
+    <option name="LAST_COMMIT_MESSAGE" value="partie test de API" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1037,18 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/UploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1205#1206#0" expanded="false" />
-            <element signature="e#1240#1241#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Storage/StorageService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1196,11 +1095,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="486">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
             <element signature="e#741#742#0" expanded="true" />
             <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/UploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding>
+            <element signature="e#1116#1124#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1240#1241#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -55,7 +55,7 @@ public class CategorieServiceImlementation implements CategorieInterface{
     @Override
     public List<Categorie> consulterCategories() {
 
-        System.out.println("lq sikwq ; "+categorieRepository.findAll().size());
+
         return categorieRepository.findAll();
     }
 
