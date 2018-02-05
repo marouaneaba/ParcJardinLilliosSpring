@@ -169,5 +169,10 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
         return null;//parcJardinRepository.trouverPJparLG(l,g);
     }
 
+    @Override
+    public List<ParcJardin> consulterPJByType(String type){
+        return parcJardinRepository.findByType(type);
+
+    }
 
 }

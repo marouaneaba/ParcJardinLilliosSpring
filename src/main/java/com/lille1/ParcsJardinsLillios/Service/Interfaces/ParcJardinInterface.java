@@ -55,6 +55,9 @@ public interface ParcJardinInterface {
 	 public ParcJardin chercherPJLG(Long l , Long g);
 
 
+	public List<ParcJardin> consulterPJByType(String type);
+
+
 
 
 

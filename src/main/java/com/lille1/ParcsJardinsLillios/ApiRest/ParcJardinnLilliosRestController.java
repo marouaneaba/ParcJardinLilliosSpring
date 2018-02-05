@@ -1,5 +1,9 @@
 package com.lille1.ParcsJardinsLillios.ApiRest;
 
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +24,12 @@ import com.lille1.ParcsJardinsLillios.Entity.*;
 
 @RestController
 public class ParcJardinnLilliosRestController {
+	@Autowired
+	private ParcJardinInterface parcJardinInterfaceMetier;
+	@Autowired
+	private CategorieInterface categorieInterfaceMetier;
+	@Autowired
+	private CommentaireInterface commentaireInterfaceMetier;
 
 	/**
 	 * Permet delister toutes les Parc/Jardinns Lillios via une requête GET
@@ -73,7 +83,7 @@ public class ParcJardinnLilliosRestController {
 		
 		String serviceGet = service.toUpperCase();
 		List<ParcJardin> parcJardinn = new ArrayList<>();
-		switch(serviceGet){
+		/*switch(serviceGet){
 			case "PARC":
 				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.611881, 3.141374, service+"addresseParc"));
 				break;
@@ -108,9 +118,20 @@ public class ParcJardinnLilliosRestController {
 				
 				
 		}
-		
-		
-		return parcJardinn;
+		*/
+
+		switch(service.toUpperCase()){
+			case "PARC":
+				return parcJardinInterfaceMetier.consulterPJByType("parc");
+			case "JARDIN":
+				return parcJardinInterfaceMetier.consulterPJByType("jardin");
+			default:
+				Categorie catTmp= categorieInterfaceMetier.ConsulterCategorieParNom(service);
+				return parcJardinInterfaceMetier.chercherPJParCategorie(catTmp);
+
+
+		}
+
 	}
 	
 	@RequestMapping(value="/api/PJBylocalisation/{Latitude}/{Longitude}", method = RequestMethod.GET)
