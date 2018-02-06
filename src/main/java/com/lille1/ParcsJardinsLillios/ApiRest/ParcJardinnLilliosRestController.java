@@ -1,5 +1,6 @@
 package com.lille1.ParcsJardinsLillios.ApiRest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,11 +17,14 @@ import java.util.*;
 import javax.imageio.ImageIO;
 
 import com.lille1.ParcsJardinsLillios.Entity.*;
+import com.lille1.ParcsJardinsLillios.Service.Imlementations.ParcJardinServiceImpelementation;
 
 
 @RestController
 public class ParcJardinnLilliosRestController {
 
+	@Autowired
+	private ParcJardinServiceImpelementation mParcJardinServiceImpelementation;
 	/**
 	 * Permet delister toutes les Parc/Jardinns Lillios via une requête GET
 	 * http://localhost:8080/api/beers
@@ -29,9 +33,10 @@ public class ParcJardinnLilliosRestController {
 	 */
 	@RequestMapping(value = "/api/PJ", method = RequestMethod.GET)
 	public List<ParcJardin> GetParcJardinnLillios() {
-		List<ParcJardin> parcJardinn = new ArrayList<>();
-		parcJardinn.add(new ParcJardin("AllnameParc", "AlldescriptionParc", "AlltypeParc", 1.0, 2.0, "AlladdresseParc"));
-		return parcJardinn;
+		//List<ParcJardin> parcJardinn = new ArrayList<>();
+		
+		//parcJardinn.add(new ParcJardin("AllnameParc", "AlldescriptionParc", "AlltypeParc", 1.0, 2.0, "AlladdresseParc"));
+		return mParcJardinServiceImpelementation.ConsulterParcsJardin();
 	}
 
 	/**
@@ -57,7 +62,8 @@ public class ParcJardinnLilliosRestController {
 			@RequestParam("g") double sLongitude, @RequestParam("addresse") String sAdderesse) {
 
 		ParcJardin parcJardinn = new ParcJardin(sName, sDescription, sType, sLatitude, sLongitude, sAdderesse);
-		System.out.println("Post réussite contenus : " + parcJardinn);
+		mParcJardinServiceImpelementation.AjouterPJ(parcJardinn);
+		//System.out.println("Post réussite contenus : " + parcJardinn);
 	}
 	
 	@RequestMapping(value="/api/PJBysearch/{search}", method = RequestMethod.GET)
