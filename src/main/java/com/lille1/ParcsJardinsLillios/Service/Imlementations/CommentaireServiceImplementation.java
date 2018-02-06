@@ -1,6 +1,7 @@
 package com.lille1.ParcsJardinsLillios.Service.Imlementations;
 
 import com.lille1.ParcsJardinsLillios.DAO.CommentaireRepository;
+import com.lille1.ParcsJardinsLillios.DAO.ParcJardinRepository;
 import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
 import com.lille1.ParcsJardinsLillios.Entity.ParcJardin;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
@@ -15,6 +16,8 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
 
     @Autowired
     CommentaireRepository commentaireRepository;
+    @Autowired
+    ParcJardinRepository parcJardinRepository;
 
     @Override
     public Commentaire AjouterCommentaire(Commentaire commentaire) {
@@ -24,23 +27,53 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
     }
 
     @Override
-    public Commentaire ValiderCommentaire(Commentaire commentaire) {
-        commentaire.setConfirmer(true);
-        return commentaireRepository.save(commentaire);
+    public ParcJardin ValiderCommentaire(Commentaire commentaire) throws Exception {
+
+        ParcJardin tmpPJ = null;
+
+        /*Commentaire Tmp =commentaireRepository.findById(commentaire.getId());
+        Tmp.setConfirmer(true);*/
+        for (ParcJardin pj : parcJardinRepository.findAll()){
+            for(Commentaire com : pj.getCommentaires()){
+                if(com.getId().equals(commentaire.getId())) {
+                    tmpPJ = pj;
+                    pj.getCommentaires().get(pj.getCommentaires().indexOf(com)).setConfirmer(true);
+                    System.out.println("afficher le parc qui contien le com"+pj.toString());
+                }
+            }
+        }
+
+        if(tmpPJ==null)
+            throw new Exception("commentaire a valider non trouve");
+
+        return parcJardinRepository.save(tmpPJ);
     }
 
     @Override
     public void SupprimerCommentaire(Commentaire commentaire) {
+        ParcJardin tmpPJ = null;
+        for (ParcJardin pj : parcJardinRepository.findAll()){
+            for(Commentaire com : pj.getCommentaires()){
+                if(com.getId().equals( commentaire.getId())) {
+                    tmpPJ = pj;
+                    pj.getCommentaires().remove(com);
 
+                }
+            }
+        }
+
+        parcJardinRepository.save(tmpPJ);
         commentaireRepository.delete(commentaire);
+
+
     }
 
 
-    @Override
+    /*@Override
     public List<Commentaire> ConsulterNouveauCommentaire(boolean confirm) {
 
         return commentaireRepository.findByConfirmer(false);
-    }
+    }*/
 
     @Override
     public List<Commentaire> ListeCommentaireParPJ(ParcJardin PJ) {

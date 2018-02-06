@@ -69,16 +69,19 @@ public class Application implements CommandLineRunner{
 		
 		Commentaire cm1 = new Commentaire("com1",3,"pers1",false);
         Commentaire cm2 = new Commentaire("com2",5,"pers2",false);
-        
-        Commentaire commentaire1 = mCommentaireRepository.save(cm1);
+		Commentaire cm3 = new Commentaire("com3",5,"pers3",false);
+
+		Commentaire commentaire1 = mCommentaireRepository.save(cm1);
         Commentaire commentaire2 = mCommentaireRepository.save(cm2);
-		
-        ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "JARDIN",30.0,3.16,"adressJardin1");
+		Commentaire commentaire3 = mCommentaireRepository.save(cm3);
+
+		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "JARDIN",30.0,3.16,"adressJardin1");
 		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "PARC",21.0,2.0,"adressJardin2");
         
 		PJ2.setCommentaires(commentaire1);
 		PJ2.setCommentaires(commentaire2);
-		
+		PJ2.setCommentaires(commentaire3);
+
         ParcJardin parcjardin1 = mParcJardinRepository.save(PJ2);
 		ParcJardin parcjardin2 = mParcJardinRepository.save(PJ3);
         

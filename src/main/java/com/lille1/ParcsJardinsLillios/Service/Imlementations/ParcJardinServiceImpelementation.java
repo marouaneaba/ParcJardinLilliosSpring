@@ -1,6 +1,7 @@
 package com.lille1.ParcsJardinsLillios.Service.Imlementations;
 
 import com.lille1.ParcsJardinsLillios.DAO.CategorieRepository;
+import com.lille1.ParcsJardinsLillios.DAO.CommentaireRepository;
 import com.lille1.ParcsJardinsLillios.DAO.ParcJardinRepository;
 import com.lille1.ParcsJardinsLillios.Entity.Categorie;
 import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
@@ -21,7 +22,8 @@ import java.util.List;
 @Service
 @Transactional
 public class ParcJardinServiceImpelementation implements ParcJardinInterface {
-
+    @Autowired
+    CommentaireRepository commentaireRepository;
 
     @Autowired
     ParcJardinRepository parcJardinRepository;
@@ -80,20 +82,32 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public void SupprimerPJ(ParcJardin PJ) {
-        /*try {
+        try {
 
             ParcJardin tmp = parcJardinRepository.findById(PJ.getId());
 
-            ArrayList<Categorie> listcat = new ArrayList<>(tmp.getCategorie());
+            /*ArrayList<Categorie> listcat = new ArrayList<>(tmp.getCategorie());
 
             for(Categorie categorie : listcat){
                 tmp.getCategorie().remove(categorie);
+            }*/
+
+            List<Categorie> listCat = categorieRepository.findByParcJardinnId(tmp.getId());
+            for(Categorie categorie : listCat){
+                if(categorie.getParcJardinn().contains(PJ))
+                    categorie.getParcJardinn().remove(PJ);
             }
+
+            ArrayList<Commentaire> listCom = new ArrayList<>(tmp.getCommentaires());
+            for(Commentaire commentaire : listCom){
+                tmp.getCommentaires().remove(commentaire);
+            }
+
 
             parcJardinRepository.delete(tmp.getId());
         }catch(Exception e){
             e.printStackTrace();
-        }*/
+        }
 
     }
 
@@ -173,6 +187,12 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     @Override
     public List<ParcJardin> consulterPJByType(String type){
         return parcJardinRepository.findByType(type);
+
+    }
+
+    @Override
+    public List<Commentaire> ConsulterNouveauCommentaire(boolean confirm) {
+        return commentaireRepository.findByConfirmer(false);
 
     }
 
