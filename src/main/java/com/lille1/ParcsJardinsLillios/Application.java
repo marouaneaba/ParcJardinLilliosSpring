@@ -26,7 +26,7 @@ import java.util.List;
 @SpringBootApplication
 @EnableJpaRepositories
 
-public class Application /*implements CommandLineRunner*/{
+public class Application implements CommandLineRunner{
 
 	
 	@Resource
@@ -56,10 +56,36 @@ public class Application /*implements CommandLineRunner*/{
     public static void main(java.lang.String[] args) {
         SpringApplication.run(Application.class, args);
     }
-/*
+
 	@Override
 	public void run(java.lang.String... arg0) throws Exception {
-		ParcJardin PJ1= new ParcJardin("parc1","descParc1", "Parc",125.0,2121.0,"adressParc1");
+		
+		Categorie cat2 = new Categorie("cat2");
+		Categorie cat3 = new Categorie("cat3");
+		
+		categorieInterfaceMetier.AjouterCategoriePJ(cat2);
+		categorieInterfaceMetier.AjouterCategoriePJ(cat3);
+		
+		
+        ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "Jardin",122.0,211.0,"adressJardin1");
+		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "Jardin",122.0,211.0,"adressJardin2");
+        
+		parcJardinInterfaceMetier.AjouterPJ(PJ3);
+		parcJardinInterfaceMetier.AjouterPJ(PJ2);
+		
+		parcJardinInterfaceMetier.ajouterCategorieToPJ(cat2, PJ2);
+		parcJardinInterfaceMetier.ajouterCategorieToPJ(cat3, PJ2);
+		
+		Commentaire cm1 = new Commentaire("com1",3,"pers1",false);
+        Commentaire cm2 = new Commentaire("com2",5,"pers2",false);
+		
+        commentaireInterfaceMetier.AjouterCommentaire(cm1);
+        commentaireInterfaceMetier.AjouterCommentaire(cm2);
+		
+        parcJardinInterfaceMetier.ajouterCommentaireToPJ(cm1, PJ2);
+        parcJardinInterfaceMetier.ajouterCommentaireToPJ(cm2, PJ2);
+        
+		/*ParcJardin PJ1= new ParcJardin("parc1","descParc1", "Parc",125.0,2121.0,"adressParc1");
 		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "Jardin",122.0,211.0,"adressJardin1");
 		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "Jardin",122.0,211.0,"adressJardin2");
 
@@ -194,5 +220,5 @@ storageService.init();
 
 
 		//System.out.println("photo de oj1"+PJ1.getPhotos());
-	//}
+	}
 }
