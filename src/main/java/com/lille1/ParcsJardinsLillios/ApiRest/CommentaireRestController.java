@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
 
 
 @RestController
@@ -20,6 +21,9 @@ public class CommentaireRestController {
 	
 	@Autowired
 	private CommentaireInterface mCommentaireInterface;
+	
+	@Autowired
+	private ParcJardinInterface parcJardinInterfaceMetier;
 	
 	List<Commentaire> commentaires = new ArrayList<Commentaire>();
 
@@ -64,36 +68,22 @@ public class CommentaireRestController {
 	
 	
 	@RequestMapping(value = "/api/CommentaireByPJ/{ParcJardin}", method = RequestMethod.GET)
-	public List<Commentaire> getCommentaireByPJ(@PathVariable("ParcJardin")String parcJardin) {
-
-		Commentaire commentaire1 = new Commentaire("anonymous",3,"marouane : mon nom anonymous, "
-				+ "je trouve il faut détailler les arbre , souvent quand je passe me matin me rendre "
-				+ "triste", false);
-		System.out.println("Post réussite contenus : " + commentaire1);
+	public List<Commentaire> getCommentaireByPJ(@PathVariable("ParcJardin")Long idparcJardin) {
 		
-		Commentaire commentaire2 = new Commentaire("toto",5,"marouane : une trés belle vous , heureux d'avoir "
-				+ "des parc comme celle si dans notre ville , merci infinitivement ;)", false);
-		System.out.println("Post réussite contenus : " + commentaire2);
 		
-		List<Commentaire> commentaires = new ArrayList<Commentaire>();
-		commentaires.add(commentaire1);
-		commentaires.add(commentaire2);
+		return parcJardinInterfaceMetier.ChercherPJParId(idparcJardin).getCommentaires();
 		
-		return commentaires;
 	}
 	
 	@RequestMapping(value = "/api/PostCommentaire/{name}/{nbrEtoile}/{commentaire}", method = RequestMethod.GET)
 	public Commentaire PostCommentaire(@PathVariable("name")String sName,@PathVariable("nbrEtoile")int snbrEtoile,
 			@PathVariable("commentaire")String sCommentaire){
 		
-		Commentaire commentaire = new Commentaire(sName,snbrEtoile,sCommentaire,false);
-		commentaires.add(commentaire);
-		if(commentaire != null)
-			return commentaire;
+			Commentaire commentaire = new Commentaire(sName,snbrEtoile,sCommentaire,false);
+			return mCommentaireInterface.AjouterCommentaire(commentaire);
 		
-		return null;
 	}
-	
+	/*
 	@RequestMapping(value = "/api/CommentaireNonConfirmer", method = RequestMethod.GET)
 	public List<Commentaire> CommentaireNonConfirmer(@PathVariable("name")String sName,@PathVariable("nbrEtoile")int snbrEtoile,
 			@PathVariable("commentaire")String sCommentaire){
@@ -106,6 +96,6 @@ public class CommentaireRestController {
 		}
 		
 		return commentairesConfirmer;
-	}
+	}*/
 
 }
