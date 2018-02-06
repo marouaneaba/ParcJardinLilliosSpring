@@ -71,25 +71,35 @@ public class ParcJardinController {
         return "ModifierPJ";
     }
 
+    // http://localhost:8080/images/imageApp/image1.jpg
     @PostMapping(value = "/AjouterPJ")
     public String ajouterPJ(HttpServletRequest request, ParcJardin nouveauPJ, 
     		@RequestParam(value = "cats", required = false) List<Categorie> cats,
-    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model,@RequestParam("image") MultipartFile file,@RequestParam("nom") String name) {
+    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model,@RequestParam("file") MultipartFile file,@RequestParam("nom") String name) {
     	
-    	
-    	
-       /* List<MultipartFile> files = uploadForm;
+    	if(!file.isEmpty()){
+    		
+    		try{
+    			byte[] bytes = file.getBytes();
+    			
+    			
+    			File dir = new File("./src/main/resources/static/images/imageApp" );
+    			if (!dir.exists())
+					dir.mkdirs();
 
-		List<String> fileNames = new ArrayList<String>();
+				// Create the file on server
+				File serverFile = new File(dir.getAbsolutePath()+ File.separator + "hello.jpg");
+				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+				stream.write(bytes);
+				stream.close();
 
-		if(null != files && files.size() > 0) {
-            for (MultipartFile multipartFile : files) {
 
-                String fileName = multipartFile.getOriginalFilename();
-                fileNames.add(fileName);
-                //Handle file content - multipartFile.getInputStream()
-            }
-        }*/
+				System.out.println("You successfully uploaded file");
+    		}catch(Exception e){
+    			System.out.println(e.getMessage());
+    		}
+    	}
+  
         if (cats != null) {
             for (int i = 0; i < cats.size(); i++) {
                 //nouveauPJ.getCategorie().add(cats.get(i));
@@ -100,7 +110,7 @@ public class ParcJardinController {
         parcJardinRepository.save(nouveauPJ);
         return "redirect:/operationPJ";
     }
-
+    
 
 
 

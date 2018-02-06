@@ -54,4 +54,59 @@ public class ajoutimage {
 			
 		}
     }
+	
+	/*
+	 @PostMapping(value = "/addImagee")
+    public void ajouterPJ( Model model,@RequestParam("file") MultipartFile[] files) {
+    	System.out.println("arrivé");
+    	
+    	String message = "";
+    	for (int i = 0; i < files.length; i++) {
+    		MultipartFile file = files[i];
+    		
+    		try {
+				byte[] bytes = file.getBytes();
+
+				// Creating the directory to store file
+				File dir = new File("./src/main/resources/static/images/imageApp" );
+				if (!dir.exists())
+					dir.mkdirs();
+
+				// Create the file on server
+				File serverFile = new File(dir.getAbsolutePath()+ File.separator + "hello"+i+".jpg");
+				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+				stream.write(bytes);
+				stream.close();
+
+				System.out.println("You successfully uploaded file : "+i);
+
+			} catch (Exception e) {
+				System.out.println("You failed to upload => " + e.getMessage());
+			}
+    	
+    	}
+    	
+    	/*
+    		try{
+    			byte[] bytes = file.getBytes();
+    			
+    			
+    			File dir = new File("./src/main/resources/static/images/imageApp" );
+    			if (!dir.exists())
+					dir.mkdirs();
+
+				// Create the file on server
+				File serverFile = new File(dir.getAbsolutePath()+ File.separator + "hello.jpg");
+				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+				stream.write(bytes);
+				stream.close();
+
+
+				System.out.println("You successfully uploaded file");
+    		}catch(Exception e){
+    			System.out.println(e.getMessage());
+    		}*/
+    	
+    //}
+	 
 }
