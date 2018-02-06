@@ -20,6 +20,7 @@
 /home/m2eserv/abakarim/spring_marouane/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/controller/AjouterParcJardinController.java
 /home/m2eserv/abakarim/spring_marouane/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Web/formulairePJ.java
 /home/m2eserv/abakarim/spring_marouane/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/UI/Service/RequestCommentaire.java
+/home/m2eserv/abakarim/spring_marouane/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Web/ajoutimage.java
 /home/m2eserv/abakarim/spring_marouane/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/HoraireServiceImplementation.java
 /home/m2eserv/abakarim/spring_marouane/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ParcJardinnLilliosRestController.java
 /home/m2eserv/abakarim/spring_marouane/Platine_project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.java

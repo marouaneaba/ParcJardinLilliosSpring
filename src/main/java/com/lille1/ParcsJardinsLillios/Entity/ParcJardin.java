@@ -30,6 +30,9 @@ public class ParcJardin implements Serializable {
 	private double G;
 	@Column
 	private String adresse;
+	@Column
+	@ElementCollection(targetClass=String.class)
+	private List<java.lang.String> NameImage;
 	
 	//@OneToMany(mappedBy = "parcJardinCommentaire")
 		@OneToMany
@@ -87,7 +90,21 @@ public class ParcJardin implements Serializable {
 		this.G = g;
 		this.adresse = adresse;
 		this.commentaires = new ArrayList<>();
+		this.NameImage = new ArrayList<>();
 
+	}
+
+	
+	public List<String> getNameImage() {
+		return NameImage;
+	}
+
+	public void setNameImage(String nameImage) {
+		NameImage.add(nameImage);
+	}
+
+	public void setCommentaires(List<Commentaire> commentaires) {
+		this.commentaires = commentaires;
 	}
 
 	public Long getId() {

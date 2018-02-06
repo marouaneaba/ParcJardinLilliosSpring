@@ -11,7 +11,7 @@
     <center>
     <div id="bloc_page" class ="col-lg-12">
 
-        <form class="row" th:action="@{/AjouterPJ}" method ="Post" th:object="${nouveauPJ}">
+        <form enctype = "multipart/form-data" class="row" th:action="@{/AjouterPJ}" method ="Post" th:object="${nouveauPJ}">
             <div>
                 <label>Nom : </label>
                 <input type="text" name="name" th:field="*{name}"/>
@@ -55,8 +55,9 @@
             <div>
                 <table>
                     <tr>
+                    	<input type="text" name="nom" >Ajjouter Photos</input	>
                         <td>ajouter photos</td>
-                            <button type="submit" class="btn btn-xs btn-danger" >Ajjouter Photos</button>
+                            <input type="file" name="image" >Ajjouter Photos</input	>
 
                     </tr>
                 </table>

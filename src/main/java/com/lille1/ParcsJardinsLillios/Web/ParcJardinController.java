@@ -16,7 +16,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
+
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,8 +72,12 @@ public class ParcJardinController {
     }
 
     @PostMapping(value = "/AjouterPJ")
-    public String ajouterPJ(HttpServletRequest request, ParcJardin nouveauPJ, @RequestParam(value = "cats", required = false) List<Categorie> cats,@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model) {
-
+    public String ajouterPJ(HttpServletRequest request, ParcJardin nouveauPJ, 
+    		@RequestParam(value = "cats", required = false) List<Categorie> cats,
+    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model,@RequestParam("image") MultipartFile file,@RequestParam("nom") String name) {
+    	
+    	
+    	
        /* List<MultipartFile> files = uploadForm;
 
 		List<String> fileNames = new ArrayList<String>();
