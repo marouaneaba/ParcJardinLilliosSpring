@@ -1,11 +1,6 @@
 package com.lille1.ParcsJardinsLillios.ApiRest;
 
-<<<<<<< HEAD
-import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
-import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
-import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
-=======
->>>>>>> 8e25714f85bbe4ed38f4b8b6e08aba1c492ef9bf
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +19,9 @@ import javax.imageio.ImageIO;
 
 import com.lille1.ParcsJardinsLillios.Entity.*;
 import com.lille1.ParcsJardinsLillios.Service.Imlementations.ParcJardinServiceImpelementation;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
 
 
 @RestController
@@ -89,44 +87,7 @@ public class ParcJardinnLilliosRestController {
 	@RequestMapping(value="/api/PJByservice/{service}", method = RequestMethod.GET)
 	public List<ParcJardin> getPJByService(@PathVariable("service") String service){
 		
-		String serviceGet = service.toUpperCase();
-		List<ParcJardin> parcJardinn = new ArrayList<>();
-		/*switch(serviceGet){
-			case "PARC":
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.611881, 3.141374, service+"addresseParc"));
-				break;
-			case "JARDIN":
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.621881, 3.131374, service+"addresseParc"));
-				break;
-			case "FOOTING":
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.601881, 3.151374, service+"addresseParc"));
-				break;
-			case "ETUDE":
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.621881, 3.151374, service+"addresseParc"));
-				break;
-			case "RESTAURATION":
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.601881, 3.131374, service+"addresseParc"));
-				break;
-			case "PROMONER":
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.611081, 3.141074, service+"addresseParc"));
-				break;
-			case "ECOUTER":
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.613081, 3.141704, service+"addresseParc"));
-				break;
-			case "TOUT":
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.611881, 3.141374, service+"addresseParc"));
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.621881, 3.131374, service+"addresseParc"));
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.601881, 3.151374, service+"addresseParc"));
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.621881, 3.151374, service+"addresseParc"));
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.601881, 3.131374, service+"addresseParc"));
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.611081, 3.141074, service+"addresseParc"));
-				parcJardinn.add(new ParcJardin(service+"Name", service+"descriptionParc", service+"typeParc",50.613081, 3.141704, service+"addresseParc"));
-				
-				break;
-				
-				
-		}
-		*/
+		
 
 		switch(service.toUpperCase()){
 			case "PARC":
@@ -143,22 +104,17 @@ public class ParcJardinnLilliosRestController {
 	}
 	
 	@RequestMapping(value="/api/PJBylocalisation/{Latitude}/{Longitude}", method = RequestMethod.GET)
-	public ParcJardin getPJByLatitudeLongitude(@PathVariable("Latitude") String Latitude,@PathVariable("Longitude") String Longitude){
+	public ParcJardin getPJByLatitudeLongitude(@PathVariable("Latitude") Long Latitude,@PathVariable("Longitude") Long Longitude){
 		
+		return mParcJardinServiceImpelementation.chercherPJLG(Latitude, Longitude);
 		
-		ParcJardin parcJardinn = new ParcJardin(Latitude+"/"+Longitude+"Parc Héron", Latitude+"/"+Longitude+"Parc héron un parc localiser à lille", Latitude+"/"+Longitude+"Parc", 50.612054, 3.139113, Latitude+"/"+Longitude+"Cité scientifuqe Ville neuve d'asq");
-		return parcJardinn;
 	}
 	
-	@RequestMapping(value="/api/categorieByPJ/{parcJardinn}", method = RequestMethod.GET)
-	public List<Categorie> getCategorieByPJ(@PathVariable("parcJardinn") String parcJardinn){
+	@RequestMapping(value="/api/categorieByPJ/{id}", method = RequestMethod.GET)
+	public List<Categorie> getCategorieByPJ(@PathVariable("parcJardinn") Long id){
 		
-		List<Categorie> categorie = new ArrayList<>();
-		categorie.add(new Categorie("Etude"));
-		categorie.add(new Categorie("Parc"));
-		categorie.add(new Categorie("Restauration"));
-		categorie.add(new Categorie("Ecouter"));
-		return categorie;
+		return null;//mParcJardinServiceImpelementation.ConsulterCategoriesPJ(id);
+		
 	}
 											 
 

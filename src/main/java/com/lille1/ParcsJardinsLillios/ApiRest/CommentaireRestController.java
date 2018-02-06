@@ -3,6 +3,7 @@ package com.lille1.ParcsJardinsLillios.ApiRest;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,10 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
 
 
 @RestController
 public class CommentaireRestController {
+	
+	
+	@Autowired
+	private CommentaireInterface mCommentaireInterface;
 	
 	List<Commentaire> commentaires = new ArrayList<Commentaire>();
 
@@ -46,6 +52,8 @@ public class CommentaireRestController {
 			@RequestParam("commentaire") String sCommentaire,@RequestParam("id")Long id) {
 
 		Commentaire commentaire = new Commentaire(name,nbrEtoile,sCommentaire, false);
+		mCommentaireInterface.AjouterCommentaire(commentaire);
+		
 		System.out.println("Post réussite contenus : " + commentaire);
 		
 		if(sCommentaire.isEmpty() )

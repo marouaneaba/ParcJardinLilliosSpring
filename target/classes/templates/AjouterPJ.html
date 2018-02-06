@@ -25,6 +25,14 @@
                 <input style="padding-bottom: 30px;" type="text" name="description"  th:field="*{description}"/>
             </div>
             <div>
+                <label>Latitude : </label>
+                <input  type="text" name="L"  th:field="*{L}"/>
+            </div>
+            <div>
+                <label>Description : </label>
+                <input  type="text" name="G"  th:field="*{G}"/>
+            </div>
+            <div>
                 <label>Type : </label>
                 <input type="checkbox" id ="PJtype1" name="type" th:value="parc" th:field="*{type}"/>
                 <label for="PJtype1">Parc</label>
