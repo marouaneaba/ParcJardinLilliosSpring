@@ -25,6 +25,7 @@ public class Categorie implements Serializable{
 	public Categorie(String nomcategorie) {
 		super();
 		this.nomcategorie = nomcategorie;
+		this.ParcJardinn =  new ArrayList<>();
 	}
 
 
@@ -47,8 +48,8 @@ public class Categorie implements Serializable{
 
 
 
-	public void setParcJardinn(List<ParcJardin> parcJardinn) {
-		ParcJardinn = parcJardinn;
+	public void setParcJardinn(ParcJardin parcJardinn) {
+		ParcJardinn.add(parcJardinn);
 	}
 
 

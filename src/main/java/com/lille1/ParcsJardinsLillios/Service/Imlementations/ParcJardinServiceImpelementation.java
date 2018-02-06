@@ -71,6 +71,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     @Override
     public boolean AjouterPJ(ParcJardin PJ) {
         ParcJardin parcJardin = parcJardinRepository.save(PJ);
+        System.out.println("parc jardin ****** id : "+parcJardin.getId());
         if(parcJardin != null)
             return true;
         else
@@ -165,8 +166,8 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     }
 
     @Override
-    public ParcJardin chercherPJLG(Long l, Long g) {
-        return null;//parcJardinRepository.trouverPJparLG(l,g);
+    public ParcJardin chercherPJLG(double l, double g) {
+        return parcJardinRepository.trouverPJparLG(l,g);
     }
 
     @Override

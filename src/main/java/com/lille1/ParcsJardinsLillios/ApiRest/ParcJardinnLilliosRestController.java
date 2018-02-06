@@ -17,6 +17,8 @@ import java.util.*;
 
 import javax.imageio.ImageIO;
 
+import com.lille1.ParcsJardinsLillios.DAO.CategorieRepository;
+import com.lille1.ParcsJardinsLillios.DAO.ParcJardinRepository;
 import com.lille1.ParcsJardinsLillios.Entity.*;
 import com.lille1.ParcsJardinsLillios.Service.Imlementations.ParcJardinServiceImpelementation;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
@@ -32,7 +34,10 @@ public class ParcJardinnLilliosRestController {
 	private CategorieInterface categorieInterfaceMetier;
 	@Autowired
 	private CommentaireInterface commentaireInterfaceMetier;
-
+	@Autowired
+	private ParcJardinRepository mParcJardinRepository;
+	@Autowired
+	private CategorieRepository mCategorieRepository;
 	@Autowired
 	private ParcJardinServiceImpelementation mParcJardinServiceImpelementation;
 	/**
@@ -79,9 +84,8 @@ public class ParcJardinnLilliosRestController {
 	@RequestMapping(value="/api/PJBysearch/{search}", method = RequestMethod.GET)
 	public List<ParcJardin> getPJBySearch(@PathVariable("search") String search){
 		
-		List<ParcJardin> parcJardinn = new ArrayList<>();
-		parcJardinn.add(new ParcJardin(search+"Name", search+"descriptionParc", search+"typeParc", 50.612156, 3.139263, search+"addresseParc"));
-		return parcJardinn;
+		return mParcJardinRepository.findByNameContaining(search);
+	
 	}
 	
 	@RequestMapping(value="/api/PJByservice/{service}", method = RequestMethod.GET)
@@ -91,9 +95,9 @@ public class ParcJardinnLilliosRestController {
 
 		switch(service.toUpperCase()){
 			case "PARC":
-				return parcJardinInterfaceMetier.consulterPJByType("parc");
+				return parcJardinInterfaceMetier.consulterPJByType("PARC");
 			case "JARDIN":
-				return parcJardinInterfaceMetier.consulterPJByType("jardin");
+				return parcJardinInterfaceMetier.consulterPJByType("JARDIN");
 			default:
 				Categorie catTmp= categorieInterfaceMetier.ConsulterCategorieParNom(service);
 				return parcJardinInterfaceMetier.chercherPJParCategorie(catTmp);
@@ -104,17 +108,17 @@ public class ParcJardinnLilliosRestController {
 	}
 	
 	@RequestMapping(value="/api/PJBylocalisation/{Latitude}/{Longitude}", method = RequestMethod.GET)
-	public ParcJardin getPJByLatitudeLongitude(@PathVariable("Latitude") Long Latitude,@PathVariable("Longitude") Long Longitude){
+	public ParcJardin getPJByLatitudeLongitude(@PathVariable("Latitude") double Latitude,@PathVariable("Longitude") double Longitude){
 		
 		return mParcJardinServiceImpelementation.chercherPJLG(Latitude, Longitude);
 		
 	}
 	
 	@RequestMapping(value="/api/categorieByPJ/{id}", method = RequestMethod.GET)
-	public List<Categorie> getCategorieByPJ(@PathVariable("parcJardinn") Long idParcJadin){
+	public List<Categorie> getCategorieByPJ(@PathVariable("id") Long idParcJadin){
 		
-		return mParcJardinServiceImpelementation.ConsulterCategoriesPJ(idParcJadin);
-		
+
+		return mCategorieRepository.findByParcJardinnId(idParcJadin);
 	}
 											 
 

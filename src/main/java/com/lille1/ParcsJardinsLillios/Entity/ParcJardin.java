@@ -86,6 +86,7 @@ public class ParcJardin implements Serializable {
 		this.L = l;
 		this.G = g;
 		this.adresse = adresse;
+		this.commentaires = new ArrayList<>();
 
 	}
 
@@ -149,8 +150,8 @@ public class ParcJardin implements Serializable {
 		return commentaires;
 	}
 
-	public void setCommentaires(List<Commentaire> commentaires) {
-		this.commentaires = commentaires;
+	public void setCommentaires(Commentaire commentaires) {
+		this.commentaires.add(commentaires);
 	}
 
 	public List<Horaire> getHoraire() {

@@ -18,7 +18,8 @@ public interface ParcJardinRepository extends JpaRepository<ParcJardin, Long>{
 	public List<ParcJardin> findByType(String type);
 	@Query("select P from ParcJardin P where P.L=:l and P.G=:g")
 	public ParcJardin trouverPJparLG(@Param("l") double L, @Param("g") double G);
-
+	//public ParcJardin findByLAndG(double l,double g);
+	public List<ParcJardin> findByNameContaining(String name);
 
 
 

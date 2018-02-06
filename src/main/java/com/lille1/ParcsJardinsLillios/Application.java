@@ -32,6 +32,12 @@ public class Application implements CommandLineRunner{
 	@Resource
 	StorageService storageService;
 	@Autowired
+	private CommentaireRepository mCommentaireRepository;
+	@Autowired
+	private CategorieRepository mCategorieRepository;
+	@Autowired
+	private ParcJardinRepository mParcJardinRepository;
+	@Autowired
 	private ParcJardinRepository parcJardinRepository;
 	@Autowired
 	private CommentaireRepository commentaireRepository;
@@ -60,30 +66,41 @@ public class Application implements CommandLineRunner{
 	@Override
 	public void run(java.lang.String... arg0) throws Exception {
 		
-		Categorie cat2 = new Categorie("cat2");
-		Categorie cat3 = new Categorie("cat3");
-		
-		categorieInterfaceMetier.AjouterCategoriePJ(cat2);
-		categorieInterfaceMetier.AjouterCategoriePJ(cat3);
-		
-		
-        ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "Jardin",122.0,211.0,"adressJardin1");
-		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "Jardin",122.0,211.0,"adressJardin2");
-        
-		parcJardinInterfaceMetier.AjouterPJ(PJ3);
-		parcJardinInterfaceMetier.AjouterPJ(PJ2);
-		
-		parcJardinInterfaceMetier.ajouterCategorieToPJ(cat2, PJ2);
-		parcJardinInterfaceMetier.ajouterCategorieToPJ(cat3, PJ2);
 		
 		Commentaire cm1 = new Commentaire("com1",3,"pers1",false);
         Commentaire cm2 = new Commentaire("com2",5,"pers2",false);
+        
+        Commentaire commentaire1 = mCommentaireRepository.save(cm1);
+        Commentaire commentaire2 = mCommentaireRepository.save(cm2);
 		
-        commentaireInterfaceMetier.AjouterCommentaire(cm1);
-        commentaireInterfaceMetier.AjouterCommentaire(cm2);
+        ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "JARDIN",30.0,3.16,"adressJardin1");
+		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "PARC",21.0,2.0,"adressJardin2");
+        
+		PJ2.setCommentaires(commentaire1);
+		PJ2.setCommentaires(commentaire2);
 		
-        parcJardinInterfaceMetier.ajouterCommentaireToPJ(cm1, PJ2);
-        parcJardinInterfaceMetier.ajouterCommentaireToPJ(cm2, PJ2);
+        ParcJardin parcjardin1 = mParcJardinRepository.save(PJ2);
+		ParcJardin parcjardin2 = mParcJardinRepository.save(PJ3);
+        
+		Categorie cat2 = new Categorie("cat2");
+		
+		cat2.setParcJardinn(parcjardin1);
+		cat2.setParcJardinn(parcjardin2);
+		
+		Categorie categorie1 = mCategorieRepository.save(cat2);
+		
+
+		
+        
+        
+		
+		
+		
+		
+		
+		
+        
+        
         
 		/*ParcJardin PJ1= new ParcJardin("parc1","descParc1", "Parc",125.0,2121.0,"adressParc1");
 		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "Jardin",122.0,211.0,"adressJardin1");

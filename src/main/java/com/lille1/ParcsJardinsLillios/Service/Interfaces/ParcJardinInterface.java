@@ -52,7 +52,7 @@ public interface ParcJardinInterface {
 	 public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ);
 	 public ParcJardin supprimerCategorieFromPJ(Categorie categorie, ParcJardin PJ);
 
-	 public ParcJardin chercherPJLG(Long l , Long g);
+	 public ParcJardin chercherPJLG(double l , double g);
 
 
 	public List<ParcJardin> consulterPJByType(String type);
