@@ -48,7 +48,7 @@ public interface ParcJardinInterface {
 	 public ParcJardin supprimerCommetaireFromPJ(Commentaire commentire, ParcJardin PJ );
 
 
-	 public List<Categorie> ConsulterCategoriesPJ(ParcJardin PJ);
+	 public List<Categorie> ConsulterCategoriesPJ(Long idPJ);
 	 public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ);
 	 public ParcJardin supprimerCategorieFromPJ(Categorie categorie, ParcJardin PJ);
 
