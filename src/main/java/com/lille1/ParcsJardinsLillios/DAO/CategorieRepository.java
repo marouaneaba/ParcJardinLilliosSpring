@@ -3,7 +3,10 @@ package com.lille1.ParcsJardinsLillios.DAO;
 import com.lille1.ParcsJardinsLillios.Entity.Categorie;
 import com.lille1.ParcsJardinsLillios.Entity.ParcJardin;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -13,7 +16,8 @@ public interface CategorieRepository extends JpaRepository<Categorie, Long>{
     public Categorie findById(Long id);
     public void deleteById(Long id);
     public Categorie findBynomcategorie(String nomCategorie);
-    public List<Categorie> findByParcJardinnId(Long idParcJardinn);
+    @Query("select c from Categorie c inner JOIN c.ParcJardinn p where p.id = :idParcJardinn ")
+    public List<Categorie> findByParcJardinnId(@Param("idParcJardinn") Long idParcJardinn);
 
 
 

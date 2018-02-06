@@ -111,9 +111,9 @@ public class ParcJardinnLilliosRestController {
 	}
 	
 	@RequestMapping(value="/api/categorieByPJ/{id}", method = RequestMethod.GET)
-	public List<Categorie> getCategorieByPJ(@PathVariable("parcJardinn") Long id){
+	public List<Categorie> getCategorieByPJ(@PathVariable("parcJardinn") Long idParcJadin){
 		
-		return null;//mParcJardinServiceImpelementation.ConsulterCategoriesPJ(id);
+		return mParcJardinServiceImpelementation.ConsulterCategoriesPJ(idParcJadin);
 		
 	}
 											 
