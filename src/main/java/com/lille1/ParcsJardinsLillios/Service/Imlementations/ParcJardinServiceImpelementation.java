@@ -65,7 +65,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public List<ParcJardin> chercherPJParCategorie(Categorie categorie) {
-        return parcJardinRepository.findByCategories(categorie);
+        return null;//parcJardinRepository.findByCategories(categorie);
     }
 
     @Override

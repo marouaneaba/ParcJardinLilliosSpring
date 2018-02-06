@@ -12,8 +12,8 @@ public interface CategorieRepository extends JpaRepository<Categorie, Long>{
    // public Categorie findByNomCategorie(String Nom);
     public Categorie findById(Long id);
     public void deleteById(Long id);
-    public Categorie findByNomCategorie(String nomCategorie);
-    public List<Categorie> findByParcJardin(ParcJardin p);
+    public Categorie findBynomcategorie(String nomCategorie);
+    //public List<Categorie> findByParcJardinn(ParcJardin ParcJardinn);
 
 
 

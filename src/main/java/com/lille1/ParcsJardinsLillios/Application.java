@@ -26,8 +26,9 @@ import java.util.List;
 @SpringBootApplication
 @EnableJpaRepositories
 
-public class Application implements CommandLineRunner{
+public class Application /*implements CommandLineRunner*/{
 
+	
 	@Resource
 	StorageService storageService;
 	@Autowired
@@ -55,7 +56,7 @@ public class Application implements CommandLineRunner{
     public static void main(java.lang.String[] args) {
         SpringApplication.run(Application.class, args);
     }
-
+/*
 	@Override
 	public void run(java.lang.String... arg0) throws Exception {
 		ParcJardin PJ1= new ParcJardin("parc1","descParc1", "Parc",125.0,2121.0,"adressParc1");
@@ -116,7 +117,7 @@ public class Application implements CommandLineRunner{
 
         //consulter les categories de pj1
         
-        List<Categorie> listCatPJ1 = categorieRepository.findByParcJardin(pjById1);
+        //List<Categorie> listCatPJ1 = categorieRepository.findByParcJardinn(pjById1);
         //System.out.println("categorie de pj1 = " + listCatPJ1.toString());
 
 		parcJardinInterfaceMetier.SupprimerPJ(pjByNom2);
@@ -139,7 +140,7 @@ public class Application implements CommandLineRunner{
 
 
 		//tester la classe metier categorie
-
+/*
 		Categorie foundCat = categorieInterfaceMetier.ColsulterCategorieId(Long.parseLong(java.lang.String.valueOf(3)));
 		categorieInterfaceMetier.ConsulterParcJardinParCategorie(cat3);
 
@@ -167,7 +168,7 @@ public class Application implements CommandLineRunner{
 		adminRepository.findAll().forEach(c->{
 			System.out.println(c.getName());
 		});*/
-
+/*
 storageService.deleteAll();
 storageService.init();
 
@@ -175,7 +176,7 @@ storageService.init();
 		List<Categorie> catList = parcJardinInterfaceMetier.ConsulterCategoriesPJ(pjById1);
 		for(int i=0 ; i< catList.size() ; i++){
 			System.out.println("test service retour des cat de PJ"+ catList.get(i));
-		}
+		}*/
 
 // image 1
 		/*ClassPathResource backImgFile = new ClassPathResource("files/index.jpeg");
@@ -193,5 +194,5 @@ storageService.init();
 
 
 		//System.out.println("photo de oj1"+PJ1.getPhotos());
-	}
+	//}
 }
