@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f6be83f-e5d1-45c4-bb2f-a426fb544aed" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/security/SecurityController.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/CommentaireController.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/CommentaireController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/security/securityconfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/security/securityconfig.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/imageApp/hello.jpg" afterPath="$PROJECT_DIR$/src/main/resources/static/images/imageApp/hello.jpg" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/connexion.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/connexion.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/template.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/template.html" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Web/CommentaireController.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Web/CommentaireController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Web/ParcJardinController.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Web/ParcJardinController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/security/securityconfig.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/security/securityconfig.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/AjouterPJ.html" afterPath="$PROJECT_DIR$/target/classes/templates/AjouterPJ.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -239,10 +229,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1933" />
-    <option name="y" value="-4" />
-    <option name="width" value="648" />
-    <option name="height" value="642" />
+    <option name="x" value="-1" />
+    <option name="y" value="-35" />
+    <option name="width" value="1602" />
+    <option name="height" value="936" />
   </component>
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
@@ -500,7 +490,7 @@
       <workItem from="1517825109178" duration="1499000" />
       <workItem from="1517855969560" duration="3455000" />
       <workItem from="1517942196254" duration="23397000" />
-      <workItem from="1517966570581" duration="4037000" />
+      <workItem from="1517966570581" duration="5381000" />
     </task>
     <task id="LOCAL-00001" summary="categorie interface and implementation ok">
       <created>1514850858187</created>
@@ -593,14 +583,28 @@
       <option name="project" value="LOCAL" />
       <updated>1517951158115</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="authentification login mot de passe faite reste a ameliorer le designe de notre form connexion">
+      <created>1517970666291</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1517970666292</updated>
+    </task>
+    <task id="LOCAL-00015" summary="authentification login mot de passe faite reste a ameliorer le designe de notre form connexion">
+      <created>1517996788376</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1517996788376</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222600000" />
+    <option name="totallyTimeSpent" value="223944000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1933" y="-4" width="1297" height="780" extended-state="6" />
+    <frame x="64" y="-11" width="1537" height="912" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -613,7 +617,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25080907" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7226667" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36669335" sideWeight="0.4850088" order="0" side_tool="false" content_ui="combo" />
@@ -711,7 +715,8 @@
     <MESSAGE value="31 01" />
     <MESSAGE value="partie test de API" />
     <MESSAGE value="interface et service nouveau pj supprimer PJ fonctionne, Commentaire confirmer et supprimer fonctionne aussi" />
-    <option name="LAST_COMMIT_MESSAGE" value="interface et service nouveau pj supprimer PJ fonctionne, Commentaire confirmer et supprimer fonctionne aussi" />
+    <MESSAGE value="authentification login mot de passe faite reste a ameliorer le designe de notre form connexion" />
+    <option name="LAST_COMMIT_MESSAGE" value="authentification login mot de passe faite reste a ameliorer le designe de notre form connexion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
