@@ -121,11 +121,17 @@ public class ParcJardinnLilliosRestController {
 		
 	}
 	
-	@RequestMapping(value="/api/categorieByPJ/{id}", method = RequestMethod.GET)
-	public List<Categorie> getCategorieByPJ(@PathVariable("id") Long idParcJadin){
+	@RequestMapping(value="/api/categorieByPJ/{name}", method = RequestMethod.GET)
+	public List<Categorie> getCategorieByPJ(@PathVariable("name") String name){
 		
-
-		return mCategorieRepository.findByParcJardinnId(idParcJadin);
+		/*ParcJardin p = new ParcJardin("Parc Héron","Le parc du Héron est l'un des "
+				+ "parcs de Villeneuve-d'Ascq, d'une superficie de 110 ha. Une "
+				+ "partie est classée sous la forme de la réserve naturelle "
+				+ "régionale du Héron."
+				,"PARC", 15.0, 3.0,"Avenue Paul Langevin");
+		*/
+		return mCategorieRepository.findByParcJardinnId(name);
+		//return p;
 	}
 											 
 

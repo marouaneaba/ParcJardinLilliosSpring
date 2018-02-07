@@ -23,8 +23,11 @@ com/lille1/ParcsJardinsLillios/UI/includes/FooterController.class
 com/lille1/ParcsJardinsLillios/UI/controller/AjouterParcJardinController.class
 com/lille1/ParcsJardinsLillios/Web/CommentaireController.class
 com/lille1/ParcsJardinsLillios/security/SecurityController.class
+<<<<<<< HEAD
+=======
 com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.class
 com/lille1/ParcsJardinsLillios/Entity/Commentaire.class
+>>>>>>> 2340c250c22f6c62e88fa634b268bb8a8718c0c9
 com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.class
 com/lille1/ParcsJardinsLillios/ApiRest/ApiRestController.class
 com/lille1/ParcsJardinsLillios/DAO/HoraireRepository.class
