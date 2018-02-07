@@ -86,12 +86,14 @@ public class Application implements CommandLineRunner{
 		ParcJardin parcjardin2 = mParcJardinRepository.save(PJ3);
         
 		Categorie cat2 = new Categorie("cat2");
-		
+		Categorie cat3 = new Categorie("cat3");
+
 		cat2.setParcJardinn(parcjardin1);
 		cat2.setParcJardinn(parcjardin2);
-		
+		cat3.setParcJardinn(parcjardin2);
+
 		Categorie categorie1 = mCategorieRepository.save(cat2);
-		
+		Categorie categorie2 = mCategorieRepository.save(cat3);
 
 		
         

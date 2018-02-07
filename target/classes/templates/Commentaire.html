@@ -34,8 +34,9 @@
                     </thead>
                     <tbody th:each="com : ${AllCommentaire}" >
                     <tr>
+                        <td th:text="${com.name}"></td>
                         <td th:text="${com.commentaire}"></td>
-                        <td th:text="${com.parcJardinCommentaire.name}"></td>
+
                         <td>
                         <form th:action="@{/NouveauCommentaire/delete}" method = "Post">
                             <input type="hidden" name="id" th:value="${com.id}"/>

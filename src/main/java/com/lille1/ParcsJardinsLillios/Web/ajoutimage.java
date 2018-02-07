@@ -29,7 +29,7 @@ public class ajoutimage {
 	@PostMapping(value = "/addImagee")
     public void ajouterPJ( Model model,@RequestParam("file") MultipartFile file) {
     	System.out.println("arrivé");
-    	if(!file.isEmpty()){
+    	/*if(!file.isEmpty()){
     		
     		try{
     			byte[] bytes = file.getBytes();
@@ -52,7 +52,7 @@ public class ajoutimage {
     		}
     	} else {
 			
-		}
+		}*/
     }
 	
 	/*

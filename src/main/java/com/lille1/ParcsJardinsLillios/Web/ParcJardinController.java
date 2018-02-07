@@ -73,10 +73,11 @@ public class ParcJardinController {
 
     // http://localhost:8080/images/imageApp/image1.jpg
     @PostMapping(value = "/AjouterPJ")
-    public String ajouterPJ(HttpServletRequest request, ParcJardin nouveauPJ, 
+    public String ajouterPJ( ParcJardin nouveauPJ,
     		@RequestParam(value = "cats", required = false) List<Categorie> cats,
-    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model,@RequestParam("file") MultipartFile file,@RequestParam("nom") String name) {
-    	
+    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model,@RequestParam("file") MultipartFile file,
+                             @RequestParam("nom") String name, @RequestParam("type") String type) {
+
     	if(!file.isEmpty()){
     		
     		try{
@@ -103,6 +104,7 @@ public class ParcJardinController {
         if (cats != null) {
             for (int i = 0; i < cats.size(); i++) {
                 //nouveauPJ.getCategorie().add(cats.get(i));
+
             }
         }
       //  model.addAttribute("files", fileNames);
