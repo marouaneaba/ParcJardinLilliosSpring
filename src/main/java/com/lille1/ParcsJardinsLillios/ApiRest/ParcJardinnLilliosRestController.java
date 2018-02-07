@@ -91,19 +91,26 @@ public class ParcJardinnLilliosRestController {
 	@RequestMapping(value="/api/PJByservice/{service}", method = RequestMethod.GET)
 	public List<ParcJardin> getPJByService(@PathVariable("service") String service){
 		
-		
+		if(service.toUpperCase().equals("PARC")){
+			return parcJardinInterfaceMetier.consulterPJByType("PARC");
+		}else if(service.toUpperCase().equals("JARDIN")){
+			return parcJardinInterfaceMetier.consulterPJByType("JARDIN");
+		}else{
+			return mParcJardinServiceImpelementation.ConsulterParcsJardin();
+		}
 
-		switch(service.toUpperCase()){
+		/*switch(service.toUpperCase()){
 			case "PARC":
 				return parcJardinInterfaceMetier.consulterPJByType("PARC");
 			case "JARDIN":
 				return parcJardinInterfaceMetier.consulterPJByType("JARDIN");
 			default:
-				Categorie catTmp= categorieInterfaceMetier.ConsulterCategorieParNom(service);
-				return parcJardinInterfaceMetier.chercherPJParCategorie(catTmp);
+				return mParcJardinServiceImpelementation.ConsulterParcsJardin();
+				//Categorie catTmp= categorieInterfaceMetier.ConsulterCategorieParNom(service);
+				//return parcJardinInterfaceMetier.chercherPJParCategorie(catTmp);
 
 
-		}
+		}*/
 
 	}
 	

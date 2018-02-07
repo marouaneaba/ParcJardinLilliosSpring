@@ -78,7 +78,7 @@ public class CommentaireRestController {
 	@RequestMapping(value = "/api/PostCommentaire/{name}/{nbrEtoile}/{commentaire}", method = RequestMethod.GET)
 	public Commentaire PostCommentaire(@PathVariable("name")String sName,@PathVariable("nbrEtoile")int snbrEtoile,
 			@PathVariable("commentaire")String sCommentaire){
-		
+		System.out.println("post commentaire arrivé");
 			Commentaire commentaire = new Commentaire(sName,snbrEtoile,sCommentaire,false);
 			return mCommentaireInterface.AjouterCommentaire(commentaire);
 		
