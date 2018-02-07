@@ -30,6 +30,11 @@ com/lille1/ParcsJardinsLillios/DAO/AdminRepository.class
 com/lille1/ParcsJardinsLillios/UI/controller/AjouterParcJardinController.class
 com/lille1/ParcsJardinsLillios/Web/CommentaireController.class
 com/lille1/ParcsJardinsLillios/security/SecurityController.class
+<<<<<<< HEAD
+=======
+com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.class
+com/lille1/ParcsJardinsLillios/Entity/Commentaire.class
+>>>>>>> e9a23f3aff1acaee3d79e029a38168acd40fb7db
 com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.class
 com/lille1/ParcsJardinsLillios/DAO/HoraireRepository.class
 com/lille1/ParcsJardinsLillios/UI/includes/HeaderContorller.class
