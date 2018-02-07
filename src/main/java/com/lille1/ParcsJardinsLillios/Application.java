@@ -85,8 +85,12 @@ public class Application implements CommandLineRunner{
         ParcJardin parcjardin1 = mParcJardinRepository.save(PJ2);
 		ParcJardin parcjardin2 = mParcJardinRepository.save(PJ3);
         
-		Categorie cat2 = new Categorie("cat2");
-		Categorie cat3 = new Categorie("cat3");
+		Categorie cat2 = new Categorie("ETUDE");
+		Categorie cat3 = new Categorie("SPORT");
+		Categorie cat4 = new Categorie("RESTAURATION");
+		Categorie cat5 = new Categorie("PROMENER");
+		Categorie cat6 = new Categorie("ECOUTER");
+		Categorie cat7 = new Categorie("OBSERVER");
 
 		cat2.setParcJardinn(parcjardin1);
 		cat2.setParcJardinn(parcjardin2);
@@ -94,6 +98,16 @@ public class Application implements CommandLineRunner{
 
 		Categorie categorie1 = mCategorieRepository.save(cat2);
 		Categorie categorie2 = mCategorieRepository.save(cat3);
+
+		mCategorieRepository.save(cat4);
+
+		mCategorieRepository.save(cat5);
+
+		mCategorieRepository.save(cat6);
+
+		mCategorieRepository.save(cat7);
+
+
 
 		
         
