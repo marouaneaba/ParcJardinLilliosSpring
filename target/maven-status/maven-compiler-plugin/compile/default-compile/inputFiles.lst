@@ -12,6 +12,7 @@
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Commentaire.java
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/UI/Service/RequestParcJardin.java
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/UI/includes/HeaderContorller.java
+/home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/security/SecurityController.java
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Entity/ParcJardin.java
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Web/ParcJardinController.java
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/UI/connexion/LonginController.java

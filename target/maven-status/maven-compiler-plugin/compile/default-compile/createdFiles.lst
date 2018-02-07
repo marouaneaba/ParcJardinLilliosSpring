@@ -22,6 +22,7 @@ com/lille1/ParcsJardinsLillios/ApiRest/CategorieRestController.class
 com/lille1/ParcsJardinsLillios/UI/includes/FooterController.class
 com/lille1/ParcsJardinsLillios/UI/controller/AjouterParcJardinController.class
 com/lille1/ParcsJardinsLillios/Web/CommentaireController.class
+com/lille1/ParcsJardinsLillios/security/SecurityController.class
 com/lille1/ParcsJardinsLillios/Service/Interfaces/CategorieInterface.class
 com/lille1/ParcsJardinsLillios/Entity/Commentaire.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.class
