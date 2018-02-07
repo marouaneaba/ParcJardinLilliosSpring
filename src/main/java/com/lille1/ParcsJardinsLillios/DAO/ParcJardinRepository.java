@@ -22,5 +22,4 @@ public interface ParcJardinRepository extends JpaRepository<ParcJardin, Long>{
 	public List<ParcJardin> findByNameContaining(String name);
 
 
-
 }

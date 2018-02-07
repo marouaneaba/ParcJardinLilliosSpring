@@ -20,7 +20,10 @@ public interface CategorieRepository extends JpaRepository<Categorie, Long>{
     //@Query("select c from Categorie c inner Join c.ParcJardinn p where p.id = :idParc")
     //public List<Categorie> findByParcJardinn(@Param("idParc") Long idParc);
     @Query("select c from Categorie c inner Join c.ParcJardinn p where p.name = :nom")
-    public List<Categorie> findByParcJardinnId(@Param("nom") String nom);
+    public List<Categorie> findByParcJardinnId2(@Param("nom") String nom);
+    @Query("select c from Categorie c inner Join c.ParcJardinn p where p.id = :id")
+	public List<Categorie> findByParcJardinnId(Long id);
+
 
 
 }
