@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f6be83f-e5d1-45c4-bb2f-a426fb544aed" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Commentaire.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/Commentaire.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/connexion.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/connexion.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,8 +42,8 @@
       <file leaf-file-name="AjouterPJ.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="43" column="117" lean-forward="false" selection-start-line="43" selection-start-column="117" selection-end-line="43" selection-end-column="117" />
+            <state relative-caret-position="385">
+              <caret line="57" column="23" lean-forward="true" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -476,7 +473,7 @@
       <workItem from="1517942196254" duration="23397000" />
       <workItem from="1517966570581" duration="5736000" />
       <workItem from="1517997512766" duration="862000" />
-      <workItem from="1517999404769" duration="1342000" />
+      <workItem from="1517999404769" duration="2657000" />
     </task>
     <task id="LOCAL-00001" summary="categorie interface and implementation ok">
       <created>1514850858187</created>
@@ -594,10 +591,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226503000" />
+    <option name="totallyTimeSpent" value="227818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-35" width="1537" height="912" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -610,7 +608,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.548" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.252" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1773002" sideWeight="0.4850088" order="0" side_tool="false" content_ui="combo" />
@@ -1047,8 +1045,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="43" column="117" lean-forward="false" selection-start-line="43" selection-start-column="117" selection-end-line="43" selection-end-column="117" />
+        <state relative-caret-position="385">
+          <caret line="57" column="23" lean-forward="true" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
           <folding />
         </state>
       </provider>
