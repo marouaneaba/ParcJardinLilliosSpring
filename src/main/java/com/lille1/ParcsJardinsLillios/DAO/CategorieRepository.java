@@ -19,8 +19,8 @@ public interface CategorieRepository extends JpaRepository<Categorie, Long>{
     //@Query("select distinct c from Categorie c inner JOIN c.ParcJardinn p where p.id = :idParc ")
     //@Query("select c from Categorie c inner Join c.ParcJardinn p where p.id = :idParc")
     //public List<Categorie> findByParcJardinn(@Param("idParc") Long idParc);
-    @Query("select c from Categorie c inner Join c.ParcJardinn p where p.id = :idParc")
-    public List<Categorie> findByParcJardinnId(@Param("idParc") Long IdParc);
+    @Query("select c from Categorie c inner Join c.ParcJardinn p where p.name = :nom")
+    public List<Categorie> findByParcJardinnId(@Param("nom") String nom);
 
 
 }
