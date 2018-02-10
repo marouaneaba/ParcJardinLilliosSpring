@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,12 +22,9 @@ public class CategorieRestController {
 	private CategorieInterface mCategorieInterface;
 	
 	
-	@RequestMapping(value = "/api/Categorie", method = RequestMethod.GET)
+	@GetMapping(value = "/api/Categorie")
 	public List<Categorie> GetCategorie() {
-		
-		
-		return mCategorieInterface.consulterCategories();		
-		
+		return mCategorieInterface.consulterCategories();
 	}
 	
 	

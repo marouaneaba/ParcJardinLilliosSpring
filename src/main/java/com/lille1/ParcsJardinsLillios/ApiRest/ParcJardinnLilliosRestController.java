@@ -1,9 +1,10 @@
 
 package com.lille1.ParcsJardinsLillios.ApiRest;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,40 +27,16 @@ import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
 
-
 @RestController
 public class ParcJardinnLilliosRestController {
-	@Autowired
-	private ParcJardinInterface parcJardinInterfaceMetier;
-	@Autowired
-	private CategorieInterface categorieInterfaceMetier;
-	@Autowired
-	private CommentaireInterface commentaireInterfaceMetier;
-	@Autowired
-	private ParcJardinRepository mParcJardinRepository;
-	@Autowired
-	private CategorieRepository mCategorieRepository;
-	@Autowired
-	private ParcJardinServiceImpelementation mParcJardinServiceImpelementation;
 
-/**
-	 * Permet delister toutes les Parc/Jardinns Lillios via une requête GET
-	 * http://localhost:8080/api/beers
-	 *
-	 * @return
-	 */
-/*
+	@Autowired
+	private ParcJardinInterface mParcJardinInterface;
 
-	@RequestMapping(value = "/api/PJ", method = RequestMethod.GET)
-	public List<ParcJardin> GetParcJardinnLillios() {
-		//List<ParcJardin> parcJardinn = new ArrayList<>();
-		
-		//parcJardinn.add(new ParcJardin("AllnameParc", "AlldescriptionParc", "AlltypeParc", 1.0, 2.0, "AlladdresseParc"));
-		return mParcJardinServiceImpelementation.ConsulterParcsJardin();
-	}
+	@Autowired
+	private CategorieInterface mCategorieInterface;
 
-	*/
-/**
+	/**
 	 * Permet d'enregistrer un nouvelle Parc/Jardinns via une requête POST :
 	 * http://localhost:8080/api/beers
 	 *
@@ -75,78 +52,42 @@ public class ParcJardinnLilliosRestController {
 	 *            longitude Parc/Jardinn
 	 * @param sAdderesse
 	 *            l'address , localisation de Parc/Jardinn
-	 *//*
+	 */
+	@GetMapping(value = "/api/PJ")
+	public List<ParcJardin> GetParcJardinnLillios() {
 
-	@RequestMapping(value = "/api/PJ", method = RequestMethod.POST)
-	public void POSTParcJardinnLillios(@RequestParam("name") String sName, @RequestParam("desc") String sDescription,
-			@RequestParam("type") String sType, @RequestParam("l") double sLatitude,
-			@RequestParam("g") double sLongitude, @RequestParam("addresse") String sAdderesse) {
+		return mParcJardinInterface.ConsulterParcsJardin();
+	}
 
-		ParcJardin parcJardinn = new ParcJardin(sName, sDescription, sType, sLatitude, sLongitude, sAdderesse);
-		mParcJardinServiceImpelementation.AjouterPJ(parcJardinn);
-		//System.out.println("Post réussite contenus : " + parcJardinn);
+	@RequestMapping(value = "/api/PJBysearch/{search}", method = RequestMethod.GET)
+	public List<ParcJardin> GetParcJardinnLilliosByMotCle(@PathVariable("search") String sSearch) {
+
+		return mParcJardinInterface.ChercherPJParMotCle(sSearch);
 	}
-	
-	@RequestMapping(value="/api/PJBysearch/{search}", method = RequestMethod.GET)
-	public List<ParcJardin> getPJBySearch(@PathVariable("search") String search){
-		
-		return mParcJardinRepository.findByNameContaining(search);
-	
-	}
-	
-	@RequestMapping(value="/api/PJByservice/{service}", method = RequestMethod.GET)
-	public List<ParcJardin> getPJByService(@PathVariable("service") String service){
-		
-		if(service.toUpperCase().equals("PARC")){
-			return parcJardinInterfaceMetier.consulterPJByType("PARC");
-		}else if(service.toUpperCase().equals("JARDIN")){
-			return parcJardinInterfaceMetier.consulterPJByType("JARDIN");
-		}else{
-			return mParcJardinServiceImpelementation.ConsulterParcsJardin();
+
+	@GetMapping(value = "/api/PJByservice/{service}")
+	public List<ParcJardin> GetParcJardinnLilliosByService(@PathVariable("service") String sService) {
+		switch (sService.toUpperCase()) {
+		case "PARC":
+			return mParcJardinInterface.consulterPJByType("PARC");
+		case "JARDIN":
+			return mParcJardinInterface.consulterPJByType("JARDIN");
+		default:
+			return mParcJardinInterface.chercherPJParCategorie(mCategorieInterface.ConsulterCategorieParNom(sService));
 		}
+	}
 
-		*/
-/*switch(service.toUpperCase()){
-			case "PARC":
-				return parcJardinInterfaceMetier.consulterPJByType("PARC");
-			case "JARDIN":
-				return parcJardinInterfaceMetier.consulterPJByType("JARDIN");
-			default:
-				return mParcJardinServiceImpelementation.ConsulterParcsJardin();
-				//Categorie catTmp= categorieInterfaceMetier.ConsulterCategorieParNom(service);
-				//return parcJardinInterfaceMetier.chercherPJParCategorie(catTmp);
+	// @PostMapping(value="")
+	@GetMapping(value = "/api/PJById/{idParcJardinnLillios}")
+	public ParcJardin GetParcJardinLilliosById(@PathVariable("idParcJardinnLillios") Long sId) {
 
-
-		}*//*
-
+		return mParcJardinInterface.ChercherPJParId(sId);
 
 	}
-	
-	@RequestMapping(value="/api/PJBylocalisation/{Latitude}/{Longitude}", method = RequestMethod.GET)
-	public ParcJardin getPJByLatitudeLongitude(@PathVariable("Latitude") double Latitude,@PathVariable("Longitude") double Longitude){
-		
-		return mParcJardinServiceImpelementation.chercherPJLG(Latitude, Longitude);
-		
-	}
-	
-	@RequestMapping(value="/api/categorieByPJ/{name}", method = RequestMethod.GET)
-	public List<Categorie> getCategorieByPJ(@PathVariable("name") String name){
-		
-		*/
-/*ParcJardin p = new ParcJardin("Parc Héron","Le parc du Héron est l'un des "
-				+ "parcs de Villeneuve-d'Ascq, d'une superficie de 110 ha. Une "
-				+ "partie est classée sous la forme de la réserve naturelle "
-				+ "régionale du Héron."
-				,"PARC", 15.0, 3.0,"Avenue Paul Langevin");
-		*//*
 
-		return null;
-				//mCategorieRepository.findByParcJardinnId2(name);
-		//return p;
+	@GetMapping(value = "/api/categorieByPJ/{name}")
+	public List<ParcJardin> GetCategorieByName(@PathVariable("name") String sNameCategorie) {
+		return mParcJardinInterface.chercherPJParCategorie(mCategorieInterface.ConsulterCategorieParNom(sNameCategorie));
 	}
-											 
 
-	
-*/
 }
-
