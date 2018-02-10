@@ -64,9 +64,9 @@
                 <div class="row">
                     <legend class="col-form-label col-lg-2">Categorie  </legend>
                     <div class="col-sm-10" >
-                        <div class="form-check" th:each="cat : ${categories}">
-                            <input class="form-check-input" type="checkbox" id="cat" />
-                            <label class="form-check-label" for="cat" name="cats" th:value="${cat.id}"
+                        <div class="form-check" th:each="cat : ${Allcategories}">
+                            <input class="form-check-input"  name="cats" th:value="${cat.id}" type="checkbox" id="cat" />
+                            <label class="form-check-label" for="cat"
                                    th:text="${cat.nomcategorie}"></label>
                         </div>
 
