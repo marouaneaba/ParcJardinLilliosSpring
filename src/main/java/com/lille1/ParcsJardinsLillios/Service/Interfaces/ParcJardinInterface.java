@@ -18,7 +18,7 @@ public interface ParcJardinInterface {
 
 	 public List<ParcJardin> ChercherPJParMotCle(String KeyWordJP);
 	
-
+	public ParcJardin AjouterListCatToPJ(List<Categorie> lcat, ParcJardin PJ);
 
 	 public ParcJardin chercherPJParNom(String nomPj);
 

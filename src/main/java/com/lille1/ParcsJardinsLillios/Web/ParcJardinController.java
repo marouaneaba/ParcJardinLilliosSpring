@@ -1,6 +1,7 @@
 package com.lille1.ParcsJardinsLillios.Web;
 
 import com.lille1.ParcsJardinsLillios.Entity.Categorie;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -30,7 +31,8 @@ import java.util.List;
 public class ParcJardinController {
     private final Logger logger = LoggerFactory.getLogger(ParcJardinController.class);
 
-
+    @Autowired
+    private CategorieInterface categorieInterfaceMetier;
     @Autowired
     private ParcJardinRepository parcJardinRepository;
     @Autowired
@@ -74,9 +76,8 @@ public class ParcJardinController {
     // http://localhost:8080/images/imageApp/image1.jpg
     @PostMapping(value = "/AjouterPJ")
     public String ajouterPJ( ParcJardin nouveauPJ,
-    		@RequestParam(value = "cats", required = false) List<Categorie> cats,
-    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model,@RequestParam("file") MultipartFile file,
-                             @RequestParam("nom") String name, @RequestParam("type") String type) {
+    		@RequestParam(value = "cats") List<Long> cats,
+    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model,@RequestParam("file") MultipartFile file) {
 
     	if(!file.isEmpty()){
     		
@@ -107,9 +108,19 @@ public class ParcJardinController {
 
             }
         }
-      //  model.addAttribute("files", fileNames);
+        List<Categorie> listCatTmp = new ArrayList<>();
+        for(long idcat : cats){
+    	     listCatTmp.add(categorieInterfaceMetier.ColsulterCategorieId(idcat));
+        }
 
-        parcJardinRepository.save(nouveauPJ);
+        for(Categorie tmpcat : listCatTmp){
+    	    System.out.println("---------"+tmpcat.toString());
+        }
+      //  model.addAttribute("files", fileNames);
+        ParcJardin tmp = parcJardinRepository.save(nouveauPJ);
+        parcJardinInterfaceMetier.AjouterListCatToPJ(listCatTmp,tmp);
+
+
         return "redirect:/operationPJ";
     }
     

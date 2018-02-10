@@ -112,8 +112,8 @@ public class Application implements CommandLineRunner{
 		Categorie catsave6 = mCategorieRepository.save(cat6);
 		Categorie catsave7 = mCategorieRepository.save(cat7);
 
-
-
+		List<Categorie> ltmpcat = parcJardinInterfaceMetier.ConsulterCategoriesPJ(parcjardin1.getId());
+		parcJardinInterfaceMetier.AjouterListCatToPJ(ltmpcat,PJ3);
 
 
 		Horaire h1 = new Horaire("8:00","18:00", "lundi",parcjardin1);

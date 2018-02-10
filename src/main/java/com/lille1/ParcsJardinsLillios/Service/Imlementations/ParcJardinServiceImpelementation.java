@@ -54,6 +54,15 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     }
 
     @Override
+    public ParcJardin AjouterListCatToPJ(List<Categorie> lcat, ParcJardin PJ) {
+        for (Categorie cat : lcat) {
+            Categorie tmp = categorieRepository.findById(cat.getId());
+            PJ.setCategories(tmp);
+        }
+        return parcJardinRepository.save(PJ);
+    }
+
+    @Override
     public ParcJardin ChercherPJParId(Long id) {
         ParcJardin PJ = parcJardinRepository.findById(id);
         Hibernate.initialize(PJ);
@@ -207,5 +216,6 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
         return commentaireRepository.findByConfirmer(false);
 
     }*/
+
 
 }

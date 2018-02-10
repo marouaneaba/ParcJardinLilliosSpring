@@ -21,7 +21,7 @@ public class formulairePJ {
 
     @GetMapping(value="/AjouterPJ")
     public String afficherFormulairePJ(Model model){
-        model.addAttribute("categories",categorieInterfaceMetier.consulterCategories());
+        model.addAttribute("Allcategories",categorieInterfaceMetier.consulterCategories());
         
         model.addAttribute("nouveauPJ", new ParcJardin());
         return "AjouterPJ";
