@@ -4,27 +4,13 @@ package com.lille1.ParcsJardinsLillios.ApiRest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
-
-import javax.imageio.ImageIO;
-
-import com.lille1.ParcsJardinsLillios.DAO.CategorieRepository;
 import com.lille1.ParcsJardinsLillios.DAO.ParcJardinRepository;
 import com.lille1.ParcsJardinsLillios.Entity.*;
-import com.lille1.ParcsJardinsLillios.Service.Imlementations.ParcJardinServiceImpelementation;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
-import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
 
 @RestController
