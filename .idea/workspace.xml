@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f6be83f-e5d1-45c4-bb2f-a426fb544aed" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/CommentaireRestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/CommentaireRestController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ParcJardinnLilliosRestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ParcJardinnLilliosRestController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CommentaireInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/CommentaireInterface.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Application.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Application.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplementation.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImpelementation.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImpelementation.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Interfaces/CommentaireInterface.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Service/Interfaces/CommentaireInterface.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Web/CommentaireController.class" afterPath="$PROJECT_DIR$/target/classes/com/lille1/ParcsJardinsLillios/Web/CommentaireController.class" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-    </list>
+    <list default="true" id="2f6be83f-e5d1-45c4-bb2f-a426fb544aed" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -578,7 +563,7 @@
       <workItem from="1518209639323" duration="246000" />
       <workItem from="1518217007244" duration="1846000" />
       <workItem from="1518262953340" duration="737000" />
-      <workItem from="1518264495537" duration="11891000" />
+      <workItem from="1518264495537" duration="12325000" />
     </task>
     <task id="LOCAL-00001" summary="categorie interface and implementation ok">
       <created>1514850858187</created>
@@ -699,11 +684,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518273120978</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="teste API">
+      <created>1518289241329</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1518289241329</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257419000" />
+    <option name="totallyTimeSpent" value="257853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-35" width="1537" height="912" extended-state="6" />
@@ -819,7 +811,8 @@
     <MESSAGE value="interface et service nouveau pj supprimer PJ fonctionne, Commentaire confirmer et supprimer fonctionne aussi" />
     <MESSAGE value="authentification login mot de passe faite reste a ameliorer le designe de notre form connexion" />
     <MESSAGE value="j ai changer la structure comme on a discuter hier, j ai implemente les services de parcjardin, il reste les autre et apres je teste l api" />
-    <option name="LAST_COMMIT_MESSAGE" value="j ai changer la structure comme on a discuter hier, j ai implemente les services de parcjardin, il reste les autre et apres je teste l api" />
+    <MESSAGE value="teste API" />
+    <option name="LAST_COMMIT_MESSAGE" value="teste API" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
