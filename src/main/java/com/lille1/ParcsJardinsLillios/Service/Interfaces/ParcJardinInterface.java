@@ -42,7 +42,7 @@ public interface ParcJardinInterface {
 
 	public ParcJardin supprimerCategorieFromPJ(Categorie categorie, ParcJardin PJ);
 
-	public ParcJardin chercherPJLG(String l, String g);
+	public List<ParcJardin> chercherPJLG(String l, String g);
 
 	public List<ParcJardin> consulterPJByType(String type);
 

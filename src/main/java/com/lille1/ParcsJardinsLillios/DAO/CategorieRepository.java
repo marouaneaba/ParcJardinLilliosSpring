@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface CategorieRepository extends JpaRepository<Categorie, Long>{
 
-   // public Categorie findByNomCategorie(String Nom);
+   	public List<Categorie> findByNomcategorie(String Nom);
     public Categorie findById(Long id);
     //public void deleteById(Long id);
     //public Categorie findBynomcategorie(String nomCategorie);

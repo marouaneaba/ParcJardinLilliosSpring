@@ -192,8 +192,8 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     }
 
     @Override
-    public ParcJardin chercherPJLG(String l, String g) {
-        return parcJardinRepository.trouverPJparLG(l,g);
+    public List<ParcJardin> chercherPJLG(String l, String g) {
+        return parcJardinRepository.trouverPJparLG(l, g);
     }
 
     @Override

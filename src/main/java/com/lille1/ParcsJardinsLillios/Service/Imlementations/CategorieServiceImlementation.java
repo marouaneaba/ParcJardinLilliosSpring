@@ -59,8 +59,8 @@ public class CategorieServiceImlementation implements CategorieInterface{
     }
 
     @Override
-    public Categorie ConsulterCategorieParNom(String nomCategorie) {
-        return null;//categorieRepository.findByNomCategorie(nomCategorie);
+    public List<Categorie> ConsulterCategorieParNom(String nomCategorie) {
+        return categorieRepository.findByNomcategorie(nomCategorie);
     }
 
     @Override

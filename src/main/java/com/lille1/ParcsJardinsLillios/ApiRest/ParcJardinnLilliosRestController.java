@@ -35,6 +35,9 @@ public class ParcJardinnLilliosRestController {
 
 	@Autowired
 	private CategorieInterface mCategorieInterface;
+	
+	@Autowired
+	private ParcJardinRepository mParcJardinRepository;
 
 	/**
 	 * Permet d'enregistrer un nouvelle Parc/Jardinns via une requête POST :
@@ -61,8 +64,8 @@ public class ParcJardinnLilliosRestController {
 
 	@RequestMapping(value = "/api/PJBysearch/{search}", method = RequestMethod.GET)
 	public List<ParcJardin> GetParcJardinnLilliosByMotCle(@PathVariable("search") String sSearch) {
-
-		return mParcJardinInterface.ChercherPJParMotCle(sSearch);
+		
+		return mParcJardinRepository.findByNameContaining(sSearch);
 	}
 
 	@GetMapping(value = "/api/PJByservice/{service}")
@@ -73,21 +76,15 @@ public class ParcJardinnLilliosRestController {
 		case "JARDIN":
 			return mParcJardinInterface.consulterPJByType("JARDIN");
 		default:
-			return mParcJardinInterface.chercherPJParCategorie(mCategorieInterface.ConsulterCategorieParNom(sService));
+			return mParcJardinInterface.chercherPJParCategorie(mCategorieInterface.ConsulterCategorieParNom(sService).get(0));
 		}
 	}
 
-	// @PostMapping(value="")
 	@GetMapping(value = "/api/PJById/{idParcJardinnLillios}")
 	public ParcJardin GetParcJardinLilliosById(@PathVariable("idParcJardinnLillios") Long sId) {
 
 		return mParcJardinInterface.ChercherPJParId(sId);
 
-	}
-
-	@GetMapping(value = "/api/categorieByPJ/{name}")
-	public List<ParcJardin> GetCategorieByName(@PathVariable("name") String sNameCategorie) {
-		return mParcJardinInterface.chercherPJParCategorie(mCategorieInterface.ConsulterCategorieParNom(sNameCategorie));
 	}
 
 }

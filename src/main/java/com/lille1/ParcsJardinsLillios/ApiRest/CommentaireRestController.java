@@ -55,7 +55,7 @@ public class CommentaireRestController {
 			@PathVariable("nbrEtoile") int sNbrEtoile,
 			@PathVariable("commentaire") String sCommentaire) {
 		
-		Commentaire commentaire = new Commentaire(sName, sNbrEtoile, sCommentaire, false, mParcJardinInterface.ChercherPJParId(sId));
+		Commentaire commentaire = new Commentaire(sCommentaire, sNbrEtoile,sName , false, mParcJardinInterface.ChercherPJParId(sId));
 		return mCommentaireInterface.AjouterCommentaire(commentaire);
 
 	}
