@@ -15,6 +15,8 @@ public interface CommentaireRepository extends JpaRepository<Commentaire, Long>{
 
 	public List<Commentaire> findByParcJardinn(ParcJardin parcJardinn);
 
+	public void delete(Commentaire commentaire);
+
 	
 
 

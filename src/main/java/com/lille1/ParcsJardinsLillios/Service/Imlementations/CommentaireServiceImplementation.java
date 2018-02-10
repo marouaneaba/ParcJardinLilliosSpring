@@ -27,7 +27,7 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
     }
 
     @Override
-    public ParcJardin ValiderCommentaire(Commentaire commentaire) throws Exception {
+    public void ValiderCommentaire(Commentaire commentaire) throws Exception {
 /*
         ParcJardin tmpPJ = null;
 
@@ -47,7 +47,11 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
             throw new Exception("commentaire a valider non trouve");
 
         return parcJardinRepository.save(tmpPJ);*/
-        return null;
+
+
+        commentaire.setConfirmer(true);
+        commentaireRepository.save(commentaire);
+
     }
 
     @Override
@@ -66,7 +70,7 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
         parcJardinRepository.save(tmpPJ);
         commentaireRepository.delete(commentaire);
 */
-
+        commentaireRepository.delete(commentaire);
     }
 
     @Override
@@ -88,7 +92,7 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
 
     @Override
     public List<Commentaire> ListeCommentaireParPJ(ParcJardin PJ) {
-        return null;
+        return commentaireRepository.findByParcJardinn(PJ);
     }
 
     @Override

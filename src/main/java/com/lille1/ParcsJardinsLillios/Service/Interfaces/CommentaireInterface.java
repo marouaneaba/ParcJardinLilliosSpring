@@ -9,7 +9,7 @@ public interface CommentaireInterface {
 
 	public Commentaire AjouterCommentaire(Commentaire commentaire);
 
-	public ParcJardin ValiderCommentaire(Commentaire commentaire) throws Exception;
+	public void ValiderCommentaire(Commentaire commentaire) throws Exception;
 	
 	public void SupprimerCommentaire(Commentaire commentaire);
 

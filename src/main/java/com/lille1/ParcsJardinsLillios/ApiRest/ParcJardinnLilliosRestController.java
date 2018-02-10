@@ -1,4 +1,4 @@
-/*
+
 package com.lille1.ParcsJardinsLillios.ApiRest;
 
 
@@ -41,13 +41,14 @@ public class ParcJardinnLilliosRestController {
 	private CategorieRepository mCategorieRepository;
 	@Autowired
 	private ParcJardinServiceImpelementation mParcJardinServiceImpelementation;
-	*/
+
 /**
 	 * Permet delister toutes les Parc/Jardinns Lillios via une requête GET
 	 * http://localhost:8080/api/beers
 	 *
 	 * @return
-	 *//*
+	 */
+/*
 
 	@RequestMapping(value = "/api/PJ", method = RequestMethod.GET)
 	public List<ParcJardin> GetParcJardinnLillios() {
@@ -146,6 +147,6 @@ public class ParcJardinnLilliosRestController {
 											 
 
 	
-
-}
 */
+}
+

@@ -5,10 +5,12 @@ com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.class
 com/lille1/ParcsJardinsLillios/Web/ParcJardinController.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/HoraireServiceImplementation.class
 com/lille1/ParcsJardinsLillios/UI/controller/ListerJardinParcController.class
+com/lille1/ParcsJardinsLillios/ApiRest/CommentaireRestController.class
 com/lille1/ParcsJardinsLillios/Web/ajoutimage.class
 com/lille1/ParcsJardinsLillios/security/securityconfig.class
 com/lille1/ParcsJardinsLillios/Entity/Admin.class
 com/lille1/ParcsJardinsLillios/Entity/Horaire.class
+com/lille1/ParcsJardinsLillios/ApiRest/ParcJardinnLilliosRestController.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/CategorieServiceImlementation.class
 com/lille1/ParcsJardinsLillios/Service/Interfaces/HoraireInterface.class
 com/lille1/ParcsJardinsLillios/Web/UploadController.class

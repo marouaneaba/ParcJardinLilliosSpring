@@ -144,7 +144,9 @@ public class Application implements CommandLineRunner{
 		ParcJardin PJLG = parcJardinInterfaceMetier.chercherPJLG("30.0","3.16");
 		System.out.println("PJLGGGG"+PJLG.toString());
 		
-		
+
+		commentaireInterfaceMetier.ValiderCommentaire(commentaire1);
+		commentaireInterfaceMetier.SupprimerCommentaire(commentaire3);
 
 		
         
