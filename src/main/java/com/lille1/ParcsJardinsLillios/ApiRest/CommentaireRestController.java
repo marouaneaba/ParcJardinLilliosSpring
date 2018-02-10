@@ -1,3 +1,4 @@
+/*
 package com.lille1.ParcsJardinsLillios.ApiRest;
 
 import java.util.ArrayList;
@@ -27,20 +28,25 @@ public class CommentaireRestController {
 	
 	List<Commentaire> commentaires = new ArrayList<Commentaire>();
 
-	/**
+	*/
+/**
 	 * Permet delister toutes les commentaires d'un Parc/Jardinn Lillios via une
 	 * requête GET http://localhost:8080/api/commentaire
 	 *
 	 * @return
-	 */
-	/*@RequestMapping(value = "/api/Commentaire", method = RequestMethod.GET)
+	 *//*
+
+	*/
+/*@RequestMapping(value = "/api/Commentaire", method = RequestMethod.GET)
 	public List<Commentaire> GetCommentaire() {
 		List<Commentaire> commentaire = new ArrayList<>();
 		commentaire.add(new Commentaire("commentaire 1 ", true));
 		return commentaire;
-	}*/
+	}*//*
 
-	/**
+
+	*/
+/**
 	 * Permet d'enregistrer un nouvelle Parc/Jardinns via une requête POST :
 	 * http://localhost:8080/api/beers
 	 *
@@ -50,7 +56,8 @@ public class CommentaireRestController {
 	 *            la description de comentaire
 	 * @param sConfirmer
 	 *            true : le commentaire est confirmer par l'administrateur Où Non.
-	 */
+	 *//*
+
 	@RequestMapping(value = "/api/Commentaire", method = RequestMethod.POST)
 	public String POSTCommentaire(@RequestParam("name") String name,@RequestParam("nbrEtoile") int nbrEtoile,
 			@RequestParam("commentaire") String sCommentaire,@RequestParam("id")Long id) {
@@ -83,7 +90,8 @@ public class CommentaireRestController {
 			return mCommentaireInterface.AjouterCommentaire(commentaire);
 		
 	}
-	/*
+	*/
+/*
 	@RequestMapping(value = "/api/CommentaireNonConfirmer", method = RequestMethod.GET)
 	public List<Commentaire> CommentaireNonConfirmer(@PathVariable("name")String sName,@PathVariable("nbrEtoile")int snbrEtoile,
 			@PathVariable("commentaire")String sCommentaire){
@@ -96,6 +104,8 @@ public class CommentaireRestController {
 		}
 		
 		return commentairesConfirmer;
-	}*/
+	}*//*
+
 
 }
+*/

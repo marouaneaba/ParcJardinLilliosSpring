@@ -23,17 +23,17 @@ public class Horaire implements Serializable {
 	private String journee;
 	
 	@ManyToOne(targetEntity = ParcJardin.class)
-	private ParcJardin ParcJardinn;
+	private ParcJardin parcJardin;
 
 	
 	public Horaire(){}
 	
-	public Horaire(String ouverture, String fermuture, String journee,ParcJardin parcJardinn) {
+	public Horaire(String ouverture, String fermuture, String journee,ParcJardin parcJardin) {
 		super();
 		this.ouverture = ouverture;
 		this.fermuture = fermuture;
 		this.journee = journee;
-		ParcJardinn = parcJardinn;
+		this.parcJardin = parcJardin;
 	}
 
 	public Long getId() {
@@ -69,11 +69,11 @@ public class Horaire implements Serializable {
 	}
 
 	public ParcJardin getParcJardinn() {
-		return ParcJardinn;
+		return parcJardin;
 	}
 
 	public void setParcJardinn(ParcJardin parcJardinn) {
-		ParcJardinn = parcJardinn;
+		this.parcJardin = parcJardin;
 	}
 
 	

@@ -1,3 +1,4 @@
+/*
 package com.lille1.ParcsJardinsLillios.ApiRest;
 
 
@@ -40,12 +41,14 @@ public class ParcJardinnLilliosRestController {
 	private CategorieRepository mCategorieRepository;
 	@Autowired
 	private ParcJardinServiceImpelementation mParcJardinServiceImpelementation;
-	/**
+	*/
+/**
 	 * Permet delister toutes les Parc/Jardinns Lillios via une requête GET
 	 * http://localhost:8080/api/beers
 	 *
 	 * @return
-	 */
+	 *//*
+
 	@RequestMapping(value = "/api/PJ", method = RequestMethod.GET)
 	public List<ParcJardin> GetParcJardinnLillios() {
 		//List<ParcJardin> parcJardinn = new ArrayList<>();
@@ -54,7 +57,8 @@ public class ParcJardinnLilliosRestController {
 		return mParcJardinServiceImpelementation.ConsulterParcsJardin();
 	}
 
-	/**
+	*/
+/**
 	 * Permet d'enregistrer un nouvelle Parc/Jardinns via une requête POST :
 	 * http://localhost:8080/api/beers
 	 *
@@ -70,7 +74,8 @@ public class ParcJardinnLilliosRestController {
 	 *            longitude Parc/Jardinn
 	 * @param sAdderesse
 	 *            l'address , localisation de Parc/Jardinn
-	 */
+	 *//*
+
 	@RequestMapping(value = "/api/PJ", method = RequestMethod.POST)
 	public void POSTParcJardinnLillios(@RequestParam("name") String sName, @RequestParam("desc") String sDescription,
 			@RequestParam("type") String sType, @RequestParam("l") double sLatitude,
@@ -99,7 +104,8 @@ public class ParcJardinnLilliosRestController {
 			return mParcJardinServiceImpelementation.ConsulterParcsJardin();
 		}
 
-		/*switch(service.toUpperCase()){
+		*/
+/*switch(service.toUpperCase()){
 			case "PARC":
 				return parcJardinInterfaceMetier.consulterPJByType("PARC");
 			case "JARDIN":
@@ -110,7 +116,8 @@ public class ParcJardinnLilliosRestController {
 				//return parcJardinInterfaceMetier.chercherPJParCategorie(catTmp);
 
 
-		}*/
+		}*//*
+
 
 	}
 	
@@ -124,13 +131,16 @@ public class ParcJardinnLilliosRestController {
 	@RequestMapping(value="/api/categorieByPJ/{name}", method = RequestMethod.GET)
 	public List<Categorie> getCategorieByPJ(@PathVariable("name") String name){
 		
-		/*ParcJardin p = new ParcJardin("Parc Héron","Le parc du Héron est l'un des "
+		*/
+/*ParcJardin p = new ParcJardin("Parc Héron","Le parc du Héron est l'un des "
 				+ "parcs de Villeneuve-d'Ascq, d'une superficie de 110 ha. Une "
 				+ "partie est classée sous la forme de la réserve naturelle "
 				+ "régionale du Héron."
 				,"PARC", 15.0, 3.0,"Avenue Paul Langevin");
-		*/
-		return mCategorieRepository.findByParcJardinnId2(name);
+		*//*
+
+		return null;
+				//mCategorieRepository.findByParcJardinnId2(name);
 		//return p;
 	}
 											 
@@ -138,3 +148,4 @@ public class ParcJardinnLilliosRestController {
 	
 
 }
+*/

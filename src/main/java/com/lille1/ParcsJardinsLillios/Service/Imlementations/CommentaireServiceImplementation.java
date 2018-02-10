@@ -28,11 +28,11 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
 
     @Override
     public ParcJardin ValiderCommentaire(Commentaire commentaire) throws Exception {
-
+/*
         ParcJardin tmpPJ = null;
 
-        /*Commentaire Tmp =commentaireRepository.findById(commentaire.getId());
-        Tmp.setConfirmer(true);*/
+        *//*Commentaire Tmp =commentaireRepository.findById(commentaire.getId());
+        Tmp.setConfirmer(true);*//*
         for (ParcJardin pj : parcJardinRepository.findAll()){
             for(Commentaire com : pj.getCommentaires()){
                 if(com.getId().equals(commentaire.getId())) {
@@ -46,12 +46,13 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
         if(tmpPJ==null)
             throw new Exception("commentaire a valider non trouve");
 
-        return parcJardinRepository.save(tmpPJ);
+        return parcJardinRepository.save(tmpPJ);*/
+        return null;
     }
 
     @Override
     public void SupprimerCommentaire(Commentaire commentaire) {
-        ParcJardin tmpPJ = null;
+       /* ParcJardin tmpPJ = null;
         for (ParcJardin pj : parcJardinRepository.findAll()){
             for(Commentaire com : pj.getCommentaires()){
                 if(com.getId().equals( commentaire.getId())) {
@@ -64,8 +65,18 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
 
         parcJardinRepository.save(tmpPJ);
         commentaireRepository.delete(commentaire);
+*/
 
+    }
 
+    @Override
+    public List<Commentaire> ConsulternouveauCommentaires() {
+        return commentaireRepository.findByConfirmer(false);
+    }
+
+    @Override
+    public List<Commentaire> ConsulterCommentaireByPJ(ParcJardin PJ) {
+        return commentaireRepository.findByParcJardinn(PJ);
     }
 
 

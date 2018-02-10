@@ -38,6 +38,8 @@ public class Application implements CommandLineRunner{
 	@Autowired
 	private ParcJardinRepository mParcJardinRepository;
 	@Autowired
+	private HoraireRepository mHoraireRepository;
+	@Autowired
 	private ParcJardinRepository parcJardinRepository;
 	@Autowired
 	private CommentaireRepository commentaireRepository;
@@ -65,26 +67,37 @@ public class Application implements CommandLineRunner{
 
 	@Override
 	public void run(java.lang.String... arg0) throws Exception {
-		
-		
-		Commentaire cm1 = new Commentaire("com1",3,"pers1",false);
-        Commentaire cm2 = new Commentaire("com2",5,"pers2",false);
-		Commentaire cm3 = new Commentaire("com3",5,"pers3",false);
+
+		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "JARDIN","30.0","3.16","adressJardin1");
+		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "PARC","21.0","2.0","adressJardin2");
+
+		Categorie catN1 = new Categorie("toto1");
+		Categorie catN2 = new Categorie("toto2");
+		Categorie catN3 = new Categorie("toto3");
+		mCategorieRepository.save(catN1);
+		mCategorieRepository.save(catN2);
+		mCategorieRepository.save(catN3);
+
+		parcJardinInterfaceMetier.ajouterCategorieToPJ(catN1,PJ2);
+		parcJardinInterfaceMetier.ajouterCategorieToPJ(catN2,PJ3);
+		parcJardinInterfaceMetier.ajouterCategorieToPJ(catN3,PJ2);
+
+
+		Commentaire cm1 = new Commentaire("com1",3,"pers1",false, PJ2);
+		Commentaire cm2 = new Commentaire("com2",5,"pers2",false,PJ2);
+		Commentaire cm3 = new Commentaire("com3",5,"pers3",false,PJ3);
 
 		Commentaire commentaire1 = mCommentaireRepository.save(cm1);
-        Commentaire commentaire2 = mCommentaireRepository.save(cm2);
+		Commentaire commentaire2 = mCommentaireRepository.save(cm2);
 		Commentaire commentaire3 = mCommentaireRepository.save(cm3);
 
-		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "JARDIN",30.0,3.16,"adressJardin1");
-		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "PARC",21.0,2.0,"adressJardin2");
-        
-		PJ2.setCommentaires(commentaire1);
-		PJ2.setCommentaires(commentaire2);
-		PJ2.setCommentaires(commentaire3);
-
-        ParcJardin parcjardin1 = mParcJardinRepository.save(PJ2);
+		ParcJardin parcjardin1 = mParcJardinRepository.save(PJ2);
 		ParcJardin parcjardin2 = mParcJardinRepository.save(PJ3);
-        
+
+
+
+
+
 		Categorie cat2 = new Categorie("ETUDE");
 		Categorie cat3 = new Categorie("SPORT");
 		Categorie cat4 = new Categorie("RESTAURATION");
@@ -92,31 +105,47 @@ public class Application implements CommandLineRunner{
 		Categorie cat6 = new Categorie("ECOUTER");
 		Categorie cat7 = new Categorie("OBSERVER");
 
-		cat2.setParcJardinn(parcjardin1);
-		cat2.setParcJardinn(parcjardin2);
-		cat3.setParcJardinn(parcjardin2);
-
-		Categorie categorie1 = mCategorieRepository.save(cat2);
-		Categorie categorie2 = mCategorieRepository.save(cat3);
-
-		mCategorieRepository.save(cat4);
-
-		mCategorieRepository.save(cat5);
-
-		mCategorieRepository.save(cat6);
-
-		mCategorieRepository.save(cat7);
+        Categorie catsave2 = mCategorieRepository.save(cat2);
+		Categorie catsave3 = mCategorieRepository.save(cat3);
+		Categorie catsave4 = mCategorieRepository.save(cat4);
+		Categorie catsave5 = mCategorieRepository.save(cat5);
+		Categorie catsave6 = mCategorieRepository.save(cat6);
+		Categorie catsave7 = mCategorieRepository.save(cat7);
 
 
 
+
+
+		Horaire h1 = new Horaire("8:00","18:00", "lundi",parcjardin1);
+		mHoraireRepository.save(h1);
+
+		List<ParcJardin> listPJByCat = parcJardinInterfaceMetier.chercherPJParCategorie(cat2);
+
+		for(ParcJardin pj : listPJByCat){
+			System.out.println("PJ avec Cat 2"+pj.toString());
+		}
+
+
+
+		List<Categorie> listCat= parcJardinInterfaceMetier.ConsulterCategoriesPJ(parcjardin1.getId());
+
+		for(Categorie cat : listCat){
+			System.out.println("cat de PJ1"+cat.toString());
+		}
+
+
+		/*parcJardinInterfaceMetier.SupprimerPJ(parcjardin2);
+		List<ParcJardin> listPJ= parcJardinInterfaceMetier.ConsulterParcsJardin();
+		for(ParcJardin pj : listPJ){
+			System.out.println(pj.toString());
+		}*/
+
+
+		ParcJardin PJLG = parcJardinInterfaceMetier.chercherPJLG("30.0","3.16");
+		System.out.println("PJLGGGG"+PJLG.toString());
 		
-        
-        
 		
-		
-		
-		
-		
+
 		
         
         

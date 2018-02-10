@@ -13,7 +13,7 @@ public interface CommentaireRepository extends JpaRepository<Commentaire, Long>{
 
 	public List<Commentaire> findByConfirmer(Boolean confirmer);
 
-	
+	public List<Commentaire> findByParcJardinn(ParcJardin parcJardinn);
 
 	
 

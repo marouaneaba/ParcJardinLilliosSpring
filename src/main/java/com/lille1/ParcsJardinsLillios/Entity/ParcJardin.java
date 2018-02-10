@@ -25,9 +25,9 @@ public class ParcJardin implements Serializable {
 	@Column
 	private String type;  // parc ou jardin
 	@Column
-	private double L;
+	private String L;
 	@Column
-	private double G;
+	private String G;
 	@Column
 	private String adresse;
 	@Column
@@ -35,11 +35,11 @@ public class ParcJardin implements Serializable {
 	private List<java.lang.String> NameImage;
 	
 	//@OneToMany(mappedBy = "parcJardinCommentaire")
-		@OneToMany
-		private List<Commentaire> commentaires = new ArrayList<>();
+		//@OneToMany
+		//private List<Commentaire> commentaires = new ArrayList<>();
 
-		@ManyToMany
-		private List<Horaire> horaire = new ArrayList<>();
+		/*@ManyToMany
+		private List<Horaire> horaire = new ArrayList<>();*/
 		
 		//@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 		/*@JoinTable(
@@ -47,9 +47,10 @@ public class ParcJardin implements Serializable {
 			      joinColumns=@JoinColumn(name="parcJardin_id", referencedColumnName="id"),
 			      inverseJoinColumns=@JoinColumn(name="categorie_id", referencedColumnName="id"))
 		private List<Categorie> categories = new ArrayList<>();*/
-		
-		
-		
+
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	private List<Categorie> categories = new ArrayList<>();
 
 	/*@Lob
 	@Column(name="photos", length=100000)
@@ -74,13 +75,12 @@ public class ParcJardin implements Serializable {
 		this.photos.add(photos);
 	}*/
 
-	
-	
+
 
 
 	public ParcJardin(){}
 	
-	public ParcJardin(java.lang.String name, java.lang.String description, String type, double l, double g, java.lang.String adresse
+	public ParcJardin(java.lang.String name, java.lang.String description, String type, String l, String g, java.lang.String adresse
 			) {
 		super();
 		this.name = name;
@@ -89,7 +89,7 @@ public class ParcJardin implements Serializable {
 		this.L = l;
 		this.G = g;
 		this.adresse = adresse;
-		this.commentaires = new ArrayList<>();
+		//this.commentaires = new ArrayList<>();
 		this.NameImage = new ArrayList<>();
 
 	}
@@ -103,9 +103,9 @@ public class ParcJardin implements Serializable {
 		NameImage.add(nameImage);
 	}
 
-	public void setCommentaires(List<Commentaire> commentaires) {
+	/*public void setCommentaires(List<Commentaire> commentaires) {
 		this.commentaires = commentaires;
-	}
+	}*/
 
 	public Long getId() {
 		return id;
@@ -139,19 +139,19 @@ public class ParcJardin implements Serializable {
 		this.type = type;
 	}
 
-	public double getL() {
+	public String getL() {
 		return L;
 	}
 
-	public void setL(double l) {
+	public void setL(String l) {
 		L = l;
 	}
 
-	public double getG() {
+	public String getG() {
 		return G;
 	}
 
-	public void setG(double g) {
+	public void setG(String g) {
 		G = g;
 	}
 
@@ -163,27 +163,33 @@ public class ParcJardin implements Serializable {
 		this.adresse = adresse;
 	}
 
-	public List<Commentaire> getCommentaires() {
+	/*public List<Commentaire> getCommentaires() {
 		return commentaires;
-	}
+	}*/
 
-	public void setCommentaires(Commentaire commentaires) {
+	/*public void setCommentaires(Commentaire commentaires) {
 		this.commentaires.add(commentaires);
+	}*/
+
+	public List<Categorie> getCategories() {
+		return categories;
 	}
 
-	public List<Horaire> getHoraire() {
+	public void setCategories(Categorie categories) {
+		this.categories.add(categories);
+	}
+	/*public List<Horaire> getHoraire() {
 		return horaire;
 	}
 
 	public void setHoraire(List<Horaire> horaire) {
 		this.horaire = horaire;
 	}
-
+*/
 	@Override
 	public String toString() {
 		return "ParcJardin [id=" + id + ", name=" + name + ", description=" + description + ", type=" + type + ", L="
-				+ L + ", G=" + G + ", adresse=" + adresse + ", commentaires=" + commentaires + ", horaire=" + horaire
-				+ "]";
+				+ L + ", G=" + G + ", adresse=" + adresse + "]";
 	}
 	
 	

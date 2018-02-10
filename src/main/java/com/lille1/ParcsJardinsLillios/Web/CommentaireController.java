@@ -20,7 +20,7 @@ public class CommentaireController {
     @GetMapping(value="/NouveauCommentaire")
     public String afficherNouveauCommentaire(Model model){
         //model.addAttribute("CommentairesByPJ", commentaireInterfaceMetier.);
-        model.addAttribute("AllCommentaire", parcJardinInterfaceMetier.ConsulterNouveauCommentaire(false));
+        model.addAttribute("AllCommentaire", commentaireInterfaceMetier.ConsulternouveauCommentaires());
         return "Commentaire";
     }
 

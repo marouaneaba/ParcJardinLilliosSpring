@@ -67,7 +67,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public List<ParcJardin> chercherPJParCategorie(Categorie categorie) {
-        return null;//parcJardinRepository.findByCategories(categorie);
+        return parcJardinRepository.findByCategories(categorie);
     }
 
     @Override
@@ -82,15 +82,15 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public void SupprimerPJ(ParcJardin PJ) {
-        try {
+        /*try {
 
             ParcJardin tmp = parcJardinRepository.findById(PJ.getId());
 
-            /*ArrayList<Categorie> listcat = new ArrayList<>(tmp.getCategorie());
+            *//*ArrayList<Categorie> listcat = new ArrayList<>(tmp.getCategorie());
 
             for(Categorie categorie : listcat){
                 tmp.getCategorie().remove(categorie);
-            }*/
+            }*//*
 
             List<Categorie> listCat = categorieRepository.findByParcJardinnId(tmp.getId());
             for(Categorie categorie : listCat){
@@ -108,7 +108,17 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
         }catch(Exception e){
             e.printStackTrace();
         }
+*/
+        List<Categorie> ListTmpCat = PJ.getCategories();
+        for (Categorie cat : ListTmpCat){
+            PJ.getCategories().remove(cat);
+        }
 
+        List<Commentaire> listTmp = commentaireRepository.findByParcJardinn(PJ);
+        for (Commentaire cm : listTmp){
+            commentaireRepository.delete(cm);
+        }
+        parcJardinRepository.delete(PJ);
     }
 
     @Override
@@ -128,48 +138,50 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     }
 
-    @Override
+    /*@Override
     public List<Horaire> ConsulterHorairesPJ(Long idPJ) {
         ParcJardin PJ = parcJardinRepository.findById(idPJ);
         return PJ.getHoraire();
-    }
+    }*/
 
     @Override
     public void ModifierHorairesPJ(ParcJardin PJ, List<Horaire> horaire) {
 
     }
 
-    @Override
+    /*@Override
     public List<Commentaire> ConsulterCommentairesPJ(ParcJardin PJ) {
         return null;//PJ.getCommentaire();
     }
-
-    @Override
+*/
+    /*@Override
     public ParcJardin ajouterCommentaireToPJ(Commentaire commentaire, ParcJardin PJ) {
-        /*Hibernate.initialize(PJ.getCommentaire());
+        *//*Hibernate.initialize(PJ.getCommentaire());
         PJ.getCommentaire().add(commentaire);
-        return parcJardinRepository.save(PJ);*/
+        return parcJardinRepository.save(PJ);*//*
     	return null;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public ParcJardin supprimerCommetaireFromPJ(Commentaire commentire, ParcJardin PJ) {
-        /*PJ.getCommentaire().remove(commentire);
-        return parcJardinRepository.save(PJ);*/
+        *//*PJ.getCommentaire().remove(commentire);
+        return parcJardinRepository.save(PJ);*//*
     	return null;
-    }
+    }*/
 
     @Override
     public List<Categorie> ConsulterCategoriesPJ(Long idPJ) {
-        return categorieRepository.findByParcJardinnId(idPJ);
+        ParcJardin parcJardin = parcJardinRepository.findById(idPJ);
+        return parcJardin.getCategories();
+
     }
 
     @Override
     public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ) {
-        /*Hibernate.initialize(PJ.getCategorie());
-        PJ.getCategorie().add(categorie);
-        return parcJardinRepository.save(PJ);*/
-    	return null;
+        //Hibernate.initialize(PJ.getCategories());
+        PJ.setCategories(categorie);
+        return parcJardinRepository.save(PJ);
+
     }
 
     @Override
@@ -180,7 +192,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     }
 
     @Override
-    public ParcJardin chercherPJLG(double l, double g) {
+    public ParcJardin chercherPJLG(String l, String g) {
         return parcJardinRepository.trouverPJparLG(l,g);
     }
 
@@ -190,10 +202,10 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     }
 
-    @Override
+   /* @Override
     public List<Commentaire> ConsulterNouveauCommentaire(boolean confirm) {
         return commentaireRepository.findByConfirmer(false);
 
-    }
+    }*/
 
 }

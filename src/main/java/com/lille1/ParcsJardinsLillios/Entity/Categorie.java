@@ -1,9 +1,7 @@
 package com.lille1.ParcsJardinsLillios.Entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+
 
 import javax.persistence.*;
 
@@ -15,8 +13,7 @@ public class Categorie implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;
-	@ManyToMany
-	private List<ParcJardin> ParcJardinn;
+
 	@Column
 	private String nomcategorie;
 	
@@ -25,7 +22,6 @@ public class Categorie implements Serializable{
 	public Categorie(String nomcategorie) {
 		super();
 		this.nomcategorie = nomcategorie;
-		this.ParcJardinn =  new ArrayList<>();
 	}
 
 
@@ -42,7 +38,7 @@ public class Categorie implements Serializable{
 
 
 
-	public List<ParcJardin> getParcJardinn() {
+	/*public List<ParcJardin> getParcJardinn() {
 		return ParcJardinn;
 	}
 
@@ -50,7 +46,7 @@ public class Categorie implements Serializable{
 
 	public void setParcJardinn(ParcJardin parcJardinn) {
 		ParcJardinn.add(parcJardinn);
-	}
+	}*/
 
 
 
@@ -68,7 +64,7 @@ public class Categorie implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Categorie [id=" + id + ", ParcJardinn=" + ParcJardinn + ", nomcategorie=" + nomcategorie + "]";
+		return "Categorie [id=" + id + ", nomcategorie=" + nomcategorie + "]";
 	}
 
 

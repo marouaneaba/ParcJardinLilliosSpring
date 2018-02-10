@@ -13,7 +13,8 @@ public interface CommentaireInterface {
 	
 	public void SupprimerCommentaire(Commentaire commentaire);
 
-
+	public List<Commentaire> ConsulternouveauCommentaires();
+	public List<Commentaire> ConsulterCommentaireByPJ(ParcJardin PJ);
 
 	public List<Commentaire> ListeCommentaireParPJ(ParcJardin PJ);
 
