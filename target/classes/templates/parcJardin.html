@@ -10,9 +10,9 @@
 <body>
 <div layout:fragment="content">
 
-    <div class="col-md-6">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Chercher Parcs Jardins</div>
+    <div class="col-md-12"><br/><br/>
+        <center >
+            <div >Chercher Parcs Jardins</div>
             <div class="panel-body">
                 <form method="GET">
                     <div>
@@ -22,9 +22,8 @@
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="panel panel-primary" th:if="${allParcsJardins}">
-            <div class="panel-heading">Parcs Jardins Trouves</div>
+     </center>
+        <div  th:if="${allParcsJardins}"><br/><br/>
             <div class="panel-body">
                 <table class="table">
                     <thead>

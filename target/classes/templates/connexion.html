@@ -3,40 +3,23 @@
       xmlns:layout="https://www.ultraq.net.nz/thymeLeaf/Layout">
 <head>
     <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="/css/monstyle.css" />
     <title>Authentification</title>
 </head>
 
 <body>
-    <form th:action="@{/login}" method = "post" >
-        <div class="form-group col-lg-4 col-lg-offset-4">
-            <label for="exampleInputEmail" >Username</label>
-            <input type="texte" name="username" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter your Username"/>
-        </div>
-        <div class="form-group col-lg-4 col-lg-offset-4">
-            <label for="exampleInputPassword">Password</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Password"/>
-        </div>
-        <button type="submit" class="btn btn-primary"> Submit</button>
+ 
+
+<div class="login-page">
+<center><h2 style="color:#FFFFFF">Authentification</h2></center>
+  <div class="form">
+    <form class="login-form" th:action="@{/login}" method = "post">
+      <input type="text" name="username" placeholder="Nom d'utilisateur"/>
+      <input type="password" name="password" placeholder="Mot de passe"/>
+      <button>login</button>
     </form>
+  </div>
+</div>
 
-
-
-<!--
-
-
-
-    <div class="wrapper">
-    <form class="form-signin" action="/login" method="post">
-      <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
-      &lt;!&ndash;<label class="checkbox">
-        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-      </label>&ndash;&gt;
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
-    </form>
-  </div>-->
-  
-  
 </body>
 </html>

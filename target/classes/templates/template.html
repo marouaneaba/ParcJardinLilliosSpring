@@ -13,13 +13,22 @@
 </head>
 <body>
 <header>
-    <div class="navbar navbar-default">
-        <div class="container-fluid">
+	<div class="text-center">
+       <div  style="transform: scale(1.11, 1)">
+           <a href="/">
+               <div>
+                   <img src="/images/back.png" />
+               </div>
+           </a>
+       </div>
+    </div>
+    <div class="navbar navbar-default" >
+        <div class="container-fluid" style = "background:#ffffff;">
             <u1 class = "nav navbar-nav">
-                <li><a th:href="@{/}">Accueil</a></li>
-                <li><a th:href="@{/AjouterPJ}">Ajouter Parc Jardin</a></li>
-                <li><a th:href="@{/NouveauCommentaire}">Commentaires</a></li>
-
+                <li><a style="background:#175732;margin-left:10px;" th:href="@{/}">Accueil</a></li>
+                <li><a style="background:#175732;margin-left:5px;" th:href="@{/AjouterPJ}">Ajouter Parc Jardin</a></li>
+                <li><a style="background:#175732;margin-left:5px;" th:href="@{/NouveauCommentaire}">Commentaires</a></li>
+				<li><a style="background:#175732;margin-left:5px;" th:href="@{/NouveauCommentaire}">Administration</a></li>
             </u1>
             <u1 class="nav navbar-nav navbar-right">
 
