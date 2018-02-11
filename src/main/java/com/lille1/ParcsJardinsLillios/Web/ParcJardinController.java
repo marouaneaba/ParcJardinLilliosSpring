@@ -77,30 +77,43 @@ public class ParcJardinController {
     @PostMapping(value = "/AjouterPJ")
     public String ajouterPJ( ParcJardin nouveauPJ,
     		@RequestParam(value = "cats") List<Long> cats,
-    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model,@RequestParam("file") MultipartFile file) {
+    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model
+    		,@RequestParam("file1") MultipartFile file,@RequestParam("file2") MultipartFile file2,
+    		@RequestParam("file3") MultipartFile file3,@RequestParam("file4") MultipartFile file4,
+    		@RequestParam("file5") MultipartFile file5) {
 
-    	if(!file.isEmpty()){
-    		
-    		try{
-    			byte[] bytes = file.getBytes();
-    			
-    			
-    			File dir = new File("./src/main/resources/static/images/imageApp" );
-    			if (!dir.exists())
-					dir.mkdirs();
+    	List<MultipartFile> files = new ArrayList<>();
+    	files.add(file);
+    	files.add(file2);
+    	files.add(file3);
+    	files.add(file4);
+    	files.add(file5);
+    	
+    	for(int i=0;i<files.size();i++){
+    		if(!files.get(i).isEmpty()){
+        		
+        		try{
+        			byte[] bytes = files.get(i).getBytes();
+        			
+        			
+        			File dir = new File("./src/main/resources/static/images/imageApp" );
+        			if (!dir.exists())
+    					dir.mkdirs();
 
-				// Create the file on server
-				File serverFile = new File(dir.getAbsolutePath()+ File.separator + "hello.jpg");
-				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
-				stream.write(bytes);
-				stream.close();
+    				// Create the file on server
+    				File serverFile = new File(dir.getAbsolutePath()+ File.separator + "hello"+i+".jpg");
+    				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+    				stream.write(bytes);
+    				stream.close();
 
 
-				System.out.println("You successfully uploaded file");
-    		}catch(Exception e){
-    			System.out.println(e.getMessage());
-    		}
+    				System.out.println("You successfully uploaded file");
+        		}catch(Exception e){
+        			System.out.println(e.getMessage());
+        		}
+        	}
     	}
+    	
   
         if (cats != null) {
             for (int i = 0; i < cats.size(); i++) {
