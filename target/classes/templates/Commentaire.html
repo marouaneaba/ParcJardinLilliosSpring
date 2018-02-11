@@ -7,10 +7,12 @@
     <title>Nouveau Commentaire</title>
 </head>
 <body class="gray-bg">
-<div layout:fragment="content">
-    <div class="col-md-6">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Chercher Commentaires Par nom Parc/Jardin</div>
+
+<div layout:fragment="content"><br/><br/>
+    <div class="col-md-12">
+        <center>
+            <div class="panel-heading">Chercher Commentaires Par PJ</div>
+
             <div class="panel-body">
                 <form th:action="@{/chercherCommentaireParNomPJ}" method="GET">
                     <div>
@@ -20,10 +22,9 @@
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="panel panel-primary" th:if="${AllCommentaire}">
-            <div class="panel-heading">Nouveaux Commentaires </div>
-            <div class="panel-body">
+        </center>
+        <div  th:if="${AllCommentaire}">	
+            <div class="panel-body"><br/><br/>
                 <table class="table">
                     <thead>
                     <tr>

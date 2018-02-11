@@ -13,6 +13,7 @@ import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
 
+
 @RestController
 public class CommentaireRestController {
 
@@ -23,7 +24,7 @@ public class CommentaireRestController {
 	private ParcJardinInterface mParcJardinInterface;
 
 	/**
-	 * Permet delister toutes les commentaires d'un Parc/Jardinn Lillios via une
+	 * Permet delister toutes les commentaires d'un Parc/Jardinn Lillios via une POST :
 	 * requête GET http://localhost:8080/api/commentaire
 	 *
 	 * @return
@@ -53,7 +54,5 @@ public class CommentaireRestController {
 		return mCommentaireInterface.AjouterCommentaire(commentaire);
 
 	}
-
-	
 
 }
