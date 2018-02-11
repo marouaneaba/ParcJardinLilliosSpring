@@ -27,7 +27,7 @@ public class ParcJardinnLilliosRestController {
 
 	/**
 	 * Permet de récupérer tous les parc jardin Lillios enregistrer via une requête GET :
-	 * http://localhost:8080/api/beers
+	 * http://localhost:8080/api/PJ
 	 * 
 	 */
 	@GetMapping(value = "/api/PJ")
@@ -38,7 +38,7 @@ public class ParcJardinnLilliosRestController {
 
 	/**
 	 * Permet de récupérer les parc jardinn Lillios à partir un MotCle de nom Parc/Jardin via une requête GET :
-	 * http://localhost:8080/api/beers
+	 * http://localhost:8080/api/PJBysearch/{search}
 	 *
 	 * @param sSearch
 	 *            le MotCle d'un Parc/Jardin Lillios
@@ -51,7 +51,7 @@ public class ParcJardinnLilliosRestController {
 
 	/**
 	 * Permet de récupérer les parc jardinn Lillios à partir un service via une requête GET :
-	 * http://localhost:8080/api/beers
+	 * http://localhost:8080/api/PJByservice/{service}
 	 *
 	 * @param sService
 	 *            le nom d'un service liée à un parc Jardin Lillios  via une requête GET
@@ -70,7 +70,7 @@ public class ParcJardinnLilliosRestController {
 
 	/**
 	 * Permet d'enregistrer un nouvelle Parc/Jardinns via une requête POST :
-	 * http://localhost:8080/api/beers
+	 * http://localhost:8080/api/PJById/{idParcJardinnLillios}
 	 *
 	 * @param sId
 	 *            le nom
@@ -79,6 +79,20 @@ public class ParcJardinnLilliosRestController {
 	public ParcJardin GetParcJardinLilliosById(@PathVariable("idParcJardinnLillios") Long sId) {
 
 		return mParcJardinInterface.ChercherPJParId(sId);
+
+	}
+	
+	/**
+	 * Permet d'enregistrer un nouvelle Parc/Jardinns via une requête POST :
+	 * http://localhost:8080/api/PJByName/{NameParcJardinLillios}
+	 *
+	 * @param sId
+	 *            le nom
+	 */
+	@GetMapping(value = "/api/PJByName/{NameParcJardinLillios}")
+	public ParcJardin GetParcJardinLilliosByName(@PathVariable("NameParcJardinLillios") String name) {
+
+		return mParcJardinInterface.chercherPJParNom(name);
 
 	}
 
