@@ -96,12 +96,12 @@ public class ParcJardinController {
         			byte[] bytes = files.get(i).getBytes();
         			
         			
-        			File dir = new File("./src/main/resources/static/images/imageApp" );
+        			File dir = new File("./src/main/resources/static/images/"+nouveauPJ.getName() );
         			if (!dir.exists())
     					dir.mkdirs();
 
     				// Create the file on server
-    				File serverFile = new File(dir.getAbsolutePath()+ File.separator + "hello"+i+".jpg");
+    				File serverFile = new File(dir.getAbsolutePath()+ File.separator + nouveauPJ.getName()+i+".jpg");
     				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
     				stream.write(bytes);
     				stream.close();
