@@ -141,7 +141,7 @@ public class Application implements CommandLineRunner{
 		}*/
 
 
-		List<ParcJardin> PJLG = parcJardinInterfaceMetier.chercherPJLG("30.0","3.16");
+		ParcJardin PJLG = parcJardinInterfaceMetier.chercherPJLG("30.0","3.16");
 		System.out.println("PJLGGGG"+PJLG.toString());
 		
 
