@@ -30,6 +30,7 @@
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/HoraireServiceImplementation.java
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Horaire.java
+/home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Image.java
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.java
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java
 /home/elazzam/IdeaProjects/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Web/formulairePJ.java
