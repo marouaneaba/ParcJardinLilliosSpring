@@ -70,6 +70,7 @@ public class Application implements CommandLineRunner{
 
 		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "JARDIN","30.0","3.16","adressJardin1");
 		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "PARC","21.0","2.0","adressJardin2");
+		ParcJardin PJ4= new ParcJardin("jardin4","descJardin2", "PARC","24.0","2.4","adressJardin2");
 
 		Categorie catN1 = new Categorie("toto1");
 		Categorie catN2 = new Categorie("toto2");
@@ -86,6 +87,7 @@ public class Application implements CommandLineRunner{
 		Commentaire cm1 = new Commentaire("com1",3,"pers1",false, PJ2);
 		Commentaire cm2 = new Commentaire("com2",5,"pers2",false,PJ2);
 		Commentaire cm3 = new Commentaire("com3",5,"pers3",false,PJ3);
+		Commentaire cm5 = new Commentaire("com5",5,"pers3",false,PJ4);
 
 		Commentaire commentaire1 = mCommentaireRepository.save(cm1);
 		Commentaire commentaire2 = mCommentaireRepository.save(cm2);
@@ -93,6 +95,7 @@ public class Application implements CommandLineRunner{
 
 		ParcJardin parcjardin1 = mParcJardinRepository.save(PJ2);
 		ParcJardin parcjardin2 = mParcJardinRepository.save(PJ3);
+		ParcJardin parcjardin3 = mParcJardinRepository.save(PJ4);
 
 
 
@@ -116,6 +119,7 @@ public class Application implements CommandLineRunner{
 		parcJardinInterfaceMetier.AjouterListCatToPJ(ltmpcat,PJ3);
 
 
+
 		Horaire h1 = new Horaire("8:00","18:00", "lundi",parcjardin1);
 		mHoraireRepository.save(h1);
 
@@ -134,11 +138,7 @@ public class Application implements CommandLineRunner{
 		}
 
 
-		/*parcJardinInterfaceMetier.SupprimerPJ(parcjardin2);
-		List<ParcJardin> listPJ= parcJardinInterfaceMetier.ConsulterParcsJardin();
-		for(ParcJardin pj : listPJ){
-			System.out.println(pj.toString());
-		}*/
+
 
 
 		ParcJardin PJLG = parcJardinInterfaceMetier.chercherPJLG("30.0","3.16");
@@ -148,10 +148,41 @@ public class Application implements CommandLineRunner{
 		commentaireInterfaceMetier.ValiderCommentaire(commentaire1);
 		commentaireInterfaceMetier.SupprimerCommentaire(commentaire3);
 
-		
+
+
+		//test suppression parc
+
+		ParcJardin nvPJ = parcJardinRepository.save(new ParcJardin("jardin3","descJardin3", "JARDIN","37.6","3.10","adressJardin1"));
+		commentaireRepository.save( new Commentaire("com4",5,"pers4",false,nvPJ));
+
+		Categorie catPJSup = categorieRepository.save(new Categorie("test supp cat"));
+		parcJardinInterfaceMetier.ajouterCategorieToPJ(catPJSup, nvPJ);
+
+
+		List<ParcJardin> listPl= parcJardinInterfaceMetier.ConsulterParcsJardin();
+		for(ParcJardin pj : listPl){
+			System.out.println(pj.toString());
+		}
+
+
+		//parcJardinInterfaceMetier.supprimercatFromPJ(nvPJ.getId());
+
+		//parcJardinInterfaceMetier.SupprimerPJ(nvPJ);
+
+
+		//parcJardinInterfaceMetier.SupprimerPJ(parcjardin2);
+		List<ParcJardin> listPJ= parcJardinInterfaceMetier.ConsulterParcsJardin();
+		for(ParcJardin pj : listPJ){
+			System.out.println(pj.toString());
+		}
         
-        
-        
+
+
+		List<Commentaire> listCom = commentaireRepository.findByConfirmerAndParcJardinn(false,nvPJ);
+		for(Commentaire com : listCom){
+			System.out.println(com.toString());
+		}
+
 		/*ParcJardin PJ1= new ParcJardin("parc1","descParc1", "Parc",125.0,2121.0,"adressParc1");
 		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "Jardin",122.0,211.0,"adressJardin1");
 		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "Jardin",122.0,211.0,"adressJardin2");

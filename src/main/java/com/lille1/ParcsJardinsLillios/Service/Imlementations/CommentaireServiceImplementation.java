@@ -8,6 +8,8 @@ import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -99,6 +101,12 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
     @Override
     public Commentaire ConsulterCommentaireParId(Long id) {
         return commentaireRepository.findById(id);
+    }
+
+    @Override
+    public List<Commentaire> ConsulterCommentaireNonValiderParPJ(ParcJardin PJ) {
+
+        return commentaireRepository.findByConfirmerAndParcJardinn(false,PJ);
     }
 
 

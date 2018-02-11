@@ -12,9 +12,9 @@
 
     <div class="col-md-6">
         <div class="panel panel-primary">
-            <div class="panel-heading">Chercher Parcs Jardins</div>
+            <div class="panel-heading">Chercher Parc / Jardin</div>
             <div class="panel-body">
-                <form method="GET">
+                <form th:action="@{/chercherPJParNom}" method="GET">
                     <div>
                         <label>Nom : </label>
                         <input type="text" name="PJNom"/>

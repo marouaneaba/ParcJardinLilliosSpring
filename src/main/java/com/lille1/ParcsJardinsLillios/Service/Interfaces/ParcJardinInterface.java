@@ -46,4 +46,6 @@ public interface ParcJardinInterface {
 
 	public List<ParcJardin> consulterPJByType(String type);
 
+	public void supprimercatFromPJ(Long idPJ);
+
 }

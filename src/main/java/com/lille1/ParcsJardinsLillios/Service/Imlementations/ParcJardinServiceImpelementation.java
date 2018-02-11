@@ -122,6 +122,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
         for (Categorie cat : ListTmpCat){
             PJ.getCategories().remove(cat);
         }
+        parcJardinRepository.save(PJ);
 
         List<Commentaire> listTmp = commentaireRepository.findByParcJardinn(PJ);
         for (Commentaire cm : listTmp){
@@ -208,6 +209,17 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     @Override
     public List<ParcJardin> consulterPJByType(String type){
         return parcJardinRepository.findByType(type);
+
+    }
+
+    @Override
+    public void supprimercatFromPJ(Long idPJ) {
+
+ParcJardin PJ = parcJardinRepository.findById(idPJ);
+        for(Categorie cat : PJ.getCategories()){
+            PJ.getCategories().remove(cat);
+        }
+        parcJardinRepository.save(PJ);
 
     }
 

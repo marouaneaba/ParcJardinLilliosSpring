@@ -10,9 +10,9 @@
 <div layout:fragment="content">
     <div class="col-md-6">
         <div class="panel panel-primary">
-            <div class="panel-heading">Chercher Commentaires Par PJ</div>
+            <div class="panel-heading">Chercher Commentaires Par nom Parc/Jardin</div>
             <div class="panel-body">
-                <form method="GET">
+                <form th:action="@{/chercherCommentaireParNomPJ}" method="GET">
                     <div>
                         <label>Nom : </label>
                         <input type="text" name="PJNom"/>
@@ -29,6 +29,7 @@
                     <tr>
                         <th scope="col">Nom Utilisateur </th>
                         <th scope="col">Commentaire</th>
+                        <th scope="col">Nom Parc/jardin</th>
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -36,7 +37,7 @@
                     <tr>
                         <td th:text="${com.name}"></td>
                         <td th:text="${com.commentaire}"></td>
-
+                        <td th:text="${com.parcJardinn.name}"></td>
                         <td>
                         <form th:action="@{/NouveauCommentaire/delete}" method = "Post">
                             <input type="hidden" name="id" th:value="${com.id}"/>
