@@ -137,7 +137,13 @@ public class ParcJardinController {
         return "redirect:/operationPJ";
     }
     
+    @RequestMapping("/chercherPJParNom")
+    public String ChercherPJParNom(Model model,@RequestParam(value = "PJNom") String PJNom){
+        ParcJardin pj = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
+        model.addAttribute("allParcsJardins", pj);
 
+        return "parcJardin";
+    }
 
 
 }

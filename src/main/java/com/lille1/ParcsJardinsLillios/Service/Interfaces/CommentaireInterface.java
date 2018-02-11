@@ -20,6 +20,8 @@ public interface CommentaireInterface {
 
 	public Commentaire ConsulterCommentaireParId(Long id);
 
+	public List<Commentaire> ConsulterCommentaireNonValiderParPJ(ParcJardin PJ);
+
 
 
 	
