@@ -59,7 +59,7 @@ public class ParcJardinController {
     public String supprimerPJ(Long id, final RedirectAttributes redirectAttributes) {
         ParcJardin PJ = parcJardinInterfaceMetier.ChercherPJParId(id);
         parcJardinInterfaceMetier.SupprimerPJ(PJ);
-
+        
 
         redirectAttributes.addFlashAttribute("css", "success");
         redirectAttributes.addFlashAttribute("msg", "ParcJardin est supprimer");
@@ -136,6 +136,21 @@ public class ParcJardinController {
 
         return "redirect:/operationPJ";
     }
+    
+    @GetMapping(value = "/afficherRep")
+    public String GetContentFile(Model model){
+    	
+    	File dir = new File("./src/main/resources/static/images/" );
+    	String[] files = dir.list();
+    	String tmp = "vide";
+    	
+    	for(int i=0;i<files.length;i++){
+    		tmp += files[i]+" ,\n ";
+    	}
+    	model.addAttribute("testCharactere",tmp);
+    	return "test";
+    }
+    
     
     @RequestMapping("/chercherPJParNom")
     public String ChercherPJParNom(Model model,@RequestParam(value = "PJNom") String PJNom){
