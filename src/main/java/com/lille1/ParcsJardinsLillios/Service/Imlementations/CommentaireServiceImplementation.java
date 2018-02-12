@@ -108,6 +108,12 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
 
         return commentaireRepository.findByConfirmerAndParcJardinn(false,PJ);
     }
+    
+    @Override
+    public List<Commentaire> ConsulterCommentaireValiderParPJ(ParcJardin PJ) {
+
+        return commentaireRepository.findByConfirmerAndParcJardinn(true,PJ);
+    }
 
 
 }
