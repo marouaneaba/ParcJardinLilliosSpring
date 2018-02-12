@@ -230,6 +230,13 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     }
 
+    @Override
+    public ParcJardin modifierPJ(ParcJardin pj,String name,String description,String adresse, String l, String g, String type, List<Categorie> cats) {
+
+
+        return null;
+    }
+
    /* @Override
     public List<Commentaire> ConsulterNouveauCommentaire(boolean confirm) {
         return commentaireRepository.findByConfirmer(false);

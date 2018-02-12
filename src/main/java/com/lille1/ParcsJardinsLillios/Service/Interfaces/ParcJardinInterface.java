@@ -48,4 +48,6 @@ public interface ParcJardinInterface {
 
 	public void supprimercatFromPJ(Long idPJ);
 
+	public ParcJardin modifierPJ(ParcJardin pj,String name,String description,String adresse, String l, String g, String type, List<Categorie> cats);
+
 }
