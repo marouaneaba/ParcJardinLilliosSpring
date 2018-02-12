@@ -23,7 +23,14 @@ public class formulairePJ {
     @GetMapping(value="/AjouterPJ")
     public String afficherFormulairePJ(Model model){
         model.addAttribute("Allcategories",categorieInterfaceMetier.consulterCategories());
-        model.addAttribute("nhoraire", new Horaire());
+        model.addAttribute("hlundi", new Horaire());
+        model.addAttribute("hmardi", new Horaire());
+        model.addAttribute("hmercredi", new Horaire());
+        model.addAttribute("hjeudi", new Horaire());
+        model.addAttribute("hvendredi", new Horaire());
+        model.addAttribute("hsamedi", new Horaire());
+        model.addAttribute("hdimanche", new Horaire());
+
         model.addAttribute("nouveauPJ", new ParcJardin());
         return "AjouterPJ";
     }

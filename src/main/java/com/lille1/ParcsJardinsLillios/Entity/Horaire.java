@@ -73,7 +73,7 @@ public class Horaire implements Serializable {
 	}
 
 	public void setParcJardinn(ParcJardin parcJardinn) {
-		this.parcJardin = parcJardin;
+		this.parcJardin = parcJardinn;
 	}
 
 	
