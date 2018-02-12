@@ -27,6 +27,7 @@ com/lille1/ParcsJardinsLillios/Application.class
 com/lille1/ParcsJardinsLillios/Entity/Categorie.class
 com/lille1/ParcsJardinsLillios/Service/Interfaces/CommentaireInterface.class
 com/lille1/ParcsJardinsLillios/DAO/ParcJardinRepository.class
+com/lille1/ParcsJardinsLillios/Web/CommentaireEditController.class
 com/lille1/ParcsJardinsLillios/Entity/ParcJardin.class
 com/lille1/ParcsJardinsLillios/security/securityconfig.class
 com/lille1/ParcsJardinsLillios/Entity/Admin.class
