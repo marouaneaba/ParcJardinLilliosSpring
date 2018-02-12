@@ -138,9 +138,12 @@ public class ParcJardinController {
         ParcJardin tmp = parcJardinRepository.save(nouveauPJ);
         parcJardinInterfaceMetier.AjouterListCatToPJ(listCatTmp,tmp);
 
+        System.out.println("lundi  "+hlundi.getOuverture());
 
         hlundi.setParcJardinn(tmp);
         horaireRepository.save(hlundi);
+
+        System.out.println("mardi  "+hmardi.getOuverture());
 
         hmardi.setParcJardinn(tmp);
         horaireRepository.save(hmardi);
@@ -199,6 +202,7 @@ public class ParcJardinController {
     
     @RequestMapping("/chercherPJParNom")
     public String ChercherPJParNom(Model model,@RequestParam(value = "PJNom") String PJNom){
+
         ParcJardin pj = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
         model.addAttribute("allParcsJardins", pj);
 
