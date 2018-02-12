@@ -6,6 +6,8 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 <body>
 <div layout:fragment="content">
@@ -13,16 +15,16 @@
 
     <div class="col-md-12"><br/><br/>
         <center >
-            <div >Chercher Parcs Jardins</div>
 
             <div class="panel-body">
                 <form th:action="@{/chercherPJParNom}" method="GET">
                     <div>
-                        <label>Nom : </label>
+                        <label>Chercher Parcs Jardins : </label>
                         <input type="text" name="PJNom"/>
-                        <button type="submit" style="background:url(/images/rech_tra.png); "class="btn btn-primary">Chercher</button>
+	                        <button type="submit" class="btn fa fa-search" ></button>
                     </div>
                 </form>
+                
             </div>
      </center>
         <div  th:if="${allParcsJardins}"><br/><br/>
@@ -47,12 +49,12 @@
                                 <form th:action="@{/operationPJ/delete}" method = "Post">
 
                                     <input type="hidden" name="id" th:value="${pj.id}"/>
-                                    <button type="submit" class="btn btn-xs btn-danger" >Supprimer</button>
+                                    <button type="submit" class="btn fa fa-close" style="background:#ffffff;font-size:20px;color:red" ></button>
                                 </form>
                                 <form th:action="@{/modificationParcJardin}" method = "GET">
 
                                     <input type="hidden" name="id" th:value="${pj.id}"/>
-                                    <button type="submit" class="btn btn-xs btn-danger" >Modifier</button>
+                                    <button type="submit" class="btn glyphicon glyphicon-plus" style="background:#ffffff;font-size:20px;color:#32CD32" ></button>
                                 </form>
                             </td>
 
