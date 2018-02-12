@@ -11,6 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class formulairePJ {
 
@@ -22,6 +25,14 @@ public class formulairePJ {
 
     @GetMapping(value="/AjouterPJ")
     public String afficherFormulairePJ(Model model){
+
+        Horaire lundi = new Horaire(null,null,"Lundi",null);
+        Horaire mardi = new Horaire(null,null,"Mardi",null);
+
+        /*List<Horaire> listHoraire = new ArrayList<>();
+        listHoraire.add(lundi);
+        listHoraire.add(mardi);*/
+
         model.addAttribute("Allcategories",categorieInterfaceMetier.consulterCategories());
         model.addAttribute("hlundi", new Horaire());
         model.addAttribute("hmardi", new Horaire());
@@ -31,6 +42,8 @@ public class formulairePJ {
         model.addAttribute("hsamedi", new Horaire());
         model.addAttribute("hdimanche", new Horaire());
 
+
+        //model.addAttribute("AllHoraire",listHoraire);
         model.addAttribute("nouveauPJ", new ParcJardin());
         return "AjouterPJ";
     }

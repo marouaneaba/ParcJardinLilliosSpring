@@ -18,7 +18,7 @@ public class Horaire implements Serializable {
 	@Column
 	private String ouverture;
 	@Column
-	private String fermuture;
+	private String fermeture;
 	@Column
 	private String journee;
 	
@@ -28,10 +28,10 @@ public class Horaire implements Serializable {
 	
 	public Horaire(){}
 	
-	public Horaire(String ouverture, String fermuture, String journee,ParcJardin parcJardin) {
+	public Horaire(String ouverture, String fermeture, String journee,ParcJardin parcJardin) {
 		super();
 		this.ouverture = ouverture;
-		this.fermuture = fermuture;
+		this.fermeture = fermeture;
 		this.journee = journee;
 		this.parcJardin = parcJardin;
 	}
@@ -52,12 +52,12 @@ public class Horaire implements Serializable {
 		this.ouverture = ouverture;
 	}
 
-	public String getFermuture() {
-		return fermuture;
+	public String getFermeture() {
+		return fermeture;
 	}
 
-	public void setFermuture(String fermuture) {
-		this.fermuture = fermuture;
+	public void setFermeture(String fermeture) {
+		this.fermeture = fermeture;
 	}
 
 	public String getJournee() {

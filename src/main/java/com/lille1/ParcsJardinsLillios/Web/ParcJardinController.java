@@ -78,6 +78,7 @@ public class ParcJardinController {
     }
 
     // http://localhost:8080/images/imageApp/image1.jpg
+
     @PostMapping(value = "/AjouterPJ")
     public String ajouterPJ( ParcJardin nouveauPJ,Horaire hlundi,Horaire hmardi, Horaire hmercredi,Horaire hjeudi, Horaire hvendredi,Horaire hsamedi,Horaire hdimanche,
     		@RequestParam(value = "cats") List<Long> cats,
