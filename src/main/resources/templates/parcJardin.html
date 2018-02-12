@@ -49,8 +49,10 @@
                                     <input type="hidden" name="id" th:value="${pj.id}"/>
                                     <button type="submit" class="btn btn-xs btn-danger" >Supprimer</button>
                                 </form>
-                                <form method="POST">
-                                    <button type="submit" class="btn btn-xs btn-success" >Modifier</button>
+                                <form th:action="@{/modificationParcJardin}" method = "GET">
+
+                                    <input type="hidden" name="id" th:value="${pj.id}"/>
+                                    <button type="submit" class="btn btn-xs btn-danger" >Modifier</button>
                                 </form>
                             </td>
 

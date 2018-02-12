@@ -37,5 +37,6 @@
 /home/m2eserv/abakarim/spring_marouane/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImpelementation.java
 /home/m2eserv/abakarim/spring_marouane/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/DAO/ImageRepository.java
 /home/m2eserv/abakarim/spring_marouane/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Horaire.java
+/home/m2eserv/abakarim/spring_marouane/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Web/CommentaireEditController.java
 /home/m2eserv/abakarim/spring_marouane/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/UI/Service/RequestParcJardin.java
 /home/m2eserv/abakarim/spring_marouane/git-test-project/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Categorie.java
