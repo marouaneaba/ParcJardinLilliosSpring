@@ -8,7 +8,14 @@ import com.lille1.ParcsJardinsLillios.Entity.*;
 
 public interface AdminRepository extends CrudRepository<Admin, Long>{
 	
-	@Query("select a from Admin a where a.Name like :n and a.password like :p")
+	/*@Query("select a from Admin a where a.Name like :n and a.password like :p")
 	public Admin findByNameAndPassword(@Param("n")String name,@Param("p")String password);
+*/
+
+
+	//public Admin findByEmailAndPassword(String email,String password);
+
+
+
 
 }

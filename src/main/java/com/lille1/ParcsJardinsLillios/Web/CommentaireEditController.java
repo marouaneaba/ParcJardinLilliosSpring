@@ -3,6 +3,8 @@ package com.lille1.ParcsJardinsLillios.Web;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lille1.ParcsJardinsLillios.DAO.AdminRepository;
+import com.lille1.ParcsJardinsLillios.Entity.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +24,8 @@ import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
 @Controller
 public class CommentaireEditController {
 
-	
+	@Autowired
+	private AdminRepository adminRepository;
 	@Autowired
     private ParcJardinInterface parcJardinInterfaceMetier;
     @Autowired
@@ -72,6 +75,7 @@ public class CommentaireEditController {
 			@RequestParam("email_address") String email_address,@RequestParam("Tel") String Tel){
 		
 		//TODO
+		adminRepository.save(new Admin(name,password,email_address,Tel));
 		System.out.println(name+" , "+password+" , "+email_address);
 		return new RedirectView("/operationPJ");
 	}

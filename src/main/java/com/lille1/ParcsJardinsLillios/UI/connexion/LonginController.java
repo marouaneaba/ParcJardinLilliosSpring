@@ -1,3 +1,4 @@
+/*
 package com.lille1.ParcsJardinsLillios.UI.connexion;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,11 @@ import com.lille1.ParcsJardinsLillios.DAO.AdminRepository;
 
 
 @Controller
-/* aprés ma recherche j'ai trouvé on 
+*/
+/* aprés ma recherche j'ai trouvé on
  * peux faire un controller avec restcontroller 
- * */
+ * *//*
+
 @RequestMapping("/connexion")
 public class LonginController {
 
@@ -33,12 +36,13 @@ public class LonginController {
     public String connectUser(Model model, @RequestParam("username") String name,
             @RequestParam("password")String password){
         
-    	Admin find = mAdminRepository.findByNameAndPassword(name, password); 
-    	System.out.println("find : "+find.getName()+" , "+find.getPassword());
-    	if(find != null ){
+    	//Admin find = mAdminRepository.findByNameAndPassword(name, password);
+    	//System.out.println("find : "+find.getName()+" , "+find.getPassword());
+    	//if(find != null ){
     		return "admin";
     	}
         return "erreur";
     }
 }
 // REST controller , jpa , method repository
+*/

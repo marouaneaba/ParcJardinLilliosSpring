@@ -203,8 +203,12 @@ public class ParcJardinController {
     @RequestMapping("/chercherPJParNom")
     public String ChercherPJParNom(Model model,@RequestParam(value = "PJNom") String PJNom){
 
-        ParcJardin pj = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
-        model.addAttribute("allParcsJardins", pj);
+    	if(PJNom.equals("")){
+    		model.addAttribute("allParcsJardins", parcJardinInterfaceMetier.ConsulterParcsJardin());
+    	}else{
+    		ParcJardin pj = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
+            model.addAttribute("allParcsJardins", pj);
+    	}
 
         return "parcJardin";
     }
