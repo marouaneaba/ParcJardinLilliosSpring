@@ -5,20 +5,22 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Nouveau Commentaire</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 <body class="gray-bg">
 
 <div layout:fragment="content"><br/><br/>
     <div class="col-md-12">
         <center>
-            <div class="panel-heading">Chercher Commentaires Par PJ</div>
+            
 
             <div class="panel-body">
                 <form th:action="@{/chercherCommentaireParNomPJ}" method="GET">
                     <div>
-                        <label>Nom : </label>
+                        <label>Chercher Commentaires : </label>
                         <input type="text" name="PJNom"/>
-                        <button type="submit" class="btn btn-primary">Chercher</button>
+                        <button type="submit" class="btn fa fa-search" style="background:#ffffff;"></button>
                     </div>
                 </form>
             </div>
@@ -40,14 +42,14 @@
                         <td th:text="${com.commentaire}"></td>
                         <td th:text="${com.parcJardinn.name}"></td>
                         <td>
-                        <form th:action="@{/NouveauCommentaire/delete}" method = "Post">
+                        <form style="display: inline;" th:action="@{/NouveauCommentaire/delete}" method = "Post">
                             <input type="hidden" name="id" th:value="${com.id}"/>
-                            <button type="submit" class="btn btn-xs btn-danger" >Supprimer</button>
+                            <button type="submit" class="btn fa fa-close" style="background:#ffffff;font-size:20px;color:red" ></button>
                         </form>
 
-                        <form th:action="@{/NouveauCommentaire/confirmer}" method = "Post">
+                        <form style="display: inline;" th:action="@{/NouveauCommentaire/confirmer}" method = "Post">
                            <input type="hidden" name="id" th:value="${com.id}"/>
-                           <button type="submit" class="btn btn-xs" >Confirmer</button>
+                           <button type="submit" class="btn glyphicon glyphicon-plus" style="background:#ffffff;font-size:19px;color:#32CD32" ></button>
                         </form>
                         </td>
                     </tr>

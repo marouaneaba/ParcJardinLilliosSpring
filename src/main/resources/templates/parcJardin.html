@@ -21,9 +21,7 @@
                     <div>
                         <label>Chercher Parcs Jardins : </label>
                         <input type="text" name="PJNom"/>
-
-	                        <button type="submit" class="btn fa fa-search" ></button>
-
+	                        <button type="submit" class="btn fa fa-search" style="background:#ffffff;" ></button>
                     </div>
                 </form>
                 
@@ -48,16 +46,17 @@
                             <td th:text="${pj.type}"></td>
 
                             <td>
-                                <form th:action="@{/operationPJ/delete}" method = "Post">
+                            	<form style="display: inline;" th:action="@{/modificationParcJardin}" method = "GET">
+
+                                    <input type="hidden" name="id" th:value="${pj.id}"/>
+                                    <button type="submit" class="btn glyphicon glyphicon-plus" style="background:#ffffff;font-size:19px;color:#32CD32" ></button>
+                                </form>
+                                <form style="display: inline;" th:action="@{/operationPJ/delete}" method = "Post">
 
                                     <input type="hidden" name="id" th:value="${pj.id}"/>
                                     <button type="submit" class="btn fa fa-close" style="background:#ffffff;font-size:20px;color:red" ></button>
                                 </form>
-                                <form th:action="@{/modificationParcJardin}" method = "GET">
-
-                                    <input type="hidden" name="id" th:value="${pj.id}"/>
-                                    <button type="submit" class="btn glyphicon glyphicon-plus" style="background:#ffffff;font-size:20px;color:#32CD32" ></button>
-                                </form>
+                                
                             </td>
 
 
