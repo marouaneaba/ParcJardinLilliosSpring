@@ -2,6 +2,7 @@ package com.lille1.ParcsJardinsLillios.Service.Imlementations;
 
 import com.lille1.ParcsJardinsLillios.DAO.CategorieRepository;
 import com.lille1.ParcsJardinsLillios.DAO.CommentaireRepository;
+import com.lille1.ParcsJardinsLillios.DAO.HoraireRepository;
 import com.lille1.ParcsJardinsLillios.DAO.ParcJardinRepository;
 import com.lille1.ParcsJardinsLillios.Entity.Categorie;
 import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -24,7 +26,8 @@ import java.util.List;
 public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     @Autowired
     CommentaireRepository commentaireRepository;
-
+    @Autowired
+    HoraireRepository horaireRepository;
     @Autowired
     ParcJardinRepository parcJardinRepository;
     @Autowired
@@ -54,6 +57,15 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     }
 
     @Override
+    public ParcJardin AjouterListCatToPJ(List<Categorie> lcat, ParcJardin PJ) {
+        for (Categorie cat : lcat) {
+            Categorie tmp = categorieRepository.findById(cat.getId());
+            PJ.setCategories(tmp);
+        }
+        return parcJardinRepository.save(PJ);
+    }
+
+    @Override
     public ParcJardin ChercherPJParId(Long id) {
         ParcJardin PJ = parcJardinRepository.findById(id);
         Hibernate.initialize(PJ);
@@ -67,7 +79,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public List<ParcJardin> chercherPJParCategorie(Categorie categorie) {
-        return null;//parcJardinRepository.findByCategories(categorie);
+        return parcJardinRepository.findByCategories(categorie);
     }
 
     @Override
@@ -82,15 +94,15 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public void SupprimerPJ(ParcJardin PJ) {
-        try {
+        /*try {
 
             ParcJardin tmp = parcJardinRepository.findById(PJ.getId());
 
-            /*ArrayList<Categorie> listcat = new ArrayList<>(tmp.getCategorie());
+            *//*ArrayList<Categorie> listcat = new ArrayList<>(tmp.getCategorie());
 
             for(Categorie categorie : listcat){
                 tmp.getCategorie().remove(categorie);
-            }*/
+            }*//*
 
             List<Categorie> listCat = categorieRepository.findByParcJardinnId(tmp.getId());
             for(Categorie categorie : listCat){
@@ -108,7 +120,23 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
         }catch(Exception e){
             e.printStackTrace();
         }
+*/
 
+
+        List<Categorie> listTmp1Cat =PJ.getCategories();
+        listTmp1Cat.clear();
+        parcJardinRepository.save(PJ);
+
+        List<Commentaire> listTmpCom = commentaireRepository.findByParcJardinn(PJ);
+        for (Commentaire cm : listTmpCom){
+            commentaireRepository.delete(cm);
+        }
+
+        List<Horaire> listTmpH = horaireRepository.findByParcJardin(PJ);
+        for (Horaire h : listTmpH){
+            horaireRepository.delete(h);
+        }
+        parcJardinRepository.delete(PJ);
     }
 
     @Override
@@ -128,48 +156,50 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     }
 
-    @Override
+    /*@Override
     public List<Horaire> ConsulterHorairesPJ(Long idPJ) {
         ParcJardin PJ = parcJardinRepository.findById(idPJ);
         return PJ.getHoraire();
-    }
+    }*/
 
     @Override
     public void ModifierHorairesPJ(ParcJardin PJ, List<Horaire> horaire) {
 
     }
 
-    @Override
+    /*@Override
     public List<Commentaire> ConsulterCommentairesPJ(ParcJardin PJ) {
         return null;//PJ.getCommentaire();
     }
-
-    @Override
+*/
+    /*@Override
     public ParcJardin ajouterCommentaireToPJ(Commentaire commentaire, ParcJardin PJ) {
-        /*Hibernate.initialize(PJ.getCommentaire());
+        *//*Hibernate.initialize(PJ.getCommentaire());
         PJ.getCommentaire().add(commentaire);
-        return parcJardinRepository.save(PJ);*/
+        return parcJardinRepository.save(PJ);*//*
     	return null;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public ParcJardin supprimerCommetaireFromPJ(Commentaire commentire, ParcJardin PJ) {
-        /*PJ.getCommentaire().remove(commentire);
-        return parcJardinRepository.save(PJ);*/
+        *//*PJ.getCommentaire().remove(commentire);
+        return parcJardinRepository.save(PJ);*//*
     	return null;
-    }
+    }*/
 
     @Override
     public List<Categorie> ConsulterCategoriesPJ(Long idPJ) {
-        return categorieRepository.findByParcJardinnId(idPJ);
+        ParcJardin parcJardin = parcJardinRepository.findById(idPJ);
+        return parcJardin.getCategories();
+
     }
 
     @Override
     public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ) {
-        /*Hibernate.initialize(PJ.getCategorie());
-        PJ.getCategorie().add(categorie);
-        return parcJardinRepository.save(PJ);*/
-    	return null;
+        //Hibernate.initialize(PJ.getCategories());
+        PJ.setCategories(categorie);
+        return parcJardinRepository.save(PJ);
+
     }
 
     @Override
@@ -180,8 +210,8 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     }
 
     @Override
-    public ParcJardin chercherPJLG(double l, double g) {
-        return parcJardinRepository.trouverPJparLG(l,g);
+    public ParcJardin chercherPJLG(String l, String g) {
+        return parcJardinRepository.trouverPJparLG(l, g);
     }
 
     @Override
@@ -191,9 +221,20 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     }
 
     @Override
+    public void supprimercatFromPJ(Long idPJ) {
+
+        ParcJardin PJ = parcJardinRepository.findById(idPJ);
+
+        List<Categorie> listTmp =PJ.getCategories();
+        listTmp.clear();
+
+    }
+
+   /* @Override
     public List<Commentaire> ConsulterNouveauCommentaire(boolean confirm) {
         return commentaireRepository.findByConfirmer(false);
 
-    }
+    }*/
+
 
 }

@@ -1,119 +1,88 @@
+
 package com.lille1.ParcsJardinsLillios.ApiRest;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
-
-import javax.imageio.ImageIO;
-
-import com.lille1.ParcsJardinsLillios.DAO.CategorieRepository;
 import com.lille1.ParcsJardinsLillios.DAO.ParcJardinRepository;
 import com.lille1.ParcsJardinsLillios.Entity.*;
-import com.lille1.ParcsJardinsLillios.Service.Imlementations.ParcJardinServiceImpelementation;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
-import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
-
 
 @RestController
 public class ParcJardinnLilliosRestController {
+
 	@Autowired
-	private ParcJardinInterface parcJardinInterfaceMetier;
+	private ParcJardinInterface mParcJardinInterface;
+
 	@Autowired
-	private CategorieInterface categorieInterfaceMetier;
-	@Autowired
-	private CommentaireInterface commentaireInterfaceMetier;
+	private CategorieInterface mCategorieInterface;
+	
 	@Autowired
 	private ParcJardinRepository mParcJardinRepository;
-	@Autowired
-	private CategorieRepository mCategorieRepository;
-	@Autowired
-	private ParcJardinServiceImpelementation mParcJardinServiceImpelementation;
+
 	/**
-	 * Permet delister toutes les Parc/Jardinns Lillios via une requête GET
-	 * http://localhost:8080/api/beers
-	 *
-	 * @return
+	 * Permet de récupérer tous les parc jardin Lillios enregistrer via une requête GET :
+	 * http://localhost:8080/api/PJ
+	 * 
 	 */
-	@RequestMapping(value = "/api/PJ", method = RequestMethod.GET)
+	@GetMapping(value = "/api/PJ")
 	public List<ParcJardin> GetParcJardinnLillios() {
-		//List<ParcJardin> parcJardinn = new ArrayList<>();
+
+		return mParcJardinInterface.ConsulterParcsJardin();
+	}
+
+	/**
+	 * Permet de récupérer les parc jardinn Lillios à partir un MotCle de nom Parc/Jardin via une requête GET :
+	 * http://localhost:8080/api/PJBysearch/{search}
+	 *
+	 * @param sSearch
+	 *            le MotCle d'un Parc/Jardin Lillios
+	 */
+	@RequestMapping(value = "/api/PJBysearch/{search}", method = RequestMethod.GET)
+	public List<ParcJardin> GetParcJardinnLilliosByMotCle(@PathVariable("search") String sSearch) {
 		
-		//parcJardinn.add(new ParcJardin("AllnameParc", "AlldescriptionParc", "AlltypeParc", 1.0, 2.0, "AlladdresseParc"));
-		return mParcJardinServiceImpelementation.ConsulterParcsJardin();
+		return mParcJardinRepository.findByNameContaining(sSearch);
+	}
+
+	/**
+	 * Permet de récupérer les parc jardinn Lillios à partir un service via une requête GET :
+	 * http://localhost:8080/api/PJByservice/{service}
+	 *
+	 * @param sService
+	 *            le nom d'un service liée à un parc Jardin Lillios  via une requête GET
+	 */
+	@GetMapping(value = "/api/PJByservice/{service}")
+	public List<ParcJardin> GetParcJardinnLilliosByService(@PathVariable("service") String sService) {
+		switch (sService.toUpperCase()) {
+		case "PARC":
+			return mParcJardinInterface.consulterPJByType("PARC");
+		case "JARDIN":
+			return mParcJardinInterface.consulterPJByType("JARDIN");
+		default:
+			return mParcJardinInterface.chercherPJParCategorie(mCategorieInterface.ConsulterCategorieParNom(sService));
+		}
 	}
 
 	/**
 	 * Permet d'enregistrer un nouvelle Parc/Jardinns via une requête POST :
-	 * http://localhost:8080/api/beers
+	 * http://localhost:8080/api/PJById/{idParcJardinnLillios}
 	 *
-	 * @param sName
+	 * @param sId
 	 *            le nom
-	 * @param sDescription
-	 *            la description
-	 * @param sType
-	 *            le type Jardinn Où Parc (blonde, brune, ruby, etc ...)
-	 * @param sLatitude
-	 *            latitude de Parc/Jardinn
-	 * @param sLongitude
-	 *            longitude Parc/Jardinn
-	 * @param sAdderesse
-	 *            l'address , localisation de Parc/Jardinn
 	 */
-	@RequestMapping(value = "/api/PJ", method = RequestMethod.POST)
-	public void POSTParcJardinnLillios(@RequestParam("name") String sName, @RequestParam("desc") String sDescription,
-			@RequestParam("type") String sType, @RequestParam("l") double sLatitude,
-			@RequestParam("g") double sLongitude, @RequestParam("addresse") String sAdderesse) {
+	@GetMapping(value = "/api/PJById/{idParcJardinnLillios}")
+	public ParcJardin GetParcJardinLilliosById(@PathVariable("idParcJardinnLillios") Long sId) {
 
-		ParcJardin parcJardinn = new ParcJardin(sName, sDescription, sType, sLatitude, sLongitude, sAdderesse);
-		mParcJardinServiceImpelementation.AjouterPJ(parcJardinn);
-		//System.out.println("Post réussite contenus : " + parcJardinn);
-	}
-	
-	@RequestMapping(value="/api/PJBysearch/{search}", method = RequestMethod.GET)
-	public List<ParcJardin> getPJBySearch(@PathVariable("search") String search){
-		
-		return mParcJardinRepository.findByNameContaining(search);
-	
-	}
-	
-	@RequestMapping(value="/api/PJByservice/{service}", method = RequestMethod.GET)
-	public List<ParcJardin> getPJByService(@PathVariable("service") String service){
-		
-		if(service.toUpperCase().equals("PARC")){
-			return parcJardinInterfaceMetier.consulterPJByType("PARC");
-		}else if(service.toUpperCase().equals("JARDIN")){
-			return parcJardinInterfaceMetier.consulterPJByType("JARDIN");
-		}else{
-			return mParcJardinServiceImpelementation.ConsulterParcsJardin();
-		}
-
-		/*switch(service.toUpperCase()){
-			case "PARC":
-				return parcJardinInterfaceMetier.consulterPJByType("PARC");
-			case "JARDIN":
-				return parcJardinInterfaceMetier.consulterPJByType("JARDIN");
-			default:
-				return mParcJardinServiceImpelementation.ConsulterParcsJardin();
-				//Categorie catTmp= categorieInterfaceMetier.ConsulterCategorieParNom(service);
-				//return parcJardinInterfaceMetier.chercherPJParCategorie(catTmp);
-
-
-		}*/
+		return mParcJardinInterface.ChercherPJParId(sId);
 
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping(value="/api/PJBylocalisation/{Latitude}/{Longitude}", method = RequestMethod.GET)
 	public ParcJardin getPJByLatitudeLongitude(@PathVariable("Latitude") double Latitude,@PathVariable("Longitude") double Longitude){
 		
@@ -135,7 +104,20 @@ public class ParcJardinnLilliosRestController {
 		//return p;
 	}
 											 
+=======
+	/**
+	 * Permet d'enregistrer un nouvelle Parc/Jardinns via une requête POST :
+	 * http://localhost:8080/api/PJByName/{NameParcJardinLillios}
+	 *
+	 * @param sId
+	 *            le nom
+	 */
+	@GetMapping(value = "/api/PJByName/{NameParcJardinLillios}")
+	public ParcJardin GetParcJardinLilliosByName(@PathVariable("NameParcJardinLillios") String name) {
+>>>>>>> 622e962d028f55a8caedb6b794707512d2aedd7f
 
-	
+		return mParcJardinInterface.chercherPJParNom(name);
+
+	}
 
 }

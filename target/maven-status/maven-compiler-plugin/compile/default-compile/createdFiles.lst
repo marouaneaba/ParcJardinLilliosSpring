@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com/lille1/ParcsJardinsLillios/Service/Interfaces/ParcJardinInterface.class
 com/lille1/ParcsJardinsLillios/ApiRest/CommentaireRestController.class
 com/lille1/ParcsJardinsLillios/Web/ajoutimage.class
@@ -20,3 +21,7 @@ com/lille1/ParcsJardinsLillios/Service/Imlementations/CommentaireServiceImplemen
 com/lille1/ParcsJardinsLillios/DAO/HoraireRepository.class
 com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.class
 com/lille1/ParcsJardinsLillios/Storage/StorageService.class
+=======
+com/lille1/ParcsJardinsLillios/DAO/ImageRepository.class
+com/lille1/ParcsJardinsLillios/Entity/Image.class
+>>>>>>> 622e962d028f55a8caedb6b794707512d2aedd7f

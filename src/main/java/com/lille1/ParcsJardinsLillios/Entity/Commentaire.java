@@ -18,6 +18,8 @@ public class Commentaire implements Serializable {
 	@Column
 	private boolean confirmer;
 
+	@ManyToOne(targetEntity = ParcJardin.class)
+	private ParcJardin parcJardinn;
 
 
 	//@ManyToOne(fetch = FetchType.EAGER)
@@ -28,12 +30,21 @@ public class Commentaire implements Serializable {
 	
 	public Commentaire(){}
 	
-	public Commentaire(String commentaire,int nbrEtoile, String nomCommentaire, boolean confirmer) {
+	public Commentaire(String commentaire,int nbrEtoile, String nomCommentaire, boolean confirmer, ParcJardin parcJardin) {
 		super();
 		this.Name=nomCommentaire;
 		this.nbrEtoile = nbrEtoile;
 		this.commentaire = commentaire;
 		this.confirmer = confirmer;
+		this.parcJardinn=parcJardin;
+	}
+
+	public ParcJardin getParcJardinn() {
+		return parcJardinn;
+	}
+
+	public void setParcJardinn(ParcJardin parcJardinn) {
+		this.parcJardinn = parcJardinn;
 	}
 
 	public Long getId() {

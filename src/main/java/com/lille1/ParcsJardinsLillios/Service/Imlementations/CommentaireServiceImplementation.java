@@ -7,9 +7,12 @@ import com.lille1.ParcsJardinsLillios.Entity.ParcJardin;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CommentaireInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 import java.util.List;
+
+
 @Service
 @Transactional
 public class CommentaireServiceImplementation implements CommentaireInterface{
@@ -27,12 +30,12 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
     }
 
     @Override
-    public ParcJardin ValiderCommentaire(Commentaire commentaire) throws Exception {
-
+    public void ValiderCommentaire(Commentaire commentaire) throws Exception {
+/*
         ParcJardin tmpPJ = null;
 
-        /*Commentaire Tmp =commentaireRepository.findById(commentaire.getId());
-        Tmp.setConfirmer(true);*/
+        *//*Commentaire Tmp =commentaireRepository.findById(commentaire.getId());
+        Tmp.setConfirmer(true);*//*
         for (ParcJardin pj : parcJardinRepository.findAll()){
             for(Commentaire com : pj.getCommentaires()){
                 if(com.getId().equals(commentaire.getId())) {
@@ -46,12 +49,17 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
         if(tmpPJ==null)
             throw new Exception("commentaire a valider non trouve");
 
-        return parcJardinRepository.save(tmpPJ);
+        return parcJardinRepository.save(tmpPJ);*/
+
+
+        commentaire.setConfirmer(true);
+        commentaireRepository.save(commentaire);
+
     }
 
     @Override
     public void SupprimerCommentaire(Commentaire commentaire) {
-        ParcJardin tmpPJ = null;
+       /* ParcJardin tmpPJ = null;
         for (ParcJardin pj : parcJardinRepository.findAll()){
             for(Commentaire com : pj.getCommentaires()){
                 if(com.getId().equals( commentaire.getId())) {
@@ -64,8 +72,18 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
 
         parcJardinRepository.save(tmpPJ);
         commentaireRepository.delete(commentaire);
+*/
+        commentaireRepository.delete(commentaire);
+    }
 
+    @Override
+    public List<Commentaire> ConsulternouveauCommentaires() {
+        return commentaireRepository.findByConfirmer(false);
+    }
 
+    @Override
+    public List<Commentaire> ConsulterCommentaireByPJ(ParcJardin PJ) {
+        return commentaireRepository.findByParcJardinn(PJ);
     }
 
 
@@ -77,12 +95,18 @@ public class CommentaireServiceImplementation implements CommentaireInterface{
 
     @Override
     public List<Commentaire> ListeCommentaireParPJ(ParcJardin PJ) {
-        return null;
+        return commentaireRepository.findByParcJardinn(PJ);
     }
 
     @Override
     public Commentaire ConsulterCommentaireParId(Long id) {
         return commentaireRepository.findById(id);
+    }
+
+    @Override
+    public List<Commentaire> ConsulterCommentaireNonValiderParPJ(ParcJardin PJ) {
+
+        return commentaireRepository.findByConfirmerAndParcJardinn(false,PJ);
     }
 
 

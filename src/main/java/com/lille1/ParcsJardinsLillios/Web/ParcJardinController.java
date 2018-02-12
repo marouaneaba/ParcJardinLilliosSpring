@@ -1,6 +1,9 @@
 package com.lille1.ParcsJardinsLillios.Web;
 
+import com.lille1.ParcsJardinsLillios.DAO.HoraireRepository;
 import com.lille1.ParcsJardinsLillios.Entity.Categorie;
+import com.lille1.ParcsJardinsLillios.Entity.Horaire;
+import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -30,11 +33,14 @@ import java.util.List;
 public class ParcJardinController {
     private final Logger logger = LoggerFactory.getLogger(ParcJardinController.class);
 
-
+    @Autowired
+    private CategorieInterface categorieInterfaceMetier;
     @Autowired
     private ParcJardinRepository parcJardinRepository;
     @Autowired
     private ParcJardinInterface parcJardinInterfaceMetier;
+    @Autowired
+    private HoraireRepository horaireRepository;
 
 
 
@@ -57,7 +63,7 @@ public class ParcJardinController {
     public String supprimerPJ(Long id, final RedirectAttributes redirectAttributes) {
         ParcJardin PJ = parcJardinInterfaceMetier.ChercherPJParId(id);
         parcJardinInterfaceMetier.SupprimerPJ(PJ);
-
+        
 
         redirectAttributes.addFlashAttribute("css", "success");
         redirectAttributes.addFlashAttribute("msg", "ParcJardin est supprimer");
@@ -73,33 +79,45 @@ public class ParcJardinController {
 
     // http://localhost:8080/images/imageApp/image1.jpg
     @PostMapping(value = "/AjouterPJ")
-    public String ajouterPJ( ParcJardin nouveauPJ,
-    		@RequestParam(value = "cats", required = false) List<Categorie> cats,
-    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model,@RequestParam("file") MultipartFile file,
-                             @RequestParam("nom") String name, @RequestParam("type") String type) {
+    public String ajouterPJ( ParcJardin nouveauPJ,Horaire hlundi,Horaire hmardi, Horaire hmercredi,Horaire hjeudi, Horaire hvendredi,Horaire hsamedi,Horaire hdimanche,
+    		@RequestParam(value = "cats") List<Long> cats,
+    		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model
+    		,@RequestParam("file1") MultipartFile file,@RequestParam("file2") MultipartFile file2,
+    		@RequestParam("file3") MultipartFile file3,@RequestParam("file4") MultipartFile file4,
+    		@RequestParam("file5") MultipartFile file5) {
 
-    	if(!file.isEmpty()){
-    		
-    		try{
-    			byte[] bytes = file.getBytes();
-    			
-    			
-    			File dir = new File("./src/main/resources/static/images/imageApp" );
-    			if (!dir.exists())
-					dir.mkdirs();
+    	List<MultipartFile> files = new ArrayList<>();
+    	files.add(file);
+    	files.add(file2);
+    	files.add(file3);
+    	files.add(file4);
+    	files.add(file5);
+    	
+    	for(int i=0;i<files.size();i++){
+    		if(!files.get(i).isEmpty()){
+        		
+        		try{
+        			byte[] bytes = files.get(i).getBytes();
+        			
+        			
+        			File dir = new File("./src/main/resources/static/images/"+nouveauPJ.getName() );
+        			if (!dir.exists())
+    					dir.mkdirs();
 
-				// Create the file on server
-				File serverFile = new File(dir.getAbsolutePath()+ File.separator + "hello.jpg");
-				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
-				stream.write(bytes);
-				stream.close();
+    				// Create the file on server
+    				File serverFile = new File(dir.getAbsolutePath()+ File.separator + nouveauPJ.getName()+i+".jpg");
+    				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+    				stream.write(bytes);
+    				stream.close();
 
 
-				System.out.println("You successfully uploaded file");
-    		}catch(Exception e){
-    			System.out.println(e.getMessage());
-    		}
+    				System.out.println("You successfully uploaded file");
+        		}catch(Exception e){
+        			System.out.println(e.getMessage());
+        		}
+        	}
     	}
+    	
   
         if (cats != null) {
             for (int i = 0; i < cats.size(); i++) {
@@ -107,13 +125,84 @@ public class ParcJardinController {
 
             }
         }
-      //  model.addAttribute("files", fileNames);
+        List<Categorie> listCatTmp = new ArrayList<>();
+        for(long idcat : cats){
+    	     listCatTmp.add(categorieInterfaceMetier.ColsulterCategorieId(idcat));
+        }
 
-        parcJardinRepository.save(nouveauPJ);
+        for(Categorie tmpcat : listCatTmp){
+    	    System.out.println("---------"+tmpcat.toString());
+        }
+      //  model.addAttribute("files", fileNames);
+        ParcJardin tmp = parcJardinRepository.save(nouveauPJ);
+        parcJardinInterfaceMetier.AjouterListCatToPJ(listCatTmp,tmp);
+
+
+        hlundi.setParcJardinn(tmp);
+        horaireRepository.save(hlundi);
+
+        hmardi.setParcJardinn(tmp);
+        horaireRepository.save(hmardi);
+
+        hmercredi.setParcJardinn(tmp);
+        horaireRepository.save(hmercredi);
+
+        hjeudi.setParcJardinn(tmp);
+        horaireRepository.save(hjeudi);
+
+        hvendredi.setParcJardinn(tmp);
+        horaireRepository.save(hvendredi);
+
+        hsamedi.setParcJardinn(tmp);
+        horaireRepository.save(hsamedi);
+
+        hdimanche.setParcJardinn(tmp);
+        horaireRepository.save(hdimanche);
+
+
+
         return "redirect:/operationPJ";
     }
     
+    @GetMapping(value = "/afficherRep")
+    public String GetContentFile(Model model){
+    	
+    	File dir = new File("./src/main/resources/static/images/" );
+    	String[] files = dir.list();
+    	String tmp = "vide";
+    	
+    	for(int i=0;i<files.length;i++){
+    		tmp += files[i]+" ,\n ";
+    	}
+    	model.addAttribute("testCharactere",tmp);
+    	return "test";
+    }
+    
+    @GetMapping(value = "/afficherRepName/{name}")
+    public String GetContentFile(@PathVariable("name") String name,Model model){
+    	
+    	if( !name.equals("") && name != null ){
+    		File dir = new File("./src/main/resources/static/images/"+name+"/" );
+        	String[] files = dir.list();
+        	String tmp = "vide";
+        	
+        	for(int i=0;i<files.length;i++){
+        		tmp += files[i]+" ,\n ";
+        	}
+        	model.addAttribute("testCharactere",tmp);
+    	}
+    	
+    	return "test";
+    }
+    
+    
+    @RequestMapping("/chercherPJParNom")
+    public String ChercherPJParNom(Model model,@RequestParam(value = "PJNom") String PJNom){
+        ParcJardin pj = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
+        model.addAttribute("allParcsJardins", pj);
 
+        return "parcJardin";
+    }
 
 
 }

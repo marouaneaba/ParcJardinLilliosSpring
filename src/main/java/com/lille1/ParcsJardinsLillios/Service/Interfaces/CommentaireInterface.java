@@ -9,15 +9,18 @@ public interface CommentaireInterface {
 
 	public Commentaire AjouterCommentaire(Commentaire commentaire);
 
-	public ParcJardin ValiderCommentaire(Commentaire commentaire) throws Exception;
+	public void ValiderCommentaire(Commentaire commentaire) throws Exception;
 	
 	public void SupprimerCommentaire(Commentaire commentaire);
 
-
+	public List<Commentaire> ConsulternouveauCommentaires();
+	public List<Commentaire> ConsulterCommentaireByPJ(ParcJardin PJ);
 
 	public List<Commentaire> ListeCommentaireParPJ(ParcJardin PJ);
 
 	public Commentaire ConsulterCommentaireParId(Long id);
+
+	public List<Commentaire> ConsulterCommentaireNonValiderParPJ(ParcJardin PJ);
 
 
 
