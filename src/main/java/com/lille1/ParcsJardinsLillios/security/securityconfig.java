@@ -1,8 +1,7 @@
 package com.lille1.ParcsJardinsLillios.security;
 
 
-import com.lille1.ParcsJardinsLillios.DAO.AdminRepository;
-import com.lille1.ParcsJardinsLillios.Entity.Admin;
+import com.lille1.ParcsJardinsLillios.DAO.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -12,22 +11,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import java.util.List;
-
 @Configuration
 @EnableWebSecurity
 public class securityconfig extends WebSecurityConfigurerAdapter {
 @Autowired
-    AdminRepository adminRepository;
+CustomUserDetails customUserDetails;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    	// /images/**
-    	// /images/imageApp/**
-        //personneMetier.chercherPersonneLoginPass();
-        Authentication Auth = SecurityContextHolder.getContext().getAuthentication();
 
-//Admin admin = adminRepository.findByNameAndPassword()
-        auth.inMemoryAuthentication().withUser("admin").password("password").roles("ADMIN");
+        auth.userDetailsService(customUserDetails);
+        //auth.inMemoryAuthentication().withUser("admin").password("password").roles("ADMIN");
 
 
     }

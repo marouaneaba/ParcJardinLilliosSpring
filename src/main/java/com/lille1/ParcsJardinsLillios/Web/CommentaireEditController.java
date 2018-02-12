@@ -3,8 +3,8 @@ package com.lille1.ParcsJardinsLillios.Web;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.lille1.ParcsJardinsLillios.DAO.AdminRepository;
-import com.lille1.ParcsJardinsLillios.Entity.Admin;
+import com.lille1.ParcsJardinsLillios.DAO.UserRepository;
+import com.lille1.ParcsJardinsLillios.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +25,7 @@ import com.lille1.ParcsJardinsLillios.Service.Interfaces.ParcJardinInterface;
 public class CommentaireEditController {
 
 	@Autowired
-	private AdminRepository adminRepository;
+	private UserRepository userRepository;
 	@Autowired
     private ParcJardinInterface parcJardinInterfaceMetier;
     @Autowired
@@ -56,7 +56,7 @@ public class CommentaireEditController {
     	    System.out.println("---------"+tmpcat.toString());
         }
         // TODO
-        
+
       //  model.addAttribute("files", fileNames);
         //ParcJardin tmp = parcJardinRepository.save(nouveauPJ);
         //parcJardinInterfaceMetier.AjouterListCatToPJ(listCatTmp,tmp);
@@ -75,7 +75,7 @@ public class CommentaireEditController {
 			@RequestParam("email_address") String email_address,@RequestParam("Tel") String Tel){
 		
 		//TODO
-		adminRepository.save(new Admin(name,password,email_address,Tel));
+		userRepository.save(new User(name,password,email_address,Tel));
 		System.out.println(name+" , "+password+" , "+email_address);
 		return new RedirectView("/operationPJ");
 	}

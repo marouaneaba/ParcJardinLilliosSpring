@@ -111,7 +111,38 @@
                 </table>
             </div>
 
-            <div th:object="${hlundi}">
+            <!--<div>
+                <table>
+                    <tr>
+                        <td>Categorie(s)</td>
+                        <td>
+                            <th:block th:each="cat : ${categories}">
+                                <input type="checkbox" name="cats" th:value="${cat.id}"/>
+                                <label th:text="${cat.nomcategorie}"></label>
+                            </th:block>
+                        </td>
+                    </tr>
+                </table>
+            </div>-->
+
+
+
+
+            <!--<table >
+                <tr >
+                    <td>Horaire : </td>
+                    <td>
+                        <th:block th:each="hor : ${AllHoraire}" th:object="${hor}">
+                            <input type="text" name="journee" th:value="${hor.journee}"/>
+                            <input type="text" name="ouverture" th:field="*{ouverture}"/>
+                            <input type="text" name="fermeture" th:field="*{fermeture}"/>
+                        </th:block>
+                    </td>
+                </tr>
+            </table>-->
+
+
+            <!--<div th:object="${hlundi}">
                 <div class="form-group col-lg-offset-2">
                     <label for="mardi">Mardi : </label>
                     <input type="hidden" class="form-control"  th:value="lundi" id="lundi" name="journee" th:field="*{journee}"/>
@@ -163,7 +194,7 @@
                 </div>
 
             </div>
-
+-->
 
 
 

@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.*;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.lille1.ParcsJardinsLillios.DAO.*;
@@ -18,8 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -46,7 +43,7 @@ public class Application implements CommandLineRunner{
 	@Autowired
 	private CategorieRepository categorieRepository;
 	@Autowired
-	private AdminRepository adminRepository;
+	private UserRepository userRepository;
 	@Autowired
 	private HoraireRepository horaireRepository;
 	
@@ -56,6 +53,8 @@ public class Application implements CommandLineRunner{
 	private ParcJardinInterface parcJardinInterfaceMetier;
 	@Autowired
     private CommentaireInterface commentaireInterfaceMetier;
+
+
 	
 	
 	
@@ -185,6 +184,8 @@ public class Application implements CommandLineRunner{
 
 		parcJardinInterfaceMetier.supprimercatFromPJ(parcjardin2.getId());
 
+		userRepository.save(new User("name","password","admin@admin.fr","098998"));
+
 		/*ParcJardin PJ1= new ParcJardin("parc1","descParc1", "Parc",125.0,2121.0,"adressParc1");
 		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "Jardin",122.0,211.0,"adressJardin1");
 		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "Jardin",122.0,211.0,"adressJardin2");
@@ -287,11 +288,11 @@ public class Application implements CommandLineRunner{
 
 
 /*
-		Admin a = new Admin("mouss", "123", "toto", "25448");
-		adminRepository.save(a);
+		User a = new User("mouss", "123", "toto", "25448");
+		userRepository.save(a);
 
 
-		adminRepository.findAll().forEach(c->{
+		userRepository.findAll().forEach(c->{
 			System.out.println(c.getName());
 		});*/
 /*

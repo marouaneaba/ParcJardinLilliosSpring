@@ -23,7 +23,7 @@ public class LonginController {
 
 	
 	@Autowired
-    private AdminRepository mAdminRepository;
+    private UserRepository mAdminRepository;
 	
 	@RequestMapping(method = RequestMethod.GET)
     public String createView(Model model){
@@ -36,7 +36,7 @@ public class LonginController {
     public String connectUser(Model model, @RequestParam("username") String name,
             @RequestParam("password")String password){
         
-    	//Admin find = mAdminRepository.findByNameAndPassword(name, password);
+    	//User find = mAdminRepository.findByNameAndPassword(name, password);
     	//System.out.println("find : "+find.getName()+" , "+find.getPassword());
     	//if(find != null ){
     		return "admin";

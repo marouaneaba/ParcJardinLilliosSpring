@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Admin implements Serializable {
+public class User implements Serializable {
 
 	@Id
 	@GeneratedValue
@@ -14,22 +14,24 @@ public class Admin implements Serializable {
 	@Column
 	private String password;
 	@Column
-	private String Email;
+	private String email;
 	@Column
 	private String Tel;
+	@Column
+	private String role = "ROLE_ADMIN";
 	
 	
 	
 	
 	
-	public Admin() {
+	public User() {
 		// TODO Auto-generated constructor stub
 	}
-	public Admin(String name, String password, String email, String tel) {
+	public User(String name, String password, String email, String tel) {
 		super();
 		Name = name;
 		this.password = password;
-		Email = email;
+		this.email = email;
 		Tel = tel;
 	}
 	public Long getId() {
@@ -51,10 +53,10 @@ public class Admin implements Serializable {
 		this.password = password;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getTel() {
 		return Tel;
@@ -62,7 +64,12 @@ public class Admin implements Serializable {
 	public void setTel(String tel) {
 		Tel = tel;
 	}
-	
-	
-	
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 }
