@@ -48,9 +48,15 @@ public class CommentaireController {
 
     @RequestMapping("/chercherCommentaireParNomPJ")
     public String  ChercherCommentaireParNomPJ(Model model, @RequestParam(value="PJNom") String PJNom){
-        ParcJardin tmp =parcJardinInterfaceMetier.chercherPJParNom(PJNom);
-        List<Commentaire> listtmpCom =commentaireInterfaceMetier.ConsulterCommentaireNonValiderParPJ(tmp);
-        model.addAttribute("AllCommentaire",listtmpCom);
+    	
+    	if(PJNom.equals("")){
+    		model.addAttribute("AllCommentaire",commentaireInterfaceMetier.ConsulternouveauCommentaires());
+    	}else{
+    		ParcJardin tmp =parcJardinInterfaceMetier.chercherPJParNom(PJNom);
+            List<Commentaire> listtmpCom =commentaireInterfaceMetier.ConsulterCommentaireNonValiderParPJ(tmp);
+            model.addAttribute("AllCommentaire",listtmpCom);
+    	}
+        
         return "Commentaire";
     }
 
