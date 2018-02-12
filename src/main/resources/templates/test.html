@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymLeaf.org"
       xmlns:layout="https://www.ultraq.net.nz/thymeLeaf/Layout">
-<head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="/css/monstyle.css" />
-    <title>TEST</title>
-</head>
-<body>
-	<label th:text= "${testCharactere}"></label>
-</body>
+
+  <head>
+    <title>Geocoding service</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8"/>
+    
+  </head>
+  <body >
+    <div id="floating-panel">
+      <input id="address" type="textbox" value="Sydney, NSW"/>
+      <input id="submit" type="button" value="Geocode"/>
+    </div>
+    <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJnvvcL_dbwxK3BMeZ0AjOUy1fXywda_4">
+    </script>
+    <script>
+    
+    var t = document.getElementById("address");
+    
+    var geocoder = new google.maps.Geocoder();
+  
+        document.getElementById('submit').addEventListener('click', function() {
+          geocodeAddress();
+        });
+  
+	
+ 
+      function geocodeAddress() {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+        	console.log("hey 1");
+          if (status === 'OK') {
+        	  var GPS= results[0].geometry.location;
+        	  var objLatLng= {lat:GPS.lat(),lng:GPS.lng()};
+        	  console.log(objLatLng);
+            
+          } else {
+        	  console.log("hey 2");
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+          console.log("hey 3");
+        });
+      }
+    </script>
+    
+  </body>
 </html>

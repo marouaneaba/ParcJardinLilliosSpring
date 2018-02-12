@@ -42,7 +42,8 @@ public class CommentaireRestController {
 	@GetMapping(value = "/api/CommentaireByPJ/{ParcJardin}")
 	public List<Commentaire> getCommentaireByPJ(@PathVariable("ParcJardin") Long sIdparcJardin) {
 		
-		return mCommentaireInterface.ConsulterCommentaireByPJ(mParcJardinInterface.ChercherPJParId(sIdparcJardin));
+		//return mCommentaireInterface.ConsulterCommentaireByPJ(mParcJardinInterface.ChercherPJParId(sIdparcJardin));
+		return mCommentaireInterface.ConsulterCommentaireValiderParPJ(mParcJardinInterface.ChercherPJParId(sIdparcJardin));
 	}
 
 	@GetMapping(value = "/api/PostCommentaire/{idPJ}/{name}/{nbrEtoile}/{commentaire}")
