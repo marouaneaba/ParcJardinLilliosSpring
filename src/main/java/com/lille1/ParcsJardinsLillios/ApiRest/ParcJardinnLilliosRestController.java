@@ -82,29 +82,9 @@ public class ParcJardinnLilliosRestController {
 
 	}
 	
-<<<<<<< HEAD
-	@RequestMapping(value="/api/PJBylocalisation/{Latitude}/{Longitude}", method = RequestMethod.GET)
-	public ParcJardin getPJByLatitudeLongitude(@PathVariable("Latitude") double Latitude,@PathVariable("Longitude") double Longitude){
-		
-		return mParcJardinServiceImpelementation.chercherPJLG(Latitude, Longitude);
-		
-	}
+
 	
-	@RequestMapping(value="/api/categorieByPJ/{name}", method = RequestMethod.GET)
-	public List<Categorie> getCategorieByPJ(@PathVariable("name") String name){
-		
-		/*ParcJardin p = new ParcJardin("Parc Héron","Le parc du Héron est l'un des "
-				+ "parcs de Villeneuve-d'Ascq, d'une superficie de 110 ha. Une "
-				+ "partie est classée sous la forme de la réserve naturelle "
-				+ "régionale du Héron."
-				,"PARC", 15.0, 3.0,"Avenue Paul Langevin");
-		*/
-		System.out.println("eeee : "+mCategorieRepository.findByParcJardinnId2(name));		
-		return mCategorieRepository.findByParcJardinnId2(name);
-		//return p;
-	}
-											 
-=======
+
 	/**
 	 * Permet d'enregistrer un nouvelle Parc/Jardinns via une requête POST :
 	 * http://localhost:8080/api/PJByName/{NameParcJardinLillios}
@@ -114,7 +94,7 @@ public class ParcJardinnLilliosRestController {
 	 */
 	@GetMapping(value = "/api/PJByName/{NameParcJardinLillios}")
 	public ParcJardin GetParcJardinLilliosByName(@PathVariable("NameParcJardinLillios") String name) {
->>>>>>> 622e962d028f55a8caedb6b794707512d2aedd7f
+
 
 		return mParcJardinInterface.chercherPJParNom(name);
 
