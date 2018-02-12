@@ -130,6 +130,7 @@ public class ParcJardinnLilliosRestController {
 				+ "régionale du Héron."
 				,"PARC", 15.0, 3.0,"Avenue Paul Langevin");
 		*/
+		System.out.println("eeee : "+mCategorieRepository.findByParcJardinnId2(name));		
 		return mCategorieRepository.findByParcJardinnId2(name);
 		//return p;
 	}
