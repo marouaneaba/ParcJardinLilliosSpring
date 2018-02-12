@@ -113,36 +113,56 @@
 
             <div th:object="${hlundi}">
                 <div class="form-group col-lg-offset-2">
-                <label for="lundi">Lundi : </label>
-                <input type="hidden" class="form-control" th:value="Lundi" id="lundi" name="journee" th:field="*{journee}"/>
-            </div>
-
-            <div class="form-group col-lg-offset-2">
-                <label for="ho">Heure d'ouverture</label>
-                <input type="texte" class="form-control" id="ho" name="ouverture" th:field="*{ouverture}"/>
-            </div>
-            <div class="form-group col-lg-offset-2">
-                <label for="hf">Heure fermeture</label>
-                <input type="texte" class="form-control" id="hf" name="fermuture" th:field="*{fermuture}"/>
-            </div>
-            </div>
-
-            <div th:object="${hmardi}">
-                <div class="form-group col-lg-offset-2">
-                    <label for="mardi">Lundi : </label>
-                    <input type="hidden" class="form-control"  th:value="Mardi" id="mardi" name="journee" th:field="*{journee}"/>
+                    <label for="mardi">Mardi : </label>
+                    <input type="hidden" class="form-control"  th:value="lundi" id="lundi" name="journee" th:field="*{journee}"/>
                 </div>
 
                 <div class="form-group col-lg-offset-2">
-                    <label for="ho1">Heure d'ouverture</label>
-                    <input type="texte" class="form-control" id="ho1" name="ouverture" th:field="*{ouverture}"/>
+                    <label for="ho">Heure d'ouverture</label>
+                    <input type="texte" class="form-control" id="ho" name="ouverture" th:field="*{ouverture}"/>
                 </div>
                 <div class="form-group col-lg-offset-2">
                     <label for="hf1">Heure fermeture</label>
-                    <input type="texte" class="form-control" id="hf1" name="fermuture" th:field="*{fermuture}"/>
+                    <input type="texte" class="form-control" id="hf" name="fermeture" th:field="*{fermeture}"/>
                 </div>
+
             </div>
 
+            <div th:object="${hmardi}">
+                    <div class="form-group col-lg-offset-2">
+                        <label for="mardi">Mardi : </label>
+                        <input type="hidden" class="form-control"  th:value="Mardi" id="mardi" name="journee" th:field="*{journee}"/>
+                    </div>
+
+                    <div class="form-group col-lg-offset-2">
+                        <label for="ho1">Heure d'ouverture</label>
+                        <input type="texte" class="form-control" id="ho1" name="ouverture" th:field="*{ouverture}"/>
+                    </div>
+                    <div class="form-group col-lg-offset-2">
+                        <label for="hf1">Heure fermeture</label>
+                        <input type="texte" class="form-control" id="hf1" name="fermeture" th:field="*{fermeture}"/>
+                    </div>
+
+            </div>
+
+
+
+            <div th:object="${hmercredi}">
+                <div class="form-group col-lg-offset-2">
+                    <label for="mercredi">Mercredi : </label>
+                    <input type="hidden" class="form-control"  th:value="mercredi" id="mercredi" name="journee" th:field="*{journee}"/>
+                </div>
+
+                <div class="form-group col-lg-offset-2">
+                    <label for="ho2">Heure d'ouverture</label>
+                    <input type="texte" class="form-control" id="ho2" name="ouverture" th:field="*{ouverture}"/>
+                </div>
+                <div class="form-group col-lg-offset-2">
+                    <label for="hf2">Heure fermeture</label>
+                    <input type="texte" class="form-control" id="hf2" name="fermeture" th:field="*{fermeture}"/>
+                </div>
+
+            </div>
 
 
 

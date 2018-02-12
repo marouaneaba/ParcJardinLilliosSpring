@@ -78,6 +78,7 @@ public class ParcJardinController {
     }
 
     // http://localhost:8080/images/imageApp/image1.jpg
+
     @PostMapping(value = "/AjouterPJ")
     public String ajouterPJ( ParcJardin nouveauPJ,Horaire hlundi,Horaire hmardi, Horaire hmercredi,Horaire hjeudi, Horaire hvendredi,Horaire hsamedi,Horaire hdimanche,
     		@RequestParam(value = "cats") List<Long> cats,
@@ -137,9 +138,12 @@ public class ParcJardinController {
         ParcJardin tmp = parcJardinRepository.save(nouveauPJ);
         parcJardinInterfaceMetier.AjouterListCatToPJ(listCatTmp,tmp);
 
+        System.out.println("lundi  "+hlundi.getOuverture());
 
         hlundi.setParcJardinn(tmp);
         horaireRepository.save(hlundi);
+
+        System.out.println("mardi  "+hmardi.getOuverture());
 
         hmardi.setParcJardinn(tmp);
         horaireRepository.save(hmardi);
@@ -198,13 +202,13 @@ public class ParcJardinController {
     
     @RequestMapping("/chercherPJParNom")
     public String ChercherPJParNom(Model model,@RequestParam(value = "PJNom") String PJNom){
+
     	if(PJNom.equals("")){
     		model.addAttribute("allParcsJardins", parcJardinInterfaceMetier.ConsulterParcsJardin());
     	}else{
     		ParcJardin pj = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
             model.addAttribute("allParcsJardins", pj);
     	}
-        
 
         return "parcJardin";
     }
