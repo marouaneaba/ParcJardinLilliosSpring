@@ -1,6 +1,7 @@
 package com.lille1.ParcsJardinsLillios.Web;
 
 import com.lille1.ParcsJardinsLillios.Entity.Categorie;
+import com.lille1.ParcsJardinsLillios.Entity.Horaire;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
@@ -75,7 +76,7 @@ public class ParcJardinController {
 
     // http://localhost:8080/images/imageApp/image1.jpg
     @PostMapping(value = "/AjouterPJ")
-    public String ajouterPJ( ParcJardin nouveauPJ,
+    public String ajouterPJ( ParcJardin nouveauPJ,Horaire horaire,
     		@RequestParam(value = "cats") List<Long> cats,
     		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model
     		,@RequestParam("file1") MultipartFile file,@RequestParam("file2") MultipartFile file2,

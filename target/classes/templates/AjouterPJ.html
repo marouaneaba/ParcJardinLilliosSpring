@@ -11,7 +11,7 @@
     <!--center-->
     <div id="bloc_page" class ="col-lg-4 col-lg-offset-4">
 
-        <form enctype = "multipart/form-data" class="row" th:action="@{/AjouterPJ}" method ="Post" th:object="${nouveauPJ}">
+        <form enctype = "multipart/form-data" class="row" th:action="@{/AjouterPJ}" method ="Post" th:object="${nouveauPJ}" th:object="${horaire}">
             <div class="form-group col-lg-offset-2">
                 <label for="ajouterPJ">Nom</label>
                 <input type="text" class="form-control" id="ajouterPJ" name="name" th:field="*{name}"/>
@@ -108,6 +108,28 @@
                     </tr>
                 </table>
             </div>
+
+            <div class="form-group col-lg-offset-2">
+                <label for="lundi">Lundi : </label>
+                <input type="hidden" class="form-control" id="lundi" name="journee" th:field="*{journee}"/>
+            </div>
+
+            <div class="form-group col-lg-offset-2">
+                <label for="ho">Heure d'ouverture</label>
+                <input type="texte" class="form-control" id="ho" name="ouverture" th:field="*{ouverture}"/>
+            </div>
+            <div class="form-group col-lg-offset-2">
+                <label for="hf">Heure fermeture</label>
+                <input type="texte" class="form-control" id="hf" name="fermuture" th:field="*{fermuture}"/>
+            </div>
+
+
+
+
+
+
+
+
 
 
 
