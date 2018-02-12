@@ -2,6 +2,7 @@ package com.lille1.ParcsJardinsLillios.Service.Imlementations;
 
 import com.lille1.ParcsJardinsLillios.DAO.CategorieRepository;
 import com.lille1.ParcsJardinsLillios.DAO.CommentaireRepository;
+import com.lille1.ParcsJardinsLillios.DAO.HoraireRepository;
 import com.lille1.ParcsJardinsLillios.DAO.ParcJardinRepository;
 import com.lille1.ParcsJardinsLillios.Entity.Categorie;
 import com.lille1.ParcsJardinsLillios.Entity.Commentaire;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -24,7 +26,8 @@ import java.util.List;
 public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     @Autowired
     CommentaireRepository commentaireRepository;
-
+    @Autowired
+    HoraireRepository horaireRepository;
     @Autowired
     ParcJardinRepository parcJardinRepository;
     @Autowired
@@ -118,15 +121,20 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
             e.printStackTrace();
         }
 */
-        List<Categorie> ListTmpCat = PJ.getCategories();
-        for (Categorie cat : ListTmpCat){
-            PJ.getCategories().remove(cat);
-        }
+
+
+        List<Categorie> listTmp1Cat =PJ.getCategories();
+        listTmp1Cat.clear();
         parcJardinRepository.save(PJ);
 
-        List<Commentaire> listTmp = commentaireRepository.findByParcJardinn(PJ);
-        for (Commentaire cm : listTmp){
+        List<Commentaire> listTmpCom = commentaireRepository.findByParcJardinn(PJ);
+        for (Commentaire cm : listTmpCom){
             commentaireRepository.delete(cm);
+        }
+
+        List<Horaire> listTmpH = horaireRepository.findByParcJardin(PJ);
+        for (Horaire h : listTmpH){
+            horaireRepository.delete(h);
         }
         parcJardinRepository.delete(PJ);
     }
@@ -215,11 +223,10 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     @Override
     public void supprimercatFromPJ(Long idPJ) {
 
-ParcJardin PJ = parcJardinRepository.findById(idPJ);
-        for(Categorie cat : PJ.getCategories()){
-            PJ.getCategories().remove(cat);
-        }
-        parcJardinRepository.save(PJ);
+        ParcJardin PJ = parcJardinRepository.findById(idPJ);
+
+        List<Categorie> listTmp =PJ.getCategories();
+        listTmp.clear();
 
     }
 

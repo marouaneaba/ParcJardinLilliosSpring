@@ -1,6 +1,8 @@
 package com.lille1.ParcsJardinsLillios.Web;
 
+import com.lille1.ParcsJardinsLillios.DAO.HoraireRepository;
 import com.lille1.ParcsJardinsLillios.Entity.Categorie;
+import com.lille1.ParcsJardinsLillios.Entity.Horaire;
 import com.lille1.ParcsJardinsLillios.Service.Interfaces.CategorieInterface;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
@@ -37,6 +39,8 @@ public class ParcJardinController {
     private ParcJardinRepository parcJardinRepository;
     @Autowired
     private ParcJardinInterface parcJardinInterfaceMetier;
+    @Autowired
+    private HoraireRepository horaireRepository;
 
 
 
@@ -75,7 +79,7 @@ public class ParcJardinController {
 
     // http://localhost:8080/images/imageApp/image1.jpg
     @PostMapping(value = "/AjouterPJ")
-    public String ajouterPJ( ParcJardin nouveauPJ,
+    public String ajouterPJ( ParcJardin nouveauPJ,Horaire hlundi,Horaire hmardi, Horaire hmercredi,Horaire hjeudi, Horaire hvendredi,Horaire hsamedi,Horaire hdimanche,
     		@RequestParam(value = "cats") List<Long> cats,
     		@ModelAttribute("uploadForm") List<MultipartFile> uploadForm, Model model
     		,@RequestParam("file1") MultipartFile file,@RequestParam("file2") MultipartFile file2,
@@ -132,6 +136,29 @@ public class ParcJardinController {
       //  model.addAttribute("files", fileNames);
         ParcJardin tmp = parcJardinRepository.save(nouveauPJ);
         parcJardinInterfaceMetier.AjouterListCatToPJ(listCatTmp,tmp);
+
+
+        hlundi.setParcJardinn(tmp);
+        horaireRepository.save(hlundi);
+
+        hmardi.setParcJardinn(tmp);
+        horaireRepository.save(hmardi);
+
+        hmercredi.setParcJardinn(tmp);
+        horaireRepository.save(hmercredi);
+
+        hjeudi.setParcJardinn(tmp);
+        horaireRepository.save(hjeudi);
+
+        hvendredi.setParcJardinn(tmp);
+        horaireRepository.save(hvendredi);
+
+        hsamedi.setParcJardinn(tmp);
+        horaireRepository.save(hsamedi);
+
+        hdimanche.setParcJardinn(tmp);
+        horaireRepository.save(hdimanche);
+
 
 
         return "redirect:/operationPJ";
