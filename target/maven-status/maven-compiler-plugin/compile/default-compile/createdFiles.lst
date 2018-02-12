@@ -14,6 +14,7 @@ com/lille1/ParcsJardinsLillios/UI/Service/RequestParcJardin.class
 com/lille1/ParcsJardinsLillios/UI/controller/AjouterParcJardinController.class
 com/lille1/ParcsJardinsLillios/Web/CommentaireController.class
 com/lille1/ParcsJardinsLillios/security/SecurityController.class
+com/lille1/ParcsJardinsLillios/ApiRest/HoraireApiController.class
 com/lille1/ParcsJardinsLillios/DAO/HoraireRepository.class
 com/lille1/ParcsJardinsLillios/UI/includes/HeaderContorller.class
 com/lille1/ParcsJardinsLillios/Service/Imlementations/HoraireServiceImplementation.class
