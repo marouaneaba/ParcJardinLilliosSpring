@@ -34,17 +34,29 @@ public class CommentaireEditController {
 	@Autowired
 	private ParcJardinRepository parcJardinRepository;
 	
+	/**
+	 * 
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping(value="/modificationParcJardin")
 	public String ModificationParcJardinnLillios(long id,Model model){
 		
 		model.addAttribute("Allcategories",categorieInterfaceMetier.consulterCategories());
 
-System.out.println("avant modifi pj "+ id);
+		System.out.println("avant modifi pj "+ id);
         model.addAttribute("nouveauPJ", parcJardinInterfaceMetier.ChercherPJParId(id) );
         return "modificationparcjardin";
 	}
 	
-	
+	/**
+	 * 
+	 * @param id
+	 * @param nouveauPJ
+	 * @param cats
+	 * @return
+	 */
 	@PostMapping(value="/modifierParcJardinLillios")
 	public RedirectView PostModificationParcJardinLillios(long id,ParcJardin nouveauPJ ,@RequestParam(value = "cats") List<Long> cats){
 		
@@ -72,13 +84,24 @@ System.out.println("avant modifi pj "+ id);
         return new RedirectView("/operationPJ");
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	@GetMapping(value="/ajouteAdmin")
 	public String GETajoutAdmin(){
 		
 		return "ajoutadmin";
 	}
 	
-	
+	/**
+	 * 
+	 * @param name
+	 * @param password
+	 * @param email_address
+	 * @param Tel
+	 * @return
+	 */
 	@PostMapping(value="/ajouteAdmin")
 	public RedirectView PostajoutAdmin(@RequestParam("name") String name,@RequestParam("password") String password,
 			@RequestParam("email_address") String email_address,@RequestParam("Tel") String Tel){
@@ -88,14 +111,6 @@ System.out.println("avant modifi pj "+ id);
 		System.out.println(name+" , "+password+" , "+email_address);
 		return new RedirectView("/operationPJ");
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }

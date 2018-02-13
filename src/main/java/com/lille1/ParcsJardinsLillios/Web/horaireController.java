@@ -19,6 +19,12 @@ public class horaireController {
     ParcJardinRepository parcJardinRepository;
 
 
+    /**
+     * 
+     * @param model
+     * @param id
+     * @return
+     */
     @GetMapping(value="/AjouterHoraire")
     public String GETajoutHoraire(Model model, long id){
     System.out.println("id de pj "+id);
@@ -26,7 +32,14 @@ public class horaireController {
         return "horaire";
     }
 
-
+    /**
+     * 
+     * @param journee
+     * @param ouverture
+     * @param fermeture
+     * @param id
+     * @return
+     */
     @PostMapping(value="/toto")
     public String AddHoraireToPJ(String journee, String ouverture, String fermeture, long id){
 

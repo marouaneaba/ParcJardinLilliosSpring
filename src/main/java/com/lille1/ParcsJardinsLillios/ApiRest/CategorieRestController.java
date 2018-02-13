@@ -13,7 +13,10 @@ public class CategorieRestController {
 	@Autowired
 	private CategorieInterface mCategorieInterface;
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
 	@GetMapping(value = "/api/Categorie")
 	public List<Categorie> GetCategorie() {
 		return mCategorieInterface.consulterCategories();

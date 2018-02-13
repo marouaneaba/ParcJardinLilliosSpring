@@ -24,12 +24,23 @@ public class HoraireController2 {
     ParcJardinInterface parcJardinInterfaceMetier;
 
 
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @GetMapping(value="/Operatiohoraire")
     public String GetOperationHoraire(Model model){
     return "operationHoraire";
     }
 
-
+    /**
+     * 
+     * @param model
+     * @param PJ
+     * @param PJNom
+     * @return
+     */
     @GetMapping(value="/chercherHoraireParPJ")
     public String ChercherHoraireParPJ(Model model , String PJ, String PJNom){
         ParcJardin foundPJ = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
@@ -38,7 +49,12 @@ public class HoraireController2 {
         return "operationHoraire";
     }
 
-
+    /**
+     * 
+     * @param idH
+     * @param model
+     * @return
+     */
     @GetMapping(value="/ModifierHoraire")
     public String GetModifierHoraire(Long idH,Model model){
         Horaire tmphoraire = horaireRepository.findById(idH);
@@ -46,15 +62,26 @@ public class HoraireController2 {
         return "modifierhoraire";
     }
 
-
+    /**
+     * 
+     * @param model
+     * @param horaire
+     * @param idH
+     * @return
+     */
     @PostMapping(value="/ModifierHoraire")
     public String PostModifierHoraire(Model model, Horaire horaire, Long idH){
-horaireInterfaceMetier.ModifierHorairePJ(idH,horaire.getJournee(),horaire.getOuverture(), horaire.getFermeture());
+    	horaireInterfaceMetier.ModifierHorairePJ(idH,horaire.getJournee(),horaire.getOuverture(), horaire.getFermeture());
 
         return "operationHoraire";
 
     }
-
+    
+    /**
+     * 
+     * @param idH
+     * @return
+     */
     @PostMapping(value="/nhoraire/delete")
     public String deteleHoraire(Long idH){
         Horaire tmp =horaireRepository.findById(idH);

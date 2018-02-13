@@ -23,6 +23,11 @@ public class formulairePJ {
     private CategorieInterface categorieInterfaceMetier;
 
 
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @GetMapping(value="/AjouterPJ")
     public String afficherFormulairePJ(Model model){
 
