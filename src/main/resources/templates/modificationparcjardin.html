@@ -13,6 +13,7 @@
     <div id="bloc_page" class ="col-lg-4 col-lg-offset-4">
 
         <form enctype = "multipart/form-data" class="row" th:action="@{/modifierParcJardinLillios}" method ="Post" th:object="${nouveauPJ} " >
+            <input type="hidden" name="id" th:value="${nouveauPJ.id}"/>
             <div class="form-group col-lg-offset-2">
                 <label for="ajouterPJ">Nom</label>
                 <input type="text" class="form-control" id="ajouterPJ" name="name" th:field="*{name}" th:value="${nouveauPJ.name}"/>
@@ -85,7 +86,6 @@
                 
 
             </div>
-
 
         </form>
 

@@ -32,6 +32,8 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     ParcJardinRepository parcJardinRepository;
     @Autowired
     CategorieRepository categorieRepository;
+    @Autowired
+    ParcJardinInterface parcJardinInterface;
     @Override
     public List<ParcJardin> ConsulterParcsJardin() {
         return parcJardinRepository.findAll();
@@ -233,8 +235,16 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
     @Override
     public ParcJardin modifierPJ(ParcJardin pj,String name,String description,String adresse, String l, String g, String type, List<Categorie> cats) {
 
+        pj.setName(name);
+        pj.setDescription(description);
+        pj.setAdresse(adresse);
+        pj.setL(l);
+        pj.setG(g);
+        pj.setType(type);
+        pj.setCat(cats);
+        //parcJardinInterface.AjouterListCatToPJ();
 
-        return null;
+        return parcJardinRepository.save(pj);
     }
 
    /* @Override

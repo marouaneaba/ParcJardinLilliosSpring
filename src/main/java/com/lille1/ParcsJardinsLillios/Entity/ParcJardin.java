@@ -186,6 +186,11 @@ public class ParcJardin implements Serializable {
 		this.horaire = horaire;
 	}
 */
+
+
+	public void setCat(List<Categorie> cats){
+		this.categories=cats;
+	}
 	@Override
 	public String toString() {
 		return "ParcJardin [id=" + id + ", name=" + name + ", description=" + description + ", type=" + type + ", L="

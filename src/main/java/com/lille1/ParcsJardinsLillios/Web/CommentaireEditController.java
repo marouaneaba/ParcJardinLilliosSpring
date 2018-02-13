@@ -3,6 +3,7 @@ package com.lille1.ParcsJardinsLillios.Web;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lille1.ParcsJardinsLillios.DAO.ParcJardinRepository;
 import com.lille1.ParcsJardinsLillios.DAO.UserRepository;
 import com.lille1.ParcsJardinsLillios.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,23 +31,24 @@ public class CommentaireEditController {
     private ParcJardinInterface parcJardinInterfaceMetier;
     @Autowired
     private CategorieInterface categorieInterfaceMetier;
-	
+	@Autowired
+	private ParcJardinRepository parcJardinRepository;
 	
 	@GetMapping(value="/modificationParcJardin")
-	public String ModificationParcJardinnLillios(Long id,Model model){
+	public String ModificationParcJardinnLillios(long id,Model model){
 		
 		model.addAttribute("Allcategories",categorieInterfaceMetier.consulterCategories());
 
-
+System.out.println("avant modifi pj "+ id);
         model.addAttribute("nouveauPJ", parcJardinInterfaceMetier.ChercherPJParId(id) );
         return "modificationparcjardin";
 	}
 	
 	
 	@PostMapping(value="/modifierParcJardinLillios")
-	public RedirectView PostModificationParcJardinLillios(ParcJardin nouveauPJ,@RequestParam(value = "cats") List<Long> cats){
+	public RedirectView PostModificationParcJardinLillios(long id,ParcJardin nouveauPJ ,@RequestParam(value = "cats") List<Long> cats){
 		
-		
+		ParcJardin tmp = parcJardinInterfaceMetier.ChercherPJParId(id);
 		List<Categorie> listCatTmp = new ArrayList<>();
         for(long idcat : cats){
     	     listCatTmp.add(categorieInterfaceMetier.ColsulterCategorieId(idcat));
@@ -55,9 +57,16 @@ public class CommentaireEditController {
         for(Categorie tmpcat : listCatTmp){
     	    System.out.println("---------"+tmpcat.toString());
         }
-        // TODO
 
-      //  model.addAttribute("files", fileNames);
+		System.out.println("id pj a modifier "+id);
+
+
+        parcJardinInterfaceMetier.modifierPJ(tmp,nouveauPJ.getName(),nouveauPJ.getDescription(),nouveauPJ.getAdresse(),nouveauPJ.getL(),nouveauPJ.getG(),nouveauPJ.getType(),listCatTmp);
+		parcJardinRepository.save(tmp);
+
+
+
+		//  model.addAttribute("files", fileNames);
         //ParcJardin tmp = parcJardinRepository.save(nouveauPJ);
         //parcJardinInterfaceMetier.AjouterListCatToPJ(listCatTmp,tmp);
         return new RedirectView("/operationPJ");
