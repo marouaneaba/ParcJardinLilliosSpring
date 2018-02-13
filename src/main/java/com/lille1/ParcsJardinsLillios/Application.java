@@ -67,11 +67,20 @@ public class Application implements CommandLineRunner{
 	@Override
 	public void run(java.lang.String... arg0) throws Exception {
 
-		ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "JARDIN","30.0","3.16","adressJardin1");
+		/*ParcJardin PJ2= new ParcJardin("jardin1","descJardin1", "JARDIN","30.0","3.16","adressJardin1");
 		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "PARC","21.0","2.0","adressJardin2");
 		ParcJardin PJ4= new ParcJardin("jardin4","descJardin2", "PARC","24.0","2.4","adressJardin2");
 
+		Categorie catN1 = new Categorie("toto1");
+		Categorie catN2 = new Categorie("toto2");
+		Categorie catN3 = new Categorie("toto3");
+		mCategorieRepository.save(catN1);
+		mCategorieRepository.save(catN2);
+		mCategorieRepository.save(catN3);
 
+		parcJardinInterfaceMetier.ajouterCategorieToPJ(catN1,PJ2);
+		parcJardinInterfaceMetier.ajouterCategorieToPJ(catN2,PJ3);
+		parcJardinInterfaceMetier.ajouterCategorieToPJ(catN3,PJ2);
 
 
 		Commentaire cm1 = new Commentaire("com1",3,"pers1",false, PJ2);
@@ -87,7 +96,7 @@ public class Application implements CommandLineRunner{
 		ParcJardin parcjardin2 = mParcJardinRepository.save(PJ3);
 		ParcJardin parcjardin3 = mParcJardinRepository.save(PJ4);
 
-
+*/
 
 
 
@@ -105,7 +114,7 @@ public class Application implements CommandLineRunner{
 		Categorie catsave6 = mCategorieRepository.save(cat6);
 		Categorie catsave7 = mCategorieRepository.save(cat7);
 
-		List<Categorie> ltmpcat = parcJardinInterfaceMetier.ConsulterCategoriesPJ(parcjardin1.getId());
+		/*List<Categorie> ltmpcat = parcJardinInterfaceMetier.ConsulterCategoriesPJ(parcjardin1.getId());
 		parcJardinInterfaceMetier.AjouterListCatToPJ(ltmpcat,PJ3);
 
 
@@ -168,7 +177,7 @@ public class Application implements CommandLineRunner{
 			System.out.println(com.toString());
 		}
 
-		parcJardinInterfaceMetier.supprimercatFromPJ(parcjardin2.getId());
+		parcJardinInterfaceMetier.supprimercatFromPJ(parcjardin2.getId());*/
 
 		userRepository.save(new User("name","password","admin@admin.fr","098998"));
 

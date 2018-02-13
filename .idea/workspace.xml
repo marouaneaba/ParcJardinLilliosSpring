@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f6be83f-e5d1-45c4-bb2f-a426fb544aed" name="Default" comment="" />
+    <list default="true" id="2f6be83f-e5d1-45c4-bb2f-a426fb544aed" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ModifierPJ.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/ModifierPJ.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ajoutadmin.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/ajoutadmin.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ajouterParcJardin.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/ajouterParcJardin.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/horaire.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/horaire.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/modificationparcjardin.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/modificationparcjardin.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/modifierhoraire.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/modifierhoraire.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parcJardin.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/parcJardin.html" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,18 +37,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/template.html">
+      <file leaf-file-name="horaire.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/horaire.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-274">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+              <folding>
+                <marker date="1518524170867" expanded="true" signature="760:841" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connexion.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/connexion.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addimage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addimage.html">
+      <file leaf-file-name="ModifierPJ.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ModifierPJ.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modifierhoraire.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modifierhoraire.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modificationparcjardin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modificationparcjardin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Commentaire.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Commentaire.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -47,11 +99,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin.html">
+      <file leaf-file-name="AjouterPJ.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajouterParcJardin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ajouterParcJardin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -60,70 +122,20 @@
       <file leaf-file-name="ajoutadmin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ajoutadmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-706">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding>
-                <marker date="1518451694304" expanded="true" signature="822:894" ph="..." />
+                <marker date="1518524233899" expanded="true" signature="805:877" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategorieRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java">
+      <file leaf-file-name="admin.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentaireRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parcJardin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parcJardin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-882">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParcJardinInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/ParcJardinInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StorageService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Storage/StorageService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-400">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-612">
-              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state relative-caret-position="-738">
+              <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -143,10 +155,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>allcate</find>
-      <find>/AjouterPJ</find>
-      <find>parc</find>
-      <find>consulterhora</find>
       <find>getcomme</find>
       <find>commentai</find>
       <find>ajouterca</find>
@@ -160,7 +168,6 @@
       <find>back</find>
       <find>getPa</find>
       <find>nouveauPJ</find>
-      <find>tit</find>
       <find>fermu</find>
       <find>butt</find>
       <find>button</find>
@@ -173,6 +180,11 @@
       <find>com.id</find>
       <find>hora</find>
       <find>modi</find>
+      <find>catN1</find>
+      <find>catN2</find>
+      <find>catN3</find>
+      <find>tit</find>
+      <find>title</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,8 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/templates/connexion.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/ParcJardinnLilliosRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/CommentaireRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/ParcJardinInterface1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/ParcJardinServiceImplementation.java" />
@@ -199,11 +209,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Horaire.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/ParcJardinController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/UI/connexion/LonginController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ajoutadmin.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/formulairePJ.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/common/horaire.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/horaire.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/horaireController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/AdminRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Entity/Admin.java" />
@@ -211,17 +219,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/security/CustomUserDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/security/securityconfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/ApiRest/HoraireApiController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/ModifierPJ.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/CommentaireEditController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/modificationparcjardin.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/parcJardin.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/HoraireRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Interfaces/HoraireInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/HoraireController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/template.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/operationHoraire.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/modifierhoraire.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Service/Imlementations/HoraireServiceImplementation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/HoraireController2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/ParcJardinRepository.java" />
@@ -237,6 +241,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CategorieRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/parcJardin.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/ModifierPJ.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/modifierhoraire.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/modificationparcjardin.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/horaire.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/ajouterParcJardin.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/ajoutadmin.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin.html" />
       </list>
     </option>
   </component>
@@ -577,7 +589,7 @@
       <workItem from="1518429841494" duration="7925000" />
       <workItem from="1518438817440" duration="32330000" />
       <workItem from="1518518231178" duration="604000" />
-      <workItem from="1518521332014" duration="2059000" />
+      <workItem from="1518521332014" duration="2850000" />
     </task>
     <task id="LOCAL-00001" summary="categorie interface and implementation ok">
       <created>1514850858187</created>
@@ -730,7 +742,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346240000" />
+    <option name="totallyTimeSpent" value="347031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1537" height="912" extended-state="6" />
@@ -746,7 +758,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45466667" sideWeight="0.49764943" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32266667" sideWeight="0.49764943" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22632639" sideWeight="0.47751606" order="0" side_tool="false" content_ui="combo" />
@@ -862,32 +874,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/formCategorieController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/UI/connexion/LonginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/formulairePJ.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-64">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -925,13 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ModifierPJ.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/CommentaireEditController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -955,13 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modificationparcjardin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="131" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Web/horaireController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -977,16 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/horaire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1518470570356" expanded="true" signature="783:864" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/operationHoraire.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
@@ -995,22 +962,6 @@
             <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#center#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#button#0;n#form#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modifierhoraire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Commentaire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,14 +974,6 @@
             <element signature="e#1045#1046#0" expanded="false" />
             <element signature="e#1082#1083#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1210,45 +1153,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parcJardin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-882">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-274">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addimage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ajoutadmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-706">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1518451694304" expanded="true" signature="822:894" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1268,10 +1177,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lille1/ParcsJardinsLillios/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="179" column="76" lean-forward="true" selection-start-line="179" selection-start-column="76" selection-end-line="179" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parcJardin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ModifierPJ.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modifierhoraire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/modificationparcjardin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/horaire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <marker date="1518524170867" expanded="true" signature="760:841" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/connexion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Commentaire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/AjouterPJ.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ajouterParcJardin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/ajoutadmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding>
+            <marker date="1518524233899" expanded="true" signature="805:877" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-738">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding />
         </state>
       </provider>
