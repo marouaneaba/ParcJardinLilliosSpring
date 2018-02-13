@@ -43,14 +43,22 @@ public class ParcJardinController {
     private HoraireRepository horaireRepository;
 
 
-
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
         logger.debug("index()");
         return "redirect:/operationPJ";
     }
 
-
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/operationPJ", method = RequestMethod.GET)
     public String showAllPJ(Model model) {
         List<ParcJardin> listPJ = parcJardinInterfaceMetier.ConsulterParcsJardin();
@@ -58,7 +66,12 @@ public class ParcJardinController {
         return "parcJardin";
     }
 
-
+    /**
+     * 
+     * @param id
+     * @param redirectAttributes
+     * @return
+     */
     @RequestMapping(value = "/operationPJ/delete", method = RequestMethod.POST)
     public String supprimerPJ(Long id, final RedirectAttributes redirectAttributes) {
         ParcJardin PJ = parcJardinInterfaceMetier.ChercherPJParId(id);
@@ -71,7 +84,11 @@ public class ParcJardinController {
         return "redirect:/operationPJ";
     }
 
-
+    /**
+     * 
+     * @param pj
+     * @return
+     */
     @RequestMapping(value = "/operationPJ/update", method = RequestMethod.PUT)
     public String modifierPJ(ParcJardin pj) {
         return "ModifierPJ";
@@ -79,6 +96,26 @@ public class ParcJardinController {
 
     // http://localhost:8080/images/imageApp/image1.jpg
 
+    /**
+     * 
+     * @param nouveauPJ
+     * @param hlundi
+     * @param hmardi
+     * @param hmercredi
+     * @param hjeudi
+     * @param hvendredi
+     * @param hsamedi
+     * @param hdimanche
+     * @param cats
+     * @param uploadForm
+     * @param model
+     * @param file
+     * @param file2
+     * @param file3
+     * @param file4
+     * @param file5
+     * @return
+     */
     @PostMapping(value = "/AjouterPJ")
     public String ajouterPJ( ParcJardin nouveauPJ,Horaire hlundi,Horaire hmardi, Horaire hmercredi,Horaire hjeudi, Horaire hvendredi,Horaire hsamedi,Horaire hdimanche,
     		@RequestParam(value = "cats") List<Long> cats,
@@ -100,13 +137,14 @@ public class ParcJardinController {
         		try{
         			byte[] bytes = files.get(i).getBytes();
         			
-        			
-        			File dir = new File("./src/main/resources/static/images/"+nouveauPJ.getName() );
+        			String namePrcJardin = nouveauPJ.getName();
+        			File dir = new File("./src/main/resources/static/images/"+namePrcJardin.replaceAll(" ", "_") );
         			if (!dir.exists())
     					dir.mkdirs();
 
     				// Create the file on server
-    				File serverFile = new File(dir.getAbsolutePath()+ File.separator + nouveauPJ.getName()+i+".jpg");
+        			
+    				File serverFile = new File(dir.getAbsolutePath()+ File.separator + namePrcJardin.replaceAll(" ", "_")+i+".jpg");
     				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
     				stream.write(bytes);
     				stream.close();
@@ -168,6 +206,11 @@ public class ParcJardinController {
         return "redirect:/operationPJ";
     }
     
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @GetMapping(value = "/afficherRep")
     public String GetContentFile(Model model){
     	
@@ -182,6 +225,12 @@ public class ParcJardinController {
     	return "test";
     }
     
+    /**
+     * 
+     * @param name
+     * @param model
+     * @return
+     */
     @GetMapping(value = "/afficherRepName/{name}")
     public String GetContentFile(@PathVariable("name") String name,Model model){
     	
@@ -199,7 +248,12 @@ public class ParcJardinController {
     	return "test";
     }
     
-    
+    /**
+     * 
+     * @param model
+     * @param PJNom
+     * @return
+     */
     @RequestMapping("/chercherPJParNom")
     public String ChercherPJParNom(Model model,@RequestParam(value = "PJNom") String PJNom){
 

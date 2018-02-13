@@ -29,7 +29,6 @@ public class CommentaireRestController {
 	 *
 	 * @return
 	 */
-
 	@PostMapping(value = "/api/Commentaire")
 	public Commentaire POSTCommentaire(@RequestParam("name") String sName, @RequestParam("nbrEtoile") int sNbrEtoile,
 			@RequestParam("commentaire") String sCommentaire, @RequestParam("idParcJardinLillios") Long sId) {
@@ -39,6 +38,11 @@ public class CommentaireRestController {
 
 	}
 
+	/**
+	 * 
+	 * @param sIdparcJardin
+	 * @return
+	 */
 	@GetMapping(value = "/api/CommentaireByPJ/{ParcJardin}")
 	public List<Commentaire> getCommentaireByPJ(@PathVariable("ParcJardin") Long sIdparcJardin) {
 		
@@ -46,6 +50,14 @@ public class CommentaireRestController {
 		return mCommentaireInterface.ConsulterCommentaireValiderParPJ(mParcJardinInterface.ChercherPJParId(sIdparcJardin));
 	}
 
+	/**
+	 * 
+	 * @param sId
+	 * @param sName
+	 * @param sNbrEtoile
+	 * @param sCommentaire
+	 * @return
+	 */
 	@GetMapping(value = "/api/PostCommentaire/{idPJ}/{name}/{nbrEtoile}/{commentaire}")
 	public Commentaire PostCommentaire( @PathVariable("idPJ") Long sId,@PathVariable("name") String sName,
 			@PathVariable("nbrEtoile") int sNbrEtoile,

@@ -31,11 +31,22 @@ public class UploadController {
 
     List<String> files = new ArrayList<String>();
 
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @GetMapping("/upload")
     public String listUploadedFiles(Model model) {
         return "uploadForm";
     }
 
+    /**
+     * 
+     * @param file
+     * @param model
+     * @return
+     */
     @PostMapping(value = "/upload")
     public String handleFileUpload(@RequestParam("file") MultipartFile file, Model model) {
         try {
@@ -48,6 +59,11 @@ public class UploadController {
         return "uploadForm";
     }
 
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @GetMapping("/gellallfiles")
     public String getListFiles(Model model) {
         model.addAttribute("files",
@@ -59,6 +75,11 @@ public class UploadController {
         return "listFiles";
     }
 
+    /**
+     * 
+     * @param filename
+     * @return
+     */
     @GetMapping("/files/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> getFile(@PathVariable String filename) {

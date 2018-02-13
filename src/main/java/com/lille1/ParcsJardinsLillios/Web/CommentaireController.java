@@ -22,6 +22,12 @@ public class CommentaireController {
     @Autowired
     ParcJardinInterface parcJardinInterfaceMetier;
 
+    
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @GetMapping(value="/NouveauCommentaire")
     public String afficherNouveauCommentaire(Model model){
         //model.addAttribute("CommentairesByPJ", commentaireInterfaceMetier.);
@@ -29,7 +35,11 @@ public class CommentaireController {
         return "Commentaire";
     }
 
-
+    /**
+     * 
+     * @param id
+     * @return
+     */
     @PostMapping(value="/NouveauCommentaire/delete")
     public String supprimerCommentaire(Long id){
         Commentaire tmp = commentaireInterfaceMetier.ConsulterCommentaireParId(id);
@@ -37,6 +47,12 @@ public class CommentaireController {
         return "redirect:/NouveauCommentaire";
     }
 
+    /**
+     * 
+     * @param id
+     * @return
+     * @throws Exception
+     */
     @PostMapping(value="/NouveauCommentaire/confirmer")
     public String confirmerCommentaire(Long id) throws Exception {
         Commentaire tmp = commentaireInterfaceMetier.ConsulterCommentaireParId(id);
@@ -45,7 +61,12 @@ public class CommentaireController {
     }
 
 
-
+    /**
+     * 
+     * @param model
+     * @param PJNom
+     * @return
+     */
     @RequestMapping("/chercherCommentaireParNomPJ")
     public String  ChercherCommentaireParNomPJ(Model model, @RequestParam(value="PJNom") String PJNom){
     	

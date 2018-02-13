@@ -21,6 +21,11 @@ public class HoraireApiController {
     @Autowired
     private ParcJardinInterface mParcJardinInterface;
 
+    /**
+     * 
+     * @param idParcJardin
+     * @return
+     */
     @GetMapping(value="/api/horaire/{idParcJardin}")
     public List<Horaire> gethoraire(@PathVariable("idParcJardin") Long idParcJardin){
         ParcJardin tmp = mParcJardinInterface.ChercherPJParId(idParcJardin);

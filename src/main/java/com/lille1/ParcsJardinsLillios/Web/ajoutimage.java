@@ -18,14 +18,21 @@ public class ajoutimage {
 
 	
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
 	@GetMapping(value="/addImage")
 	public String addimage(){
 		System.out.println("GET");
 		return "addimage";
 	}
 	
-	
+	/**
+	 * 
+	 * @param model
+	 * @param file
+	 */
 	@PostMapping(value = "/addImagee")
     public void ajouterPJ( Model model,@RequestParam("file") MultipartFile file) {
     	System.out.println("arrivé");
