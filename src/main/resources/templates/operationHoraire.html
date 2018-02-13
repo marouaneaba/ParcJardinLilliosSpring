@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymLeaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeLeaf/Layout"
+      layout:decorator="template">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <title>Nouveau Commentaire</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
-<body>
+<body class="gray-bg">
 
+<div layout:fragment="content"><br/><br/>
+    <div class="col-md-12">
+        <center>
+
+
+            <div class="panel-body">
+                <form th:action="@{/chercherHoraireParPJ}" method="GET">
+                    <div>
+                        <label>Chercher horaires : </label>
+                        <input type="text" name="PJNom"/>
+                        <button type="submit" class="btn fa fa-search" style="background:#ffffff;"></button>
+                    </div>
+                </form>
+            </div>
+        </center>
+        <div  th:if="${foundHoraires}">
+            <div class="panel-body"><br/><br/>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Jour </th>
+                        <th scope="col">Heure D'ouverture</th>
+                        <th scope="col">Heure de fermeture</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody th:each="h : ${foundHoraires}" >
+                    <tr>
+                        <td th:text="${h.journee}"></td>
+                        <td th:text="${h.ouverture}"></td>
+                        <td th:text="${h.fermeture}"></td>
+                        <td>
+                            <form style="display: inline;" th:action="@{/nhoraire/delete}" method = "Post">
+                                <input type="hidden" name="idH" th:value="${h.id}"/>
+                                <button type="submit" class="btn fa fa-close" style="background:#ffffff;font-size:20px;color:red" ></button>
+                            </form>
+
+                            <form style="display: inline;" th:action="@{/ModifierHoraire}" method = "GET">
+                                <input type="hidden" name="idH" th:value="${h.id}"/>
+                                <button type="submit" class="btn fa fa-close" style="background:#ffffff;font-size:20px;color:red" ></button>
+
+                            </form>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

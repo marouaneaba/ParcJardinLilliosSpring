@@ -25,5 +25,7 @@ public class HoraireServiceImplementation implements HoraireInterface{
         tmph.setJournee(journee);
         tmph.setOuverture(ouverture);
         tmph.setFermeture(fermeture);
+
+        horaireRepository.save(tmph);
     }
 }
