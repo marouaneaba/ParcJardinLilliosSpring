@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymLeaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeLeaf/Layout"
+      layout:decorator="template">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Insert title here</title>
+</head>
+<body class="gray-bg">
+<div layout:fragment="content">
+    <!--center-->
+    <div id="bloc_page" class ="col-lg-4 col-lg-offset-4">
+
+        <form enctype = "multipart/form-data" class="row" th:action="@{/ModifierHoraire}" method ="Post" th:object="${horaire} " >
+            <input type="hidden" name="id" th:value="${horaire.id}"/>
+            <div class="form-group col-lg-offset-2">
+                <label for="ajouterPJ">Jour</label>
+                <input type="text" class="form-control" id="ajouterPJ" name="journee" th:field="*{journee}" th:value="${horaire.journee}"/>
+            </div>
+            <div class="form-group col-lg-offset-2">
+                <label for="ouverture">Ouverture</label>
+                <input type="text" name="ouverture" class="form-control" id="ouverture" th:field="*{ouverture}"/>
+            </div>
+            <div class="form-group col-lg-offset-2">
+                <label for="fermeture">Description</label>
+                <input type="text" class="form-control" id="fermeture" name="fermeture"  th:field="*{fermeture}"/>
+            </div>
+            <div class="form-group col-lg-offset-2">
+                <label for="lat">Latitude</label>
+                <input  type="text" name="L" class="form-control" id="lat" th:field="*{L}"/>
+            </div>
+            <div class="form-group col-lg-offset-2">
+                <label for="longitude">Longitude</label>
+                <input  type="text" name="G" class="form-control" id="longitude" th:field="*{G}"/>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary">Modifier</button>
+
+
+            </div>
+
+        </form>
+
+
+    </div>
+
+    <!--/center-->
+</div></body>
+</html>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJnvvcL_dbwxK3BMeZ0AjOUy1fXywda_4">
+</script>
+<script>
+    var geocoder = new google.maps.Geocoder();
+
+    document.getElementById('submit').addEventListener('click', function() {
+        geocodeAddress();
+    });
+
+    function hello(){
+
+        console.log("hello world");
+    }
+
+
+    function geocodeAddress() {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+
+            if (status === 'OK') {
+                var GPS= results[0].geometry.location;
+                var objLatLng= {lat:GPS.lat(),lng:GPS.lng()};
+                console.log(objLatLng);
+                var latitude = document.getElementById("lat").value=objLatLng.lat;
+                var longitude = document.getElementById("longitude").value=objLatLng.lng;
+
+            } else {
+
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+
+        });
+    }
+</script>

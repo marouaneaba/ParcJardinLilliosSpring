@@ -5,6 +5,7 @@ com/lille1/ParcsJardinsLillios/Web/ajoutimage.class
 com/lille1/ParcsJardinsLillios/Entity/Horaire.class
 com/lille1/ParcsJardinsLillios/Service/Interfaces/HoraireInterface.class
 com/lille1/ParcsJardinsLillios/ApiRest/CategorieRestController.class
+com/lille1/ParcsJardinsLillios/Web/HoraireController2.class
 com/lille1/ParcsJardinsLillios/DAO/ImageRepository.class
 com/lille1/ParcsJardinsLillios/DAO/CommentaireRepository.class
 com/lille1/ParcsJardinsLillios/Web/ParcJardinController.class

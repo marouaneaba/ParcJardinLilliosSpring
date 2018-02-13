@@ -9,4 +9,5 @@ import java.util.List;
 public interface HoraireRepository extends JpaRepository<Horaire, Long>{
 public void delete(Horaire horaire);
 public List<Horaire> findByParcJardin(ParcJardin parcJardin);
+public Horaire findById(Long id);
 }
