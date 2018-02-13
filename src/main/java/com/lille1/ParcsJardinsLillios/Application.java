@@ -71,16 +71,7 @@ public class Application implements CommandLineRunner{
 		ParcJardin PJ3= new ParcJardin("jardin2","descJardin2", "PARC","21.0","2.0","adressJardin2");
 		ParcJardin PJ4= new ParcJardin("jardin4","descJardin2", "PARC","24.0","2.4","adressJardin2");
 
-		Categorie catN1 = new Categorie("toto1");
-		Categorie catN2 = new Categorie("toto2");
-		Categorie catN3 = new Categorie("toto3");
-		mCategorieRepository.save(catN1);
-		mCategorieRepository.save(catN2);
-		mCategorieRepository.save(catN3);
 
-		parcJardinInterfaceMetier.ajouterCategorieToPJ(catN1,PJ2);
-		parcJardinInterfaceMetier.ajouterCategorieToPJ(catN2,PJ3);
-		parcJardinInterfaceMetier.ajouterCategorieToPJ(catN3,PJ2);
 
 
 		Commentaire cm1 = new Commentaire("com1",3,"pers1",false, PJ2);
