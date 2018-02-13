@@ -137,13 +137,14 @@ public class ParcJardinController {
         		try{
         			byte[] bytes = files.get(i).getBytes();
         			
-        			
-        			File dir = new File("./src/main/resources/static/images/"+nouveauPJ.getName() );
+        			String namePrcJardin = nouveauPJ.getName();
+        			File dir = new File("./src/main/resources/static/images/"+namePrcJardin.replaceAll(" ", "_") );
         			if (!dir.exists())
     					dir.mkdirs();
 
     				// Create the file on server
-    				File serverFile = new File(dir.getAbsolutePath()+ File.separator + nouveauPJ.getName()+i+".jpg");
+        			
+    				File serverFile = new File(dir.getAbsolutePath()+ File.separator + namePrcJardin.replaceAll(" ", "_")+i+".jpg");
     				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
     				stream.write(bytes);
     				stream.close();
