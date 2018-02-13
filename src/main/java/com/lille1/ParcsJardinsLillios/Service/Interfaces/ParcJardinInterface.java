@@ -12,7 +12,9 @@ public interface ParcJardinInterface {
 	public ParcJardin ChercherPJParId(Long id);
 
 	public void SupprimerPJ(ParcJardin PJ);
+
 	public ParcJardin AjouterListCatToPJ(List<Categorie> lcat, ParcJardin PJ);
+
 	public ParcJardin JardinSet(ParcJardin pj);
 
 	public List<ParcJardin> ChercherPJParMotCle(String KeyWordJP);
@@ -27,14 +29,7 @@ public interface ParcJardinInterface {
 
 	public ParcJardin ModifierNomPJ(Long idPJ, String nom);
 
-	// public List<Horaire> ConsulterHorairesPJ(Long idPJ);
 	public void ModifierHorairesPJ(ParcJardin PJ, List<Horaire> horaire);
-
-	// public List<Commentaire> ConsulterCommentairesPJ(ParcJardin PJ);
-	// public ParcJardin ajouterCommentaireToPJ(Commentaire commentaire ,
-	// ParcJardin PJ);
-	// public ParcJardin supprimerCommetaireFromPJ(Commentaire commentire,
-	// ParcJardin PJ );
 
 	public List<Categorie> ConsulterCategoriesPJ(Long idPJ);
 

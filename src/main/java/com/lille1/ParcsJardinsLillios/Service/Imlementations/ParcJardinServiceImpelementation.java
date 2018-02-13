@@ -41,15 +41,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public ParcJardin JardinSet(ParcJardin pj ) {
-                /*ParcJardin p= parcJardinRepository.findById(pj.getId());
-                p.setName(pj.getName());
-                p.setDescription(pj.getDescription());
-                p.setL(pj.getL());
-                p.setG(pj.getG());
-                p.setType(pj.getType());
-                p.setCategorie(pj.getCategorie());
-                p.setHoraire(pj.getHoraire());
-                return parcJardinRepository.save(p);*/
+
     	return null;
     }
 
@@ -96,33 +88,6 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public void SupprimerPJ(ParcJardin PJ) {
-        /*try {
-
-            ParcJardin tmp = parcJardinRepository.findById(PJ.getId());
-
-            *//*ArrayList<Categorie> listcat = new ArrayList<>(tmp.getCategorie());
-
-            for(Categorie categorie : listcat){
-                tmp.getCategorie().remove(categorie);
-            }*//*
-
-            List<Categorie> listCat = categorieRepository.findByParcJardinnId(tmp.getId());
-            for(Categorie categorie : listCat){
-                if(categorie.getParcJardinn().contains(PJ))
-                    categorie.getParcJardinn().remove(PJ);
-            }
-
-            ArrayList<Commentaire> listCom = new ArrayList<>(tmp.getCommentaires());
-            for(Commentaire commentaire : listCom){
-                tmp.getCommentaires().remove(commentaire);
-            }
-
-
-            parcJardinRepository.delete(tmp.getId());
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-*/
 
 
         List<Categorie> listTmp1Cat =PJ.getCategories();
@@ -158,36 +123,14 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     }
 
-    /*@Override
-    public List<Horaire> ConsulterHorairesPJ(Long idPJ) {
-        ParcJardin PJ = parcJardinRepository.findById(idPJ);
-        return PJ.getHoraire();
-    }*/
+
 
     @Override
     public void ModifierHorairesPJ(ParcJardin PJ, List<Horaire> horaire) {
 
     }
 
-    /*@Override
-    public List<Commentaire> ConsulterCommentairesPJ(ParcJardin PJ) {
-        return null;//PJ.getCommentaire();
-    }
-*/
-    /*@Override
-    public ParcJardin ajouterCommentaireToPJ(Commentaire commentaire, ParcJardin PJ) {
-        *//*Hibernate.initialize(PJ.getCommentaire());
-        PJ.getCommentaire().add(commentaire);
-        return parcJardinRepository.save(PJ);*//*
-    	return null;
-    }*/
 
-    /*@Override
-    public ParcJardin supprimerCommetaireFromPJ(Commentaire commentire, ParcJardin PJ) {
-        *//*PJ.getCommentaire().remove(commentire);
-        return parcJardinRepository.save(PJ);*//*
-    	return null;
-    }*/
 
     @Override
     public List<Categorie> ConsulterCategoriesPJ(Long idPJ) {
@@ -198,7 +141,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ) {
-        //Hibernate.initialize(PJ.getCategories());
+
         PJ.setCategories(categorie);
         return parcJardinRepository.save(PJ);
 
@@ -206,8 +149,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 
     @Override
     public ParcJardin supprimerCategorieFromPJ(Categorie categorie, ParcJardin PJ) {
-        /*PJ.getCategorie().remove(categorie);
-        return parcJardinRepository.save(PJ);*/
+
     	return null;
     }
 
@@ -242,16 +184,12 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
         pj.setG(g);
         pj.setType(type);
         pj.setCat(cats);
-        //parcJardinInterface.AjouterListCatToPJ();
+
 
         return parcJardinRepository.save(pj);
     }
 
-   /* @Override
-    public List<Commentaire> ConsulterNouveauCommentaire(boolean confirm) {
-        return commentaireRepository.findByConfirmer(false);
 
-    }*/
 
 
 }

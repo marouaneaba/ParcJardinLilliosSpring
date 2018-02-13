@@ -34,20 +34,13 @@ public class CategorieServiceImlementation implements CategorieInterface{
 
     @Override
     public void SupprimerCategorie(Long id) {
-       /* try {
-            categorieRepository.deleteById(id);
-        }catch (Exception e){
-            e.printStackTrace();
-        }*/
+
 
     }
 
     @Override
     public boolean ModifierCategorie(Categorie categorie, Long idCat) {
-        /*Categorie cat = categorieRepository.findById(idCat);
-        //cat.setNomcategorie(categorie.getNomCategorie());
 
-        categorieRepository.save(cat);*/
 
         return false;
     }
@@ -66,7 +59,7 @@ public class CategorieServiceImlementation implements CategorieInterface{
     @Override
     public List<ParcJardin> ConsulterParcJardinParCategorie(Categorie categorie) {
         return null;
-        // categorie.getParcJardinn();
+
     }
 
 

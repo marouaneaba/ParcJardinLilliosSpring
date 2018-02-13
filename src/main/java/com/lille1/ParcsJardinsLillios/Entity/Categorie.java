@@ -37,19 +37,6 @@ public class Categorie implements Serializable{
 	}
 
 
-
-	/*public List<ParcJardin> getParcJardinn() {
-		return ParcJardinn;
-	}
-
-
-
-	public void setParcJardinn(ParcJardin parcJardinn) {
-		ParcJardinn.add(parcJardinn);
-	}*/
-
-
-
 	public String getNomcategorie() {
 		return nomcategorie;
 	}

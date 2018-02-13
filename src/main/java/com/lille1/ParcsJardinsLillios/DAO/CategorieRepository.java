@@ -10,21 +10,17 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+
+/**
+ * Notre Repository permet l accee a la base de donne de categorie pour faire les traitement
+ * dans notre cas on a deux methode findByNomcategorie qui retourne la categorie de nomcategorie Nom
+ * findById retourne la categorie qui a id egale a id
+ */
 public interface CategorieRepository extends JpaRepository<Categorie, Long>{
 
    	public Categorie findByNomcategorie(String Nom);
     public Categorie findById(Long id);
-    //public void deleteById(Long id);
-    //public Categorie findBynomcategorie(String nomCategorie);
-    //@Query("select distinct c from Categorie c inner JOIN c.ParcJardinn p where p.id = :idParc ")
-    //@Query("select c from Categorie c inner Join c.ParcJardinn p where p.id = :idParc")
-    //public List<Categorie> findByParcJardinn(@Param("idParc") Long idParc);
 
-
-    //@Query("select c from Categorie c inner Join c.ParcJardinn p where p.name = :nom")
-    //public List<Categorie> findByParcJardinnId2(@Param("nom") String nom);
-    //@Query("select c from Categorie c inner Join c.ParcJardinn p where p.id = :id")
-	//public List<Categorie> findByParcJardinnId(Long id);
 
 
 

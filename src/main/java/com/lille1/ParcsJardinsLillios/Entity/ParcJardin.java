@@ -34,46 +34,14 @@ public class ParcJardin implements Serializable {
 	@ElementCollection(targetClass=String.class)
 	private List<java.lang.String> NameImage;
 	
-	//@OneToMany(mappedBy = "parcJardinCommentaire")
-		//@OneToMany
-		//private List<Commentaire> commentaires = new ArrayList<>();
-
-		/*@ManyToMany
-		private List<Horaire> horaire = new ArrayList<>();*/
-		
-		//@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-		/*@JoinTable(
-			      name="ParcJardinn_Categorie",
-			      joinColumns=@JoinColumn(name="parcJardin_id", referencedColumnName="id"),
-			      inverseJoinColumns=@JoinColumn(name="categorie_id", referencedColumnName="id"))
-		private List<Categorie> categories = new ArrayList<>();*/
 
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Categorie> categories = new ArrayList<>();
 
-	/*@Lob
-	@Column(name="photos", length=100000)
-	private byte[] photos;
-
-	public byte[] getPhotos() {
-		return photos;
-	}
 
 
-	public void setPhotos(byte[] photos) {
-		this.photos = photos;
-	}*/
 
-	/*private List<String> photos;
-
-	public List<String> getPhotos() {
-		return photos;
-	}
-
-	public void setPhotos(String photos) {
-		this.photos.add(photos);
-	}*/
 
 
 
@@ -103,9 +71,7 @@ public class ParcJardin implements Serializable {
 		NameImage.add(nameImage);
 	}
 
-	/*public void setCommentaires(List<Commentaire> commentaires) {
-		this.commentaires = commentaires;
-	}*/
+
 
 	public Long getId() {
 		return id;
@@ -163,13 +129,7 @@ public class ParcJardin implements Serializable {
 		this.adresse = adresse;
 	}
 
-	/*public List<Commentaire> getCommentaires() {
-		return commentaires;
-	}*/
 
-	/*public void setCommentaires(Commentaire commentaires) {
-		this.commentaires.add(commentaires);
-	}*/
 
 	public List<Categorie> getCategories() {
 		return categories;
@@ -178,14 +138,7 @@ public class ParcJardin implements Serializable {
 	public void setCategories(Categorie categories) {
 		this.categories.add(categories);
 	}
-	/*public List<Horaire> getHoraire() {
-		return horaire;
-	}
 
-	public void setHoraire(List<Horaire> horaire) {
-		this.horaire = horaire;
-	}
-*/
 
 
 	public void setCat(List<Categorie> cats){

@@ -22,10 +22,6 @@ public class Commentaire implements Serializable {
 	private ParcJardin parcJardinn;
 
 
-	//@ManyToOne(fetch = FetchType.EAGER)
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parcJardin_id", nullable = false)
-	private ParcJardin parcJardinCommentaire;*/
 	
 	
 	public Commentaire(){}

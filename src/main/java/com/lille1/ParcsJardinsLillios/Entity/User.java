@@ -25,7 +25,7 @@ public class User implements Serializable {
 	
 	
 	public User() {
-		// TODO Auto-generated constructor stub
+
 	}
 	public User(String name, String password, String email, String tel) {
 		super();
