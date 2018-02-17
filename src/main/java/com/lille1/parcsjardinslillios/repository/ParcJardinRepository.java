@@ -13,7 +13,7 @@ public interface ParcJardinRepository extends JpaRepository<ParcJardin, Long> {
 
 	public List<ParcJardin> findAll();
 
-	public ParcJardin findByName(String PJ);
+	public ParcJardin findByName(String pj);
 
 	public ParcJardin findById(Long id);
 
@@ -21,7 +21,7 @@ public interface ParcJardinRepository extends JpaRepository<ParcJardin, Long> {
 
 	public List<ParcJardin> findByType(String type);
 
-	@Query("select distinct P from ParcJardin P where P.L=:l and P.G=:g")
-	public ParcJardin trouverPJparLG(@Param("l") String L, @Param("g") String G);
+	@Query("select distinct P from ParcJardin P where P.L=:latitude and P.G=:logitude")
+	public ParcJardin trouverPJparLG(@Param("latitude") String latitude, @Param("logitude") String logitude);
 
 }

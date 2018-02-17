@@ -46,13 +46,13 @@ public class CommentaireServiceImplementation implements CommentaireInterface {
 	}
 
 	@Override
-	public List<Commentaire> ConsulterCommentaireByPJ(ParcJardin PJ) {
-		return commentaireRepository.findByParcJardinn(PJ);
+	public List<Commentaire> ConsulterCommentaireByPJ(ParcJardin pj) {
+		return commentaireRepository.findByParcJardinn(pj);
 	}
 
 	@Override
-	public List<Commentaire> ListeCommentaireParPJ(ParcJardin PJ) {
-		return commentaireRepository.findByParcJardinn(PJ);
+	public List<Commentaire> ListeCommentaireParPJ(ParcJardin pj) {
+		return commentaireRepository.findByParcJardinn(pj);
 	}
 
 	@Override
@@ -61,15 +61,15 @@ public class CommentaireServiceImplementation implements CommentaireInterface {
 	}
 
 	@Override
-	public List<Commentaire> ConsulterCommentaireNonValiderParPJ(ParcJardin PJ) {
+	public List<Commentaire> ConsulterCommentaireNonValiderParPJ(ParcJardin pj) {
 
-		return commentaireRepository.findByConfirmerAndParcJardinn(false, PJ);
+		return commentaireRepository.findByConfirmerAndParcJardinn(false, pj);
 	}
 
 	@Override
-	public List<Commentaire> ConsulterCommentaireValiderParPJ(ParcJardin PJ) {
+	public List<Commentaire> ConsulterCommentaireValiderParPJ(ParcJardin pj) {
 
-		return commentaireRepository.findByConfirmerAndParcJardinn(true, PJ);
+		return commentaireRepository.findByConfirmerAndParcJardinn(true, pj);
 	}
 
 }

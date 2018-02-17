@@ -35,19 +35,19 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 	}
 
 	@Override
-	public ParcJardin AjouterListCatToPJ(List<Categorie> lcat, ParcJardin PJ) {
+	public ParcJardin AjouterListCatToPJ(List<Categorie> lcat, ParcJardin pj) {
 		for (Categorie cat : lcat) {
 			Categorie tmp = categorieRepository.findById(cat.getId());
-			PJ.setCategories(tmp);
+			pj.setCategories(tmp);
 		}
-		return parcJardinRepository.save(PJ);
+		return parcJardinRepository.save(pj);
 	}
 
 	@Override
 	public ParcJardin ChercherPJParId(Long id) {
-		ParcJardin PJ = parcJardinRepository.findById(id);
-		Hibernate.initialize(PJ);
-		return PJ;
+		ParcJardin pj = parcJardinRepository.findById(id);
+		Hibernate.initialize(pj);
+		return pj;
 	}
 
 	@Override
@@ -61,48 +61,44 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 	}
 
 	@Override
-	public boolean AjouterPJ(ParcJardin PJ) {
-		ParcJardin parcJardin = parcJardinRepository.save(PJ);
-		System.out.println("parc jardin ****** id : " + parcJardin.getId());
-		if (parcJardin != null)
-			return true;
-
-		return false;
+	public boolean AjouterPJ(ParcJardin pj) {
+		ParcJardin parcJardin = parcJardinRepository.save(pj);
+		return parcJardin != null ? true : false;
 	}
 
 	@Override
-	public void SupprimerPJ(ParcJardin PJ) {
+	public void SupprimerPJ(ParcJardin pj) {
 
-		List<Categorie> listTmp1Cat = PJ.getCategories();
+		List<Categorie> listTmp1Cat = pj.getCategories();
 		listTmp1Cat.clear();
-		parcJardinRepository.save(PJ);
+		parcJardinRepository.save(pj);
 
-		List<Commentaire> listTmpCom = commentaireRepository.findByParcJardinn(PJ);
+		List<Commentaire> listTmpCom = commentaireRepository.findByParcJardinn(pj);
 		for (Commentaire cm : listTmpCom) {
 			commentaireRepository.delete(cm);
 		}
 
-		List<Horaire> listTmpH = horaireRepository.findByParcJardin(PJ);
+		List<Horaire> listTmpH = horaireRepository.findByParcJardin(pj);
 		for (Horaire h : listTmpH) {
 			horaireRepository.delete(h);
 		}
-		parcJardinRepository.delete(PJ);
+		parcJardinRepository.delete(pj);
 	}
 
 	@Override
 	public ParcJardin ModifierDescriptionPJ(Long idPJ, String desc) {
 
-		ParcJardin PJ = parcJardinRepository.findById(idPJ);
-		PJ.setDescription(desc);
-		return parcJardinRepository.save(PJ);
+		ParcJardin pj = parcJardinRepository.findById(idPJ);
+		pj.setDescription(desc);
+		return parcJardinRepository.save(pj);
 
 	}
 
 	@Override
 	public ParcJardin ModifierNomPJ(Long idPJ, String nom) {
-		ParcJardin PJ = parcJardinRepository.findById(idPJ);
-		PJ.setName(nom);
-		return parcJardinRepository.save(PJ);
+		ParcJardin pj = parcJardinRepository.findById(idPJ);
+		pj.setName(nom);
+		return parcJardinRepository.save(pj);
 
 	}
 
@@ -114,10 +110,10 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 	}
 
 	@Override
-	public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ) {
+	public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin pj) {
 
-		PJ.setCategories(categorie);
-		return parcJardinRepository.save(PJ);
+		pj.setCategories(categorie);
+		return parcJardinRepository.save(pj);
 
 	}
 
@@ -135,9 +131,9 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 	@Override
 	public void supprimercatFromPJ(Long idPJ) {
 
-		ParcJardin PJ = parcJardinRepository.findById(idPJ);
+		ParcJardin pj = parcJardinRepository.findById(idPJ);
 
-		List<Categorie> listTmp = PJ.getCategories();
+		List<Categorie> listTmp = pj.getCategories();
 		listTmp.clear();
 
 	}

@@ -14,14 +14,14 @@ public interface CommentaireInterface {
 
 	public List<Commentaire> ConsulternouveauCommentaires();
 
-	public List<Commentaire> ConsulterCommentaireByPJ(ParcJardin PJ);
+	public List<Commentaire> ConsulterCommentaireByPJ(ParcJardin pj);
 
-	public List<Commentaire> ListeCommentaireParPJ(ParcJardin PJ);
+	public List<Commentaire> ListeCommentaireParPJ(ParcJardin pj);
 
 	public Commentaire ConsulterCommentaireParId(Long id);
 
-	public List<Commentaire> ConsulterCommentaireNonValiderParPJ(ParcJardin PJ);
+	public List<Commentaire> ConsulterCommentaireNonValiderParPJ(ParcJardin pj);
 
-	public List<Commentaire> ConsulterCommentaireValiderParPJ(ParcJardin PJ);
+	public List<Commentaire> ConsulterCommentaireValiderParPJ(ParcJardin pj);
 
 }
