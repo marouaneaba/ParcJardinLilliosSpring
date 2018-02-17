@@ -6,25 +6,25 @@ import com.lille1.parcsjardinslillios.entity.ParcJardin;
 
 public interface ParcJardinInterface {
 
-	public List<ParcJardin> ConsulterParcsJardin();
+	public List<ParcJardin> consulterParcsJardin();
 
-	public ParcJardin ChercherPJParId(Long id);
+	public ParcJardin chercherPJParId(Long id);
 
-	public void SupprimerPJ(ParcJardin PJ);
+	public void supprimerPJ(ParcJardin PJ);
 
-	public ParcJardin AjouterListCatToPJ(List<Categorie> lcat, ParcJardin PJ);
+	public ParcJardin ajouterListCatToPJ(List<Categorie> lcat, ParcJardin PJ);
 
 	public ParcJardin chercherPJParNom(String nomPj);
 
 	public List<ParcJardin> chercherPJParCategorie(Categorie categorie);
 
-	public boolean AjouterPJ(ParcJardin PJ);
+	public boolean ajouterPJ(ParcJardin PJ);
 
-	public ParcJardin ModifierDescriptionPJ(Long idPJ, String desc);
+	public ParcJardin modifierDescriptionPJ(Long idPJ, String desc);
 
-	public ParcJardin ModifierNomPJ(Long idPJ, String nom);
+	public ParcJardin modifierNomPJ(Long idPJ, String nom);
 
-	public List<Categorie> ConsulterCategoriesPJ(Long idPJ);
+	public List<Categorie> consulterCategoriesPJ(Long idPJ);
 
 	public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ);
 

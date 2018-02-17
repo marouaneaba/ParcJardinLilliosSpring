@@ -52,7 +52,7 @@ public class ParcJardinController {
 	 */
 	@RequestMapping(value = "/operationPJ", method = RequestMethod.GET)
 	public String showAllPJ(Model model) {
-		List<ParcJardin> listPJ = parcJardinInterfaceMetier.ConsulterParcsJardin();
+		List<ParcJardin> listPJ = parcJardinInterfaceMetier.consulterParcsJardin();
 		model.addAttribute("allParcsJardins", new ArrayList<>(listPJ));
 		return "parcJardin";
 	}
@@ -65,8 +65,8 @@ public class ParcJardinController {
 	 */
 	@RequestMapping(value = "/operationPJ/delete", method = RequestMethod.POST)
 	public String supprimerPJ(Long id, final RedirectAttributes redirectAttributes) {
-		ParcJardin PJ = parcJardinInterfaceMetier.ChercherPJParId(id);
-		parcJardinInterfaceMetier.SupprimerPJ(PJ);
+		ParcJardin PJ = parcJardinInterfaceMetier.chercherPJParId(id);
+		parcJardinInterfaceMetier.supprimerPJ(PJ);
 
 		redirectAttributes.addFlashAttribute("css", "success");
 		redirectAttributes.addFlashAttribute("msg", "ParcJardin est supprimer");
@@ -155,7 +155,7 @@ public class ParcJardinController {
 		}
 		List<Categorie> listCatTmp = new ArrayList<>();
 		for (long idcat : cats) {
-			listCatTmp.add(categorieInterfaceMetier.ColsulterCategorieId(idcat));
+			listCatTmp.add(categorieInterfaceMetier.colsulterCategorieId(idcat));
 		}
 
 		for (Categorie tmpcat : listCatTmp) {
@@ -163,7 +163,7 @@ public class ParcJardinController {
 		}
 		// model.addAttribute("files", fileNames);
 		ParcJardin tmp = parcJardinRepository.save(nouveauPJ);
-		parcJardinInterfaceMetier.AjouterListCatToPJ(listCatTmp, tmp);
+		parcJardinInterfaceMetier.ajouterListCatToPJ(listCatTmp, tmp);
 
 		System.out.println("lundi  " + hlundi.getOuverture());
 
@@ -245,7 +245,7 @@ public class ParcJardinController {
 	public String ChercherPJParNom(Model model, @RequestParam(value = "PJNom") String PJNom) {
 
 		if (PJNom.equals("")) {
-			model.addAttribute("allParcsJardins", parcJardinInterfaceMetier.ConsulterParcsJardin());
+			model.addAttribute("allParcsJardins", parcJardinInterfaceMetier.consulterParcsJardin());
 		} else {
 			ParcJardin pj = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
 			model.addAttribute("allParcsJardins", pj);

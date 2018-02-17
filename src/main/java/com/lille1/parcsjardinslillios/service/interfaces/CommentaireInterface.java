@@ -6,22 +6,22 @@ import com.lille1.parcsjardinslillios.entity.ParcJardin;
 
 public interface CommentaireInterface {
 
-	public Commentaire AjouterCommentaire(Commentaire commentaire);
+	public Commentaire ajouterCommentaire(Commentaire commentaire);
 
-	public void ValiderCommentaire(Commentaire commentaire) throws Exception;
+	public void validerCommentaire(Commentaire commentaire) throws Exception;
 
-	public void SupprimerCommentaire(Commentaire commentaire);
+	public void supprimerCommentaire(Commentaire commentaire);
 
-	public List<Commentaire> ConsulternouveauCommentaires();
+	public List<Commentaire> consulternouveauCommentaires();
 
-	public List<Commentaire> ConsulterCommentaireByPJ(ParcJardin pj);
+	public List<Commentaire> consulterCommentaireByPJ(ParcJardin pj);
 
-	public List<Commentaire> ListeCommentaireParPJ(ParcJardin pj);
+	public List<Commentaire> listeCommentaireParPJ(ParcJardin pj);
 
-	public Commentaire ConsulterCommentaireParId(Long id);
+	public Commentaire consulterCommentaireParId(Long id);
 
-	public List<Commentaire> ConsulterCommentaireNonValiderParPJ(ParcJardin pj);
+	public List<Commentaire> consulterCommentaireNonValiderParPJ(ParcJardin pj);
 
-	public List<Commentaire> ConsulterCommentaireValiderParPJ(ParcJardin pj);
+	public List<Commentaire> consulterCommentaireValiderParPJ(ParcJardin pj);
 
 }

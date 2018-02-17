@@ -21,13 +21,13 @@ public class CommentaireServiceImplementation implements CommentaireInterface {
 	ParcJardinRepository parcJardinRepository;
 
 	@Override
-	public Commentaire AjouterCommentaire(Commentaire commentaire) {
+	public Commentaire ajouterCommentaire(Commentaire commentaire) {
 		return commentaireRepository.save(commentaire);
 
 	}
 
 	@Override
-	public void ValiderCommentaire(Commentaire commentaire) throws Exception {
+	public void validerCommentaire(Commentaire commentaire) throws Exception {
 
 		commentaire.setConfirmer(true);
 		commentaireRepository.save(commentaire);
@@ -35,39 +35,39 @@ public class CommentaireServiceImplementation implements CommentaireInterface {
 	}
 
 	@Override
-	public void SupprimerCommentaire(Commentaire commentaire) {
+	public void supprimerCommentaire(Commentaire commentaire) {
 
 		commentaireRepository.delete(commentaire);
 	}
 
 	@Override
-	public List<Commentaire> ConsulternouveauCommentaires() {
+	public List<Commentaire> consulternouveauCommentaires() {
 		return commentaireRepository.findByConfirmer(false);
 	}
 
 	@Override
-	public List<Commentaire> ConsulterCommentaireByPJ(ParcJardin pj) {
+	public List<Commentaire> consulterCommentaireByPJ(ParcJardin pj) {
 		return commentaireRepository.findByParcJardinn(pj);
 	}
 
 	@Override
-	public List<Commentaire> ListeCommentaireParPJ(ParcJardin pj) {
+	public List<Commentaire> listeCommentaireParPJ(ParcJardin pj) {
 		return commentaireRepository.findByParcJardinn(pj);
 	}
 
 	@Override
-	public Commentaire ConsulterCommentaireParId(Long id) {
+	public Commentaire consulterCommentaireParId(Long id) {
 		return commentaireRepository.findById(id);
 	}
 
 	@Override
-	public List<Commentaire> ConsulterCommentaireNonValiderParPJ(ParcJardin pj) {
+	public List<Commentaire> consulterCommentaireNonValiderParPJ(ParcJardin pj) {
 
 		return commentaireRepository.findByConfirmerAndParcJardinn(false, pj);
 	}
 
 	@Override
-	public List<Commentaire> ConsulterCommentaireValiderParPJ(ParcJardin pj) {
+	public List<Commentaire> consulterCommentaireValiderParPJ(ParcJardin pj) {
 
 		return commentaireRepository.findByConfirmerAndParcJardinn(true, pj);
 	}

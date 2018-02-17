@@ -27,7 +27,7 @@ public class HoraireApiController {
 	 */
 	@GetMapping(value = "/api/horaire/{idParcJardin}")
 	public List<Horaire> gethoraire(@PathVariable("idParcJardin") Long idParcJardin) {
-		ParcJardin tmp = mParcJardinInterface.ChercherPJParId(idParcJardin);
+		ParcJardin tmp = mParcJardinInterface.chercherPJParId(idParcJardin);
 		return horaireRepository.findByParcJardin(tmp);
 	}
 }

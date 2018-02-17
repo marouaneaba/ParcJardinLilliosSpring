@@ -19,7 +19,7 @@ public class HoraireServiceImplementation implements HoraireInterface {
 	HoraireRepository horaireRepository;
 
 	@Override
-	public void ModifierHorairePJ(Long idH, String journee, String ouverture, String fermeture) {
+	public void modifierHorairePJ(Long idH, String journee, String ouverture, String fermeture) {
 
 		Horaire tmph = horaireRepository.findById(idH);
 		tmph.setJournee(journee);

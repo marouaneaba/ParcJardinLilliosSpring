@@ -32,7 +32,7 @@ public class ParcJardinnLilliosRestController {
 	@GetMapping(value = "/api/PJ")
 	public List<ParcJardin> getParcJardinnLillios() {
 
-		return mParcJardinInterface.ConsulterParcsJardin();
+		return mParcJardinInterface.consulterParcsJardin();
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class ParcJardinnLilliosRestController {
 		case "JARDIN":
 			return mParcJardinInterface.consulterPJByType("JARDIN");
 		default:
-			return mParcJardinInterface.chercherPJParCategorie(mCategorieInterface.ConsulterCategorieParNom(sService));
+			return mParcJardinInterface.chercherPJParCategorie(mCategorieInterface.consulterCategorieParNom(sService));
 		}
 	}
 
@@ -79,7 +79,7 @@ public class ParcJardinnLilliosRestController {
 	@GetMapping(value = "/api/PJById/{idParcJardinnLillios}")
 	public ParcJardin getParcJardinLilliosById(@PathVariable("idParcJardinnLillios") Long sId) {
 
-		return mParcJardinInterface.ChercherPJParId(sId);
+		return mParcJardinInterface.chercherPJParId(sId);
 
 	}
 

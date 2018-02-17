@@ -70,7 +70,7 @@ public class HoraireController2 {
 	 */
 	@PostMapping(value = "/ModifierHoraire")
 	public String PostModifierHoraire(Model model, Horaire horaire, Long idH) {
-		horaireInterfaceMetier.ModifierHorairePJ(idH, horaire.getJournee(), horaire.getOuverture(),
+		horaireInterfaceMetier.modifierHorairePJ(idH, horaire.getJournee(), horaire.getOuverture(),
 				horaire.getFermeture());
 
 		return "operationHoraire";

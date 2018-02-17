@@ -30,8 +30,8 @@ public class CommentaireRestController {
 	public Commentaire insererCommentaire(@RequestParam("name") String sName, @RequestParam("nbrEtoile") int sNbrEtoile,
 			@RequestParam("commentaire") String sCommentaire, @RequestParam("idParcJardinLillios") Long sId) {
 
-		return mCommentaireInterface.AjouterCommentaire(
-				new Commentaire(sCommentaire, sNbrEtoile, sName, false, mParcJardinInterface.ChercherPJParId(sId)));
+		return mCommentaireInterface.ajouterCommentaire(
+				new Commentaire(sCommentaire, sNbrEtoile, sName, false, mParcJardinInterface.chercherPJParId(sId)));
 
 	}
 
@@ -44,7 +44,7 @@ public class CommentaireRestController {
 	public List<Commentaire> getCommentaireByPJ(@PathVariable("ParcJardin") Long sIdparcJardin) {
 
 		return mCommentaireInterface
-				.ConsulterCommentaireValiderParPJ(mParcJardinInterface.ChercherPJParId(sIdparcJardin));
+				.consulterCommentaireValiderParPJ(mParcJardinInterface.chercherPJParId(sIdparcJardin));
 	}
 
 	/**
@@ -60,8 +60,8 @@ public class CommentaireRestController {
 			@PathVariable("nbrEtoile") int sNbrEtoile, @PathVariable("commentaire") String sCommentaire) {
 
 		Commentaire commentaire = new Commentaire(sCommentaire, sNbrEtoile, sName, false,
-				mParcJardinInterface.ChercherPJParId(sId));
-		return mCommentaireInterface.AjouterCommentaire(commentaire);
+				mParcJardinInterface.chercherPJParId(sId));
+		return mCommentaireInterface.ajouterCommentaire(commentaire);
 
 	}
 

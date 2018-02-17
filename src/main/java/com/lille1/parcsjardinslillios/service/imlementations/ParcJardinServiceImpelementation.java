@@ -30,12 +30,12 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 	ParcJardinInterface parcJardinInterface;
 
 	@Override
-	public List<ParcJardin> ConsulterParcsJardin() {
+	public List<ParcJardin> consulterParcsJardin() {
 		return parcJardinRepository.findAll();
 	}
 
 	@Override
-	public ParcJardin AjouterListCatToPJ(List<Categorie> lcat, ParcJardin pj) {
+	public ParcJardin ajouterListCatToPJ(List<Categorie> lcat, ParcJardin pj) {
 		for (Categorie cat : lcat) {
 			Categorie tmp = categorieRepository.findById(cat.getId());
 			pj.setCategories(tmp);
@@ -44,7 +44,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 	}
 
 	@Override
-	public ParcJardin ChercherPJParId(Long id) {
+	public ParcJardin chercherPJParId(Long id) {
 		ParcJardin pj = parcJardinRepository.findById(id);
 		Hibernate.initialize(pj);
 		return pj;
@@ -61,13 +61,13 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 	}
 
 	@Override
-	public boolean AjouterPJ(ParcJardin pj) {
+	public boolean ajouterPJ(ParcJardin pj) {
 		ParcJardin parcJardin = parcJardinRepository.save(pj);
 		return parcJardin != null ? true : false;
 	}
 
 	@Override
-	public void SupprimerPJ(ParcJardin pj) {
+	public void supprimerPJ(ParcJardin pj) {
 
 		List<Categorie> listTmp1Cat = pj.getCategories();
 		listTmp1Cat.clear();
@@ -86,7 +86,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 	}
 
 	@Override
-	public ParcJardin ModifierDescriptionPJ(Long idPJ, String desc) {
+	public ParcJardin modifierDescriptionPJ(Long idPJ, String desc) {
 
 		ParcJardin pj = parcJardinRepository.findById(idPJ);
 		pj.setDescription(desc);
@@ -95,7 +95,7 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 	}
 
 	@Override
-	public ParcJardin ModifierNomPJ(Long idPJ, String nom) {
+	public ParcJardin modifierNomPJ(Long idPJ, String nom) {
 		ParcJardin pj = parcJardinRepository.findById(idPJ);
 		pj.setName(nom);
 		return parcJardinRepository.save(pj);
@@ -103,10 +103,9 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 	}
 
 	@Override
-	public List<Categorie> ConsulterCategoriesPJ(Long idPJ) {
+	public List<Categorie> consulterCategoriesPJ(Long idPJ) {
 		ParcJardin parcJardin = parcJardinRepository.findById(idPJ);
 		return parcJardin.getCategories();
-
 	}
 
 	@Override

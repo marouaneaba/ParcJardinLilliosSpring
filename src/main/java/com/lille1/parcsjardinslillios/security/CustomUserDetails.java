@@ -26,7 +26,7 @@ public class CustomUserDetails implements UserDetailsService {
 			user = userRepository.findByEmail(s);
 
 		} catch (UsernameNotFoundException e) {
-			System.out.println("erreur : " + e);
+			System.err.println("erreur : " + e);
 		}
 
 		List<SimpleGrantedAuthority> authorities = new ArrayList<>();

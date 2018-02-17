@@ -29,7 +29,7 @@ public class CommentaireController {
 	@GetMapping(value = "/NouveauCommentaire")
 	public String afficherNouveauCommentaire(Model model) {
 		// model.addAttribute("CommentairesByPJ", commentaireInterfaceMetier.);
-		model.addAttribute("AllCommentaire", commentaireInterfaceMetier.ConsulternouveauCommentaires());
+		model.addAttribute("AllCommentaire", commentaireInterfaceMetier.consulternouveauCommentaires());
 		return "Commentaire";
 	}
 
@@ -40,8 +40,8 @@ public class CommentaireController {
 	 */
 	@PostMapping(value = "/NouveauCommentaire/delete")
 	public String supprimerCommentaire(Long id) {
-		Commentaire tmp = commentaireInterfaceMetier.ConsulterCommentaireParId(id);
-		commentaireInterfaceMetier.SupprimerCommentaire(tmp);
+		Commentaire tmp = commentaireInterfaceMetier.consulterCommentaireParId(id);
+		commentaireInterfaceMetier.supprimerCommentaire(tmp);
 		return "redirect:/NouveauCommentaire";
 	}
 
@@ -53,8 +53,8 @@ public class CommentaireController {
 	 */
 	@PostMapping(value = "/NouveauCommentaire/confirmer")
 	public String confirmerCommentaire(Long id) throws Exception {
-		Commentaire tmp = commentaireInterfaceMetier.ConsulterCommentaireParId(id);
-		commentaireInterfaceMetier.ValiderCommentaire(tmp);
+		Commentaire tmp = commentaireInterfaceMetier.consulterCommentaireParId(id);
+		commentaireInterfaceMetier.validerCommentaire(tmp);
 		return "redirect:/NouveauCommentaire";
 	}
 
@@ -68,10 +68,10 @@ public class CommentaireController {
 	public String ChercherCommentaireParNomPJ(Model model, @RequestParam(value = "PJNom") String PJNom) {
 
 		if (PJNom.equals("")) {
-			model.addAttribute("AllCommentaire", commentaireInterfaceMetier.ConsulternouveauCommentaires());
+			model.addAttribute("AllCommentaire", commentaireInterfaceMetier.consulternouveauCommentaires());
 		} else {
 			ParcJardin tmp = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
-			List<Commentaire> listtmpCom = commentaireInterfaceMetier.ConsulterCommentaireNonValiderParPJ(tmp);
+			List<Commentaire> listtmpCom = commentaireInterfaceMetier.consulterCommentaireNonValiderParPJ(tmp);
 			model.addAttribute("AllCommentaire", listtmpCom);
 		}
 

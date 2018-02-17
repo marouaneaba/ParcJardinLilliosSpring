@@ -41,7 +41,7 @@ public class CommentaireEditController {
 		model.addAttribute("Allcategories", categorieInterfaceMetier.consulterCategories());
 
 		System.out.println("avant modifi pj " + id);
-		model.addAttribute("nouveauPJ", parcJardinInterfaceMetier.ChercherPJParId(id));
+		model.addAttribute("nouveauPJ", parcJardinInterfaceMetier.chercherPJParId(id));
 		return "modificationparcjardin";
 	}
 
@@ -56,10 +56,10 @@ public class CommentaireEditController {
 	public RedirectView PostModificationParcJardinLillios(long id, ParcJardin nouveauPJ,
 			@RequestParam(value = "cats") List<Long> cats) {
 
-		ParcJardin tmp = parcJardinInterfaceMetier.ChercherPJParId(id);
+		ParcJardin tmp = parcJardinInterfaceMetier.chercherPJParId(id);
 		List<Categorie> listCatTmp = new ArrayList<>();
 		for (long idcat : cats) {
-			listCatTmp.add(categorieInterfaceMetier.ColsulterCategorieId(idcat));
+			listCatTmp.add(categorieInterfaceMetier.colsulterCategorieId(idcat));
 		}
 
 		for (Categorie tmpcat : listCatTmp) {

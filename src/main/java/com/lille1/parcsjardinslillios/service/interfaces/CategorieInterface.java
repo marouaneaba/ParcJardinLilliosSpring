@@ -5,12 +5,12 @@ import com.lille1.parcsjardinslillios.entity.Categorie;
 
 public interface CategorieInterface {
 
-	public boolean AjouterCategoriePJ(Categorie Categorie);
+	public boolean ajouterCategoriePJ(Categorie categorie);
 
 	public List<Categorie> consulterCategories();
 
-	public Categorie ConsulterCategorieParNom(String nomCategorie);
+	public Categorie consulterCategorieParNom(String nomCategorie);
 
-	public Categorie ColsulterCategorieId(Long id);
+	public Categorie colsulterCategorieId(Long id);
 
 }

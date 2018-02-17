@@ -16,12 +16,12 @@ public class CategorieServiceImlementation implements CategorieInterface {
 	CategorieRepository categorieRepository;
 
 	@Override
-	public Categorie ColsulterCategorieId(Long id) {
+	public Categorie colsulterCategorieId(Long id) {
 		return categorieRepository.findById(id);
 	}
 
 	@Override
-	public boolean AjouterCategoriePJ(Categorie categorie) {
+	public boolean ajouterCategoriePJ(Categorie categorie) {
 		Categorie cat = categorieRepository.save(categorie);
 		return cat == null ? false : true;
 	}
@@ -33,7 +33,7 @@ public class CategorieServiceImlementation implements CategorieInterface {
 	}
 
 	@Override
-	public Categorie ConsulterCategorieParNom(String nomCategorie) {
+	public Categorie consulterCategorieParNom(String nomCategorie) {
 		return categorieRepository.findByNomcategorie(nomCategorie);
 	}
 
