@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.lille1.parcsjardinslillios.entity.Categorie;
 import com.lille1.parcsjardinslillios.entity.Horaire;
 import com.lille1.parcsjardinslillios.entity.ParcJardin;
@@ -168,27 +167,27 @@ public class ParcJardinController {
 
 		System.out.println("lundi  " + hlundi.getOuverture());
 
-		hlundi.setParcJardinn(tmp);
+		hlundi.setParcJardin(tmp);
 		horaireRepository.save(hlundi);
 
 		System.out.println("mardi  " + hmardi.getOuverture());
 
-		hmardi.setParcJardinn(tmp);
+		hmardi.setParcJardin(tmp);
 		horaireRepository.save(hmardi);
 
-		hmercredi.setParcJardinn(tmp);
+		hmercredi.setParcJardin(tmp);
 		horaireRepository.save(hmercredi);
 
-		hjeudi.setParcJardinn(tmp);
+		hjeudi.setParcJardin(tmp);
 		horaireRepository.save(hjeudi);
 
-		hvendredi.setParcJardinn(tmp);
+		hvendredi.setParcJardin(tmp);
 		horaireRepository.save(hvendredi);
 
-		hsamedi.setParcJardinn(tmp);
+		hsamedi.setParcJardin(tmp);
 		horaireRepository.save(hsamedi);
 
-		hdimanche.setParcJardinn(tmp);
+		hdimanche.setParcJardin(tmp);
 		horaireRepository.save(hdimanche);
 
 		return "redirect:/operationPJ";

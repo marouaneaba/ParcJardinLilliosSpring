@@ -4,11 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import com.lille1.parcsjardinslillios.entity.Horaire;
 import com.lille1.parcsjardinslillios.entity.ParcJardin;
 import com.lille1.parcsjardinslillios.service.interfaces.CategorieInterface;
-
 import java.util.ArrayList;
 import java.util.List;
 

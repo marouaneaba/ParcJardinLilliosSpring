@@ -149,10 +149,10 @@ public class ParcJardinServiceImpelementation implements ParcJardinInterface {
 		pj.setName(name);
 		pj.setDescription(description);
 		pj.setAdresse(adresse);
-		pj.setL(l);
-		pj.setG(g);
+		pj.setLatitude(l);
+		pj.setLongitude(g);
 		pj.setType(type);
-		pj.setCat(cats);
+		pj.setCategories(cats);
 
 		return parcJardinRepository.save(pj);
 	}

@@ -18,14 +18,14 @@ public class ParcJardin {
 	@Column
 	private String type; // parc ou jardin
 	@Column
-	private String L;
+	private String latitude;
 	@Column
-	private String G;
+	private String longitude;
 	@Column
 	private String adresse;
 	@Column
 	@ElementCollection(targetClass = String.class)
-	private List<java.lang.String> NameImage;
+	private List<String> nameImage;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Categorie> categories = new ArrayList<>();
@@ -39,20 +39,11 @@ public class ParcJardin {
 		this.name = name;
 		this.description = description;
 		this.type = type;
-		this.L = l;
-		this.G = g;
+		this.latitude = l;
+		this.longitude = g;
 		this.adresse = adresse;
-		// this.commentaires = new ArrayList<>();
-		this.NameImage = new ArrayList<>();
+		this.nameImage = new ArrayList<>();
 
-	}
-
-	public List<String> getNameImage() {
-		return NameImage;
-	}
-
-	public void setNameImage(String nameImage) {
-		NameImage.add(nameImage);
 	}
 
 	public Long getId() {
@@ -87,20 +78,20 @@ public class ParcJardin {
 		this.type = type;
 	}
 
-	public String getL() {
-		return L;
+	public String getLatitude() {
+		return latitude;
 	}
 
-	public void setL(String l) {
-		L = l;
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
 
-	public String getG() {
-		return G;
+	public String getLongitude() {
+		return longitude;
 	}
 
-	public void setG(String g) {
-		G = g;
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
 	public String getAdresse() {
@@ -111,6 +102,14 @@ public class ParcJardin {
 		this.adresse = adresse;
 	}
 
+	public List<String> getNameImage() {
+		return nameImage;
+	}
+
+	public void setNameImage(String nameImage) {
+		this.nameImage.add(nameImage);
+	}
+
 	public List<Categorie> getCategories() {
 		return categories;
 	}
@@ -118,15 +117,18 @@ public class ParcJardin {
 	public void setCategories(Categorie categories) {
 		this.categories.add(categories);
 	}
-
-	public void setCat(List<Categorie> cats) {
-		this.categories = cats;
+	
+	public void setCategories(List<Categorie> categories) {
+		this.categories = categories;
 	}
 
 	@Override
 	public String toString() {
-		return "ParcJardin [id=" + id + ", name=" + name + ", description=" + description + ", type=" + type + ", L="
-				+ L + ", G=" + G + ", adresse=" + adresse + "]";
+		return "ParcJardin [id=" + id + ", name=" + name + ", description=" + description + ", type=" + type
+				+ ", latitude=" + latitude + ", longitude=" + longitude + ", adresse=" + adresse + ", nameImage="
+				+ nameImage + ", categories=" + categories + "]";
 	}
+
+	
 
 }

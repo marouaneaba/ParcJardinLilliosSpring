@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.lille1.parcsjardinslillios.entity.Commentaire;
 import com.lille1.parcsjardinslillios.entity.ParcJardin;
 import com.lille1.parcsjardinslillios.service.interfaces.CommentaireInterface;

@@ -9,11 +9,11 @@ public class Commentaire {
 	@GeneratedValue
 	private Long id;
 	@Column
-	private String Name;
+	private String name;
 	@Column
 	private int nbrEtoile;
 	@Column
-	private String commentaire;
+	private String scommentaire;
 	@Column
 	private boolean confirmer;
 
@@ -26,19 +26,11 @@ public class Commentaire {
 	public Commentaire(String commentaire, int nbrEtoile, String nomCommentaire, boolean confirmer,
 			ParcJardin parcJardin) {
 		super();
-		this.Name = nomCommentaire;
+		this.name = nomCommentaire;
 		this.nbrEtoile = nbrEtoile;
-		this.commentaire = commentaire;
+		this.scommentaire = commentaire;
 		this.confirmer = confirmer;
 		this.parcJardinn = parcJardin;
-	}
-
-	public ParcJardin getParcJardinn() {
-		return parcJardinn;
-	}
-
-	public void setParcJardinn(ParcJardin parcJardinn) {
-		this.parcJardinn = parcJardinn;
 	}
 
 	public Long getId() {
@@ -50,11 +42,11 @@ public class Commentaire {
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public int getNbrEtoile() {
@@ -65,12 +57,12 @@ public class Commentaire {
 		this.nbrEtoile = nbrEtoile;
 	}
 
-	public String getCommentaire() {
-		return commentaire;
+	public String getScommentaire() {
+		return scommentaire;
 	}
 
-	public void setCommentaire(String commentaire) {
-		this.commentaire = commentaire;
+	public void setScommentaire(String scommentaire) {
+		this.scommentaire = scommentaire;
 	}
 
 	public boolean isConfirmer() {
@@ -81,10 +73,19 @@ public class Commentaire {
 		this.confirmer = confirmer;
 	}
 
-	@Override
-	public String toString() {
-		return "Commentaire [id=" + id + ", Name=" + Name + ", nbrEtoile=" + nbrEtoile + ", commentaire=" + commentaire
-				+ ", confirmer=" + confirmer + "]";
+	public ParcJardin getParcJardinn() {
+		return parcJardinn;
 	}
 
+	public void setParcJardinn(ParcJardin parcJardinn) {
+		this.parcJardinn = parcJardinn;
+	}
+
+	@Override
+	public String toString() {
+		return "Commentaire [id=" + id + ", name=" + name + ", nbrEtoile=" + nbrEtoile + ", scommentaire="
+				+ scommentaire + ", confirmer=" + confirmer + ", parcJardinn=" + parcJardinn + "]";
+	}
+
+	
 }

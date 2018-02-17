@@ -1,4 +1,3 @@
-
 package com.lille1.parcsjardinslillios.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,12 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.lille1.parcsjardinslillios.entity.ParcJardin;
 import com.lille1.parcsjardinslillios.repository.ParcJardinRepository;
 import com.lille1.parcsjardinslillios.service.interfaces.CategorieInterface;
 import com.lille1.parcsjardinslillios.service.interfaces.ParcJardinInterface;
-
 import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.*;
 

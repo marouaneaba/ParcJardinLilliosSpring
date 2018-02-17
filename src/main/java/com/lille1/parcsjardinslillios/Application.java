@@ -6,7 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.lille1.parcsjardinslillios.entity.User;
-import com.lille1.parcsjardinslillios.repository.CategorieRepository;
 import com.lille1.parcsjardinslillios.repository.UserRepository;
 import com.lille1.parcsjardinslillios.storage.StorageService;
 import javax.annotation.Resource;
@@ -18,8 +17,6 @@ public class Application implements CommandLineRunner {
 
 	@Resource
 	StorageService storageService;
-	@Autowired
-	private CategorieRepository mCategorieRepository;
 	@Autowired
 	private UserRepository userRepository;
 

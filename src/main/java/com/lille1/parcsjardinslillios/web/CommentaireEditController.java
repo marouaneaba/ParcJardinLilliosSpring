@@ -69,7 +69,7 @@ public class CommentaireEditController {
 		System.out.println("id pj a modifier " + id);
 
 		parcJardinInterfaceMetier.modifierPJ(tmp, nouveauPJ.getName(), nouveauPJ.getDescription(),
-				nouveauPJ.getAdresse(), nouveauPJ.getL(), nouveauPJ.getG(), nouveauPJ.getType(), listCatTmp);
+				nouveauPJ.getAdresse(), nouveauPJ.getLatitude(), nouveauPJ.getLongitude(), nouveauPJ.getType(), listCatTmp);
 		parcJardinRepository.save(tmp);
 
 		// model.addAttribute("files", fileNames);

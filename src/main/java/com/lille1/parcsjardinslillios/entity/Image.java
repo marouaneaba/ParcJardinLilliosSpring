@@ -3,7 +3,6 @@ package com.lille1.parcsjardinslillios.entity;
 import javax.persistence.*;
 
 @Entity
-
 public class Image {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,6 +46,8 @@ public class Image {
 
 	@Override
 	public String toString() {
-		return "Image{" + "id=" + id + ", nomImage='" + nomImage + '\'' + ", parcJardinn=" + parcJardinn + '}';
+		return "Image [id=" + id + ", nomImage=" + nomImage + ", parcJardinn=" + parcJardinn + "]";
 	}
+
+	
 }

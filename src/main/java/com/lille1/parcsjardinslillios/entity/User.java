@@ -9,13 +9,13 @@ public class User {
 	@GeneratedValue
 	private Long id;
 	@Column
-	private String Name;
+	private String name;
 	@Column
 	private String password;
 	@Column
 	private String email;
 	@Column
-	private String Tel;
+	private String tel;
 	@Column
 	private String role = "ROLE_ADMIN";
 
@@ -25,10 +25,10 @@ public class User {
 
 	public User(String name, String password, String email, String tel) {
 		super();
-		Name = name;
+		this.name = name;
 		this.password = password;
 		this.email = email;
-		Tel = tel;
+		this.tel = tel;
 	}
 
 	public Long getId() {
@@ -40,11 +40,11 @@ public class User {
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getPassword() {
@@ -64,11 +64,11 @@ public class User {
 	}
 
 	public String getTel() {
-		return Tel;
+		return tel;
 	}
 
 	public void setTel(String tel) {
-		Tel = tel;
+		this.tel = tel;
 	}
 
 	public String getRole() {
@@ -78,4 +78,12 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", tel=" + tel
+				+ ", role=" + role + "]";
+	}
+
+	
 }

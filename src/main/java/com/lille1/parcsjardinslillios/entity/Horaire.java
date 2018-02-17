@@ -61,12 +61,20 @@ public class Horaire {
 		this.journee = journee;
 	}
 
-	public ParcJardin getParcJardinn() {
+	public ParcJardin getParcJardin() {
 		return parcJardin;
 	}
 
-	public void setParcJardinn(ParcJardin parcJardinn) {
-		this.parcJardin = parcJardinn;
+	public void setParcJardin(ParcJardin parcJardin) {
+		this.parcJardin = parcJardin;
 	}
+
+	@Override
+	public String toString() {
+		return "Horaire [id=" + id + ", ouverture=" + ouverture + ", fermeture=" + fermeture + ", journee=" + journee
+				+ ", parcJardin=" + parcJardin + "]";
+	}
+
+	
 
 }
