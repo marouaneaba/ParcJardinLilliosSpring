@@ -138,28 +138,23 @@ public class ParcJardinController {
 					stream.write(bytes);
 					stream.close();
 
-				} catch (Exception e) {}
+				} catch (Exception e) {
+				}
 			}
 		}
-
 
 		List<Categorie> listCatTmp = new ArrayList<>();
 		for (long idcat : cats) {
 			listCatTmp.add(categorieInterfaceMetier.colsulterCategorieId(idcat));
 		}
 
-		for (Categorie tmpcat : listCatTmp) {
-			System.out.println("---------" + tmpcat.toString());
-		}
 		ParcJardin tmp = parcJardinRepository.save(nouveauPJ);
 		parcJardinInterfaceMetier.ajouterListCatToPJ(listCatTmp, tmp);
 
-		System.out.println("lundi  " + hlundi.getOuverture());
 
 		hlundi.setParcJardin(tmp);
 		horaireRepository.save(hlundi);
 
-		System.out.println("mardi  " + hmardi.getOuverture());
 
 		hmardi.setParcJardin(tmp);
 		horaireRepository.save(hmardi);
@@ -185,53 +180,11 @@ public class ParcJardinController {
 	/**
 	 * 
 	 * @param model
-	 * @return
-	 */
-	@GetMapping(value = "/afficherRep")
-	public String getContentFile(Model model) {
-
-		File dir = new File("./src/main/resources/static/images/");
-		String[] files = dir.list();
-		String tmp = "vide";
-
-		for (int i = 0; i < files.length; i++) {
-			tmp += files[i] + " ,\n ";
-		}
-		model.addAttribute("testCharactere", tmp);
-		return "test";
-	}
-
-	/**
-	 * 
-	 * @param name
-	 * @param model
-	 * @return
-	 */
-	@GetMapping(value = "/afficherRepName/{name}")
-	public String getContentFile(@PathVariable("name") String name, Model model) {
-
-		if (!name.equals("") && name != null) {
-			File dir = new File("./src/main/resources/static/images/" + name + "/");
-			String[] files = dir.list();
-			String tmp = "vide";
-
-			for (int i = 0; i < files.length; i++) {
-				tmp += files[i] + " ,\n ";
-			}
-			model.addAttribute("testCharactere", tmp);
-		}
-
-		return "test";
-	}
-
-	/**
-	 * 
-	 * @param model
 	 * @param PJNom
 	 * @return
 	 */
 	@RequestMapping("/chercherPJParNom")
-	public String chercherPJParNom(Model model, @RequestParam(value = "PJNom") String PJNom) {
+	public String chercherParcJardinParNom(Model model, @RequestParam(value = "PJNom") String PJNom) {
 
 		if (PJNom.equals("")) {
 			model.addAttribute("allParcsJardins", parcJardinInterfaceMetier.consulterParcsJardin());

@@ -26,7 +26,6 @@ public class HoraireController {
 	 */
 	@GetMapping(value = "/AjouterHoraire")
 	public String getAjoutHoraire(Model model, long id) {
-		System.out.println("id de pj " + id);
 		model.addAttribute("id", id);
 		return "horaire";
 	}
@@ -42,7 +41,6 @@ public class HoraireController {
 	@PostMapping(value = "/toto")
 	public String addHoraireToPJ(String journee, String ouverture, String fermeture, long id) {
 
-		System.out.println("id de pj apres valider" + journee);
 		ParcJardin tmp = parcJardinRepository.findById(id);
 		horaireRepository.save(new Horaire(ouverture, fermeture, journee, tmp));
 		return "redirect:/operationPJ";

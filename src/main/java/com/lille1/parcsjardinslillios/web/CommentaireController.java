@@ -23,7 +23,7 @@ public class CommentaireController {
 	@Autowired
 	ParcJardinInterface parcJardinInterfaceMetier;
 	
-	private static final String allCommentaire = "AllCommentaire"; 
+	private static final String ALLCOMMENTAIRE = "AllCommentaire"; 
 
 	/**
 	 * 
@@ -32,8 +32,7 @@ public class CommentaireController {
 	 */
 	@GetMapping(value = "/NouveauCommentaire")
 	public String afficherNouveauCommentaire(Model model) {
-		// model.addAttribute("CommentairesByPJ", commentaireInterfaceMetier.);
-		model.addAttribute(allCommentaire, commentaireInterfaceMetier.consulternouveauCommentaires());
+		model.addAttribute(ALLCOMMENTAIRE, commentaireInterfaceMetier.consulternouveauCommentaires());
 		return "Commentaire";
 	}
 
@@ -56,7 +55,7 @@ public class CommentaireController {
 	 * @throws Exception
 	 */
 	@PostMapping(value = "/NouveauCommentaire/confirmer")
-	public String confirmerCommentaire(Long id) throws Exception {
+	public String confirmerCommentaire(Long id){
 		Commentaire tmp = commentaireInterfaceMetier.consulterCommentaireParId(id);
 		commentaireInterfaceMetier.validerCommentaire(tmp);
 		return "redirect:/NouveauCommentaire";
@@ -72,11 +71,11 @@ public class CommentaireController {
 	public String chercherCommentaireParNomPJ(Model model, @RequestParam(value = "PJNom") String pjNom) {
 
 		if (pjNom.equals("")) {
-			model.addAttribute(allCommentaire, commentaireInterfaceMetier.consulternouveauCommentaires());
+			model.addAttribute(ALLCOMMENTAIRE, commentaireInterfaceMetier.consulternouveauCommentaires());
 		} else {
 			ParcJardin tmp = parcJardinInterfaceMetier.chercherPJParNom(pjNom);
 			List<Commentaire> listtmpCom = commentaireInterfaceMetier.consulterCommentaireNonValiderParPJ(tmp);
-			model.addAttribute(allCommentaire, listtmpCom);
+			model.addAttribute(ALLCOMMENTAIRE, listtmpCom);
 		}
 
 		return "Commentaire";

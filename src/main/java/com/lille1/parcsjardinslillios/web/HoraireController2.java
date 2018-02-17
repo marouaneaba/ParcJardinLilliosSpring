@@ -22,6 +22,7 @@ public class HoraireController2 {
 	HoraireRepository horaireRepository;
 	@Autowired
 	ParcJardinInterface parcJardinInterfaceMetier;
+	private static String OPERATIONHORAIRE = "operationHoraire";
 
 	/**
 	 * 
@@ -30,7 +31,7 @@ public class HoraireController2 {
 	 */
 	@GetMapping(value = "/Operatiohoraire")
 	public String getOperationHoraire(Model model) {
-		return "operationHoraire";
+		return OPERATIONHORAIRE;
 	}
 
 	/**
@@ -45,7 +46,7 @@ public class HoraireController2 {
 		ParcJardin foundPJ = parcJardinInterfaceMetier.chercherPJParNom(pjNom);
 		List<Horaire> foundHoraire = horaireRepository.findByParcJardin(foundPJ);
 		model.addAttribute("foundHoraires", foundHoraire);
-		return "operationHoraire";
+		return OPERATIONHORAIRE;
 	}
 
 	/**
@@ -73,7 +74,7 @@ public class HoraireController2 {
 		horaireInterfaceMetier.modifierHorairePJ(idh, horaire.getJournee(), horaire.getOuverture(),
 				horaire.getFermeture());
 
-		return "operationHoraire";
+		return OPERATIONHORAIRE;
 
 	}
 
@@ -86,7 +87,7 @@ public class HoraireController2 {
 	public String deteleHoraire(Long idH) {
 		Horaire tmp = horaireRepository.findById(idH);
 		horaireRepository.delete(tmp);
-		return "operationHoraire";
+		return OPERATIONHORAIRE;
 	}
 
 }

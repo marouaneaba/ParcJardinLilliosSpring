@@ -87,9 +87,9 @@ public class CommentaireEditController {
 	 */
 	@PostMapping(value = "/ajouteAdmin")
 	public RedirectView postAjoutAdmin(@RequestParam("name") String name, @RequestParam("password") String password,
-			@RequestParam("email_address") String email_address, @RequestParam("Tel") String tel) {
+			@RequestParam("email_address") String emailAddress, @RequestParam("Tel") String tel) {
 
-		userRepository.save(new User(name, password, email_address, tel));
+		userRepository.save(new User(name, password, emailAddress, tel));
 		return new RedirectView("/operationPJ");
 	}
 
