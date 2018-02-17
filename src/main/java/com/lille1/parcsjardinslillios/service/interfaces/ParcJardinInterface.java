@@ -10,15 +10,15 @@ public interface ParcJardinInterface {
 
 	public ParcJardin chercherPJParId(Long id);
 
-	public void supprimerPJ(ParcJardin PJ);
+	public void supprimerPJ(ParcJardin pj);
 
-	public ParcJardin ajouterListCatToPJ(List<Categorie> lcat, ParcJardin PJ);
+	public ParcJardin ajouterListCatToPJ(List<Categorie> lcat, ParcJardin pj);
 
 	public ParcJardin chercherPJParNom(String nomPj);
 
 	public List<ParcJardin> chercherPJParCategorie(Categorie categorie);
 
-	public boolean ajouterPJ(ParcJardin PJ);
+	public boolean ajouterPJ(ParcJardin pj);
 
 	public ParcJardin modifierDescriptionPJ(Long idPJ, String desc);
 
@@ -26,7 +26,7 @@ public interface ParcJardinInterface {
 
 	public List<Categorie> consulterCategoriesPJ(Long idPJ);
 
-	public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin PJ);
+	public ParcJardin ajouterCategorieToPJ(Categorie categorie, ParcJardin pj);
 
 	public ParcJardin chercherPJLG(String l, String g);
 

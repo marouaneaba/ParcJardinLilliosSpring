@@ -27,7 +27,7 @@ public class CommentaireServiceImplementation implements CommentaireInterface {
 	}
 
 	@Override
-	public void validerCommentaire(Commentaire commentaire) throws Exception {
+	public void validerCommentaire(Commentaire commentaire) {
 
 		commentaire.setConfirmer(true);
 		commentaireRepository.save(commentaire);

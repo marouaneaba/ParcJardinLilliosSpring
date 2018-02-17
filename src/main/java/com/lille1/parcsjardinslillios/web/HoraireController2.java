@@ -29,7 +29,7 @@ public class HoraireController2 {
 	 * @return
 	 */
 	@GetMapping(value = "/Operatiohoraire")
-	public String GetOperationHoraire(Model model) {
+	public String getOperationHoraire(Model model) {
 		return "operationHoraire";
 	}
 
@@ -41,8 +41,8 @@ public class HoraireController2 {
 	 * @return
 	 */
 	@GetMapping(value = "/chercherHoraireParPJ")
-	public String ChercherHoraireParPJ(Model model, String PJ, String PJNom) {
-		ParcJardin foundPJ = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
+	public String chercherHoraireParPJ(Model model, String pj, String pjNom) {
+		ParcJardin foundPJ = parcJardinInterfaceMetier.chercherPJParNom(pjNom);
 		List<Horaire> foundHoraire = horaireRepository.findByParcJardin(foundPJ);
 		model.addAttribute("foundHoraires", foundHoraire);
 		return "operationHoraire";
@@ -55,8 +55,8 @@ public class HoraireController2 {
 	 * @return
 	 */
 	@GetMapping(value = "/ModifierHoraire")
-	public String GetModifierHoraire(Long idH, Model model) {
-		Horaire tmphoraire = horaireRepository.findById(idH);
+	public String getModifierHoraire(Long idh, Model model) {
+		Horaire tmphoraire = horaireRepository.findById(idh);
 		model.addAttribute("horaireAmodifer", tmphoraire);
 		return "modifierhoraire";
 	}
@@ -69,8 +69,8 @@ public class HoraireController2 {
 	 * @return
 	 */
 	@PostMapping(value = "/ModifierHoraire")
-	public String PostModifierHoraire(Model model, Horaire horaire, Long idH) {
-		horaireInterfaceMetier.modifierHorairePJ(idH, horaire.getJournee(), horaire.getOuverture(),
+	public String postModifierHoraire(Model model, Horaire horaire, Long idh) {
+		horaireInterfaceMetier.modifierHorairePJ(idh, horaire.getJournee(), horaire.getOuverture(),
 				horaire.getFermeture());
 
 		return "operationHoraire";

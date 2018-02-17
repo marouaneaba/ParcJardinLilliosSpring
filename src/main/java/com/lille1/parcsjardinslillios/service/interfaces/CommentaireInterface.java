@@ -8,7 +8,7 @@ public interface CommentaireInterface {
 
 	public Commentaire ajouterCommentaire(Commentaire commentaire);
 
-	public void validerCommentaire(Commentaire commentaire) throws Exception;
+	public void validerCommentaire(Commentaire commentaire);
 
 	public void supprimerCommentaire(Commentaire commentaire);
 

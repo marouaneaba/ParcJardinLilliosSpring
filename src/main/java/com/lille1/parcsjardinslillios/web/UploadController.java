@@ -25,8 +25,12 @@ public class UploadController {
 	@Autowired
 	private StorageService storageService;
 
-	List<String> files = new ArrayList<String>();
+	List<String> files ;
 
+	
+	public UploadController(){
+		this.files = new ArrayList<String>();
+	}
 	/**
 	 * 
 	 * @param model

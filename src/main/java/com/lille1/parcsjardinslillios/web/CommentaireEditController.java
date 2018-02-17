@@ -36,11 +36,9 @@ public class CommentaireEditController {
 	 * @return
 	 */
 	@GetMapping(value = "/modificationParcJardin")
-	public String ModificationParcJardinnLillios(long id, Model model) {
+	public String modificationParcJardinnLillios(long id, Model model) {
 
 		model.addAttribute("Allcategories", categorieInterfaceMetier.consulterCategories());
-
-		System.out.println("avant modifi pj " + id);
 		model.addAttribute("nouveauPJ", parcJardinInterfaceMetier.chercherPJParId(id));
 		return "modificationparcjardin";
 	}
@@ -53,7 +51,7 @@ public class CommentaireEditController {
 	 * @return
 	 */
 	@PostMapping(value = "/modifierParcJardinLillios")
-	public RedirectView PostModificationParcJardinLillios(long id, ParcJardin nouveauPJ,
+	public RedirectView postModificationParcJardinLillios(long id, ParcJardin nouveauPJ,
 			@RequestParam(value = "cats") List<Long> cats) {
 
 		ParcJardin tmp = parcJardinInterfaceMetier.chercherPJParId(id);
@@ -62,19 +60,10 @@ public class CommentaireEditController {
 			listCatTmp.add(categorieInterfaceMetier.colsulterCategorieId(idcat));
 		}
 
-		for (Categorie tmpcat : listCatTmp) {
-			System.out.println("---------" + tmpcat.toString());
-		}
-
-		System.out.println("id pj a modifier " + id);
-
 		parcJardinInterfaceMetier.modifierPJ(tmp, nouveauPJ.getName(), nouveauPJ.getDescription(),
-				nouveauPJ.getAdresse(), nouveauPJ.getLatitude(), nouveauPJ.getLongitude(), nouveauPJ.getType(), listCatTmp);
+				nouveauPJ.getAdresse(), nouveauPJ.getLatitude(), nouveauPJ.getLongitude(), nouveauPJ.getType(),
+				listCatTmp);
 		parcJardinRepository.save(tmp);
-
-		// model.addAttribute("files", fileNames);
-		// ParcJardin tmp = parcJardinRepository.save(nouveauPJ);
-		// parcJardinInterfaceMetier.AjouterListCatToPJ(listCatTmp,tmp);
 		return new RedirectView("/operationPJ");
 	}
 
@@ -83,7 +72,7 @@ public class CommentaireEditController {
 	 * @return
 	 */
 	@GetMapping(value = "/ajouteAdmin")
-	public String GETajoutAdmin() {
+	public String getAjoutAdmin() {
 
 		return "ajoutadmin";
 	}
@@ -97,12 +86,10 @@ public class CommentaireEditController {
 	 * @return
 	 */
 	@PostMapping(value = "/ajouteAdmin")
-	public RedirectView PostajoutAdmin(@RequestParam("name") String name, @RequestParam("password") String password,
-			@RequestParam("email_address") String email_address, @RequestParam("Tel") String Tel) {
+	public RedirectView postAjoutAdmin(@RequestParam("name") String name, @RequestParam("password") String password,
+			@RequestParam("email_address") String email_address, @RequestParam("Tel") String tel) {
 
-		// TODO
-		userRepository.save(new User(name, password, email_address, Tel));
-		System.out.println(name + " , " + password + " , " + email_address);
+		userRepository.save(new User(name, password, email_address, tel));
 		return new RedirectView("/operationPJ");
 	}
 
