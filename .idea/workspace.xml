@@ -435,7 +435,7 @@
     </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lille1.ParcsJardinsLillios.Application" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lille1.parcsjardinslillios.Application" />
       <module name="project_platine" />
       <envs />
     </configuration>
