@@ -7,7 +7,7 @@ import com.lille1.parcsjardinslillios.entity.User;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 
-	@Query("select a from User a where a.Name like :n and a.password like :p")
+	@Query("select a from User a where a.name like :n and a.password like :p")
 	public User findByNameAndPassword(@Param("n") String name, @Param("p") String password);
 
 	public User findByEmail(String email);

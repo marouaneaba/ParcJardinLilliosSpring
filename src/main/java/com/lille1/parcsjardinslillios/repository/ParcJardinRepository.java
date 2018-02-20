@@ -21,7 +21,7 @@ public interface ParcJardinRepository extends JpaRepository<ParcJardin, Long> {
 
 	public List<ParcJardin> findByType(String type);
 
-	@Query("select distinct P from ParcJardin P where P.L=:latitude and P.G=:logitude")
+	@Query("select distinct P from ParcJardin P where P.latitude=:latitude and P.longitude=:logitude")
 	public ParcJardin trouverPJparLG(@Param("latitude") String latitude, @Param("logitude") String logitude);
 
 }
