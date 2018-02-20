@@ -29,7 +29,7 @@ public class UploadController {
 
 	
 	public UploadController(){
-		this.files = new ArrayList<String>();
+		this.files = new ArrayList<>();
 	}
 	/**
 	 * 

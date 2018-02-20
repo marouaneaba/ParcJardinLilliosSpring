@@ -18,6 +18,7 @@ import com.lille1.parcsjardinslillios.service.interfaces.ParcJardinInterface;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,9 @@ import java.util.List;
 public class ParcJardinController {
 	private final Logger logger = LoggerFactory.getLogger(ParcJardinController.class);
 
+	private static final String ALLPARCSJARDINS = "allParcsJardins";
+	private static final String REDIRECTOPERATIONPJ = "redirect:/operationPJ";
+	
 	@Autowired
 	private CategorieInterface categorieInterfaceMetier;
 	@Autowired
@@ -41,8 +45,8 @@ public class ParcJardinController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Model model) {
-		logger.debug("index()");
-		return "redirect:/operationPJ";
+		
+		return REDIRECTOPERATIONPJ;
 	}
 
 	/**
@@ -53,7 +57,8 @@ public class ParcJardinController {
 	@RequestMapping(value = "/operationPJ", method = RequestMethod.GET)
 	public String showAllPJ(Model model) {
 		List<ParcJardin> listPJ = parcJardinInterfaceMetier.consulterParcsJardin();
-		model.addAttribute("allParcsJardins", new ArrayList<>(listPJ));
+		model.addAttribute(ALLPARCSJARDINS, new ArrayList<>(listPJ));
+		
 		return "parcJardin";
 	}
 
@@ -65,13 +70,13 @@ public class ParcJardinController {
 	 */
 	@RequestMapping(value = "/operationPJ/delete", method = RequestMethod.POST)
 	public String supprimerPJ(Long id, final RedirectAttributes redirectAttributes) {
-		ParcJardin PJ = parcJardinInterfaceMetier.chercherPJParId(id);
-		parcJardinInterfaceMetier.supprimerPJ(PJ);
+		ParcJardin parcJardin = parcJardinInterfaceMetier.chercherPJParId(id);
+		parcJardinInterfaceMetier.supprimerPJ(parcJardin);
 
 		redirectAttributes.addFlashAttribute("css", "success");
 		redirectAttributes.addFlashAttribute("msg", "ParcJardin est supprimer");
 
-		return "redirect:/operationPJ";
+		return REDIRECTOPERATIONPJ;
 	}
 
 	/**
@@ -120,10 +125,13 @@ public class ParcJardinController {
 		files.add(file3);
 		files.add(file4);
 		files.add(file5);
-
+		
+		
+		
 		for (int i = 0; i < files.size(); i++) {
 			if (!files.get(i).isEmpty()) {
 
+				BufferedOutputStream stream = null;
 				try {
 					byte[] bytes = files.get(i).getBytes();
 
@@ -134,11 +142,18 @@ public class ParcJardinController {
 
 					File serverFile = new File(
 							dir.getAbsolutePath() + File.separator + namePrcJardin.replaceAll(" ", "_") + i + ".jpg");
-					BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+					stream = new BufferedOutputStream(new FileOutputStream(serverFile));
 					stream.write(bytes);
-					stream.close();
+					
 
 				} catch (Exception e) {
+					logger.info(e.getMessage());
+				}finally {
+					try {
+						stream.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
 			}
 		}
@@ -174,7 +189,7 @@ public class ParcJardinController {
 		hdimanche.setParcJardin(tmp);
 		horaireRepository.save(hdimanche);
 
-		return "redirect:/operationPJ";
+		return REDIRECTOPERATIONPJ;
 	}
 
 	/**
@@ -184,13 +199,13 @@ public class ParcJardinController {
 	 * @return
 	 */
 	@RequestMapping("/chercherPJParNom")
-	public String chercherParcJardinParNom(Model model, @RequestParam(value = "PJNom") String PJNom) {
+	public String chercherParcJardinParNom(Model model, @RequestParam(value = "PJNom") String parcJardinNom) {
 
-		if (PJNom.equals("")) {
-			model.addAttribute("allParcsJardins", parcJardinInterfaceMetier.consulterParcsJardin());
+		if (parcJardinNom.equals("")) {
+			model.addAttribute(ALLPARCSJARDINS, parcJardinInterfaceMetier.consulterParcsJardin());
 		} else {
-			ParcJardin pj = parcJardinInterfaceMetier.chercherPJParNom(PJNom);
-			model.addAttribute("allParcsJardins", pj);
+			ParcJardin pj = parcJardinInterfaceMetier.chercherPJParNom(parcJardinNom);
+			model.addAttribute(ALLPARCSJARDINS, pj);
 		}
 
 		return "parcJardin";

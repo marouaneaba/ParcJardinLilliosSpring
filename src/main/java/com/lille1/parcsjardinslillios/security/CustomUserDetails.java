@@ -10,9 +10,14 @@ import com.lille1.parcsjardinslillios.entity.User;
 import com.lille1.parcsjardinslillios.repository.UserRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service("CustomUserDetailService")
 public class CustomUserDetails implements UserDetailsService {
+	
+	private static final Logger LOGGER = Logger.getLogger( CustomUserDetails.class.getName() );
+	
 	@Autowired
 	UserRepository userRepository;
 
@@ -26,7 +31,9 @@ public class CustomUserDetails implements UserDetailsService {
 			user = userRepository.findByEmail(s);
 
 		} catch (UsernameNotFoundException e) {
-			System.err.println("erreur : " + e);
+			LOGGER.log(Level.FINE,"erreur : ",e);
+		}catch(NullPointerException e){
+			LOGGER.log(Level.FINE,"erreur : ",e);
 		}
 
 		List<SimpleGrantedAuthority> authorities = new ArrayList<>();

@@ -16,14 +16,18 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class StorageService {
 
+	
+	private static final String FAIL = "FAIL!"; 
+	
 	Logger log = LoggerFactory.getLogger(this.getClass().getName());
+	
 	private final Path rootLocation = Paths.get("upload-dir");
 
 	public void store(MultipartFile file) {
 		try {
 			Files.copy(file.getInputStream(), this.rootLocation.resolve(file.getOriginalFilename()));
 		} catch (Exception e) {
-			throw new RuntimeException("FAIL!");
+			throw new RuntimeException(FAIL);
 		}
 	}
 
@@ -34,10 +38,10 @@ public class StorageService {
 			if (resource.exists() || resource.isReadable()) {
 				return resource;
 			} else {
-				throw new RuntimeException("FAIL!");
+				throw new RuntimeException(FAIL);
 			}
 		} catch (MalformedURLException e) {
-			throw new RuntimeException("FAIL!");
+			throw new RuntimeException(FAIL);
 		}
 	}
 
