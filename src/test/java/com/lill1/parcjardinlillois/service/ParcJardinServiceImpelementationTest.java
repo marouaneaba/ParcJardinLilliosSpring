@@ -1,4 +1,4 @@
-package com.lill1.parcjardinlillios.service;
+package com.lill1.parcjardinlillois.service;
 
 public class ParcJardinServiceImpelementationTest {
 
