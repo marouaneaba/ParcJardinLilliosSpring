@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.lille1.parcsjardinslillios.entity.ParcJardin;
 import com.lille1.parcsjardinslillios.entity.User;
+import com.lille1.parcsjardinslillios.repository.ParcJardinRepository;
 import com.lille1.parcsjardinslillios.repository.UserRepository;
 import com.lille1.parcsjardinslillios.storage.StorageService;
 import javax.annotation.Resource;
@@ -21,7 +22,10 @@ public class Application implements CommandLineRunner {
 	StorageService storageService;
 	@Autowired
 	private UserRepository userRepository;
-
+	@Autowired
+	private ParcJardinRepository mParcJardinRepository;
+	
+	
 	public static void main(java.lang.String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
@@ -31,7 +35,9 @@ public class Application implements CommandLineRunner {
 
 		userRepository.save(new User("name", "password", "admin@admin.fr", "098998"));
 
-		/*ParcJardin pj = ParcJardin("", java.lang.String description, String type, String l, String g,
-				java.lang.String adresse) ;*/
+		ParcJardin pj = new ParcJardin("Parc Heron", "le Parc Heron Description","PARC","0.0" , "0.0",
+				"avenue Paul Langevin Ville neuve d'asq") ;
+		
+		mParcJardinRepository.save(pj);
 	}
 }
