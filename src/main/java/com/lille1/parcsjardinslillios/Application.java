@@ -5,6 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import com.lille1.parcsjardinslillios.entity.ParcJardin;
 import com.lille1.parcsjardinslillios.entity.User;
 import com.lille1.parcsjardinslillios.repository.UserRepository;
 import com.lille1.parcsjardinslillios.storage.StorageService;
@@ -29,5 +31,7 @@ public class Application implements CommandLineRunner {
 
 		userRepository.save(new User("name", "password", "admin@admin.fr", "098998"));
 
+		/*ParcJardin pj = ParcJardin("", java.lang.String description, String type, String l, String g,
+				java.lang.String adresse) ;*/
 	}
 }

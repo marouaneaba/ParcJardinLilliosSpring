@@ -20,20 +20,7 @@ public class CommentaireRestController {
 	@Autowired
 	private ParcJardinInterface mParcJardinInterface;
 
-	/**
-	 * Permet delister toutes les commentaires d'un Parc/Jardinn Lillios via une
-	 * POST : requête GET http://localhost:8080/api/commentaire
-	 *
-	 * @return
-	 */
-	@PostMapping(value = "/api/Commentaire")
-	public Commentaire insererCommentaire(@RequestParam("name") String sName, @RequestParam("nbrEtoile") int sNbrEtoile,
-			@RequestParam("commentaire") String sCommentaire, @RequestParam("idParcJardinLillios") Long sId) {
 
-		return mCommentaireInterface.ajouterCommentaire(
-				new Commentaire(sCommentaire, sNbrEtoile, sName, false, mParcJardinInterface.chercherPJParId(sId)));
-
-	}
 
 	/**
 	 * 
