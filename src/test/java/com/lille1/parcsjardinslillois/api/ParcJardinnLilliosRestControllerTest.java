@@ -1,4 +1,4 @@
-package com.lille1.parcjardinslillios.api;
+package com.lille1.parcsjardinslillois.api;
 
 public class ParcJardinnLilliosRestControllerTest {
 
